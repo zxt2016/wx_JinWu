@@ -1,4 +1,5 @@
 // pages/login/login.js
+
 var app = getApp();
 Component({
   /**
