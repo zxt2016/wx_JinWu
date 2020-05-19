@@ -1,15 +1,29 @@
 //app.js
 App({
   onLaunch: function () {
+    
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
+    
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
     // 登录
     wx.login({
       success: res => {
+        console.log(res);
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        // wx.request({
+        //   url: this.globalData.baseUrl +'/wxUser/code2Session',
+        //   method:'POST',
+        //   data:{
+        //     code:res.code
+        //   },
+        //   success: rea => {
+        //     console.log(rea);
+        //   }
+        // })
+        
       }
     })
     // 获取用户信息
@@ -34,6 +48,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    // baseUrl:'http://192.168.1.5:8866/photovoltaic',
+    baseUrl: 'http://192.168.1.4:8080/photovoltaic',
   }
 })
