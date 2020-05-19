@@ -21,6 +21,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    
     //表单提交
     formSubmit(e){
       var phone = e.detail.value.phone;
