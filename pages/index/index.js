@@ -62,7 +62,7 @@ Page({
   getBannerList: function() {
     var _this = this
     wx.request({
-      url: 'http://192.168.1.5:8866/photovoltaic/advertising/getBannertList',
+      url: app.globalData.baseUrl+'/advertising/getBannertList',
       method: 'GET', 
       header: {
         'content-type': 'application/json'
