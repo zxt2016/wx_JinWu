@@ -1,0 +1,25 @@
+.itemTitle{
+  height: 80rpx;
+  background-color: #cccccc;
+  line-height: 80rpx;
+}
+
+.itemTitle text{
+  color: #ededed;
+  margin-left: 15rpx;
+}
+.itemList{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #cccccc;
+}
+.itemList text{
+  margin: 0rpx 15rpx;
+  font-size: 24rpx;
+}
+.itemList .jtRt{
+  width: 12rpx;
+  height: 22rpx;
+  margin-top: 10rpx;
+  line-height: 22rpx;
+}

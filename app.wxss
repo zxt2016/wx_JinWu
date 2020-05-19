@@ -8,3 +8,15 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.float_lf {
+  float: left;
+  }  
+.float_rt{
+  float: right;
+}  
+
+.clearfix {
+  overflow: hidden;
+  _zoom: 1;
+  }

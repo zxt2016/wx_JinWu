@@ -1,0 +1,21 @@
+.invite_num{
+  width: 50%;
+  text-align: center;
+  background-color: #eeeeee;
+  height: 150rpx;
+}
+
+.invite_num text{
+  line-height: 150rpx;
+}
+
+.invite_title{
+  margin-top: 5rpx;
+  height: 80rpx;
+  width: 100%;
+  background-color: #eeeeee;
+}
+.invite_title text{
+  line-height: 80rpx;
+  margin: 0rpx 15rpx;
+}
