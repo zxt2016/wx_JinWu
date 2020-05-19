@@ -6,7 +6,15 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    //轮播图效果
+    banner_img: [],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 2000,
+    duration: 500,
+    circular: true,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -49,5 +57,29 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+
+  getBannerList: function() {
+    var _this = this
+    wx.request({
+      url: 'http://192.168.1.5:8866/photovoltaic/advertising/getBannertList',
+      method: 'GET', 
+      header: {
+        'content-type': 'application/json'
+      },
+      success (res) {
+        var img_list = []
+        for (var i = 0; i < res.data.data.length; i++) {
+          img_list.push(res.data.data[i].img,)
+        }  
+        _this.setData({
+          banner_img: img_list
+        })
+      }
+    })
+  },
+
+  onLoad: function () {
+    this.getBannerList();
+  },
 })

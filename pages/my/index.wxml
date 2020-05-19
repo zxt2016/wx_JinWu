@@ -1,2 +1,56 @@
-<!--pages/my/index.wxml-->
-<text>pages/my/index.wxml</text>
+<view class='page_box'>
+  <!-- 用户信息 -->
+  <view class='section clearfix' style='margin-top:20rpx;'>
+  <image class='mineBg' src='img/mine_bg.png'></image>
+    <view class='userBox'>
+      <view class='userInfo clearfix float_lf' hidden='{{logined}}'>
+        <image class='float_lf' src='{{userInfo.avatarUrl}}'></image>
+        <view class='name_num float_lf'>
+          <text class='txt-num1'>{{userInfo.nickName}}</text>
+          <text>所属合伙企业1个</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="allnum clearfix">
+    <view class="float_lf num_info">投资总额：2300万元</view>
+    <view class="float_lf num_info">累计收益：5000万元</view>
+  </view>
+  <view>
+  <view class='itemList clearfix' bindtap='editForm'>
+    <image class='icon_img float_lf' src='img/mine_icon1.png'></image>
+    <text class='float_lf'>我的电站</text>
+    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+  </view>
+  <view class='itemList clearfix' bindtap='myNeed'>
+    <image class='icon_img float_lf' src='img/mine_icon2.png'></image>
+    <text class='float_lf'>我的订单</text>
+    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+  </view>
+  <view class='itemList clearfix' bindtap='mySheQun'>
+    <image class='icon_img float_lf' style='width:40rpx;height:38rpx;' src='img/mine_icon5.png'></image>
+    <text class='float_lf'>我的能量</text>
+    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+  </view>
+  <view class='itemList clearfix' bindtap='personal_data'>
+    <image class='icon_img float_lf' src='img/mine_icon3.png'></image>
+    <text class='float_lf'>个人资料</text>
+    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+  </view>
+  <view class='itemList clearfix' bindtap='invite_btn'>
+    <image class='icon_img float_lf' src='img/mine_icon4.png'></image>
+    <text class='float_lf'>邀请好友</text>
+    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+  </view>
+  <view class='itemList clearfix' bindtap='fankui_btn'>
+    <image class='icon_img float_lf' src='img/mine_icon4.png'></image>
+    <text class='float_lf'>分享有赏</text>
+    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+  </view>
+  <view class='itemList clearfix' bindtap='contact_us'>
+    <image class='icon_img float_lf' src='img/mine_icon4.png'></image>
+    <text class='float_lf'>关于我们</text>
+    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+  </view>
+  </view>
+</view>

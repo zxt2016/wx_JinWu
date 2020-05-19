@@ -1,0 +1,11 @@
+<view>
+    <view class="float_lf invite_num">
+        <text>邀请码：EDEGFSA</text>
+    </view>
+    <view class="float_lf invite_num">
+        <text>邀请人数：5人</text>
+    </view>
+    <view class="float_lf invite_title">
+        <text>邀请列表</text>
+    </view>
+</view>
