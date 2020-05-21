@@ -1,11 +1,75 @@
 <!--index.wxml-->
-<view class="page-section page-section-spacing swiper">
-      <swiper indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
-        <block wx:for="{{banner_img}}" wx:key="*this">
-          <swiper-item>
-            <image src="{{item}}" style="width:100%"></image>
-          </swiper-item>
-        </block>
-      </swiper>
+<view class='view_body'>
+  <!-- 轮播 -->
+  <view class="page-section page-section-spacing swiper">
+        <swiper indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+          <block wx:for="{{banner_img}}" wx:key="*this">
+            <swiper-item>
+              <image src="{{item}}" style="width:100%"></image>
+            </swiper-item>
+          </block>
+        </swiper>
+  </view>
+  <!-- 全部电站/我的电站 -->
+  <view class='stationBox'>
+    <!-- tab切换 -->
+    <view class='tabMain'>
+      <view class="tabItem {{stationType == 1 ? 'active':''}}" data-num='1' bindtap="stationTab">
+        <image class='left_icon' src="../image/logo_blue.png"></image>
+        <text>全部电站</text>
+        <image class='right_icon' src="../image/right_icon2.png"></image>
+      </view>  
+      <view class="tabItem {{stationType == 2 ? 'active':''}}" data-num='2' bindtap="stationTab">
+        <image class='left_icon' src="../image/station_icon2.png"></image>
+        <text>我的电站</text>
+        <image class='right_icon' src="../image/right_icon1.png"></image>
+      </view>     
     </view>
+    <!-- 电站 -->
+    <view class='stationMain'>
+      <!-- 招募项目 星系特效-->
+      <view class="sMain_item {{stationType == 1 ? 'tabShow':''}}">
+        <image class='xingKong' src="../image/xingkong.png"></image>
+        <view class="star_animted">123</view>
+      </view>
+      <!-- 我的电站 -->
+      <view class="sMain_item {{stationType == 2 ? 'tabShow':''}}">222</view>
+    </view>
+  </view>
+  <!-- 收益模拟计算器 -->
+  <view class="incomeCounter">
+    <view class="counter_title">收益模拟计算器</view>
+    <view class="counter_item getIn" style="border-bottom:1px solid #e5e5e5;">
+      <view class="item_text">投入 <text>(万)</text></view>
+      <view class="item_input">
+        <input type="number" name="money" placeholder="请输入您的投入金额" placeholder-style="color:#999;"></input>
+      </view>
+    </view>
+    <view class="counter_item">
+      <view class="item_text">总装机容量 <text>(KW))</text></view>
+      <view class="item_input">
+        <input type="number" disabled='true' value="399.68KW"></input>
+      </view>
+    </view>
+    <view class="counter_item">
+      <view class="item_text">帮助 <text>(户)</text></view>
+      <view class="item_input">
+        <input type="number" disabled='true' value="8923户"></input>
+      </view>
+    </view>
+    <view class="counter_item">
+      <view class="item_text">预计收益 <text>(万)</text></view>
+      <view class="item_input">
+        <input type="number" disabled='true' value="2399.68万"></input>
+      </view>
+    </view>
+    <view class="counter_item">
+      <view class="item_text">回报率 <text>(%)</text></view>
+      <view class="item_input">
+        <input type="number" disabled='true' value="45.2%"></input>
+      </view>
+    </view>
+  </view>
+</view>
+

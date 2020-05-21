@@ -49,7 +49,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    // baseUrl:'http://192.168.1.5:8866/photovoltaic',
-    baseUrl: 'http://192.168.1.4:8080/photovoltaic',
+    baseUrl:'http://192.168.1.5:8080/photovoltaic',
+    // baseUrl: 'http://192.168.1.4:8080/photovoltaic',
   }
 })

@@ -23,6 +23,7 @@ Component({
     formSubmit(e){
       var phone = e.detail.value.phone;
       var code = e.detail.value.code;
+      var inviteCode = e.detail.value.inviteCode;
       if(!phone){
         wx.showToast({
           title: '请输入手机号',
@@ -42,14 +43,21 @@ Component({
           duration: 2000
         })
       }else{
+        console.log(JSON.stringify({
+          phone: phone,
+          validateCode: code,
+          invitedCode: inviteCode
+        }));
         //登录
         wx.request({
           url: app.globalData.baseUrl+'/login',
           method:'POST',
+          dataType:'json',
           contentType: 'application/json',
           data:JSON.stringify({
             phone:phone,
-            validateCode:code
+            validateCode:code,
+            invitedCode: inviteCode
           }),
           success:res=>{
             console.log(res);

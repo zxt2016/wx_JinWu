@@ -10,6 +10,10 @@
       <input class='code' name='code' value='123456'></input>
       <button class='getCode' type="default">获取验证码</button>
     </view>
+     <view class='form_item'>
+      <text>邀请码：</text>
+      <input class='phone invite' name='inviteCode' placeholder="请输入邀请码" value=''></input>
+    </view>
     <view class='form_item'>
       <button class='submit' type="primary" form-type="submit">登录</button>
     </view>

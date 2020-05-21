@@ -1,0 +1,116 @@
+.page-section{
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+/* 电站招募 */
+.stationBox{
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+.stationBox .tabMain{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30rpx 0;
+  overflow: hidden;
+}
+.stationBox .tabMain .tabItem{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  line-height: 36rpx;
+}
+.stationBox .tabMain .tabItem .left_icon{
+  display: block;
+  height: 36rpx;
+  width: 24rpx;
+}
+.stationBox .tabMain .tabItem .right_icon{
+  display: block;
+  height: 18rpx;
+  width: 14rpx;
+}
+.stationBox .tabMain .tabItem:first-child+.tabItem .left_icon{
+  width: 28rpx;
+  height:28rpx;
+}
+.stationBox .tabMain .tabItem text{
+  padding: 0 30rpx 0 10rpx;
+}
+.stationBox .tabMain .tabItem:first-child{
+  border-right: 1px solid #ccc;
+}
+.stationBox .tabMain .tabItem.active{
+  color:#2c7bfe;
+}
+.stationMain{
+  padding: 30rpx;
+  box-sizing: border-box;
+  box-shadow: 0 -6px 6px -5px rgba(204, 204, 204, 0.3);
+}
+.stationMain .sMain_item{
+  width: 100%;
+  height: 600rpx;
+  display: none;
+  position: relative;
+}
+.stationMain .sMain_item .xingKong{
+  width: 100%;
+  height: 456rpx;
+  
+}
+.stationMain .sMain_item .star_animted{
+  position: absolute;
+  left:0;
+  top:0;
+  z-index: 10;
+  color:#fff;
+}
+.tabShow{
+  display: block !important;
+}
+/* 收益模拟计算器 */
+.incomeCounter{
+  padding: 30rpx;
+  overflow: hidden;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.counter_title{
+  font-size: 32rpx;
+  /* margin-bottom: 20rpx; */
+}
+.incomeCounter .counter_item{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 28rpx;
+  margin-top: 30rpx;
+}
+.incomeCounter .counter_item .item_text{
+  text-align: left;
+  width: 40%;
+}
+.incomeCounter .counter_item .item_text text{
+  color:#999;
+  font-size: 24rpx;
+}
+.incomeCounter .counter_item .item_input{
+  width: 60%;
+}
+.incomeCounter .counter_item .item_input input{
+  width: 100%;
+  color:#2c7bfe;
+  text-align: right;
+  /* padding: 20rpx 0; */
+}
+.incomeCounter .counter_item.getIn .item_input input{
+  padding: 20rpx 0;
+}

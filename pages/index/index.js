@@ -15,6 +15,9 @@ Page({
     interval: 2000,
     duration: 500,
     circular: true,
+    //电站tab切换标识
+    stationType:1,
+
   },
   //事件处理函数
   bindViewTap: function() {
@@ -49,6 +52,7 @@ Page({
         }
       })
     }
+    this.getBannerList();
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -59,7 +63,7 @@ Page({
     })
   },
 
-  getBannerList: function() {
+  getBannerList: function() { 
     var _this = this
     wx.request({
       url: app.globalData.baseUrl+'/advertising/getBannertList',
@@ -78,8 +82,10 @@ Page({
       }
     })
   },
-
-  onLoad: function () {
-    this.getBannerList();
+  //电站切换
+  stationTab: function(e){
+    this.setData({
+      stationType:e.currentTarget.dataset.num
+    });
   },
 })
