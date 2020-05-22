@@ -2,36 +2,36 @@
 <view class='view_body'>
   <!-- 轮播 -->
   <view class="page-section page-section-spacing swiper">
-        <swiper indicator-dots="{{indicatorDots}}"
-          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
-          <block wx:for="{{banner_img}}" wx:key="*this">
-            <swiper-item>
-              <image src="{{item}}" style="width:100%"></image>
-            </swiper-item>
-          </block>
-        </swiper>
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+      <block wx:for="{{banner_img}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item}}" style="width:100%"></image>
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
   <!-- 全部电站/我的电站 -->
   <view class='stationBox'>
     <!-- tab切换 -->
     <view class='tabMain'>
-      <view class="tabItem {{stationType == 1 ? 'active':''}}" data-num='1' bindtap="stationTab">
-        <image class='left_icon' src="../image/logo_blue.png"></image>
+      <view class="tabItem {{stationType == 1?'active':''}}" data-num='1' bindtap="stationTab">
+        <image class='left_icon' src="../image/index/index_icon1_{{stationType == 1?'blue':'grey'}}.png"></image>
         <text>全部电站</text>
-        <image class='right_icon' src="../image/right_icon2.png"></image>
+        <image class='right_icon' src="../image/index/right_icon_blue.png"></image>
       </view>  
-      <view class="tabItem {{stationType == 2 ? 'active':''}}" data-num='2' bindtap="stationTab">
-        <image class='left_icon' src="../image/station_icon2.png"></image>
+      <view class="tabItem" data-num='2' bindtap="stationTab">
+        <image class='left_icon' src="../image/index/index_icon2_grey.png"></image>
         <text>我的电站</text>
-        <image class='right_icon' src="../image/right_icon1.png"></image>
+        <image class='right_icon' src="../image/index/right_icon_grey.png"></image>
       </view>     
     </view>
     <!-- 电站 -->
     <view class='stationMain'>
       <!-- 招募项目 星系特效-->
       <view class="sMain_item {{stationType == 1 ? 'tabShow':''}}">
-        <image class='xingKong' src="../image/xingkong.png"></image>
-        <view class="star_animted">123</view>
+        <image class='xingKong' src="../image/index/xingkong.png"></image>
+        <view class="star_animted"></view>
       </view>
       <!-- 我的电站 -->
       <view class="sMain_item {{stationType == 2 ? 'tabShow':''}}">222</view>

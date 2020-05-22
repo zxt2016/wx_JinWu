@@ -2,36 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fce3cd3f-0f7d-46ee-bd8a-78a69652543e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/banner1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/logo_blue.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/logo_white.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/right_icon1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/right_icon2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/star_center.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/station_bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/station_icon2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/xingkong.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/myEnergy/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/myEnergy/index.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/myEnergy/index.wxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/myEnergy/index.wxss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/share/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/share/index.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/share/index.wxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/share/index.wxss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon1_blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon1_grey.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon2_blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon2_grey.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon3_blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon3_grey.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon4_blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon4_grey.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/banner1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/index_icon1_blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/index_icon1_grey.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/index_icon2_blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/index_icon2_grey.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/logo_white.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/right_icon_blue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/right_icon_grey.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/star_center.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/station_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/xingkong.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
-      <change beforePath="$PROJECT_DIR$/app.wxss" afterPath="$PROJECT_DIR$/app.wxss" />
-      <change beforePath="$PROJECT_DIR$/pages/index/image/qinghaiskw1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/index/image/qinghaiskw2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/index/image/sanyeskw.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/index/image/shandongqingdao.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/index/index.js" afterPath="$PROJECT_DIR$/pages/index/index.js" />
+      <change beforePath="$PROJECT_DIR$/pages/image/banner1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/image/logo_blue.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/image/logo_white.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/image/right_icon1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/image/right_icon2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/image/star_center.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/image/station_bg.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/image/station_icon2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/image/xingkong.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" afterPath="$PROJECT_DIR$/pages/index/index.wxml" />
       <change beforePath="$PROJECT_DIR$/pages/index/index.wxss" afterPath="$PROJECT_DIR$/pages/index/index.wxss" />
-      <change beforePath="$PROJECT_DIR$/pages/login/login.js" afterPath="$PROJECT_DIR$/pages/login/login.js" />
-      <change beforePath="$PROJECT_DIR$/pages/login/login.wxml" afterPath="$PROJECT_DIR$/pages/login/login.wxml" />
       <change beforePath="$PROJECT_DIR$/project.config.json" afterPath="$PROJECT_DIR$/project.config.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,8 +67,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+            <state relative-caret-position="38">
+              <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -94,9 +95,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="22" />
-    <option name="y" value="31" />
-    <option name="width" value="1637" />
+    <option name="x" value="138" />
+    <option name="y" value="23" />
+    <option name="width" value="1102" />
     <option name="height" value="966" />
   </component>
   <component name="ProjectView">
@@ -114,7 +115,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -131,12 +131,13 @@
               <item name="wx_JinWu" type="b2602c69:ProjectViewProjectNode" />
               <item name="wx_JinWu" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="image" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -172,7 +173,8 @@
       <workItem from="1589882221854" duration="144000" />
       <workItem from="1589882557378" duration="1345000" />
       <workItem from="1589952939016" duration="4247000" />
-      <workItem from="1590024298351" duration="751000" />
+      <workItem from="1590024298351" duration="797000" />
+      <workItem from="1590109107731" duration="1152000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/zxt2016/wx_JinWu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1589882241138</created>
@@ -195,26 +197,33 @@
       <option name="project" value="LOCAL" />
       <updated>1589883858859</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="zxt">
+      <created>1590057399797</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590057399797</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6521000" />
+    <option name="totallyTimeSpent" value="7719000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="22" y="31" width="1637" height="966" extended-state="0" />
+    <frame x="138" y="23" width="1102" height="966" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26206896" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2235849" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -240,6 +249,30 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -307,8 +340,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        <state relative-caret-position="38">
+          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
           <folding />
         </state>
       </provider>
