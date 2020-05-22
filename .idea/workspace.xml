@@ -2,38 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fce3cd3f-0f7d-46ee-bd8a-78a69652543e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon1_blue.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon1_grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon2_blue.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon2_grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon3_blue.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon3_grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon4_blue.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/bar_icon4_grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/banner1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/index_icon1_blue.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/index_icon1_grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/index_icon2_blue.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/index_icon2_grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/logo_white.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/right_icon_blue.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/right_icon_grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/star_center.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/station_bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/xingkong.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/pages/image/banner1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/image/logo_blue.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/image/logo_white.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/image/right_icon1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/image/right_icon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/image/star_center.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/image/station_bg.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/image/station_icon2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/pages/image/xingkong.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.js" afterPath="$PROJECT_DIR$/pages/index/index.js" />
       <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" afterPath="$PROJECT_DIR$/pages/index/index.wxml" />
       <change beforePath="$PROJECT_DIR$/pages/index/index.wxss" afterPath="$PROJECT_DIR$/pages/index/index.wxss" />
-      <change beforePath="$PROJECT_DIR$/project.config.json" afterPath="$PROJECT_DIR$/project.config.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,7 +19,7 @@
       <file leaf-file-name="app.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
+            <state relative-caret-position="0">
               <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
               <folding />
             </state>
@@ -68,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="38">
-              <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+              <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -95,9 +67,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="138" />
+    <option name="x" value="41" />
     <option name="y" value="23" />
-    <option name="width" value="1102" />
+    <option name="width" value="1523" />
     <option name="height" value="966" />
   </component>
   <component name="ProjectView">
@@ -126,12 +98,6 @@
               <item name="wx_JinWu" type="b2602c69:ProjectViewProjectNode" />
               <item name="wx_JinWu" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wx_JinWu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wx_JinWu" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="image" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -174,7 +140,7 @@
       <workItem from="1589882557378" duration="1345000" />
       <workItem from="1589952939016" duration="4247000" />
       <workItem from="1590024298351" duration="797000" />
-      <workItem from="1590109107731" duration="1152000" />
+      <workItem from="1590109107731" duration="3848000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/zxt2016/wx_JinWu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1589882241138</created>
@@ -204,16 +170,23 @@
       <option name="project" value="LOCAL" />
       <updated>1590057399797</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="zxt">
+      <created>1590126502348</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1590126502349</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7719000" />
+    <option name="totallyTimeSpent" value="10415000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="138" y="23" width="1102" height="966" extended-state="0" />
+    <frame x="41" y="23" width="1523" height="966" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2235849" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16002701" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -332,8 +305,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
+        <state relative-caret-position="0">
           <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/util的副本.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -341,7 +322,7 @@
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
-          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
           <folding />
         </state>
       </provider>

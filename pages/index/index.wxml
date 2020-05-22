@@ -16,14 +16,18 @@
     <!-- tab切换 -->
     <view class='tabMain'>
       <view class="tabItem {{stationType == 1?'active':''}}" data-num='1' bindtap="stationTab">
-        <image class='left_icon' src="../image/index/index_icon1_{{stationType == 1?'blue':'grey'}}.png"></image>
-        <text>全部电站</text>
-        <image class='right_icon' src="../image/index/right_icon_blue.png"></image>
+        <view class="item_view">
+          <image class='left_icon' src="../image/index/index_icon1_{{stationType == 1?'blue':'grey'}}.png"></image>
+          <text>全部电站</text>
+          <image class='right_icon' src="../image/index/right_icon_{{stationType == 1?'blue':'grey'}}.png"></image>
+        </view>
       </view>  
       <view class="tabItem" data-num='2' bindtap="stationTab">
-        <image class='left_icon' src="../image/index/index_icon2_grey.png"></image>
-        <text>我的电站</text>
-        <image class='right_icon' src="../image/index/right_icon_grey.png"></image>
+        <view class="item_view">
+          <image class='left_icon' src="../image/index/index_icon2_{{stationType == 2?'blue':'grey'}}.png"></image>
+          <text>我的电站</text>
+          <image class='right_icon' src="../image/index/right_icon_{{stationType == 2?'blue':'grey'}}.png"></image>
+        </view>
       </view>     
     </view>
     <!-- 电站 -->
@@ -31,7 +35,18 @@
       <!-- 招募项目 星系特效-->
       <view class="sMain_item {{stationType == 1 ? 'tabShow':''}}">
         <image class='xingKong' src="../image/index/xingkong.png"></image>
-        <view class="star_animted"></view>
+        <view class="star_animted">
+          <figure class="icon-cards">
+            <view class="icon-cards__content">
+                <view class="icon-cards__item"></view>
+                <view class="icon-cards__item"></view>
+                <view class="icon-cards__item"></view>
+            </view>
+        </figure>
+        
+        
+        
+        </view>
       </view>
       <!-- 我的电站 -->
       <view class="sMain_item {{stationType == 2 ? 'tabShow':''}}">222</view>

@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
+
 Page({
   data: {
     motto: 'Hello World',
@@ -20,7 +21,7 @@ Page({
 
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function() { 
     wx.navigateTo({
       url: '../logs/logs'
     })
@@ -88,4 +89,7 @@ Page({
       stationType:e.currentTarget.dataset.num
     });
   },
+
+
+  
 })
