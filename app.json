@@ -21,19 +21,27 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath":"pages/image/bar_icon1_grey.png",
+        "selectedIconPath":"pages/image/bar_icon1_blue.png"
       },
       {
         "pagePath": "pages/guarantee/index",
-        "text": "保障"
+        "text": "保障",
+        "iconPath":"pages/image/bar_icon2_grey.png",
+        "selectedIconPath":"pages/image/bar_icon2_blue.png"
       },
       {
         "pagePath": "pages/introduce/index",
-        "text": "须知"
+        "text": "须知",
+        "iconPath":"pages/image/bar_icon3_grey.png",
+        "selectedIconPath":"pages/image/bar_icon3_blue.png"
       },
       {
         "pagePath": "pages/my/index",
-        "text": "我的"
+        "text": "我的",
+        "iconPath":"pages/image/bar_icon4_grey.png",
+        "selectedIconPath":"pages/image/bar_icon4_blue.png"
       }
     ]
   },

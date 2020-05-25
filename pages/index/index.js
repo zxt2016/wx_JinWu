@@ -18,6 +18,26 @@ Page({
     circular: true,
     //电站tab切换标识
     stationType:1,
+    //星系旋转标识
+    step:1,
+    //星球数据
+    starData:[
+      {
+        num:0,
+      },
+      {
+        num:1,
+      },
+      {
+        num:2,
+      },
+      {
+        num:3,
+      },
+      {
+        num:4,
+      },
+    ],
 
   },
   //事件处理函数
@@ -55,6 +75,12 @@ Page({
     }
     this.getBannerList();
   },
+  onShow(){
+    var _this = this;
+    // setInterval(function(){
+    //   _this.starRotate();
+    // },3000);
+  },
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -89,7 +115,21 @@ Page({
       stationType:e.currentTarget.dataset.num
     });
   },
-
+  //星系转动-->从右向左
+  starRotate:function(){
+    var _this = this,
+    starData = _this.data.starData
+    //设定最大值为5，
+    for(var i=0;i<starData.length;i++){
+      if(starData[i].num == 0){
+        starData[i].num = starData.length-1;
+      }else{
+        var val = starData[i].num;
+        starData[i].num = val-1;
+      }
+    }
+    _this.setData({starData});
+  },
 
   
 })

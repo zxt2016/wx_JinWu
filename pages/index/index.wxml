@@ -5,7 +5,7 @@
     <swiper indicator-dots="{{indicatorDots}}"
       autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
       <block wx:for="{{banner_img}}" wx:key="*this">
-        <swiper-item>
+        <swiper-item class="swiper_img">
           <image src="{{item}}" style="width:100%"></image>
         </swiper-item>
       </block>
@@ -35,17 +35,12 @@
       <!-- 招募项目 星系特效-->
       <view class="sMain_item {{stationType == 1 ? 'tabShow':''}}">
         <image class='xingKong' src="../image/index/xingkong.png"></image>
+        <image class='star_line' src="../image/index/star_line.png"></image>
         <view class="star_animted">
-          <figure class="icon-cards">
-            <view class="icon-cards__content">
-                <view class="icon-cards__item"></view>
-                <view class="icon-cards__item"></view>
-                <view class="icon-cards__item"></view>
-            </view>
-        </figure>
-        
-        
-        
+          <!-- 太阳 -->
+          <image class="star sun" src="../image/index/sun.png"></image>
+          <!-- 星球 -->
+          <image wx:for="{{starData}}" class="star star{{item.num}}" src="../image/index/star{{index}}.png"></image>
         </view>
       </view>
       <!-- 我的电站 -->
