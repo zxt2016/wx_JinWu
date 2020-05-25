@@ -1,0 +1,12 @@
+<view class="main">
+    <image class="content_image" src="../image/introduce_detail/1.jpg"></image>
+    <view class="introduce_detail">
+      <text class="content_title">关于光伏发电？</text>
+      <view class="line"></view>
+      <text class="content">光伏发电是利用半导体界面的光生伏特效应而将光能直接转变为电能的一种技术。主要由太阳电池板（组件）、控制器和逆变器三大部分组成，主要部件由电子元器件构成。太阳能电池经过串联后进行封装保护可形成大面积的太阳电池组件，再配合上功率控制器等部件就形成了光伏发电装置。光伏电站与电网相连并向电网输送电力，国家电网按照实际发电量乘以合同电价每月结算电费。</text> 
+    </view>
+</view>
+
+    <view class="logo_img">
+      <image src="../image/guarantee/logo.png"></image>
+    </view>

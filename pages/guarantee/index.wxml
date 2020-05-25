@@ -1,2 +1,118 @@
-<!--pages/guarantee/index.wxml-->
-<text>pages/guarantee/index.wxml</text>
+<view>
+    <image class="backgroundimg" src="../image/guarantee/backgroud.png" mode="aspectFill"></image>
+    <view class="bannerimg">
+        <image class="bannerimg_image" src="../image/guarantee/banner.png"></image>
+    </view>
+    <view class="content">
+        <view class="induction">
+        <text>金乌创造合伙人全流程保障模式成立合伙企业：建立规范企业制度、实缴注资，《公司法》保护合伙人权益。</text>
+        </view>
+        <view class="guarantee_content">
+            <view class="content_child float-lf">
+                <view class="float-lf">
+                    <!-- <image class="num_img float-lf" src="../image/guarantee/01.png"></image> -->
+                    <text class="num">01</text>
+                    <text class="content_title_lf">合作形式正规</text>
+                    <image class="title_icon" src="../image/guarantee/icon.png"></image>
+                </view>
+                <view class="content_info float-rg">
+                    <text>组织成立合伙企业，建立规范企业制度、实缴注资，用《公司法》保护合伙人权益。</text>
+                    <image class="content_image" src="../image/guarantee/image11.png"></image>
+                </view>
+            </view>
+            <view class="content_child float-rg">
+                <view class="float-rg">
+                    <image class="num_img float-rg" src="../image/guarantee/02.png"></image>
+                    <text class="content_title_rg">国家政策规定</text>
+                    <image class="title_icon" src="../image/guarantee/icon.png"></image>
+                </view>
+                <view class="content_info float-lf">
+                    <text class="text-rg">国家国务院、发改委、能源局出台正式文件，保证分布式光伏发电并网的合法性以及支付电费和补贴的确定性。</text>
+                    <image class="content_image" src="../image/guarantee/image12.png"></image>
+                </view>
+            </view>
+            <view class="content_child float-lf">
+                <view class="float-lf">
+                    <image class="num_img float-lf" src="../image/guarantee/01.png"></image>
+                    <text class="content_title_lf">核心设备质量</text>
+                    <image class="title_icon" src="../image/guarantee/icon.png"></image>
+                </view>
+                <view class="content_info float-rg">
+                    <text>核心设备均选自一线大品牌，光伏组件厂家质保10年，终身售后，25年功率衰减不超过20%，否则予以赔偿。逆变器厂家质保5年，终身售后。</text>
+                    <image class="content_image" src="../image/guarantee/image1.png"></image>
+                </view>
+            </view>
+            <view class="content_child float-rg">
+                <view class="float-rg">
+                    <image class="num_img float-rg" src="../image/guarantee/number.png"></image>
+                    <text class="content_title_rg">农户屋顶开发</text>
+                    <image class="title_icon" src="../image/guarantee/icon.png"></image>
+                </view>
+                <view class="content_info float-lf">
+                    <text class="text-rg">对农户屋顶严格筛选，周围无遮挡，新建不超过5年，屋顶为水泥屋顶保证安装强度。对农户进行严格说明培训并签定户用光伏合作协议，避免纠纷。</text>
+                    <image class="content_image" src="../image/guarantee/image2.png"></image>
+                </view>
+            </view>
+            <view class="content_child float-lf">
+                <image class="title_image float-lf" src="../image/guarantee/title3.png"></image>
+                <view class="content_info float-rg">
+                    <text>筛选具备专业安装施工资质和丰富的施工安装经验的施工团队，给予超行业标准施工费用同时制定户用分布式光伏行业最高施工标准要求规范。</text>
+                    <image class="content_image" src="../image/guarantee/image3.png"></image>
+                </view>
+            </view>
+            <view class="content_child float-rg">
+                <image class="title_image float-rg" src="../image/guarantee/title4.png"></image>
+                <view class="content_info float-lf">
+                    <text class="text-rg">超行业验收标准，一旦发现用料和施工不合格，立即进行修正甚至拆除重建，直至达标并满足国家电网要求，与国家电网成功并网正常发电，否则不予验收结算施工费用。</text>
+                    <image class="content_image" src="../image/guarantee/image4.png"></image>
+                </view>
+            </view>
+            <view class="content_child float-lf">
+                <image class="title_image float-lf" src="../image/guarantee/title5.png"></image>
+                <view class="content_info float-rg">
+                    <text>公司为所有光伏电站均投保足额大地商业保险，保证电站资产安全和第三者责任。</text>
+                    <image class="content_image" src="../image/guarantee/image5.png"></image>
+                </view>
+            </view>
+            <view class="content_child float-rg">
+                <image class="title_image float-rg" src="../image/guarantee/title6.png"></image>
+                <view class="content_info float-lf">
+                    <text class="text-rg">公司与国家电网签订电费划转协议，所有电站电费统一划转入公司账户，避免一切人为风险。</text>
+                    <image class="content_image" src="../image/guarantee/image6.png"></image>
+                </view>
+            </view>
+            <view class="content_child float-lf">
+                <image class="title_image float-lf" src="../image/guarantee/title7.png"></image>
+                <view class="content_info float-rg">
+                    <text>公司与建设银行合作监管服务，电费进入公司对公账户后，银行实行账户监管，任何人不得挪用资金，必须按照协议约定进行按份额比例进行分配，保证合伙人收益安全。</text>
+                    <image class="content_image" src="../image/guarantee/image7.png"></image>
+                </view>
+            </view>
+            <view class="content_child float-rg">
+                <image class="title_image float-rg" src="../image/guarantee/title8.png"></image>
+                <view class="content_info float-lf">
+                    <text class="text-rg">公司建立线上+线下的运维售后服务管理团队，利用线上大数据监控中心和线下运维团队，保障电站正常运行并承诺保底年发电量，间接保证了合伙人电费收入。</text>
+                    <image class="content_image" src="../image/guarantee/image8.png"></image>
+                </view>
+            </view>
+            <view class="content_child float-lf">
+                <image class="title_image float-lf" src="../image/guarantee/title9.png"></image>
+                <view class="content_info float-rg">
+                    <text>合伙人在投资购买合伙企业份额后，允许通过合伙企业内部或者外部进行实时交易，同时金乌公司承诺，合伙人购买份额满五年后，按照届时电站参考价值进行回购。交易回购机制保障了合伙人的资金资产使用灵活性。</text>
+                    <image class="content_image" src="../image/guarantee/image9.png"></image>
+                </view>
+            </view>
+            <view class="content_child float-rg">
+                <image class="title_image float-rg" src="../image/guarantee/title10.png"></image>
+                <view class="content_info float-lf">
+                    <text class="text-rg">每一位合伙人均开通金乌光联平台账户，通过金乌光联平台可以查看所有电站全部实际情况，包括地址、现场视频照片、发电情况等等，同时还可以查看自己所持有电站的发电量，对发电收入有可控预期。</text>
+                    <image class="content_image" src="../image/guarantee/image10.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="bottom">
+        <image class="logo_image" src="../image/guarantee/logo.png"></image>
+    </view>
+</view>
+

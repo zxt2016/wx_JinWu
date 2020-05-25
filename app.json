@@ -5,6 +5,7 @@
     "pages/login/login",
     "pages/guarantee/index",
     "pages/introduce/index",
+    "pages/introduce_detail/index",
     "pages/my/index",
     "pages/logs/logs",
     "pages/personalData/index",
