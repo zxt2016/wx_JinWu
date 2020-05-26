@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "backgroundTextStyle":"light",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTitleText": "邀请好友",
+  "navigationBarTextStyle":"black"
 }

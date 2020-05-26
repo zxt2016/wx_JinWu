@@ -1,2 +1,36 @@
-<!--pages/share/index.wxml-->
-<text>pages/share/index.wxml</text>
+<view class="top_img">
+  <image src="../image/share/share.png" mode="aspectFill"></image>
+</view>
+<view class="guize" bindtap='share_rules'>分享规则 ></view>
+<view class="shareList">
+        <view class='share_title clearfix'>
+          <text class='float_lf'>分享给好友</text>
+        </view>
+        <view class='itemList clearfix' style="background-color: #e9f1ff; height: 100rpx;">
+          <text class='float_lf'>名称</text>
+          <text class='float_lf'>地址</text>
+          <text class='float_lf'>认购份额</text>
+          <text class='float_lf'>分享</text>
+        </view>
+        <view class='itemList clearfix'>
+          <text class='float_lf'>一号电站</text>
+          <text class='float_lf'>天津蓟县</text>
+          <text class='float_lf'>68.5%</text>
+          <image class="icon float_lf" src="../image/share/icon.png"></image>
+        </view>
+        <view class='itemList clearfix' bindtap='share_rules'>
+          <text class='float_lf'>二号电站</text>
+          <text class='float_lf'>河北石家庄</text>
+          <text class='float_lf'>85%</text>
+          <image class="icon float_lf" src="../image/share/icon.png"></image>
+        </view>
+         <view class='itemList clearfix'>
+          <text class='float_lf'>三号电站</text>
+          <text class='float_lf'>河北石家庄</text>
+          <text class='float_lf'>85%</text>
+          <image class="icon float_lf" src="../image/share/icon.png"></image>
+        </view>
+</view>   
+<view class="logo_img">
+      <image src="../image/guarantee/logo.png"></image>
+    </view>     

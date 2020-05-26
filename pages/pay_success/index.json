@@ -1,8 +1,7 @@
 {
-  "component": true,
   "usingComponents": {},
   "backgroundTextStyle":"light",
   "navigationBarBackgroundColor": "#ffffff",
-  "navigationBarTitleText": "分享有赏",
+  "navigationBarTitleText": "支付成功",
   "navigationBarTextStyle":"black"
 }

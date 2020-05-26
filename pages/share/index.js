@@ -14,6 +14,11 @@ Component({
 
   },
 
+  share_rules: function(e) {
+    wx.navigateTo({
+      url: '../share_rules/index',
+    })
+  },
   /**
    * 组件的方法列表
    */

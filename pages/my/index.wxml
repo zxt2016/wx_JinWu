@@ -43,19 +43,19 @@
     <text class='float_lf'>能量公益</text>
     <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
   </view>
-  <view class='itemList clearfix' bindtap='personal_data'>
-    <image class='icon_img float_lf' src='../image/my/ziliao.png'></image>
-    <text class='float_lf'>个人资料</text>
-    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
-  </view>
   <view class='itemList clearfix' bindtap='invite_btn'>
     <image class='icon_img float_lf' src='../image/my/yaoqing.png'></image>
     <text class='float_lf'>邀请好友</text>
     <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
   </view>
-  <view class='itemList clearfix' bindtap='fankui_btn'>
+  <view class='itemList clearfix' bindtap='share_btn'>
     <image class='icon_img float_lf' src='../image/my/fenxiang.png'></image>
     <text class='float_lf'>分享有赏</text>
+    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+  </view>
+  <view class='itemList clearfix' bindtap='personal_data'>
+    <image class='icon_img float_lf' src='../image/my/ziliao.png'></image>
+    <text class='float_lf'>个人资料</text>
     <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
   </view>
   <view class='itemList clearfix' bindtap='contact_us'>

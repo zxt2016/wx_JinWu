@@ -1,0 +1,30 @@
+<view class="content">
+    <view class="order_num">订单号：20201568664792</view>
+    <view class="station">一号发电站</view>
+    
+    <text class="num">认购份额：</text>
+    <view class='stepper sum'>
+    <text class='{{minusStatus}}' type='number' bindtap='bindMinus'>-</text>
+    <input bindinput='bindManual' value='{{num}}'></input>
+    <text bindtap='bindPlus'>+</text>
+    </view>
+    <view>
+    <view class="content_item float_lf">
+      <view class="shares item">所占股份：<text>85.6%</text></view>
+      <view class="shares item">总金额：<text>126.62万元</text></view>
+    </view>
+    <view class="content_item float_lf">
+      <view class="shares item">预支付金额：</view>
+      <view class="shares item"><text style="color:#ff0000; font-size: 36rpx;">18.58</text>万</view>
+    </view>
+    </view>
+</view>
+<view class="agreement">
+  <image class="icon" src="../image/icon.png"></image>我同意《发电站认购协议》 <text class="chakan" bindtap='agreement_btn'>查看协议</text>
+</view>
+<view class="saveBtn">
+    <text>支付</text>
+</view>
+<view class="logo_img">
+      <image src="../image/guarantee/logo.png"></image>
+    </view>

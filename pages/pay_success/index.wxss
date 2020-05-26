@@ -1,0 +1,54 @@
+page{
+  background-color: #f8f8f8;
+}
+.content{
+  width: 100%;
+  text-align: center;
+  margin-top: 110rpx;
+}
+.content image{
+  width: 350rpx;
+  height: 230rpx;
+}
+.success_text{
+  margin-top: 30rpx;
+  font-weight: 700;
+  font-size: 36rpx;
+}
+
+.saveBtn{
+  width: 580rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  background-color: #176eff;
+  margin-left: 86rpx;
+  margin-top: 30rpx;
+}
+.saveBtn text{
+  line-height: 80rpx;
+  color: #ffffff;
+  font-size: 26rpx;
+}
+.logo_img{
+  bottom: 30rpx;
+  left: 315rpx;
+  position: absolute;
+}
+.backBtn{
+  width: 580rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  background-color: #ffffff;
+  margin-left: 86rpx;
+  margin-top: 40rpx;
+  border: 1rpx solid #e5e5e5; 
+}
+.backBtn text{
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+.logo_img image{
+  width: 130rpx;
+  height: 50rpx;
+}
+

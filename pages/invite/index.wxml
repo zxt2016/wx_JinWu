@@ -1,11 +1,56 @@
-<view>
-    <view class="float_lf invite_num">
-        <text>邀请码：EDEGFSA</text>
-    </view>
-    <view class="float_lf invite_num">
-        <text>邀请人数：5人</text>
-    </view>
-    <view class="float_lf invite_title">
-        <text>邀请列表</text>
-    </view>
+<view class='mineBg'>
+    <image src="../image/invite/invite.png" mode="aspectFill"></image>
 </view>
+<view class="guize" bindtap='invite_rules'>邀请规则 ></view>
+<view class="allnum clearfix">
+    <view class="float_lf num_info">
+      <view class="num">625848</view>
+      <view class="num_text">邀请码</view>
+    </view>
+    <view class="float_lf num_info">
+      <view class="num">126</view>
+      <view class="num_text">邀请人数</view>
+    </view>
+  </view>
+  <view class="button">
+        <text>邀请</text>
+ </view>
+ <view class="inviteList">
+        <view class='invite_title clearfix' bindtap='invite_rules'>
+          <text class='float_lf'>已邀请好友</text>
+        </view>
+        <view class='itemList clearfix'>
+          <view class='user_num float_lf'>
+            <text class='float_lf'>1</text>
+          </view> 
+          <image class='user_img float_lf' src='../image/invite/user.png'></image>
+          <view class='invite_detail float_lf'>
+                <view class="invite_name">金乌科技</view>
+                <view class="invite_time">邀请时间：2020-5-21</view>
+          </view>
+        </view>
+        <view class='itemList clearfix'>
+          <view class='user_num float_lf'>
+            <text class='float_lf'>2</text>
+          </view> 
+          <image class='user_img float_lf' src='../image/invite/user.png'></image>
+          <view class='invite_detail float_lf'>
+                <view class="invite_name">金乌科技</view>
+                <view class="invite_time">邀请时间：2020-5-21</view>
+          </view>
+        </view>
+        <view class='itemList clearfix'>
+          <view class='user_num float_lf'>
+            <text class='float_lf'>3</text>
+          </view> 
+          <image class='user_img float_lf' src='../image/invite/user.png'></image>
+          <view class='invite_detail float_lf'>
+                <view class="invite_name">金乌科技</view>
+                <view class="invite_time">邀请时间：2020-5-21</view>
+          </view>
+        </view>
+</view>
+<view class="logo_img">
+      <image src="../image/guarantee/logo.png"></image>
+    </view>
+

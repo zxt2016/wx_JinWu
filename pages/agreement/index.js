@@ -1,4 +1,4 @@
-// pages/invite/index.js
+// pages/agreement/index.js
 Page({
 
   /**
@@ -8,15 +8,12 @@ Page({
 
   },
 
-  //跳转邀请规则页面
-  invite_rules: function(e) {
-    wx.navigateTo({
-      url: '../invite_rules/index',
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
+  onLoad: function (options) {
+
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,0 +1,12 @@
+<view class="content">
+  <text class="title">规则细则：</text>
+  <text class="item">平台会将推广伙伴的每一次分享记录成为换成能量，根据推广分享行动的实际效果数据记录成为分享能量：</text>
+  <text class="item">原则一： 同一用户可多次分享，分享同一用户注册成功可得一次能量奖励。</text>
+  <text class="item">原则二： 平台通过一系列规则考察分享来源于真实的用户操作；</text>
+  <text class="item">原则三： 分享所得能量可以为自己购买小帮工具，也可以为其他人购买小帮工具；</text>
+  <text class="item">原则四：分享所得能量，折算1元现金的 小帮产品购买能力；</text>
+  <text class="item">分享好友成功注册并且成功购买招募单，奖励平台另行折算</text>
+</view>
+<view class="logo_img">
+      <image src="../image/guarantee/logo.png"></image>
+    </view>
