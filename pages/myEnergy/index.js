@@ -1,3 +1,4 @@
+const app = getApp();
 Page({
 
   /**
@@ -6,21 +7,86 @@ Page({
   data: {
     system:'',
     animation: '',
+    //用户总能量
+    totalEnergy:'',
+    //用户可用能量
+    balanceEnergy:'',
+    //能量气泡数据
+    energy:[],
+    //能量排行榜
+    rankingList:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var _this = this;
     this.setData({
-      system:wx.getSystemInfoSync()
+      system:wx.getSystemInfoSync(),
+      token:wx.getStorageSync('token')
     })
+
+    //查询用户能量
+    wx.request({
+      url: app.globalData.baseUrl+'/wxEnergy',
+      method:'GET',
+      header:{'Authorization':_this.data.token},
+      contentType: 'application/json;charset=UTF-8 ',
+      success(res){
+        console.log(res);
+        if(res.statusCode == 200){
+          _this.setData({
+            totalEnergy:res.data.totalEnergy,
+            balanceEnergy:res.data.balanceEnergy
+          });
+        }
+      },
+    })
+    //获取用户能量列表--渲染气泡
+    wx.request({
+      url: app.globalData.baseUrl+'/wxEnergy/list',
+      method:'GET',
+      header:{'Authorization':_this.data.token},
+      contentType: 'application/json;charset=UTF-8 ',
+      success(res){
+        console.log(res);
+        if(res.statusCode == 200){
+          _this.setData({
+            energy:res.data.data
+          });
+          _this.bubble();
+
+        }
+      },
+    })
+    //能量排行榜
+    wx.request({
+      url: app.globalData.baseUrl+'/wxEnergy/rank',
+      method:'GET',
+      header:{'Authorization':_this.data.token},
+      contentType: 'application/json;charset=UTF-8 ',
+      data:{
+        current:1,
+        size:10
+      },
+      success(res){
+        console.log(res);
+        if(res.statusCode == 200){
+          _this.setData({
+            rankingList:res.data.data.records
+          });
+
+        }
+      },
+    })
+    
   },
 
   /**
-   * 生命周期函数--监听页面显示
+   * 遍历数据
    */
-  onShow: function () {
+  bubble() {
     let that=this;
     let anmition=wx.createAnimation({
       duration: 1200,
@@ -30,22 +96,59 @@ Page({
       animation:anmition
     })
     let arryList = new Array();
-    for (let i = 0; i < 8; i++) {
+    //气泡数据测试
+    // let arryList2 = [
+    //   {
+    //     energy:1289,
+    //     type:1
+    //   },{
+    //     energy:4386,
+    //     type:2
+    //   },{
+    //     energy:83290,
+    //     type:3
+    //   },{
+    //     energy:986,
+    //     type:1
+    //   },{
+    //     energy:29,
+    //     type:1
+    //   },{
+    //     energy:100,
+    //     type:1
+    //   },
+    // ];
+    //遍历气泡数组
+    let bubble = that.data.energy;
+    // let bubble = arryList2;
+    console.log(bubble);
+    for (let i = 0; i <bubble.length; i++) {
+      var val = bubble[i].energy.toString();
       var obj = {
-        num: Math.floor(Math.random() * 15 + 1) + 'C',
-        title: i % 3 == 0 ? '发电': i % 3 == 1 ? '邀请' : i % 3 == 2 ? '分享' : '认购',
+        num: val.length >=4 ? (val/1000).toFixed(1) + 'kw' : val+'w',
+        title: bubble[i].type == 1 ? '邀请': bubble[i].type == 2 ? '分享' : bubble[i].type == 3 ? '发电' : '',
         anima: '',
         styleObject: '',
         isShow: true,
-        realItem: true
+        realItem: true,
+        size:val.length
       }
       arryList.push(obj)
     }
     //随机左边距 上边距 动画延时
-    let left_width, top_height, anm_time;
+    let left_width = 0, top_height = 0, anm_time,valsL = 300,valsH = 200;
     for (let i = 0; i < arryList.length; i++) {
-      left_width = Math.floor(Math.random() * 20 + 1);
-      top_height = Math.floor(Math.random() * 15 + 5);
+      console.log(left_width);
+      if(left_width != 0){
+        left_width = Math.floor(Math.random() * 200 + 60);
+      }else{
+        left_width = Math.floor(Math.random() * 40 + 1);
+      }
+      if(top_height != 0){
+        top_height = Math.floor(Math.random() * 140 + 80);
+      }else{
+        top_height = Math.floor(Math.random() * 100 + 80);
+      }
       anm_time = (Math.random() * 1.1 + 0).toFixed(1);
       console.log('id:' + i + '左边距:' + left_width + ',上边距:' + top_height + ',动画时间:' + anm_time);
       arryList[i].top = top_height;
@@ -54,7 +157,8 @@ Page({
           "top": top_height + 'px',
           "animation": 'heart 1.3s ease-in-out ' + anm_time + 's infinite alternate'
         })
-    }
+      }
+    
     // 空数组
     var emptarry = new Array();
     for (var i = 0; i < 16 - arryList.length; i++) {
@@ -69,6 +173,7 @@ Page({
     query.select('#my_collect').boundingClientRect()
     query.selectViewport().scrollOffset()
     query.exec(function (res) {
+      console.log(res);
      that.setData({
        my_collect:res[0]
      })
@@ -125,7 +230,7 @@ Page({
       })
 
       that.animation = animation;
-      animation.translate(myCollect_x - view_x, myCollect_y - view_y).opacity(0).step();
+      animation.translate(myCollect_x - view_x + 30, myCollect_y - that.data.my_collect.height - 170 - view_y).opacity(0).step();
       animation.translateX(myCollect_x - view_x).step();
       animation.translateY(myCollect_y - view_y).step();
       let anmi = 'myList[' + e.currentTarget.id + '].anima';
