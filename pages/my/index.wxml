@@ -12,10 +12,16 @@
       </view>
     </view>
   </view>
-  <!-- <view class="allnum clearfix">
-    <view class="float_lf num_info">投资总额：2300万元</view>
-    <view class="float_lf num_info">累计收益：5000万元</view>
-  </view> -->
+  <view class="allnum clearfix">
+    <view class="float_lf num_info">
+      <view class="num">2300万元</view>
+      <view class="num_text">投资总额</view>
+    </view>
+    <view class="float_lf num_info">
+      <view class="num">6926.37万元</view>
+      <view class="num_text">累计收益</view>
+    </view>
+  </view>
   <view class="menu">
   <view class='itemList clearfix' bindtap='editForm'>
     <image class='icon_img float_lf' src='../image/my/station.png'></image>

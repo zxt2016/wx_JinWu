@@ -9,10 +9,10 @@
   height: 210rpx;
   background: #fff;
   border-radius: 10rpx;
-  
-  box-sizing: border-box;
-  margin-bottom: 10rpx;
   position: relative;
+  box-sizing: border-box;
+  z-index: 9;
+  margin-bottom: 10rpx;
 }
 .mineBg{
   width: 100%;
@@ -57,18 +57,34 @@
   padding: 20rpx 0.5rpx;
   width: 710rpx;
   height: 150rpx;
-  border: 1rpx solid #181717;
+  border: 1rpx solid #f3f3f3;
+  box-shadow: 5rpx 5rpx 5rpx #f3f3f3;
   border-radius: 20rpx;
   background-color: #ffffff;
   position: absolute;
-  z-index: 100;
-  margin: 30rpx;
+  z-index: 10;
+  margin: 20rpx;
+  margin-top: -50rpx;
 }
 .num_info{
-  width: 50%;
+  width: 49%;
   text-align: center;
+  margin-top: 30rpx;
+}
+.num_info:first-child{
+  border-right: 1rpx solid #e2edff;
+}
+.num{
+  color: #004dcc;
+  font-size: 32rpx;
+  font-weight: 700;
+  height: 50rpx;
+}
+.num_text{
+  color: #b3b3b3;
 }
 .menu{
+  margin-top: 150rpx;
   width: 100%;
   background-color: #ffffff;
 }

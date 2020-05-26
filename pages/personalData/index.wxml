@@ -1,34 +1,43 @@
 <view>
     <view class="itemTitle">
-     <text>基本信息</text>
+     <image src="../image/personalData/my_bg.png"></image>
     </view>
-    <view class='itemList clearfix'>
-      <text class='float_lf'>头像</text>
-      <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+    <view class="userinfo">
+        <view class='itemList clearfix'>
+          <text class='float_lf'>头像</text>
+          <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+        </view>
+        <view class='itemList clearfix'>
+          <text class='float_lf'>昵称</text>
+          <text class='float_rt'>Sherry</text>
+          <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+        </view>
+        <view class='itemList clearfix'>
+          <text class='float_lf'>姓名</text>
+          <text class='float_rt'>张瑞雪</text>
+          <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+        </view>
+        <view class='itemList clearfix'>
+          <text class='float_lf'>合伙公司</text>
+          <text class='float_rt'>测试数据</text>
+          <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+        </view>
+        <view class='itemList clearfix'>
+          <text class='float_lf'>手机号码</text>
+          <text class='float_rt'>15214512451</text>
+          <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+        </view>
+        <view class='itemList clearfix'>
+          <text class='float_lf'>地址</text>
+          <text class='float_rt'>石家庄裕华区万达写字楼B座</text>
+          <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+        </view>
     </view>
-    <view class='itemList clearfix'>
-      <text class='float_lf'>昵称</text>
-      <text class='float_rt'>Sherry</text>
-      <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
-    </view>
-    <view class='itemList clearfix'>
-      <text class='float_lf'>姓名</text>
-      <text class='float_rt'>张瑞雪</text>
-      <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
-    </view>
-    <view class='itemList clearfix'>
-      <text class='float_lf'>合伙公司</text>
-      <text class='float_rt'>测试数据</text>
-      <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
-    </view>
-    <view class='itemList clearfix'>
-      <text class='float_lf'>手机号码</text>
-      <text class='float_rt'>15214512451</text>
-      <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
-    </view>
-    <view class='itemList clearfix'>
-      <text class='float_lf'>地址</text>
-      <text class='float_rt'>石家庄裕华区万达写字楼B座</text>
-      <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
-    </view>
+    <view style="height:430rpx"></view>
 </view>
+<view class="saveBtn">
+    <text>保存</text>
+</view> 
+<view class="logo_img">
+      <image src="../image/guarantee/logo.png"></image>
+    </view>

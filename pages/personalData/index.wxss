@@ -1,17 +1,31 @@
 .itemTitle{
-  height: 80rpx;
-  background-color: #cccccc;
-  line-height: 80rpx;
+  position: relative;
+  z-index: 1;
 }
-
-.itemTitle text{
-  color: #ededed;
-  margin-left: 15rpx;
+.itemTitle image{
+  width: 100%;
+  height: 210rpx;
+}
+.userinfo{
+  position: absolute;
+  z-index: 2;
+  width: 660rpx;
+  height: 500rpx;
+  border: 1rpx solid #f3f3f3;
+  box-shadow: 5rpx 5rpx 5rpx #f3f3f3;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+  margin: -180rpx 25rpx 40rpx 25rpx;
+  padding: 20rpx;
 }
 .itemList{
   height: 80rpx;
   line-height: 80rpx;
-  border-bottom: 1rpx solid #cccccc;
+  border-bottom: 1rpx solid #e5e5e5;
+  color: #3f3f3f;
+}
+.itemList:last-child{
+  border-bottom: 0rpx;
 }
 .itemList text{
   margin: 0rpx 15rpx;
@@ -22,4 +36,27 @@
   height: 22rpx;
   margin-top: 10rpx;
   line-height: 22rpx;
+}
+.saveBtn{
+  width: 580rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  background-color: #176eff;
+  margin-left: 86rpx;
+}
+.saveBtn text{
+  line-height: 80rpx;
+  color: #ffffff;
+  font-size: 26rpx;
+  margin-left: 260rpx;
+}
+.logo_img{
+  bottom: 30rpx;
+  left: 315rpx;
+  position: absolute;
+}
+
+.logo_img image{
+  width: 130rpx;
+  height: 50rpx;
 }
