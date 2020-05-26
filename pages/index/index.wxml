@@ -34,13 +34,25 @@
     <view class='stationMain'>
       <!-- 招募项目 星系特效-->
       <view class="sMain_item {{stationType == 1 ? 'tabShow':''}}">
-        <image class='xingKong' src="../image/index/xingkong.png"></image>
+        <view class="xk_box">
+          <image class='xingKong' src="../image/index/xingkong.png"></image>
+        </view>
         <image class='star_line' src="../image/index/star_line.png"></image>
         <view class="star_animted">
           <!-- 太阳 -->
           <image class="star sun" src="../image/index/sun.png"></image>
+
           <!-- 星球 -->
-          <image wx:for="{{starData}}" class="star star{{item.num}}" src="../image/index/star{{index}}.png"></image>
+          <image wx:for="{{starData}}" class="star star{{item.num}}" animation="{{animation}}" src="../image/index/star{{index}}.png"></image>
+
+
+          <!-- <view style="height: 100%; width: 100%;" bindtouchstart="documentTouchStart" bindtouchmove="documentTouchMove" bindtouchend="documentTouchEnd" >
+            <canvas type="webgl" id="c" style="width: 100%; height:100%;" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" bindtouchcancel="touchCancel" bindlongtap="longTap" bindtap="tap"></canvas>
+          </view> -->
+
+
+
+
         </view>
       </view>
       <!-- 我的电站 -->
