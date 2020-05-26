@@ -7,6 +7,7 @@ Page({
   data: {
     system:'',
     animation: '',
+    userId:'',
     //用户总能量
     totalEnergy:'',
     //用户可用能量
@@ -26,6 +27,8 @@ Page({
       system:wx.getSystemInfoSync(),
       token:wx.getStorageSync('token')
     })
+    console.log(wx.getStorageSync('token'));
+    app.globalData.token = wx.getStorageSync('token');
 
     //查询用户能量
     wx.request({
@@ -37,6 +40,7 @@ Page({
         console.log(res);
         if(res.statusCode == 200){
           _this.setData({
+            userId:res.data.userId,
             totalEnergy:res.data.totalEnergy,
             balanceEnergy:res.data.balanceEnergy
           });
@@ -167,7 +171,7 @@ Page({
       })
     }
     that.setData({
-        myList: that.randomArry(arryList.concat(emptarry))
+        myList: that.randomArry(arryList)
     })
     const query = wx.createSelectorQuery()
     query.select('#my_collect').boundingClientRect()
@@ -203,48 +207,77 @@ Page({
   //收集能量 
   bindTab(e) {
     let that = this;
-    // that.data.myList[e.currentTarget.id].styleObject.animation = ''; //将css动画置空
-    console.log(that.data.myList[e.currentTarget.id].styleObject);
-    let myItm = that.data.myList[e.currentTarget.id];
-    myItm.styleObject= myItm.styleObject.split("animation")[0];
-    console.log(myItm.styleObject)
-    console.log(that.data.my_collect)
-    let itd = 'myList[' + e.currentTarget.id +'].styleObject';
-    that.setData({
-      [itd]: myItm.styleObject
-    })
-    setTimeout(function () {
-        let dpi = that.data.system.screenWidth / 750; //计算像素密度
-        //元素的位置
-        let view_x = e.detail.x,
-          view_y = e.detail.y + dpi * 116 / 2;
-        console.log(e.currentTarget.id)
-        console.log('元素位置----', view_x, view_y)
-        let myCollect_x = that.data.my_collect.left + dpi * 130 / 2 + dpi * 260 / 2 * 0.5,
-          myCollect_y = that.data.my_collect.right + that.data.myList[e.currentTarget.id].top+dpi*116/2 + dpi*113*0.5;
-        console.log('收集按钮位置----', myCollect_x, myCollect_y);
-        console.log('移动位置----', myCollect_x - view_x, myCollect_y - view_y);
-      var animation = wx.createAnimation({
-        duration: 1200,
-        timingFunction: 'ease',
-      })
-
-      that.animation = animation;
-      animation.translate(myCollect_x - view_x + 30, myCollect_y - that.data.my_collect.height - 170 - view_y).opacity(0).step();
-      animation.translateX(myCollect_x - view_x).step();
-      animation.translateY(myCollect_y - view_y).step();
-      let anmi = 'myList[' + e.currentTarget.id + '].anima';
-      that.setData({
-        [anmi]: animation.export()
-      })
-        setTimeout(function () {
+    var id = that.data.energy[e.currentTarget.dataset.index].id;
+    console.log(id);
+    wx.request({
+      url:app.globalData.baseUrl + '/wxEnergy/get',
+      method:'GET',
+      header:{'Authorization':that.data.token},
+      contentType: 'application/json;charset=UTF-8 ',
+      data:{
+        id:id
+      },
+      success(res){
+        console.log(res);
+        if(res.statusCode == 200){
           that.setData({
-            ['myList[' + e.currentTarget.id + '].isShow']: false
-          })
-        }, 1100)
-    }, 100)
-  },
+            totalEnergy:res.data.data.totalEnergy,
+            balanceEnergy:res.data.data.energy
+          });
 
+          // that.data.myList[e.currentTarget.id].styleObject.animation = ''; //将css动画置空
+          console.log(that.data.myList[e.currentTarget.id].styleObject);
+          let myItm = that.data.myList[e.currentTarget.id];
+          myItm.styleObject= myItm.styleObject.split("animation")[0];
+          console.log(myItm.styleObject)
+          console.log(that.data.my_collect)
+          let itd = 'myList[' + e.currentTarget.id +'].styleObject';
+          that.setData({
+            [itd]: myItm.styleObject
+          })
+          setTimeout(function () {
+              let dpi = that.data.system.screenWidth / 750; //计算像素密度
+              //元素的位置
+              let view_x = e.detail.x,
+                view_y = e.detail.y + dpi * 116 / 2;
+              let myCollect_x = that.data.my_collect.left + dpi * 130 / 2 + dpi * 260 / 2 * 0.5,
+                myCollect_y = that.data.my_collect.right + that.data.myList[e.currentTarget.id].top+dpi*116/2 + dpi*113*0.5;
+            var animation = wx.createAnimation({
+              duration: 1200,
+              timingFunction: 'ease',
+            })
+
+            that.animation = animation;
+            animation.translate(myCollect_x - view_x + 30, myCollect_y - that.data.my_collect.height - 170 - view_y).opacity(0).step();
+            animation.translateX(myCollect_x - view_x).step();
+            animation.translateY(myCollect_y - view_y).step();
+            let anmi = 'myList[' + e.currentTarget.id + '].anima';
+            that.setData({
+              [anmi]: animation.export()
+            })
+              setTimeout(function () {
+                that.setData({
+                  ['myList[' + e.currentTarget.id + '].isShow']: false
+                })
+              }, 1100)
+          }, 100)
+
+        }
+      },
+    })
+
+
+
+
+
+    
+  },
+  getRecord(){
+    var _this = this;
+    wx.navigateTo({
+      url: '../myEnergy_record/index?total='+ _this.data.totalEnergy,
+    });
+  },
     
 
 })

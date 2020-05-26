@@ -10,14 +10,14 @@
 				<view>累计能量</view>
 				<view>{{totalEnergy}}kw</view>
 			</view>
-			<view class="record">记录</view>
+			<view class="record" bindtap="getRecord">记录</view>
 		</view>
 	</view>
 	<!-- 能量球 -->
 	<view class="view_energy">
 		<block wx:for="{{myList}}" wx:for-index="idx" wx:for-item="itm" wx:key='idx'>
 			<block wx:if="{{itm.realItem}}">
-				<view class="view_energy_list" animation="{{itm.anima}}"  id='{{idx}}' bindtap="bindTab"  style="{{itm.styleObject}}">
+				<view class="view_energy_list" animation="{{itm.anima}}" id="{{idx}}" data-index='{{idx}}' bindtap="bindTab"  style="{{itm.styleObject}}">
 					<block wx:if="{{itm.isShow}}">
 						<text class="energy_title" wx:if="{{itm.size <= 2}}" style="width:90rpx;height:90rpx;line-height:90rpx;">{{itm.num}}</text>
 						<text class="energy_title" wx:elif="{{itm.size == 3}}" style="width:110rpx;height:110rpx;line-height:110rpx;">{{itm.num}}</text>
@@ -46,7 +46,7 @@
 						<image wx:elif="{{index == 2}}" class="rank_icon" src="../image/myEnergy/icon3.png"></image>
 						<text wx:else class="rank_text">{{index+1}}</text>
 						<image class="header_img" src="../image/myEnergy/header_img.png"></image>
-						<image class="header_img" src="{{item.icon}}"></image>
+						<!-- <image class="header_img" src="{{item.icon}}"></image> -->
 					</view>
 					<view class="name_val">
 						<text>金乌科技</text>

@@ -1,8 +1,9 @@
 {
   "pages": [
-   
-    "pages/index/index",
     "pages/myEnergy/index",
+    "pages/myEnergy_record/index",
+    "pages/index/index",
+    
     "pages/login/login",
     "pages/guarantee/index",
     "pages/introduce/index",

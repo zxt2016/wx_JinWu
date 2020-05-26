@@ -1,0 +1,56 @@
+.recordMain{
+  width: 100%;
+  min-height: 100vh;
+  padding:30rpx 20rpx;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+}
+.recordMain .record_title{
+  font-size: 36rpx;
+  padding-left: 20rpx;
+}
+.recordMain .record_list{
+  width: 100%;
+  min-height: 85vh;
+  padding: 30rpx;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.recordMain .record_list .list_title{
+  font-size: 36rpx;
+}
+.list_box{
+  width: 600rpx;
+  margin-left: 40rpx;
+  margin-top: 10rpx;
+  border-left:1px solid #e5e5e5;
+}
+.list_box .list_item{
+  padding-top: 30rpx;
+  position: relative;
+  padding-left: 40rpx;
+  font-size: 28rpx;
+}
+.list_box .list_item .yuan{
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  border:1px solid #1c71ff;
+  position: absolute;
+  top:45rpx;
+  left:-8rpx;
+  z-index: 10;
+  background-color: #fff;
+}
+.list_box .list_item .item_time{
+  color:#999;
+}
+.list_box .list_item .item_text view{
+  margin-top: 20rpx;
+}
+.list_box .list_item .item_text view{
+  padding-bottom: 30rpx;
+  border-bottom: 1px dashed #e5e5e5;
+}
