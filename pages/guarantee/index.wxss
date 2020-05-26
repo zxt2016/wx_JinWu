@@ -1,1 +1,100 @@
-/* pages/guarantee/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.float-lf{
+  float: left;
+}
+.float-rg{
+  float: right;
+}
+.backgroundimg{
+    width: 100%;
+    height: 100%;
+    position:fixed; 
+    background-size:100% 100%;
+    z-index: -9999;
+}
+.bannerimg{
+  z-index: -9999;
+}
+.bannerimg_image{
+  width: 100%;
+}
+.content{
+  background-color: #ffffff;
+  z-index: 10;
+  margin: -160rpx 20rpx 200rpx 20rpx;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  position: absolute;
+}
+.text-lf{
+  text-align: left;
+}
+.text-rg{
+  text-align: right;
+}
+
+.induction{
+  background-color: #edf4ff;
+  border-radius: 20rpx;
+  padding: 35rpx;
+  font-size: 26rpx;
+  color: black;
+}
+.induction text{
+  line-height: 50rpx;
+}
+.guarantee_content{
+  margin: 30rpx 0rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+.content_child{
+  margin: 40rpx 0rpx;
+}
+.num_img{
+  width: 85rpx;
+  height: 100rpx;
+}
+.content_title_lf{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 36rpx;
+  float: left;
+  font-weight: 700;
+  margin-left: 20rpx;
+}
+.content_title_rg{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 36rpx;
+  float: right;
+  font-weight: 700;
+  margin-right: 20rpx;
+}
+.title_icon{
+  width: 50rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
+}
+.content_info{
+  width: 80%;
+}
+.content_image{
+  width: 410rpx;
+  height: 230rpx;
+  margin: 40rpx 0rpx 0rpx 50rpx;
+  
+}
+.bottom{
+  z-index: 11;
+  position: relative;
+  bottom: 20rpx;
+}
+.logo_image{
+  width:152rpx;
+  height: 52rpx;
+  margin: 0 auto;
+}

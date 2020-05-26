@@ -16,7 +16,7 @@ Page({
   },
   onLoad: function () {
     wx.setNavigationBarTitle({
-      title: "金乌电联-我的"
+      title: "我的"
     });
     if (app.globalData.userInfo) {
       this.setData({
