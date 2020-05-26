@@ -11,7 +11,12 @@
     "pages/logs/logs",
     "pages/personalData/index",
     "pages/invite/index",
-    "pages/share/index"
+    "pages/invite_rules/index",
+    "pages/share/index",
+    "pages/share_rules/index",
+    "pages/purchase/index",
+    "pages/agreement/index",
+    "pages/pay_success/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,1 +1,79 @@
-/* pages/share/index.wxss */
+page{
+  background-color: #f8f8f8;
+}
+.top_img{
+  width: 100%;
+  position: fixed;
+}
+.top_img image{
+  width: 750rpx;
+  height: 430rpx;
+  z-index: -10;
+}
+
+.guize{
+  color: #ffffff;
+  font-size: 24rpx; 
+  z-index: 10;
+  position: absolute;
+  left: 610rpx;
+  top: 20rpx;
+}
+
+.shareList{
+  position: absolute;
+  z-index: 2;
+  width: 660rpx;
+  border: 1rpx solid #f3f3f3;
+  box-shadow: 5rpx 5rpx 5rpx #f3f3f3;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+  margin: 300rpx 25rpx 40rpx 25rpx;
+  padding: 20rpx;
+}
+.shareList:last-child{
+  border-bottom: 0rpx;
+}
+.itemList{
+  padding: 40rpx 0rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 10rpx;
+  border-bottom: 1rpx solid #dddddd;
+}
+
+.itemList:last-child{
+  border: 0rpx;
+}
+.itemList text{
+  font-size: 24rpx;
+  width: 20%;
+  text-align: center;
+}
+.itemList text:nth-child(2){
+  width: 40%;
+}
+.share_title{
+  font-size: 36rpx;
+  font-weight: 700;
+  height: 110rpx;
+  line-height: 110rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  color: #3f3f3f;
+}
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 50rpx;
+}
+
+.logo_img{
+  bottom: 30rpx;
+  left: 315rpx;
+  position: absolute;
+}
+
+.logo_img image{
+  width: 130rpx;
+  height: 50rpx;
+}

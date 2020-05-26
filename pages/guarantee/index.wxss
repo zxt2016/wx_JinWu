@@ -54,6 +54,17 @@ page{
 .content_child{
   margin: 40rpx 0rpx;
 }
+.num{
+  background-image: url('https://guangneng-img.oss-cn-beijing.aliyuncs.com/items/1590478129555.png');
+  width: 85rpx;
+  height: 95rpx;
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  line-height: 95rpx;
+  font-size: 36rpx;
+  color: #ffffff;
+  text-align: center;
+}
 .num_img{
   width: 85rpx;
   height: 100rpx;
@@ -93,8 +104,13 @@ page{
   position: relative;
   bottom: 20rpx;
 }
-.logo_image{
-  width:152rpx;
-  height: 52rpx;
-  margin: 0 auto;
+.logo_img{
+  bottom: 30rpx;
+  left: 315rpx;
+  position: absolute;
+}
+
+.logo_img image{
+  width: 130rpx;
+  height: 50rpx;
 }

@@ -11,7 +11,7 @@
             <view class="content_child float-lf">
                 <view class="float-lf">
                     <!-- <image class="num_img float-lf" src="../image/guarantee/01.png"></image> -->
-                    <text class="num">01</text>
+                    <text class="num float-lf">01</text>
                     <text class="content_title_lf">合作形式正规</text>
                     <image class="title_icon" src="../image/guarantee/icon.png"></image>
                 </view>
@@ -22,7 +22,7 @@
             </view>
             <view class="content_child float-rg">
                 <view class="float-rg">
-                    <image class="num_img float-rg" src="../image/guarantee/02.png"></image>
+                    <text class="num float-rg">02</text>
                     <text class="content_title_rg">国家政策规定</text>
                     <image class="title_icon" src="../image/guarantee/icon.png"></image>
                 </view>
@@ -33,7 +33,7 @@
             </view>
             <view class="content_child float-lf">
                 <view class="float-lf">
-                    <image class="num_img float-lf" src="../image/guarantee/01.png"></image>
+                    <text class="num float-lf">03</text>
                     <text class="content_title_lf">核心设备质量</text>
                     <image class="title_icon" src="../image/guarantee/icon.png"></image>
                 </view>
@@ -44,8 +44,8 @@
             </view>
             <view class="content_child float-rg">
                 <view class="float-rg">
-                    <image class="num_img float-rg" src="../image/guarantee/number.png"></image>
-                    <text class="content_title_rg">农户屋顶开发</text>
+                    <text class="num float-rg">04</text>
+                    <text class="content_title_rg">农户屋顶筛选</text>
                     <image class="title_icon" src="../image/guarantee/icon.png"></image>
                 </view>
                 <view class="content_info float-lf">
@@ -54,56 +54,88 @@
                 </view>
             </view>
             <view class="content_child float-lf">
-                <image class="title_image float-lf" src="../image/guarantee/title3.png"></image>
+            <view class="float-lf">
+                <text class="num float-lf">05</text>
+                <text class="content_title_lf">专业施工安装</text>
+                <image class="title_icon" src="../image/guarantee/icon.png"></image>
+            </view>
                 <view class="content_info float-rg">
                     <text>筛选具备专业安装施工资质和丰富的施工安装经验的施工团队，给予超行业标准施工费用同时制定户用分布式光伏行业最高施工标准要求规范。</text>
                     <image class="content_image" src="../image/guarantee/image3.png"></image>
                 </view>
             </view>
             <view class="content_child float-rg">
-                <image class="title_image float-rg" src="../image/guarantee/title4.png"></image>
+            <view class="float-rg">
+                <text class="num float-rg">06</text>
+                <text class="content_title_rg">验收并网高标</text>
+                <image class="title_icon" src="../image/guarantee/icon.png"></image>
+            </view>
                 <view class="content_info float-lf">
                     <text class="text-rg">超行业验收标准，一旦发现用料和施工不合格，立即进行修正甚至拆除重建，直至达标并满足国家电网要求，与国家电网成功并网正常发电，否则不予验收结算施工费用。</text>
                     <image class="content_image" src="../image/guarantee/image4.png"></image>
                 </view>
             </view>
             <view class="content_child float-lf">
-                <image class="title_image float-lf" src="../image/guarantee/title5.png"></image>
+            <view class="float-lf">
+                <text class="num float-lf">07</text>
+                <text class="content_title_lf">大地商业保险</text>
+                <image class="title_icon" src="../image/guarantee/icon.png"></image>
+            </view>
                 <view class="content_info float-rg">
                     <text>公司为所有光伏电站均投保足额大地商业保险，保证电站资产安全和第三者责任。</text>
                     <image class="content_image" src="../image/guarantee/image5.png"></image>
                 </view>
             </view>
             <view class="content_child float-rg">
-                <image class="title_image float-rg" src="../image/guarantee/title6.png"></image>
+            <view class="float-rg">
+                <text class="num float-rg">08</text>
+                <text class="content_title_rg">国网计算费用</text>
+                <image class="title_icon" src="../image/guarantee/icon.png"></image>
+            </view>
                 <view class="content_info float-lf">
                     <text class="text-rg">公司与国家电网签订电费划转协议，所有电站电费统一划转入公司账户，避免一切人为风险。</text>
                     <image class="content_image" src="../image/guarantee/image6.png"></image>
                 </view>
             </view>
             <view class="content_child float-lf">
-                <image class="title_image float-lf" src="../image/guarantee/title7.png"></image>
+            <view class="float-lf">
+                <text class="num float-lf">09</text>
+                <text class="content_title_lf">银行监管账户</text>
+                <image class="title_icon" src="../image/guarantee/icon.png"></image>
+            </view>
                 <view class="content_info float-rg">
                     <text>公司与建设银行合作监管服务，电费进入公司对公账户后，银行实行账户监管，任何人不得挪用资金，必须按照协议约定进行按份额比例进行分配，保证合伙人收益安全。</text>
                     <image class="content_image" src="../image/guarantee/image7.png"></image>
                 </view>
             </view>
             <view class="content_child float-rg">
-                <image class="title_image float-rg" src="../image/guarantee/title8.png"></image>
+                <view class="float-rg">
+                <text class="num float-rg">10</text>
+                <text class="content_title_rg">智能运维售后</text>
+                <image class="title_icon" src="../image/guarantee/icon.png"></image>
+            </view>
                 <view class="content_info float-lf">
                     <text class="text-rg">公司建立线上+线下的运维售后服务管理团队，利用线上大数据监控中心和线下运维团队，保障电站正常运行并承诺保底年发电量，间接保证了合伙人电费收入。</text>
                     <image class="content_image" src="../image/guarantee/image8.png"></image>
                 </view>
             </view>
             <view class="content_child float-lf">
-                <image class="title_image float-lf" src="../image/guarantee/title9.png"></image>
+               <view class="float-lf">
+                <text class="num float-lf">11</text>
+                <text class="content_title_lf">交易回购机制</text>
+                <image class="title_icon" src="../image/guarantee/icon.png"></image>
+            </view>
                 <view class="content_info float-rg">
                     <text>合伙人在投资购买合伙企业份额后，允许通过合伙企业内部或者外部进行实时交易，同时金乌公司承诺，合伙人购买份额满五年后，按照届时电站参考价值进行回购。交易回购机制保障了合伙人的资金资产使用灵活性。</text>
                     <image class="content_image" src="../image/guarantee/image9.png"></image>
                 </view>
             </view>
             <view class="content_child float-rg">
-                <image class="title_image float-rg" src="../image/guarantee/title10.png"></image>
+                <view class="float-rg">
+                <text class="num float-rg">12</text>
+                <text class="content_title_rg">智能数据平台</text>
+                <image class="title_icon" src="../image/guarantee/icon.png"></image>
+            </view>
                 <view class="content_info float-lf">
                     <text class="text-rg">每一位合伙人均开通金乌光联平台账户，通过金乌光联平台可以查看所有电站全部实际情况，包括地址、现场视频照片、发电情况等等，同时还可以查看自己所持有电站的发电量，对发电收入有可控预期。</text>
                     <image class="content_image" src="../image/guarantee/image10.png"></image>
@@ -111,8 +143,9 @@
             </view>
         </view>
     </view>
-    <view class="bottom">
-        <image class="logo_image" src="../image/guarantee/logo.png"></image>
-    </view>
+    
 </view>
+<view class="logo_img">
+      <image src="../image/guarantee/logo.png"></image>
+    </view>
 

@@ -64,5 +64,11 @@ Page({
     wx.navigateTo({
       url: '../invite/index',
     })
+  },
+
+  share_btn: function(e){
+    wx.navigateTo({
+      url: '../share/index',
+    })
   }
 })

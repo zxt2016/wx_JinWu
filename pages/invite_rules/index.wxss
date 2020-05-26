@@ -1,0 +1,31 @@
+page{
+  background-color: #f8f8f8;
+}
+.content{
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  color: #333333;
+  margin: 30rpx;
+}
+.title{
+  font-size: 28rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  float: left;
+}
+.item{
+  float: left;
+  font-size: 24rpx;
+  line-height: 60rpx;
+}
+
+.logo_img{
+  bottom: 30rpx;
+  left: 315rpx;
+  position: absolute;
+}
+
+.logo_img image{
+  width: 130rpx;
+  height: 50rpx;
+}

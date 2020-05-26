@@ -1,21 +1,129 @@
-.invite_num{
-  width: 50%;
-  text-align: center;
-  background-color: #eeeeee;
-  height: 150rpx;
-}
-
-.invite_num text{
-  line-height: 150rpx;
-}
-
-.invite_title{
-  margin-top: 5rpx;
-  height: 80rpx;
+.mineBg{
   width: 100%;
-  background-color: #eeeeee;
+  position: fixed;
 }
-.invite_title text{
+.mineBg image{
+  width: 750rpx;
+  height: 390rpx;
+  z-index: -10;
+}
+.guize{
+  color: #ffffff;
+  font-size: 24rpx; 
+  z-index: 10;
+  position: absolute;
+  left: 610rpx;
+  top: 20rpx;
+}
+.allnum{
+  padding: 20rpx 0.5rpx;
+  width: 710rpx;
+  height: 150rpx;
+  z-index: 10;
+  margin: 20rpx;
+  position: absolute;
+  margin-top: 15rpx;
+}
+.num_info{
+  width: 49%;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.num{
+  color: #ffffff;
+  font-size: 48rpx;
+  height: 80rpx;
+}
+.num_text{
+  color: #ffffff;
+}
+.button{
+  width: 580rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  background-color: #ffffff;
+  margin-left: 86rpx;
+  position: absolute;
+  z-index: 10;
+  margin-top: 200rpx;
+}
+.button text{
   line-height: 80rpx;
+  color: #176eff;
+  font-size: 26rpx;
+  margin-left: 260rpx;
+}
+.inviteList{
+  position: absolute;
+  z-index: 2;
+  width: 660rpx;
+  border: 1rpx solid #f3f3f3;
+  box-shadow: 5rpx 5rpx 5rpx #f3f3f3;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+  margin: 300rpx 25rpx 40rpx 25rpx;
+  padding: 20rpx;
+}
+.itemList{
+  height: 160rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  color: #3f3f3f;
+}
+.itemList:last-child{
+  border-bottom: 0rpx;
+}
+.itemList text{
   margin: 0rpx 15rpx;
+  font-size: 24rpx;
+}
+.invite_title{
+  font-size: 36rpx;
+  font-weight: 700;
+  height: 110rpx;
+  line-height: 110rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  color: #3f3f3f;
+}
+.user_num{
+  background-image: url('https://guangneng-img.oss-cn-beijing.aliyuncs.com/items/1590472951818.png');
+  width: 50rpx;
+  height: 50rpx;
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  margin-top: 55rpx;
+}
+.user_num text{
+  line-height: 50rpx;
+}
+
+.user_img{
+  width: 105rpx;
+  height: 105rpx;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+.invite_detail{
+  height: 160rpx;
+  margin-left: 30rpx;
+}
+.invite_name{
+  height: 30%;
+  font-size: 30rpx;
+  margin-top: 45rpx;
+}
+.invite_time{
+  height: 50%;
+  color: #666666;
+  font-size: 24rpx;
+}
+
+.logo_img{
+  bottom: 30rpx;
+  left: 315rpx;
+  position: absolute;
+}
+
+.logo_img image{
+  width: 130rpx;
+  height: 50rpx;
 }
