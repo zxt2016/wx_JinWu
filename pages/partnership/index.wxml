@@ -1,0 +1,45 @@
+<view class='mineBg'>
+    <image src="../image/partnership/top_img.png" mode="aspectFill"></image>
+</view>
+<view class="title">
+        <text>金乌科技</text>
+ </view>
+<view class="button">
+        <text>投资合伙企业共6家</text>
+ </view>
+ <view class="inviteList">
+        <view class='itemList clearfix' bindtap="partnership_detail">
+          <view class='user_num float_lf'>
+            <text class='float_lf'>金</text>
+          </view> 
+          <view class='invite_detail float_lf'>
+                <view class="invite_name">金无生产</view>
+                <view class="invite_time">金乌科技具备自主研发光伏组件的能力……</view>
+          </view>
+          <image class='user_img float_rg' src='../image/partnership/right_icon.png'></image>
+        </view>
+        <view class='itemList clearfix'>
+          <view class='user_num float_lf'>
+            <text class='float_lf'>金</text>
+          </view> 
+          <view class='invite_detail float_lf'>
+                <view class="invite_name">金乌科技</view>
+                <view class="invite_time">金乌科技具备自主研发光伏组件的能力……</view>
+          </view>
+          <image class='user_img float_rg' src='../image/partnership/right_icon.png'></image>
+        </view>
+        <view class='itemList clearfix'>
+          <view class='user_num float_lf'>
+            <text class='float_lf'>金</text>
+          </view> 
+          <view class='invite_detail float_lf'>
+                <view class="invite_name">金乌科技</view>
+                <view class="invite_time">金乌科技具备自主研发光伏组件的能力……</view>
+          </view>
+          <image class='user_img float_rg' src='../image/partnership/right_icon.png'></image>
+        </view>
+</view>
+<view class="logo_img">
+      <image src="../image/guarantee/logo.png"></image>
+    </view>
+

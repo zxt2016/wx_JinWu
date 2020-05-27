@@ -1,0 +1,11 @@
+<view class="content">
+  <view class="title">关于我们</view>
+  <view class="infomation">
+  <text class="item" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;金乌科技总部坐落于国家级光伏产业基地-----河北省邢台市开发区，注册资金5000万元，经过多年的深入研究，高速发展，目前金乌科技具备光伏电站研发、生产、设计、施工、运维、销售、储能、电力交易等全产业链整合服务能力。</text>
+      <text class="item" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;金乌科技是我国最早一批“光伏+互联网”、“光伏+储能”的倡导者和实践者，金乌科技先后在北京、石家庄成立研发中心和运营中心，利用互联网、物联网、区块链、大数据、人工智能等综合技术研发成功了光伏电站资产在线交易结算平台、光伏电站智能运维平台、光伏+储能微电网能源管理系统以及电力交易平台，以最前沿的姿态迎接光伏平价时代，力争打造世界一流的新能源互联网平台。
+</text>
+</view>
+</view>
+<view class="logo_img">
+      <image src="../image/guarantee/logo.png"></image>
+    </view>

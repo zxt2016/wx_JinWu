@@ -1,0 +1,57 @@
+page{
+  background-color: #f8f8f8;
+}
+.introduce{
+  height: 360rpx;
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
+  padding: 20rpx 32rpx;
+  text-align: center;
+}
+.introduce image{
+  height: 285rpx;
+  width: 690rpx;
+  margin-bottom: 20rpx;
+}
+.introduce_detail{
+  float: left;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.station_title{
+  width: 100%;
+  height: 70rpx;
+  background-color: #e9f1ff;
+  line-height: 70rpx;
+  text-align: center;
+}
+.station_info{
+  background-color: #ffffff;
+}
+.itemList{
+  padding: 36rpx 0rpx;
+  margin: 0 40rpx;
+  box-sizing: border-box;
+  margin-bottom: 10rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  border-bottom: 1rpx solid #dddddd;
+}
+.itemList:last-child{
+  border: 0rpx;
+}
+.itemList text:last-child{
+  width: 580rxp;
+  float: right;
+}
+.logo_img{
+  bottom: 30rpx;
+  left: 315rpx;
+  position: absolute;
+}
+
+.logo_img image{
+  width: 130rpx;
+  height: 50rpx;
+}

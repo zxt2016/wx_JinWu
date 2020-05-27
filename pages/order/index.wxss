@@ -1,0 +1,125 @@
+
+page{
+  background-color: #f8f8f8;
+}
+.swiper-tab {
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #ffffff;
+  display: flex;
+  position: relative;
+  z-index: 2;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  }
+   
+  .swiper-tab-list {
+  margin: 20rpx 20rpx;
+  font-size: 30rpx;
+  }
+   
+  .on {
+  border-bottom:2px solid #176eff;
+  }
+   
+  .navTopList {
+  display: flex;
+  width: 100%;
+  height: 70rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #BEBEBE ;
+  margin-top:5rpx;
+  }
+   
+  .navTopList .order-info {
+  text-align: center;
+  }
+   
+  .navTopList .order-info view {
+  width: 56rpx;
+  height: 56rpx;
+  margin-left: 31rpx;
+  }
+   
+  .navTopList .order-info text {
+  font-size: 34rpx;
+  }
+   
+  .navTopList .order-info text.active {
+  color: #ff6662;
+  }
+   
+  .navTopList .ywc,.navTopList .dfk,.navTopList .yqx {
+  flex: 1;
+  }
+  
+  .content{
+    height: 380rpx;
+    margin: 20rpx;
+    background-color: #ffffff;
+    border-radius: 10rpx;
+    padding: 30rpx;
+  }
+  .order_num{
+    font-size: 26rpx;
+    font-weight: 500;
+    height: 85rpx;
+    line-height: 85rpx;
+    border-bottom: 1rpx solid #f3f3f3;
+    padding-left: 30rpx;
+  }
+  .station{
+    padding-left: 30rpx;
+    font-size: 30rpx;
+    font-weight: 700;
+    height: 70rpx;
+    line-height: 70rpx;
+  }
+    .content_item{
+      width: 45%;
+      color: #737373;
+      font-size: 26rpx;
+      padding-left: 30rpx;
+      border-bottom: 1rpx solid #f3f3f3;
+    }
+    .item{
+      height: 45rpx;
+      line-height: 45rpx;
+      margin-bottom: 30rpx;
+    }
+    .icon{
+      width: 25rpx;
+      height: 25rpx;
+      margin-right: 15rpx;
+    }
+    .handel_item{
+      color: #737373;
+      font-size: 26rpx;
+      padding-left: 30rpx;
+      margin-top: 30rpx;
+    }
+    .detail_btn{
+      border: 1rpx solid #999999;
+      color: #999999;
+      border-radius: 30rpx;
+      width: 140rpx;
+      height: 60rpx;
+      text-align: center;
+      line-height: 60rpx;
+      margin-right: 20rpx;
+      margin-left: 80rpx;
+      display: inline-block;
+    }
+    .pay_btn{
+      background-color: #176eff;
+      border-radius: 30rpx;
+      color: #ffffff;
+      width: 140rpx;
+      height: 60rpx;
+      text-align: center;
+      line-height: 60rpx;
+      display: inline-block;
+    }
+   
+  

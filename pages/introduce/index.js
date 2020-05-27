@@ -18,8 +18,9 @@ Component({
    */
   methods: {
     introduce_detail: function(e) {
+      var id = e.currentTarget.id;
       wx.navigateTo({
-        url: '../introduce_detail/index',
+        url: '../introduce_detail/index?str='+id,
       })
     }
   }

@@ -1,0 +1,52 @@
+page{
+  background-color: #f8f8f8;
+}
+.station_name{
+  height: 110rpx;
+  width: 100%;
+  background-color: #f8f8f8;
+  line-height: 110rpx;
+  font-size: 36rpx;
+  font-weight: 700;
+  text-align: center;
+}
+.introduce{
+  width: 750rpx;
+  height: 360rpx;
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
+  padding: 20rpx 32rpx;
+}
+.introduce image{
+  height: 285rpx;
+  width: 690rpx;
+}
+.introduce text{
+  float: left;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 20rpx;
+}
+.icon_img{
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-right: 80rpx;
+  float: right;
+
+}
+.icon_img image{
+  width: 25rpx;
+  height: 25rpx;
+}
+
+.logo_img{
+  width: 100%;
+  margin: 30rpx auto;
+  text-align: center;
+}
+
+.logo_img image{
+  width: 130rpx;
+  height: 50rpx;
+}

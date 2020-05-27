@@ -1,6 +1,6 @@
-<view class="introduce">
+<view class="introduce" bindtap='introduce_detail'  id="detail1">
     <image src="../image/introduce/introduce1.png"></image>
-    <view bindtap='introduce_detail'>
+    <view>
       <text>关于光伏发电?</text>
       <view class="icon_img">
         <image src="../image/introduce/icon.png"></image>
@@ -46,7 +46,7 @@
      </view> 
 </view>
 <view class="introduce">
-    <image src="../image/introduce/introduce6.png"></image>
+    <image src="../image/introduce/introduce3.png"></image>
     <view>
       <text>关于金乌光联光伏合伙人收益率</text>
       <view class="icon_img">

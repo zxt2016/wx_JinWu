@@ -105,9 +105,8 @@ page{
   bottom: 20rpx;
 }
 .logo_img{
-  bottom: 30rpx;
-  left: 315rpx;
-  position: absolute;
+  text-align: center;
+  padding: 30rpx;
 }
 
 .logo_img image{

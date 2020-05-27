@@ -16,7 +16,15 @@
     "pages/share_rules/index",
     "pages/purchase/index",
     "pages/agreement/index",
-    "pages/pay_success/index"
+    "pages/pay_success/index",
+    "pages/about_us/index",
+    "pages/partnership/index",
+    "pages/partnership_detail/index",
+    "pages/station_detail/index",
+    "pages/project/index",
+    "pages/order/index",
+    "pages/station/index",
+    "pages/order_detail/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

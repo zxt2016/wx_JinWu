@@ -1,0 +1,58 @@
+.mineBg{
+  width: 100%;
+  position: fixed;
+}
+.mineBg image{
+  width: 750rpx;
+  height: 210rpx;
+  z-index: -10;
+}
+.title{
+  position: absolute;
+  z-index: 10;
+  margin-top: 50rpx;
+  margin-left: 310rpx;
+}
+.title text{
+  width: 100%;
+  height: 55rpx;
+  line-height: 55rpx;
+  color: #ffffff;
+  font-size: 42rpx;
+  font-weight: 500;
+}
+.line{
+  border: 1rpx solid #ffffff;
+  width: 90rpx;
+  position: absolute;
+  z-index: 10;
+  margin-top: 125rpx;
+  margin-left: 350rpx;
+}
+.inviteList{
+  position: absolute;
+  z-index: 2;
+  width: 620rpx;
+  border: 1rpx solid #f3f3f3;
+  box-shadow: 5rpx 5rpx 5rpx #f3f3f3;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+  margin: 160rpx 25rpx 40rpx 25rpx;
+  padding: 40rpx;
+}
+.inviteList text{
+  font-size: 24rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.logo_img{
+  bottom: 30rpx;
+  left: 315rpx;
+  position: absolute;
+}
+
+.logo_img image{
+  width: 130rpx;
+  height: 50rpx;
+}
