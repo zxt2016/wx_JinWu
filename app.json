@@ -33,12 +33,14 @@
     "navigationBarTextStyle":"white"
   },
   "tabBar": {
+    "color":"#666",
+    "selectedColor":"#2c7bfe",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath":"pages/image/bar_icon1_grey.png",
-        "selectedIconPath":"pages/image/icon1_blue.png"
+        "selectedIconPath":"pages/image/bar_icon1_blue.png"
       },
       {
         "pagePath": "pages/guarantee/index",

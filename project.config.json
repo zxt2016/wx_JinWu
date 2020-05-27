@@ -6,6 +6,7 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
+		"enhance": false,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
@@ -27,7 +28,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.0",
-	"appid": "wx712056e661d2de4a",
+	"appid": "wx37e4252ff91ecc45",
 	"projectname": "JWDL",
 	"debugOptions": {
 		"hidedInDevtools": []

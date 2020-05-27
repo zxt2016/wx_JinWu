@@ -12,7 +12,7 @@ App({
     // 登录
     wx.login({
         success: res => {
-        console.log(res);
+        // console.log(res);
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         // wx.request({
         //   url: this.globalData.baseUrl +'/wxUser/code2Session',
