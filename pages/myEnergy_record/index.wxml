@@ -1,0 +1,23 @@
+<view class="recordMain">
+  <view class="record_title"><text>我的能量记录</text></view>
+  <view class="record_list">
+    <view class="list_title">{{total}}kw</view>
+    <view class="list_box">
+      <view class="list_item" wx:for="{{record}}" wx:for-item="item">
+        <view class="yuan"></view>
+        <view class="item_time">{{item.created}}</view>
+        <view class="item_text">
+          <view wx:if="{{item.type == 1}}">
+            <text>收取邀请好友产生的能量{{item.energy}}w </text>
+          </view>
+          <view wx:if="{{item.type == 2}}">
+            <text>收取分享给好友产生的能量{{item.energy}}w</text>
+          </view>
+          <view wx:if="{{item.type == 3}}">
+            <text>收取发电产生的能量{{item.energy}}w</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

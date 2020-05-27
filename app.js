@@ -7,6 +7,7 @@ App({
     
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    this.globalData.token = wx.getStorageSync('token');
 
     // 登录
     wx.login({
@@ -48,6 +49,7 @@ App({
     })
   },
   globalData: {
+    token:'',
     userInfo: null,
     baseUrl:'http://192.168.1.5:8080/photovoltaic',
     // baseUrl: 'http://192.168.1.4:8080/photovoltaic',

@@ -67,6 +67,7 @@ Component({
                 key: 'token',
                 data: res.data.data.access_token,
               });
+              app.globalData.token = res.data.data.access_token;
               wx.showToast({
                 title: '登录成功',
                 icon:'none',

@@ -3,9 +3,62 @@
 page {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(to bottom, rgb(34,193,195), 	rgba(236,202,129,0.7)); /* 标准语法 */
+  /* background: linear-gradient(to bottom, rgb(34,193,195), 	rgba(236,202,129,0.7)); 标准语法 */
 }
-
+.main {
+  position: relative;
+}
+.main .three{
+  width: 100%;
+  height: 700rpx;
+}
+.myEnergy{
+  position: absolute;
+  top:38rpx;
+  left:0;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.myEnergy .balanceEnergy{
+  width: 326rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  text-align: center;
+  color:#fff;
+  font-size: 28rpx;
+  border-radius: 0 30rpx 30rpx 0;
+  background-color: #2f97d4;
+}
+.myEnergy .totalEnergy{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 326rpx;
+  height: 90rpx;
+  color:#fff;
+  font-size: 28rpx;
+  padding-left: 15rpx;
+  box-sizing: border-box;
+  border-radius: 50rpx 0 0 50rpx;
+  background-color: rgba(47, 151, 212, 1);
+}
+.myEnergy .totalEnergy .header_top{
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 50%;
+}
+.myEnergy .totalEnergy .record{
+  width:115rpx;
+  height: 54rpx;
+  color:#333;
+  text-align: center;
+  line-height: 54rpx;
+  border-radius: 30rpx 0 0 30rpx;
+  background-color: #fff;
+}
 .star_icon {
   position: absolute;
   left: 0;
@@ -110,18 +163,24 @@ page {
 /* 能量 */
 
 .view_energy {
-  min-height: 350rpx;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 10;
+  width: 100%;
+  height: 200rpx;
   padding-top: 10rpx;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 20rpx;
-  padding-bottom: 60px;
-  margin-top: 60rpx;
+  margin: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  /* margin-top: 60rpx; */
   /* overflow: hidden; *//* border: 1px solid #4CD964; */
 }
 
 .view_energy_list {
-  position: relative;
+  position: absolute;
   height: 130rpx;
   width: 116rpx;
   text-align: center;
@@ -152,12 +211,11 @@ page {
 
 .energy_title {
   font-size: 23rpx;
-  line-height: 110rpx;
+  line-height: 120rpx;
   letter-spacing: 2rpx;
   color: white;
   display: block;
-  width: 110rpx;
-  height: 110rpx;
+  margin:0 auto;
   text-align: center;
   font-family: 'wangte';
   background-image: url('http://image.51what.cn/public/upload/20190830/7addf9a8844d06bbddbdf30a31ea2fc5.png');
@@ -173,6 +231,13 @@ page {
 
 .view_collect {
   text-align: center;
+  position: fixed;
+  top:40%;
+  left:50%;
+  z-index: 1;
+  width: 50%;
+  height: 200rpx;
+  transform: translate(-50%,-90%);
 }
 
 .img_collect {
@@ -191,4 +256,68 @@ page {
   to {
     transform: translate(6px, 0);
   }
+}
+.rankingList{
+  width: 100%;
+  min-height:700rpx;
+  background-color: #f8f8f8;
+  border-radius: 20rpx 20rpx 0 0;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-top: -110rpx;
+  position: relative;
+  z-index: 10;
+}
+.list_title{
+  font-size: 32rpx;
+  padding: 20rpx;
+}
+.listMain{
+  width: 100%;
+  height: 500rpx;
+  padding: 10rpx 0;
+  background-color: #fff;
+}
+.listMain .list_item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 20rpx;
+}
+.listMain .list_item .num_header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.listMain .list_item .num_header .rank_icon{
+  width: 42rpx;
+  height: 62rpx;
+}
+.listMain .list_item .num_header .header_img{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.listMain .list_item .num_header .rank_text{
+  font-size: 28rpx;
+  color:#bbb;
+}
+.listMain .list_item .name_val{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 490rpx;
+  height: 140rpx;
+  padding:0 10rpx;
+  box-sizing: border-box;
+  border-top: 1px solid #e5e5e5;
+}
+.listMain .list_item:first-child .name_val{
+  border-top: 0;
+}
+.listMain .list_item .name_val text{
+  font-size: 28rpx;
 }

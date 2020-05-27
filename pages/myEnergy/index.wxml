@@ -1,22 +1,59 @@
-<!--index.wxml-->
-			<!-- 能量球 -->
-			<view class="view_energy">
-				<block wx:for="{{myList}}" wx:for-index="idx" wx:for-item="itm" wx:key='idx'>
-					<block wx:if="{{itm.realItem}}">
-						<view class="view_energy_list" animation="{{itm.anima}}"  id='{{idx}}' bindtap="bindTab"  style="{{itm.styleObject}}">
-							<block wx:if="{{itm.isShow}}" >
-								<text class="energy_title">{{itm.num}}</text>
-								<view class="energy_tips">{{itm.title}}</view>
-							</block>
-						</view>
-					</block>
-					<block wx:else>
-						<view class="view_energy_list">
-						</view>
-					</block>
-				</block>
+			
+<view class="main">
+	<image class="three" src="../image/myEnergy/myEnergy_bg.png"></image>
+	<!-- 可用能量、累计能量 -->
+	<view class="myEnergy">
+		<view class="balanceEnergy">可用能量：<text>{{balanceEnergy}}</text>	kw</view>
+		<view class="totalEnergy">
+			<image class="header_top" src="../image/myEnergy/header_img.png"></image>
+			<view>
+				<view>累计能量</view>
+				<view>{{totalEnergy}}kw</view>
 			</view>
-      <view class="view_collect">
-				<image id="my_collect"  src="http://image.51what.cn/public/upload/20190916/5e053c8276102f544bb6c403028ef601.png"
-				 class="img_collect"> </image>
-			</view>
+			<view class="record" bindtap="getRecord">记录</view>
+		</view>
+	</view>
+	<!-- 能量球 -->
+	<view class="view_energy">
+		<block wx:for="{{myList}}" wx:for-index="idx" wx:for-item="itm" wx:key='idx'>
+			<block wx:if="{{itm.realItem}}">
+				<view class="view_energy_list" animation="{{itm.anima}}" id="{{idx}}" data-index='{{idx}}' bindtap="bindTab"  style="{{itm.styleObject}}">
+					<block wx:if="{{itm.isShow}}">
+						<text class="energy_title" wx:if="{{itm.size <= 2}}" style="width:90rpx;height:90rpx;line-height:90rpx;">{{itm.num}}</text>
+						<text class="energy_title" wx:elif="{{itm.size == 3}}" style="width:110rpx;height:110rpx;line-height:110rpx;">{{itm.num}}</text>
+						<text class="energy_title" wx:elif="{{itm.size == 4}}" style="width:130rpx;height:130rpx;line-height:130rpx;">{{itm.num}}</text>
+						<text class="energy_title" wx:elif="{{itm.size >= 4}}" style="width:140rpx;height:140rpx;line-height:140rpx;">{{itm.num}}</text>
+						<view class="energy_tips">{{itm.title}}</view>
+					</block>
+				</view>
+			</block>
+			<block wx:else>
+				<view class="view_energy_list">
+				</view>
+			</block>
+		</block>
+	</view>
+	<!-- 收集区域 -->
+	<view id="my_collect" class="view_collect"></view>
+	<!-- 能量排行 -->
+	<view class="rankingList">
+		<view class="list_title">能量排行</view>
+		<view class="listMain">
+				<view class="list_item" wx:for="{{rankingList}}" wx:for-item="item">
+					<view class="num_header">
+						<image wx:if="{{index == 0}}" class="rank_icon" src="../image/myEnergy/icon1.png"></image>
+						<image wx:elif="{{index == 1}}" class="rank_icon" src="../image/myEnergy/icon2.png"></image>
+						<image wx:elif="{{index == 2}}" class="rank_icon" src="../image/myEnergy/icon3.png"></image>
+						<text wx:else class="rank_text">{{index+1}}</text>
+						<image class="header_img" src="../image/myEnergy/header_img.png"></image>
+						<!-- <image class="header_img" src="{{item.icon}}"></image> -->
+					</view>
+					<view class="name_val">
+						<text>金乌科技</text>
+						<!-- <text>{{item.nickName}}</text> -->
+						<text>{{item.totalEnergy}}kw</text>
+					</view>
+				</view>
+		</view>
+	</view>
+</view>

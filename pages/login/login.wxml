@@ -3,7 +3,7 @@
   <form class='login_form' bindsubmit="formSubmit">
     <view class='form_item'>
       <text>手机号：</text>
-      <input class='phone' name='phone' placeholder="请输入手机号" value='18603214650'></input>
+      <input class='phone' name='phone' placeholder="请输入手机号" value='15383899908'></input>
     </view>
     <view class='form_item'>
       <text>验证码：</text>
