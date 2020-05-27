@@ -1,0 +1,34 @@
+<view class='mineBg'>
+    <image src="../image/partnership/top_img.png" mode="aspectFill"></image>
+<view class="title">天津蓟县发电站 </view>
+ <view class="line"></view>
+ <view class="inviteList">请输入您想查找的项目</view>
+ <view style="height:60rpx"></view>
+ </view>
+ <view class="introduce">
+    <image src="../image/introduce/station.png"></image>
+    <view bindtap='introduce_detail' bindtap="station_detail">
+      <text>蓟县一号发电站?</text>
+      <view class="icon_img">
+        <image src="../image/introduce/icon.png"></image>
+      </view>
+     </view> 
+</view>
+<view class="introduce">
+    <image src="../image/introduce/station.png"></image>
+    <view bindtap='introduce_detail' bindtap="station_detail">
+      <text>蓟县一号发电站?</text>
+      <view class="icon_img">
+        <image src="../image/introduce/icon.png"></image>
+      </view>
+     </view> 
+</view>
+<view class="introduce">
+    <image src="../image/introduce/station.png"></image>
+    <view bindtap='introduce_detail' bindtap="station_detail">
+      <text>蓟县一号发电站?</text>
+      <view class="icon_img">
+        <image src="../image/introduce/icon.png"></image>
+      </view>
+     </view> 
+</view>

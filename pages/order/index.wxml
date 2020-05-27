@@ -1,0 +1,150 @@
+
+<view class="swiper-tab">
+<block wx:for="{{swipertab}}" wx:key="sptab">
+<view class="swiper-tab-list {{currtab == item.index ? 'on' : ''}}" data-current="{{item.index}}" bindtap="tabSwitch">{{item.name}}</view>
+</block>
+</view>
+ 
+<swiper current="{{currtab}}" class="swiper-box" duration="300" style="height:{{deviceH-31}}px" bindchange="tabChange">
+<!-- 待支付 -->
+<swiper-item>
+<scroll-view class="hot-box" scroll-y="true">
+<view class="content">
+    <view class="order_num">订单号：20201568664792<text style="margin-left:200rpx">取消订单</text></view>
+    <view class="station">一号发电站</view>
+    <view>
+    <view class="content_item float_lf">
+      <view class="shares item">装机容量：<text>329.34KW</text></view>
+      <view class="shares item">所占股份：<text>64.5%</text></view>
+    </view>
+    <view class="content_item float_lf">
+      <view class="shares item">认购金额：<text>1268.62万元</text></view>
+      <view class="shares item">认购时间：<text>2020-05-26</text></view>
+    </view>
+    <view class="handel_item float_lf">
+      <view class="shares item float_lf">预付金额：<text style="color:#ff0000; font-size: 36rpx;">18.58</text>万</view>
+      <view class="detail_btn item" bindtap="order_detail">详情</view>
+      <view class="pay_btn item">支付</view>
+    </view>  
+    </view>
+</view>
+<view class="content">
+    <view class="order_num">订单号：20201568664792</view>
+    <view class="station">一号发电站</view>
+    <view>
+    <view class="content_item float_lf">
+      <view class="shares item">装机容量：<text>329.34KW</text></view>
+      <view class="shares item">所占股份：<text>64.5%</text></view>
+    </view>
+    <view class="content_item float_lf">
+      <view class="shares item">认购金额：<text>1268.62万元</text></view>
+      <view class="shares item">认购时间：<text>2020-05-26</text></view>
+    </view>
+    <view class="handel_item float_lf">
+      <view class="shares item float_lf">预付金额：<text style="color:#ff0000; font-size: 36rpx;">18.58</text>万</view>
+      <view class="detail_btn item">详情</view>
+      <view class="pay_btn item">支付</view>
+    </view>  
+    </view>
+</view>
+</scroll-view>
+</swiper-item>
+<!-- 支付中 -->
+<swiper-item>
+<scroll-view class="hot-box" scroll-y="true">
+  <view class="content">
+    <view class="order_num">订单号：20201568664792</view>
+    <view class="station">一号发电站</view>
+    <view>
+    <view class="content_item float_lf">
+      <view class="shares item">装机容量：<text>329.34KW</text></view>
+      <view class="shares item">所占股份：<text>64.5%</text></view>
+    </view>
+    <view class="content_item float_lf">
+      <view class="shares item">认购金额：<text>1268.62万元</text></view>
+      <view class="shares item">认购时间：<text>2020-05-26</text></view>
+    </view>
+    <view class="handel_item float_lf">
+      <view class="shares item float_lf">预付金额：<text style="color:#ff0000; font-size: 36rpx;">18.58</text>万</view>
+      <view class="detail_btn item">详情</view>
+      <view class="pay_btn item">支付中</view>
+    </view>  
+    </view>
+</view>
+</scroll-view>
+</swiper-item>
+<!-- 预付定金支付完成 -->
+<swiper-item>
+<scroll-view class="hot-box" scroll-y="true">
+    <view class="content">
+    <view class="order_num">订单号：20201568664792</view>
+    <view class="station">一号发电站</view>
+    <view>
+    <view class="content_item float_lf">
+      <view class="shares item">装机容量：<text>329.34KW</text></view>
+      <view class="shares item">所占股份：<text>64.5%</text></view>
+    </view>
+    <view class="content_item float_lf">
+      <view class="shares item">认购金额：<text>1268.62万元</text></view>
+      <view class="shares item">认购时间：<text>2020-05-26</text></view>
+    </view>
+    <view class="handel_item float_lf">
+      <view class="shares item float_lf">预付金额：<text style="color:#ff0000; font-size: 36rpx;">18.58</text>万</view>
+      <view class="detail_btn item">详情</view>
+      <view class="pay_btn item">定金完成</view>
+    </view>  
+    </view>
+</view>
+</scroll-view>
+</swiper-item>
+<!-- 已完成 -->
+<swiper-item>
+<scroll-view class="hot-box" scroll-y="true">
+    <view class="content">
+    <view class="order_num">订单号：20201568664792</view>
+    <view class="station">一号发电站</view>
+    <view>
+    <view class="content_item float_lf">
+      <view class="shares item">装机容量：<text>329.34KW</text></view>
+      <view class="shares item">所占股份：<text>64.5%</text></view>
+    </view>
+    <view class="content_item float_lf">
+      <view class="shares item">认购金额：<text>1268.62万元</text></view>
+      <view class="shares item">认购时间：<text>2020-05-26</text></view>
+    </view>
+    <view class="handel_item float_lf">
+      <view class="shares item float_lf">预付金额：<text style="color:#ff0000; font-size: 36rpx;">18.58</text>万</view>
+      <view class="detail_btn item">详情</view>
+      <view class="pay_btn item">已完成</view>
+    </view>  
+    </view>
+</view>
+</scroll-view>
+</swiper-item>
+<!-- 取消 -->
+<swiper-item>
+<scroll-view class="hot-box" scroll-y="true">
+    <view class="content">
+    <view class="order_num">订单号：20201568664792</view>
+    <view class="station">一号发电站</view>
+    <view>
+    <view class="content_item float_lf">
+      <view class="shares item">装机容量：<text>329.34KW</text></view>
+      <view class="shares item">所占股份：<text>64.5%</text></view>
+    </view>
+    <view class="content_item float_lf">
+      <view class="shares item">认购金额：<text>1268.62万元</text></view>
+      <view class="shares item">认购时间：<text>2020-05-26</text></view>
+    </view>
+    <view class="handel_item float_lf">
+      <view class="shares item float_lf">预付金额：<text style="color:#ff0000; font-size: 36rpx;">18.58</text>万</view>
+      <view class="detail_btn item">详情</view>
+      <view class="pay_btn item">已取消</view>
+    </view>  
+    </view>
+</view>
+</scroll-view>
+</swiper-item>
+ 
+</swiper>
+

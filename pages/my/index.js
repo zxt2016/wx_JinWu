@@ -70,5 +70,26 @@ Page({
     wx.navigateTo({
       url: '../share/index',
     })
+  },
+  partnership: function(e) {
+    wx.navigateTo({
+      url: '../partnership/index',
+    })
+  },
+  project: function(e) {
+    wx.navigateTo({
+      url: '../project/index',
+    })
+  },
+
+  order: function(e) {
+    wx.navigateTo({
+      url: '../order/index',
+    })
+  },
+  contact_us: function(e) {
+    wx.navigateTo({
+      url: '../about_us/index',
+    })
   }
 })

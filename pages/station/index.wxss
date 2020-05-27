@@ -1,0 +1,70 @@
+page{
+  background-color: #f8f8f8;
+}
+.mineBg{
+  width: 100%;
+}
+.mineBg image{
+  width: 750rpx;
+  height: 210rpx;
+  z-index: -10;
+}
+.title{
+  position: absolute;
+  z-index: 10;
+  margin-top: -170rpx;
+  margin-left: 290rpx;
+  color: #ffffff;
+  font-size: 36rpx;
+  font-weight: 500;
+}
+.line{
+  border: 1rpx solid #ffffff;
+  width: 90rpx;
+  position: absolute;
+  z-index: 10;
+  margin-top: -100rpx;
+  margin-left: 350rpx;
+}
+.inviteList{
+  position: absolute;
+  z-index: 2;
+  width: 600rpx;
+  border: 1rpx solid #f3f3f3;
+  box-shadow: 5rpx 5rpx 5rpx #f3f3f3;
+  border-radius: 50rpx;
+  background-color: #ffffff;
+  margin: -50rpx 25rpx 40rpx 25rpx;
+  height: 85rpx;
+  padding: 0rpx 50rpx;
+  line-height: 85rpx;
+}
+.introduce{
+  width: 750rpx;
+  height: 360rpx;
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
+  padding: 20rpx 32rpx;
+}
+.introduce image{
+  height: 285rpx;
+  width: 690rpx;
+}
+.introduce text{
+  float: left;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 20rpx;
+}
+.icon_img{
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-right: 80rpx;
+  float: right;
+
+}
+.icon_img image{
+  width: 25rpx;
+  height: 25rpx;
+}

@@ -1,9 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/myEnergy/index",
     "pages/myEnergy_record/index",
-    "pages/index/index",
-    
     "pages/login/login",
     "pages/guarantee/index",
     "pages/introduce/index",
@@ -18,7 +17,14 @@
     "pages/purchase/index",
     "pages/agreement/index",
     "pages/pay_success/index",
-    "pages/about_us/index"
+    "pages/about_us/index",
+    "pages/partnership/index",
+    "pages/partnership_detail/index",
+    "pages/station_detail/index",
+    "pages/project/index",
+    "pages/order/index",
+    "pages/station/index",
+    "pages/order_detail/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

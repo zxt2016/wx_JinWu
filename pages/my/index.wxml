@@ -7,7 +7,7 @@
         <image class='float_lf' src='{{userInfo.avatarUrl}}'></image>
         <view class='name_num float_lf'>
           <text class='txt-num1'>{{userInfo.nickName}}</text>
-          <text class="float_lf">所属合伙企业1个详情</text>
+          <text class="float_lf" bindtap="partnership">所属合伙企业1个详情</text>
         </view>
       </view>
     </view>
@@ -23,12 +23,12 @@
     </view>
   </view>
   <view class="menu">
-  <view class='itemList clearfix' bindtap='editForm'>
+  <view class='itemList clearfix' bindtap='project'>
     <image class='icon_img float_lf' src='../image/my/station.png'></image>
     <text class='float_lf'>我的电站</text>
     <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
   </view>
-  <view class='itemList clearfix' bindtap='myNeed'>
+  <view class='itemList clearfix' bindtap='order'>
     <image class='icon_img float_lf' src='../image/my/order.png'></image>
     <text class='float_lf'>我的订单</text>
     <image class='float_rt jtRt' src='./image/jt_rt.png'></image>

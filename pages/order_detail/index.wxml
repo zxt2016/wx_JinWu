@@ -1,0 +1,32 @@
+<view class="station_name">一号发电站</view>
+<view class="introduce">
+    <image src="../image/introduce/station.png"></image>
+    <view bindtap='introduce_detail'>
+      <text>蓟县一号发电站?</text>
+      <view class="icon_img">
+        <image src="../image/introduce/icon.png"></image>
+      </view>
+     </view> 
+</view>
+<view class="introduce">
+    <image src="../image/introduce/station.png"></image>
+    <view bindtap='station_detail'>
+      <text>蓟县一号发电站?</text>
+      <view class="icon_img">
+        <image src="../image/introduce/icon.png"></image>
+      </view>
+     </view> 
+</view>
+<view class="introduce">
+    <image src="../image/introduce/station.png"></image>
+    <view bindtap='introduce_detail'>
+      <text>蓟县一号发电站?</text>
+      <view class="icon_img">
+        <image src="../image/introduce/icon.png"></image>
+      </view>
+     </view> 
+</view>
+
+<view class="logo_img">
+  <image src="../image/guarantee/logo.png"></image>
+</view>

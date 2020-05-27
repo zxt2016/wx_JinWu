@@ -1,0 +1,28 @@
+<view class="introduce">
+    <image src="../image/introduce/station.png"></image>
+    <view bindtap='introduce_detail'>
+      蓟县一号发电站
+     </view> 
+</view>
+<view class="station_title">基本信息</view>
+<view class="station_info">
+  <view class='itemList clearfix' bindtap='myNeed'>
+    <text class='float_lf'>电站地址：</text>
+    <text class="float_rg">天津蓟县渔阳镇</text>
+  </view>
+  <view class='itemList clearfix' bindtap='myNeed'>
+    <text class='float_lf'>装机容量：</text>
+    <text class="float_rg">6288.29KW</text>
+  </view>
+  <view class='itemList clearfix' bindtap='myNeed'>
+    <text class='float_lf'>持有人：</text>
+    <text class="float_rg">孙泽新</text>
+  </view>
+  <view class='itemList clearfix' bindtap='myNeed'>
+    <text class='float_lf'>并网时间：</text>
+    <text class="float_rg">2019-10-20</text>
+  </view>
+</view>
+<view class="logo_img">
+      <image src="../image/guarantee/logo.png"></image>
+    </view>

@@ -1,0 +1,106 @@
+page{
+  background-color: #f8f8f8;
+}
+.mineBg{
+  width: 100%;
+}
+.mineBg image{
+  width: 750rpx;
+  height: 210rpx;
+  z-index: -10;
+}
+.title{
+  position: absolute;
+  z-index: 10;
+  margin-top: -170rpx;
+  margin-left: 310rpx;
+  color: #ffffff;
+}
+.title text{
+  width: 100%;
+  height: 55rpx;
+  line-height: 55rpx;
+  color: #ffffff;
+  font-size: 42rpx;
+  font-weight: 500;
+}
+.line{
+  border: 1rpx solid #ffffff;
+  width: 90rpx;
+  position: absolute;
+  z-index: 10;
+  margin-top: -100rpx;
+  margin-left: 350rpx;
+}
+.inviteList{
+  position: absolute;
+  z-index: 2;
+  width: 600rpx;
+  border: 1rpx solid #f3f3f3;
+  box-shadow: 5rpx 5rpx 5rpx #f3f3f3;
+  border-radius: 50rpx;
+  background-color: #ffffff;
+  margin: -50rpx 25rpx 40rpx 25rpx;
+  height: 85rpx;
+  padding: 0rpx 50rpx;
+  line-height: 85rpx;
+}
+
+.content{
+  height: 360rpx;
+  margin: 0 20rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+}
+.order_num{
+  font-size: 26rpx;
+  font-weight: 500;
+  height: 75rpx;
+  line-height: 75rpx;
+  border-bottom: 1rpx solid #f3f3f3;
+  color: #176eff;
+  padding-left: 30rpx;
+  margin-bottom: 30rpx;
+}
+.station{
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+  .content_item{
+    width: 45%;
+    color: #737373;
+    font-size: 26rpx;
+    padding-left: 30rpx;
+  }
+  .item{
+    height: 45rpx;
+    line-height: 45rpx;
+    font-size: 24rpx;
+  }
+  .icon{
+    width: 25rpx;
+    height: 25rpx;
+    margin-right: 15rpx;
+  }
+  .handel_item{
+    color: #737373;
+    font-size: 26rpx;
+    padding-left: 30rpx;
+    float: right;
+    margin-top: 20rpx;
+  }
+  .pay_btn{
+    background-color: #176eff;
+    border-radius: 30rpx;
+    color: #ffffff;
+    width: 200rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    display: inline-block;
+  }
