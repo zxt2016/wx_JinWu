@@ -144,8 +144,8 @@
         </view>
     </view>
     
-</view>
 <view class="logo_img">
       <image src="../image/guarantee/logo.png"></image>
     </view>
+</view>
 
