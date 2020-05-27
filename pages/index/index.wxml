@@ -40,15 +40,17 @@
         <image class='star_line' src="../image/index/star_line.png"></image>
         <view class="star_animted">
           <!-- 太阳 -->
-          <image class="star sun" src="../image/index/sun.png"></image>
+          <image class="sun" src="../image/index/sun.png"></image>
 
           <!-- 星球 -->
-          <image wx:for="{{starData}}" class="star star{{item.num}}" animation="{{animation}}" src="../image/index/star{{index}}.png"></image>
-
-
-          <!-- <view style="height: 100%; width: 100%;" bindtouchstart="documentTouchStart" bindtouchmove="documentTouchMove" bindtouchend="documentTouchEnd" >
-            <canvas type="webgl" id="c" style="width: 100%; height:100%;" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" bindtouchcancel="touchCancel" bindlongtap="longTap" bindtap="tap"></canvas>
-          </view> -->
+          <view class="star_img">
+            <image 
+            wx:for="{{starData}}" 
+            wx:for-item = 'item'
+            class="star star{{item.num}}" 
+            style="width:{{item.width}}px;height:{{item.height}}px;transform:translateX({{item.translateX}}px) translateY(0) translateZ({{item.translateZ}}px);"
+            src="../image/index/star{{index}}.png"></image>
+          </view>
 
 
 

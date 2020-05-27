@@ -3,22 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fce3cd3f-0f7d-46ee-bd8a-78a69652543e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
-      <change beforePath="$PROJECT_DIR$/pages/image/bar_icon1_blue.png" afterPath="$PROJECT_DIR$/pages/image/bar_icon1_blue.png" />
-      <change beforePath="$PROJECT_DIR$/pages/image/bar_icon1_grey.png" afterPath="$PROJECT_DIR$/pages/image/bar_icon1_grey.png" />
-      <change beforePath="$PROJECT_DIR$/pages/image/bar_icon2_blue.png" afterPath="$PROJECT_DIR$/pages/image/bar_icon2_blue.png" />
-      <change beforePath="$PROJECT_DIR$/pages/image/bar_icon2_grey.png" afterPath="$PROJECT_DIR$/pages/image/bar_icon2_grey.png" />
-      <change beforePath="$PROJECT_DIR$/pages/image/bar_icon3_blue.png" afterPath="$PROJECT_DIR$/pages/image/bar_icon3_blue.png" />
-      <change beforePath="$PROJECT_DIR$/pages/image/bar_icon3_grey.png" afterPath="$PROJECT_DIR$/pages/image/bar_icon3_grey.png" />
-      <change beforePath="$PROJECT_DIR$/pages/image/bar_icon4_blue.png" afterPath="$PROJECT_DIR$/pages/image/bar_icon4_blue.png" />
-      <change beforePath="$PROJECT_DIR$/pages/image/bar_icon4_grey.png" afterPath="$PROJECT_DIR$/pages/image/bar_icon4_grey.png" />
-      <change beforePath="$PROJECT_DIR$/pages/image/icon1_blue.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/pages/index/index.js" afterPath="$PROJECT_DIR$/pages/index/index.js" />
-      <change beforePath="$PROJECT_DIR$/project.config.json" afterPath="$PROJECT_DIR$/project.config.json" />
-      <change beforePath="$PROJECT_DIR$/utils/OrbitControls.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/utils/gltf-loader.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/utils/three.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" afterPath="$PROJECT_DIR$/pages/index/index.wxml" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.wxss" afterPath="$PROJECT_DIR$/pages/index/index.wxss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,8 +29,8 @@
       <file leaf-file-name="project.config.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project.config.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+            <state relative-caret-position="133">
+              <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -160,7 +147,7 @@
       <workItem from="1590334851826" duration="363000" />
       <workItem from="1590369359303" duration="992000" />
       <workItem from="1590460856568" duration="2091000" />
-      <workItem from="1590540680019" duration="934000" />
+      <workItem from="1590540680019" duration="1466000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/zxt2016/wx_JinWu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1589882241138</created>
@@ -239,11 +226,18 @@
       <option name="project" value="LOCAL" />
       <updated>1590505003796</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="zxt">
+      <created>1590545973594</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1590545973594</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14834000" />
+    <option name="totallyTimeSpent" value="15366000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="56" y="23" width="1523" height="966" extended-state="0" />
@@ -519,8 +513,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project.config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        <state relative-caret-position="133">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
           <folding />
         </state>
       </provider>
