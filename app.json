@@ -15,7 +15,8 @@
     "pages/share_rules/index",
     "pages/purchase/index",
     "pages/agreement/index",
-    "pages/pay_success/index"
+    "pages/pay_success/index",
+    "pages/about_us/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,0 +1,7 @@
+<view class="content">
+  <view class="title">关于我们</view>
+  <text class="item" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;金乌电联是河北金乌科技有限公司旗下的一款小程序，金乌科技结合多年光伏行业研发、设计、生产、安装、并网、售电等专业经验，结合目前光伏行业痛点和市场需求，通过在北京和石家庄成立研发中心，经过近三年的研发试验，利用互联网、物联网、区块链、大数据、云平台、人工智能等综合技术搭建了金乌租售平台。</text>
+</view>
+<view class="logo_img">
+      <image src="../image/guarantee/logo.png"></image>
+    </view>

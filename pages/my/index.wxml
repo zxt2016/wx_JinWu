@@ -7,7 +7,7 @@
         <image class='float_lf' src='{{userInfo.avatarUrl}}'></image>
         <view class='name_num float_lf'>
           <text class='txt-num1'>{{userInfo.nickName}}</text>
-          <text>所属合伙企业1个</text>
+          <text class="float_lf">所属合伙企业1个详情</text>
         </view>
       </view>
     </view>
