@@ -12,16 +12,16 @@ Page({
     banner_img: [],
     indicatorDots: true,
     vertical: false,
-    autoplay: true,
+    autoplay: false,
     interval: 2000,
     duration: 500,
     circular: true,
     //星系轮播
-    indicatorDots2: false,
+    indicatorDots2: true,
     vertical2: false,
-    autoplay2: false,
-    interval2: 2000,
-    duration2: 500,
+    autoplay2: true,
+    interval2: 5000,
+    duration2: 800,
     circular2: true,
 
     //电站tab切换标识
@@ -74,7 +74,9 @@ Page({
     height:'',
     // 招募单列表（项目）
     projectData:[],
-    
+    projectData2:[],
+    // 认购授权标识
+    power:1,
 
 
   },
@@ -118,9 +120,7 @@ Page({
     wx.request({
       url: app.globalData.baseUrl+'/wxRecruitOrder/list',
       method: 'GET', 
-      header: {
-        'content-type': 'application/json'
-      },
+      contentType: 'application/json;charset=UTF-8 ',
       data:{
         current:1,
         size:10
@@ -303,6 +303,53 @@ getBannerList: function() {
 },
 //电站切换
 stationTab: function(e){
+  var _this = this;
+  var tab = e.currentTarget.dataset.num;
+  if(tab == 1){
+    if(this.data.projectData.length == 0){
+      wx.request({
+        url: app.globalData.baseUrl+'/wxRecruitOrder/list',
+        method: 'GET', 
+        header: {
+          'content-type': 'application/json'
+        },
+        data:{
+          current:1,
+          size:10
+        },
+        success(res){
+          if(res.statusCode == 200){
+            _this.setData({
+                projectData:res.data.data.records,
+            });
+          }
+        },
+      })
+    }
+  }else if(tab == 2){
+    if(this.data.projectData2.length == 0){
+      wx.request({
+        url: app.globalData.baseUrl+'/wxOrder/getProjectList',
+        method:'GET',
+        header:{
+          'Authorization':app.globalData.token,
+          'content-type': 'application/json'
+        },
+        data:{
+          current:1,
+          size:10
+        },
+        success(res){
+          if(res.statusCode == 200){
+            _this.setData({
+                projectData2:res.data.data.records,
+            });
+          }
+          console.log(res);
+        },
+      })
+    }
+  }
   this.setData({
     stationType:e.currentTarget.dataset.num
   });

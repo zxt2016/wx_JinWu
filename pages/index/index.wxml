@@ -6,7 +6,7 @@
       autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
       <block wx:for="{{banner_img}}" wx:key="*this">
         <swiper-item class="swiper_img">
-          <image src="{{item}}" style="width:100%"></image>
+          <image src="{{item}}" style="width:100%;height:100%;"></image>
         </swiper-item>
       </block>
     </swiper>
@@ -22,7 +22,7 @@
           <image class='right_icon' src="{{imgUrl}}/index/right_icon_{{stationType == 1?'blue':'grey'}}.png"></image>
         </view>
       </view>  
-      <view class="tabItem" data-num='2' bindtap="stationTab">
+      <view class="tabItem {{stationType == 2?'active':''}}" data-num='2' bindtap="stationTab">
         <view class="item_view">
           <image class='left_icon' src="{{imgUrl}}/index/index_icon2_{{stationType == 2?'blue':'grey'}}.png"></image>
           <text>我的电站</text>
@@ -57,7 +57,7 @@
                 autoplay="{{autoplay2}}" interval="{{interval2}}" duration="{{duration2}}" circular="{{circular2}}">
                 <block wx:for="{{projectData}}" wx:for-item="item" wx:key="*this">
                   <swiper-item class="swiper_img">
-                    <image class="project_star_img" src="{{imgUrl}}/index/star/star{{index}}.png"></image>
+                    <image class="project_star_img" src="{{item.trademark}}"></image>
                     <view class="project_box">
                       <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image>
                       <view class="project_item">
@@ -72,7 +72,7 @@
                           <view class="item_list">总认购份数：{{item.subscriptionTotalNum}}</view>
                           <view class="item_list">年化收益率%：<text style="color:red;">{{item.annualized}}</text></view>
                         </view>
-                        <view class="buyBtn">认购</view>
+                        <view class="buyBtn {{power == 1 ? 'blueBtn' : ''}}" disabled="{{power == 1 ? false : true}}">认购</view>
                       </view>
                     </view>
 
@@ -108,9 +108,9 @@
             <view class="page-section page-section-spacing swiper">
               <swiper indicator-dots="{{indicatorDots2}}"
                 autoplay="{{autoplay2}}" interval="{{interval2}}" duration="{{duration2}}" circular="{{circular2}}">
-                <block wx:for="{{projectData}}" wx:for-item="item" wx:key="*this">
+                <block wx:for="{{projectData2}}" wx:for-item="item" wx:key="*this">
                   <swiper-item class="swiper_img">
-                    <image class="project_star_img" src="{{imgUrl}}/index/star/star{{index}}.png"></image>
+                    <image class="project_star_img" src="{{item.trademark}}"></image>
                     <view class="project_box">
                       <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image>
                       <view class="project_item">
