@@ -12,8 +12,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
+      var id = ''
+      this.setData({
+        id: options.id
+      })
+      var _this = this
+    wx.request({
+      url: 'http://192.168.1.4:8080/photovoltaic/wxRecruitOrder/getStationDetail',
+      method: 'GET', 
+      header: {
+        'content-type': 'application/json',
+        'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODcwMTY1MTA0MyIsImF1dGgiOiJST0xFX1VTRVIiLCJpZCI6MTI2NTgyNTA4NDkwMTQzMzM0NiwidGVsIjoiMTg3MDE2NTEwNDMiLCJleHAiOjE1OTA2NDY3NDZ9.MMx4cNKzZLtn14GYcZ-tTpkA2rmsGDu8zyESSJ0Rk4IzwkCF3K4R02Ev2wVeEHupBCuju8b76lKivuE8uMX_Fw',
+        'openId': '1'
+      },
+      data: {
+        stationId: id
+      },
+      success (res) {
+        console.log(res) 
+        _this.setData({
+          stationList: res.data.data.records,
+        })
+      }
+    })
+ },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

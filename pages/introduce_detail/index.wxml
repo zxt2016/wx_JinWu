@@ -1,4 +1,4 @@
-<view class="main">
+<view class="main" wx:if="{{num == 1}}">
     <image class="content_image" src="../image/introduce_detail/1.jpg"></image>
     <view class="introduce_detail">
       <text class="content_title">关于光伏发电？</text>
@@ -7,7 +7,7 @@
     </view>
 </view>
 
-<view class="main" style="display:none">
+<view class="main" wx:if="{{num == 2}}">
     <image class="content_image" src="../image/introduce/introduce2.png"></image>
     <view class="introduce_detail">
       <text class="content_title">关于国家对光伏产业的支持政策</text>
@@ -16,7 +16,7 @@
     </view>
 </view>
 
-<view class="main" style="display:none">
+<view class="main" wx:if="{{num == 3}}">
     <image class="content_image" src="../image/introduce/introduce7.png"></image>
     <view class="introduce_detail">
       <text class="content_title">关于光伏行业</text>
@@ -49,7 +49,7 @@
       </view> 
     </view>
 </view>
-<view class="main" style="display:none">
+<view class="main" wx:if="{{num == 4}}">
     <image class="content_image" src="../image/introduce/introduce4.png"></image>
     <view class="introduce_detail">
       <text class="content_title">关于金乌光联---光伏合伙人模式</text>
@@ -68,7 +68,7 @@
 </text> 
     </view>
 </view>
-<view class="main" style="display:none">
+<view class="main" wx:if="{{num == 5}}">
     <image class="content_image" src="../image/introduce/introduce5.png"></image>
     <view class="introduce_detail">
       <text class="content_title">关于金乌光联光伏合伙人加入</text>
@@ -77,7 +77,7 @@
     </view>
 </view>
 
-<view class="main" style="display:none">
+<view class="main" wx:if="{{num == 6}}">
     <image class="content_image" src="../image/introduce/introduce3.png"></image>
     <view class="introduce_detail">
       <text class="content_title">关于金乌光联光伏合伙人收益率</text>

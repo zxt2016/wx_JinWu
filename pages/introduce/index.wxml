@@ -1,58 +1,58 @@
-<view class="introduce" bindtap='introduce_detail'  id="detail1">
+<view class="introduce">
     <image src="../image/introduce/introduce1.png"></image>
-    <view>
+    <navigator url="../introduce_detail/index?str=1">
       <text>关于光伏发电?</text>
       <view class="icon_img">
         <image src="../image/introduce/icon.png"></image>
       </view>
-     </view> 
+     </navigator>
 </view>
 
 <view class="introduce">
     <image src="../image/introduce/introduce2.png"></image>
-    <view>
+    <navigator url="../introduce_detail/index?str=2">
       <text>关于国家对光伏产业的支持政策</text>
       <view class="icon_img">
         <image src="../image/introduce/icon.png"></image>
       </view>
-     </view> 
+     </navigator>
 </view>
 
 <view class="introduce">
     <image src="../image/introduce/introduce7.png"></image>
-    <view>
+    <navigator url="../introduce_detail/index?str=3">
       <text>关于光伏行业</text>
       <view class="icon_img">
         <image src="../image/introduce/icon.png"></image>
       </view>
-     </view> 
+     </navigator>
 </view>
 <view class="introduce">
     <image src="../image/introduce/introduce4.png"></image>
-    <view>
+    <navigator url="../introduce_detail/index?str=4">
       <text>关于金乌光联---光伏合伙人模式</text>
       <view class="icon_img">
         <image src="../image/introduce/icon.png"></image>
       </view>
-     </view> 
+     </navigator>
 </view>
 <view class="introduce">
     <image src="../image/introduce/introduce5.png"></image>
-    <view>
+    <navigator url="../introduce_detail/index?str=5">
       <text>关于金乌光联光伏合伙人加入</text>
       <view class="icon_img">
         <image src="../image/introduce/icon.png"></image>
       </view>
-     </view> 
+     </navigator>
 </view>
 <view class="introduce">
     <image src="../image/introduce/introduce3.png"></image>
-    <view>
+    <navigator url="../introduce_detail/index?str=6">
       <text>关于金乌光联光伏合伙人收益率</text>
       <view class="icon_img">
         <image src="../image/introduce/icon.png"></image>
       </view>
-     </view> 
+     </navigator>
 </view>
 
 <view class="logo_img">

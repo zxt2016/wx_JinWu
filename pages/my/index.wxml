@@ -7,18 +7,18 @@
         <image class='float_lf' src='{{userInfo.avatarUrl}}'></image>
         <view class='name_num float_lf'>
           <text class='txt-num1'>{{userInfo.nickName}}</text>
-          <text class="float_lf" bindtap="partnership">所属合伙企业1个详情</text>
+          <text class="float_lf" bindtap="partnership">所属合伙企业{{dataInfo.count}}个详情</text>
         </view>
       </view>
     </view>
   </view>
   <view class="allnum clearfix">
     <view class="float_lf num_info">
-      <view class="num">2300万元</view>
+      <view class="num">{{dataInfo.totalCost}}万元</view>
       <view class="num_text">投资总额</view>
     </view>
     <view class="float_lf num_info">
-      <view class="num">6926.37万元</view>
+      <view class="num">{{dataInfo.totalIncome}}万元</view>
       <view class="num_text">累计收益</view>
     </view>
   </view>

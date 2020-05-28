@@ -104,3 +104,14 @@ page{
     line-height: 60rpx;
     display: inline-block;
   }
+  .weui-input{
+    margin-top: 20rpx;
+    width: 560rpx;
+    float: left;
+  }
+  .search{
+    width: 40rpx;
+    height: 40rpx;
+    float: right;
+    margin-top: 20rpx;
+  }

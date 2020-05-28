@@ -6,6 +6,7 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
+    dataInfo: '',
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
   //事件处理函数
@@ -44,6 +45,7 @@ Page({
         }
       })
     }
+    this.myData()
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -78,7 +80,7 @@ Page({
   },
   project: function(e) {
     wx.navigateTo({
-      url: '../project/index',
+      url: '../project/index?str=my',
     })
   },
 
@@ -91,5 +93,23 @@ Page({
     wx.navigateTo({
       url: '../about_us/index',
     })
-  }
+  },
+  myData: function(e) {
+    var _this = this
+    wx.request({
+      url: 'http://192.168.1.4:8080/photovoltaic/wxUser/userCompanyInfo',
+      method: 'GET', 
+      header: {
+        'content-type': 'application/json',
+        'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODcwMTY1MTA0MyIsImF1dGgiOiJST0xFX1VTRVIiLCJpZCI6MTI2NTgyNTA4NDkwMTQzMzM0NiwidGVsIjoiMTg3MDE2NTEwNDMiLCJleHAiOjE1OTA2NTk0MjR9.pyaiZmt9J1Lb_XROxAtj35REEM5FwrP_B1-9uH3tnFfzkHR_jtjx1BlObi-TdXpazPzZ-IdAiWmK-S8k-SDqLQ',
+        'openId': '1'
+      },
+      success (res) {
+        console.log(res) 
+        _this.setData({
+          dataInfo: res.data.data
+        })
+      }
+    })
+  },
 })

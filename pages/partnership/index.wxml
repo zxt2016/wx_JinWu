@@ -5,38 +5,18 @@
         <text>金乌科技</text>
  </view>
 <view class="button">
-        <text>投资合伙企业共6家</text>
+        <text>投资合伙企业共{{dataInfo.count}}家</text>
  </view>
  <view class="inviteList">
-        <view class='itemList clearfix' bindtap="partnership_detail">
+        <view class='itemList clearfix' wx:for="{{dataInfo.wxCompanyList}}">
           <view class='user_num float_lf'>
-            <text class='float_lf'>金</text>
+            <image src="{{item.trademark}}"></image>
           </view> 
           <view class='invite_detail float_lf'>
-                <view class="invite_name">金无生产</view>
-                <view class="invite_time">金乌科技具备自主研发光伏组件的能力……</view>
+                <view class="invite_name">{{item.name}}</view>
+                <view class="invite_time">地址：{{item.address}}</view>
+                <view class="invite_time">所占股份：{{item.shareRatio}}</view>
           </view>
-          <image class='user_img float_rg' src='../image/partnership/right_icon.png'></image>
-        </view>
-        <view class='itemList clearfix'>
-          <view class='user_num float_lf'>
-            <text class='float_lf'>金</text>
-          </view> 
-          <view class='invite_detail float_lf'>
-                <view class="invite_name">金乌科技</view>
-                <view class="invite_time">金乌科技具备自主研发光伏组件的能力……</view>
-          </view>
-          <image class='user_img float_rg' src='../image/partnership/right_icon.png'></image>
-        </view>
-        <view class='itemList clearfix'>
-          <view class='user_num float_lf'>
-            <text class='float_lf'>金</text>
-          </view> 
-          <view class='invite_detail float_lf'>
-                <view class="invite_name">金乌科技</view>
-                <view class="invite_time">金乌科技具备自主研发光伏组件的能力……</view>
-          </view>
-          <image class='user_img float_rg' src='../image/partnership/right_icon.png'></image>
         </view>
 </view>
 <view class="logo_img">

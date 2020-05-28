@@ -51,8 +51,8 @@ App({
   globalData: {
     token:'',
     userInfo: null,
-    baseUrl:'http://192.168.1.5:8080/photovoltaic',
-    // baseUrl: 'http://192.168.1.4:8080/photovoltaic',
+    //baseUrl:'http://192.168.1.5:8080/photovoltaic',
+      baseUrl: 'http://192.168.1.4:8080/photovoltaic',
     imgUrl:'https://www.jwpower.cn/image'
   }
 })
