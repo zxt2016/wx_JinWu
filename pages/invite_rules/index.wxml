@@ -5,5 +5,5 @@
   <text class="item">3.本活动长期有效，最终解释权归金乌科技有限公司所有 </text>
 </view>
 <view class="logo_img">
-      <image src="../image/guarantee/logo.png"></image>
+      <image src="{{imgUrl}}/guarantee/logo.png"></image>
     </view>

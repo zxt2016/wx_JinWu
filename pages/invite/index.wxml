@@ -1,5 +1,5 @@
 <view class='mineBg'>
-    <image src="../image/invite/invite.png" mode="aspectFill"></image>
+    <image src="{{imgUrl}}/invite/invite.png" mode="aspectFill"></image>
 </view>
 <view class="guize" bindtap='invite_rules'>邀请规则 ></view>
 <view class="allnum clearfix">
@@ -23,7 +23,7 @@
           <view class='user_num float_lf'>
             <text class='float_lf'>1</text>
           </view> 
-          <image class='user_img float_lf' src='../image/invite/user.png'></image>
+          <image class='user_img float_lf' src='{{imgUrl}}/invite/user.png'></image>
           <view class='invite_detail float_lf'>
                 <view class="invite_name">金乌科技</view>
                 <view class="invite_time">邀请时间：2020-5-21</view>
@@ -33,7 +33,7 @@
           <view class='user_num float_lf'>
             <text class='float_lf'>2</text>
           </view> 
-          <image class='user_img float_lf' src='../image/invite/user.png'></image>
+          <image class='user_img float_lf' src='{{imgUrl}}/invite/user.png'></image>
           <view class='invite_detail float_lf'>
                 <view class="invite_name">金乌科技</view>
                 <view class="invite_time">邀请时间：2020-5-21</view>
@@ -43,7 +43,7 @@
           <view class='user_num float_lf'>
             <text class='float_lf'>3</text>
           </view> 
-          <image class='user_img float_lf' src='../image/invite/user.png'></image>
+          <image class='user_img float_lf' src='{{imgUrl}}/invite/user.png'></image>
           <view class='invite_detail float_lf'>
                 <view class="invite_name">金乌科技</view>
                 <view class="invite_time">邀请时间：2020-5-21</view>
@@ -51,6 +51,6 @@
         </view>
 </view>
 <view class="logo_img">
-      <image src="../image/guarantee/logo.png"></image>
+      <image src="{{imgUrl}}/guarantee/logo.png"></image>
     </view>
 

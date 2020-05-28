@@ -1,7 +1,7 @@
 <view class='page_box'>
   <!-- 用户信息 -->
   <view class='section clearfix' style='margin-top:20rpx;'>
-  <image class='mineBg' src='../image/my/my_bg.png'></image>
+  <image class='mineBg' src='{{imgUrl}}/my/my_bg.png'></image>
     <view class='userBox'>
       <view class='userInfo clearfix float_lf' hidden='{{logined}}'>
         <image class='float_lf' src='{{userInfo.avatarUrl}}'></image>
@@ -24,50 +24,50 @@
   </view>
   <view class="menu">
   <view class='itemList clearfix' bindtap='project'>
-    <image class='icon_img float_lf' src='../image/my/station.png'></image>
+    <image class='icon_img float_lf' src='{{imgUrl}}/my/station.png'></image>
     <text class='float_lf'>我的电站</text>
-    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+    <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
   </view>
   <view class='itemList clearfix' bindtap='order'>
-    <image class='icon_img float_lf' src='../image/my/order.png'></image>
+    <image class='icon_img float_lf' src='{{imgUrl}}/my/order.png'></image>
     <text class='float_lf'>我的订单</text>
-    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+    <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
   </view>
-  <view class='itemList clearfix' bindtap='mySheQun'>
-    <image class='icon_img float_lf' style='width:40rpx;height:38rpx;' src='../image/my/energy.png'></image>
+  <view class='itemList clearfix' bindtap='myEnergy'>
+    <image class='icon_img float_lf' style='width:40rpx;height:38rpx;' src='{{imgUrl}}/my/energy.png'></image>
     <text class='float_lf'>我的能量</text>
-    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+    <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
   </view>
   <view class='itemList clearfix' bindtap='mySheQun'>
-    <image class='icon_img float_lf' style='width:40rpx;height:38rpx;' src='../image/my/gongyi.png'></image>
+    <image class='icon_img float_lf' style='width:40rpx;height:38rpx;' src='{{imgUrl}}/my/gongyi.png'></image>
     <text class='float_lf'>能量公益</text>
-    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+    <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
   </view>
   <view class='itemList clearfix' bindtap='invite_btn'>
-    <image class='icon_img float_lf' src='../image/my/yaoqing.png'></image>
+    <image class='icon_img float_lf' src='{{imgUrl}}/my/yaoqing.png'></image>
     <text class='float_lf'>邀请好友</text>
-    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+    <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
   </view>
   <view class='itemList clearfix' bindtap='share_btn'>
-    <image class='icon_img float_lf' src='../image/my/fenxiang.png'></image>
+    <image class='icon_img float_lf' src='{{imgUrl}}/my/fenxiang.png'></image>
     <text class='float_lf'>分享有赏</text>
-    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+    <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
   </view>
   <view class='itemList clearfix' bindtap='personal_data'>
-    <image class='icon_img float_lf' src='../image/my/ziliao.png'></image>
+    <image class='icon_img float_lf' src='{{imgUrl}}/my/ziliao.png'></image>
     <text class='float_lf'>个人资料</text>
-    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+    <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
   </view>
   <view class='itemList clearfix' bindtap='contact_us'>
-    <image class='icon_img float_lf' src='../image/my/guanyu.png'></image>
+    <image class='icon_img float_lf' src='{{imgUrl}}/my/guanyu.png'></image>
     <text class='float_lf'>关于我们</text>
-    <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+    <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
   </view>
   </view>
   <view class="tuichu">
     <text>退出登录</text>
   </view>
   <view class="logo_img">
-      <image src="../image/guarantee/logo.png"></image>
+      <image src="{{imgUrl}}/guarantee/logo.png"></image>
     </view>
 </view>

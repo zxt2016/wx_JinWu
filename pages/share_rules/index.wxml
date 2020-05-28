@@ -8,5 +8,5 @@
   <text class="item">分享好友成功注册并且成功购买招募单，奖励平台另行折算</text>
 </view>
 <view class="logo_img">
-      <image src="../image/guarantee/logo.png"></image>
+      <image src="{{imgUrl}}/guarantee/logo.png"></image>
     </view>

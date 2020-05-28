@@ -1,4 +1,5 @@
 // pages/purchase/index.js
+const app = getApp();
 Page({
 
   /**
@@ -6,7 +7,8 @@ Page({
    */
   data: {
     num:1,
-    minusStatus:'disable'
+    minusStatus:'disable',
+    imgUrl:app.globalData.imgUrl,
     },
     //事件处理函数
     /*点击减号*/

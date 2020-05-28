@@ -1,5 +1,5 @@
 <view class="main" wx:if="{{num == 1}}">
-    <image class="content_image" src="../image/introduce_detail/1.jpg"></image>
+    <image class="content_image" src="{{imgUrl}}/introduce_detail/1.jpg"></image>
     <view class="introduce_detail">
       <text class="content_title">关于光伏发电？</text>
       <view class="line"></view>
@@ -8,7 +8,7 @@
 </view>
 
 <view class="main" wx:if="{{num == 2}}">
-    <image class="content_image" src="../image/introduce/introduce2.png"></image>
+    <image class="content_image" src="{{imgUrl}}/introduce/introduce2.png"></image>
     <view class="introduce_detail">
       <text class="content_title">关于国家对光伏产业的支持政策</text>
       <view class="line"></view>
@@ -17,7 +17,7 @@
 </view>
 
 <view class="main" wx:if="{{num == 3}}">
-    <image class="content_image" src="../image/introduce/introduce7.png"></image>
+    <image class="content_image" src="{{imgUrl}}/introduce/introduce7.png"></image>
     <view class="introduce_detail">
       <text class="content_title">关于光伏行业</text>
       <view class="line"></view>
@@ -50,7 +50,7 @@
     </view>
 </view>
 <view class="main" wx:if="{{num == 4}}">
-    <image class="content_image" src="../image/introduce/introduce4.png"></image>
+    <image class="content_image" src="{{imgUrl}}/introduce/introduce4.png"></image>
     <view class="introduce_detail">
       <text class="content_title">关于金乌光联---光伏合伙人模式</text>
       <view class="line"></view>
@@ -69,7 +69,7 @@
     </view>
 </view>
 <view class="main" wx:if="{{num == 5}}">
-    <image class="content_image" src="../image/introduce/introduce5.png"></image>
+    <image class="content_image" src="{{imgUrl}}/introduce/introduce5.png"></image>
     <view class="introduce_detail">
       <text class="content_title">关于金乌光联光伏合伙人加入</text>
       <view class="line"></view>
@@ -78,7 +78,7 @@
 </view>
 
 <view class="main" wx:if="{{num == 6}}">
-    <image class="content_image" src="../image/introduce/introduce3.png"></image>
+    <image class="content_image" src="{{imgUrl}}/introduce/introduce3.png"></image>
     <view class="introduce_detail">
       <text class="content_title">关于金乌光联光伏合伙人收益率</text>
       <view class="line"></view>
@@ -87,5 +87,5 @@
 </view>
 
     <view class="logo_img">
-      <image src="../image/guarantee/logo.png"></image>
+      <image src="{{imgUrl}}/guarantee/logo.png"></image>
     </view>

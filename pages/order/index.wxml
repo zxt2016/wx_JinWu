@@ -24,7 +24,9 @@
     <view class="handel_item float_lf">
       <view class="shares item float_lf">预付金额：<text style="color:#ff0000; font-size: 36rpx;">{{item.depositAmont}}</text>万</view>
       <view style="float:right">
-        <view class="detail_btn item" bindtap="order_detail">详情</view>
+        
+        <view class="detail_btn item"><navigator url="../order_detail/index?str={{item.recruitId}}">详情</navigator></view>
+        
         <view class="pay_btn item">支付</view>
       </view> 
     </view>  

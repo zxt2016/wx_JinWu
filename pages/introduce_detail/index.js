@@ -1,6 +1,8 @@
+const app = getApp();
 Page({
   data: {
-    num: ''
+    num: '',
+    imgUrl:app.globalData.imgUrl,
   },
   onLoad: function(options) {
     this.setData({

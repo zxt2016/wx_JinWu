@@ -1,11 +1,13 @@
 
     // pages/order/order.js
+    const app = getApp();
     Page({
      
       /**
       * 页面的初始数据
       */
       data: {
+      imgUrl:app.globalData.imgUrl,
       order_list: {},  
       currtab: 0,
       swipertab: [{ name: '待支付', index: 0 }, { name: '定金支付完成', index: 1 }, { name: '已完成', index: 2 }, { name: '取消', index: 3 }],
@@ -79,11 +81,11 @@
         console.log(num)
         var _this = this
         wx.request({
-          url: 'http://192.168.1.4:8080/photovoltaic/wxOrder/getList',
+          url: app.globalData.baseUrl+'/wxOrder/getList',
           method: 'GET', 
           header: {
             'content-type': 'application/json',
-            'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODcwMTY1MTA0MyIsImF1dGgiOiJST0xFX1VTRVIiLCJpZCI6MTI2NTgyNTA4NDkwMTQzMzM0NiwidGVsIjoiMTg3MDE2NTEwNDMiLCJleHAiOjE1OTA2MzUyMDB9.VI7OBu_YT7T33-psme_910x4XWErghnKyjkULCyK7lQC00-vTifq6jrdrP-BiMFjXVE6ooRCCVC0BlLMJ9panQ',
+            'authorization': app.globalData.token,
             'openId': '1'
           },
           data: {
@@ -120,11 +122,11 @@
       cancle_order: function(order_id) {
         var _this = this
         wx.request({
-          url: 'http://192.168.1.4:8080/photovoltaic/wxOrder/cancelOrder',
+          url: app.globalData.baseUrl+'/wxOrder/cancelOrder',
           method: 'GET', 
           header: {
             'content-type': 'application/json',
-            'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODcwMTY1MTA0MyIsImF1dGgiOiJST0xFX1VTRVIiLCJpZCI6MTI2NTgyNTA4NDkwMTQzMzM0NiwidGVsIjoiMTg3MDE2NTEwNDMiLCJleHAiOjE1OTA2MzUyMDB9.VI7OBu_YT7T33-psme_910x4XWErghnKyjkULCyK7lQC00-vTifq6jrdrP-BiMFjXVE6ooRCCVC0BlLMJ9panQ',
+            'authorization': app.globalData.token,
             'openId': '1'
           },
           data: {

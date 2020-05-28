@@ -1,6 +1,6 @@
 <view>
     <view class="itemTitle">
-     <image src="../image/personalData/my_bg.png"></image>
+     <image src="{{imgUrl}}/personalData/my_bg.png"></image>
     </view>
     <view class="userinfo">
         <view class='itemList clearfix'>
@@ -39,5 +39,5 @@
     <text>保存</text>
 </view> 
 <view class="logo_img">
-      <image src="../image/guarantee/logo.png"></image>
+      <image src="{{imgUrl}}/guarantee/logo.png"></image>
     </view>

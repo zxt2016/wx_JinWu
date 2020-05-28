@@ -1,5 +1,5 @@
 <view class="content">
-    <image src="../image/success.png"></image>
+    <image src="{{imgUrl}}/success.png"></image>
     <view class="success_text">支付成功</view>
     <view class="backBtn">
         <text>返回首页</text>
@@ -9,5 +9,5 @@
     </view>
 </view>
 <view class="logo_img">
-      <image src="../image/guarantee/logo.png"></image>
+      <image src="{{imgUrl}}/guarantee/logo.png"></image>
     </view>
