@@ -17,16 +17,16 @@
     <view class='tabMain'>
       <view class="tabItem {{stationType == 1?'active':''}}" data-num='1' bindtap="stationTab">
         <view class="item_view">
-          <image class='left_icon' src="../image/index/index_icon1_{{stationType == 1?'blue':'grey'}}.png"></image>
+          <image class='left_icon ' src="{{imgUrl}}/index/index_icon1_{{stationType == 1?'blue':'grey'}}.png"></image>
           <text>全部电站</text>
-          <image class='right_icon' src="../image/index/right_icon_{{stationType == 1?'blue':'grey'}}.png"></image>
+          <image class='right_icon' src="{{imgUrl}}/index/right_icon_{{stationType == 1?'blue':'grey'}}.png"></image>
         </view>
       </view>  
       <view class="tabItem" data-num='2' bindtap="stationTab">
         <view class="item_view">
-          <image class='left_icon' src="../image/index/index_icon2_{{stationType == 2?'blue':'grey'}}.png"></image>
+          <image class='left_icon' src="{{imgUrl}}/index/index_icon2_{{stationType == 2?'blue':'grey'}}.png"></image>
           <text>我的电站</text>
-          <image class='right_icon' src="../image/index/right_icon_{{stationType == 2?'blue':'grey'}}.png"></image>
+          <image class='right_icon' src="{{imgUrl}}/index/right_icon_{{stationType == 2?'blue':'grey'}}.png"></image>
         </view>
       </view>     
     </view>
@@ -35,30 +35,114 @@
       <!-- 招募项目 星系特效-->
       <view class="sMain_item {{stationType == 1 ? 'tabShow':''}}">
         <view class="xk_box">
-          <image class='xingKong' src="../image/index/xingkong.png"></image>
+          <image class='xingKong' src="{{imgUrl}}/index/star/star_bg.png"></image>
         </view>
-        <image class='star_line' src="../image/index/star_line.png"></image>
+        <image class='star_line' src="{{imgUrl}}/index/star_line.png"></image>
         <view class="star_animted">
           <!-- 太阳 -->
-          <image class="sun" src="../image/index/sun.png"></image>
-
+          <image class="sun" src="{{imgUrl}}/index/sun.png"></image>
           <!-- 星球 -->
           <view class="star_img">
             <image 
             wx:for="{{starData}}" 
             wx:for-item = 'item'
-            class="star star{{item.num}}" 
-            style="width:{{item.width}}px;height:{{item.height}}px;transform:translateX({{item.translateX}}px) translateY(0) translateZ({{item.translateZ}}px);"
-            src="../image/index/star{{index}}.png"></image>
+            class="star star{{item.num+1}}" 
+            src="{{imgUrl}}/index/star/star{{index}}.png"></image>
           </view>
 
+          <!-- 轮播 -->
+          <view class="star_swiper">
+            <view class="page-section page-section-spacing swiper">
+              <swiper indicator-dots="{{indicatorDots2}}"
+                autoplay="{{autoplay2}}" interval="{{interval2}}" duration="{{duration2}}" circular="{{circular2}}">
+                <block wx:for="{{projectData}}" wx:for-item="item" wx:key="*this">
+                  <swiper-item class="swiper_img">
+                    <image class="project_star_img" src="{{imgUrl}}/index/star/star{{index}}.png"></image>
+                    <view class="project_box">
+                      <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image>
+                      <view class="project_item">
+                        <view class="item_name">
+                          <text>{{item.projectName}}</text>
+                          <text class="look_details" data-id="{{item.projectId}}" bindtap="lookDetails">详情 ></text>
+                        </view>
+                        <view class="item_data">
+                          <view class="item_list txt-num1">地区：{{item.projectAddress}}</view>
+                          <view class="item_list">总装机容量：{{item.capacity}}</view>
+                          <view class="item_list">剩余认购份数：{{item.remainingNum}}</view>
+                          <view class="item_list">总认购份数：{{item.subscriptionTotalNum}}</view>
+                          <view class="item_list">年化收益率%：<text style="color:red;">{{item.annualized}}</text></view>
+                        </view>
+                        <view class="buyBtn">认购</view>
+                      </view>
+                    </view>
 
 
-
+                    <!-- <image src="{{item}}" style="width:100%"></image> -->
+                  </swiper-item>
+                </block>
+              </swiper>
+            </view>
+          </view>
         </view>
       </view>
       <!-- 我的电站 -->
-      <view class="sMain_item {{stationType == 2 ? 'tabShow':''}}">222</view>
+      <view class="sMain_item {{stationType == 2 ? 'tabShow':''}}">
+        <view class="xk_box">
+          <image class='xingKong' src="{{imgUrl}}/index/star/star_bg.png"></image>
+        </view>
+        <image class='star_line' src="{{imgUrl}}/index/star_line.png"></image>
+        <view class="star_animted">
+          <!-- 太阳 -->
+          <image class="sun" src="{{imgUrl}}/index/sun.png"></image>
+          <!-- 星球 -->
+          <view class="star_img">
+            <image 
+            wx:for="{{starData}}" 
+            wx:for-item = 'item'
+            class="star star{{item.num+1}}" 
+            src="{{imgUrl}}/index/star/star{{index}}.png"></image>
+          </view>
+
+          <!-- 轮播 -->
+          <view class="star_swiper">
+            <view class="page-section page-section-spacing swiper">
+              <swiper indicator-dots="{{indicatorDots2}}"
+                autoplay="{{autoplay2}}" interval="{{interval2}}" duration="{{duration2}}" circular="{{circular2}}">
+                <block wx:for="{{projectData}}" wx:for-item="item" wx:key="*this">
+                  <swiper-item class="swiper_img">
+                    <image class="project_star_img" src="{{imgUrl}}/index/star/star{{index}}.png"></image>
+                    <view class="project_box">
+                      <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image>
+                      <view class="project_item">
+                        <view class="item_name">
+                          <text>{{item.projectName}}</text>
+                          <text class="look_details" data-id="{{item.projectId}}" bindtap="lookDetails">详情 ></text>
+                        </view>
+                        <view class="item_data">
+                          <view class="item_list txt-num1">地区：{{item.projectAddress}}</view>
+                          <view class="item_list">总装机容量：{{item.capacity}}</view>
+                          <view class="item_list">剩余认购份数：{{item.remainingNum}}</view>
+                          <view class="item_list">总认购份数：{{item.subscriptionTotalNum}}</view>
+                          <view class="item_list">年化收益率%：<text style="color:red;">{{item.annualized}}</text></view>
+                        </view>
+                        <!-- <view class="buyBtn">认购</view> -->
+                      </view>
+                    </view>
+
+
+                    <!-- <image src="{{item}}" style="width:100%"></image> -->
+                  </swiper-item>
+                </block>
+              </swiper>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 背景图标 -->
+      <view class="station_bg_icon">
+        <image src="{{imgUrl}}/index/station_bg.png"></image>
+      </view>
     </view>
   </view>
   <!-- 收益模拟计算器 -->

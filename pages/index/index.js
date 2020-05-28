@@ -5,6 +5,7 @@ Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
+    imgUrl:app.globalData.imgUrl,
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     //轮播图效果
@@ -16,9 +17,12 @@ Page({
     duration: 500,
     circular: true,
     //星系轮播
-    autoplay2: false,
-    circular2: true,
     indicatorDots2: false,
+    vertical2: false,
+    autoplay2: false,
+    interval2: 2000,
+    duration2: 500,
+    circular2: true,
 
     //电站tab切换标识
     stationType:1,
@@ -54,20 +58,25 @@ Page({
         translateX:'',
         translateY:''
       },
-      {
-        num:4,
-        width:'70',
-        height:'70',
-        translateX:'',
-        translateY:''
-      },
+      // {
+      //   num:4,
+      //   width:'70',
+      //   height:'70',
+      //   translateX:'',
+      //   translateY:''
+      // },
     ],
     //平均角度
     deg:'',
     translateX:'',
     translateY:'',
     width:'',
-    height:''
+    height:'',
+    // 招募单列表（项目）
+    projectData:[],
+    
+
+
   },
   //事件处理函数
   bindViewTap: function() { 
@@ -105,6 +114,26 @@ Page({
     }
     this.getBannerList();
 
+    // 获取招募单列表
+    wx.request({
+      url: app.globalData.baseUrl+'/wxRecruitOrder/list',
+      method: 'GET', 
+      header: {
+        'content-type': 'application/json'
+      },
+      data:{
+        current:1,
+        size:10
+      },
+      success(res){
+        if(res.statusCode == 200){
+          _this.setData({
+              projectData:res.data.data.records,
+          });
+        }
+        console.log(res);
+      },
+    })
 
   },
   onShow(){
@@ -113,49 +142,46 @@ Page({
     
 
 
-    const query = wx.createSelectorQuery()
-    var data = _this.data.starData;
-    var deg = 360/data.length;
-    for(var i=0;i<data.length;i++){
-      query.select('.star'+i).boundingClientRect()
-    }
-      query.exec(function(res){
-        console.log(res);
-        for(var n=0;n<res.length;n++){
-//           X坐标=a + Math.sin(角度 * (Math.PI / 180)) * r ；
-// Y坐标=b + Math.cos(角度 * (Math.PI / 180)) * r ； 
-          var x_position = -20 + Math.sin(deg*n* (Math.PI / 180))*130;
-          var z_position = 0 + Math.cos(deg*n* (Math.PI / 180))*130;
-          console.log(x_position,z_position)
-          data[n].translateX = x_position;
-          data[n].translateZ = z_position;
+//     const query = wx.createSelectorQuery()
+//     var data = _this.data.starData;
+//     var deg = 360/data.length;
+//     for(var i=0;i<data.length;i++){
+//       query.select('.star'+i).boundingClientRect()
+//     }
+//       query.exec(function(res){
+//         console.log(res);
+//         for(var n=0;n<res.length;n++){
+// //           X坐标=a + Math.sin(角度 * (Math.PI / 180)) * r ；
+// // Y坐标=b + Math.cos(角度 * (Math.PI / 180)) * r ； 
+//           var x_position = -20 + Math.sin(deg*n* (Math.PI / 180))*130;
+//           var z_position = 0 + Math.cos(deg*n* (Math.PI / 180))*130;
+//           console.log(x_position,z_position)
+//           data[n].translateX = x_position;
+//           data[n].translateZ = z_position;
           
           
-        }
-        _this.setData({
-            starData:data
-        });
-        var json ={
-          r:140,
-          x0:-10,
-          y0:-40,
+//         }
+//         _this.setData({
+//             starData:data
+//         });
+//         var json ={
+//           r:140,
+//           x0:-10,
+//           y0:-40,
 
-          width:res[0].width,
-          height:res[0].height,
-          a:360/_this.data.starData.length,
-          num:0,
-          max:10
-      }
-      _this.threeCircleMove(json);
-      // _this.threeCircleMove(json1);
-      })
+//           width:res[0].width,
+//           height:res[0].height,
+//           a:360/_this.data.starData.length,
+//           num:0,
+//           max:10
+//       }
+//       // _this.threeCircleMove(json);
+//       })
       //每个点角度为72 
       // X坐标=a + Math.sin(角度 * (Math.PI / 180)) * r
       // Y坐标=b + Math.cos(角度 * (Math.PI / 180)) * r
       
     
-        
-
 
   },
   threeCircleMove(json){
@@ -296,4 +322,17 @@ starRotate:function(){
   }
   _this.setData({starData});
 },
+//项目查看详情
+lookDetails:function(e){
+  var projectId = e.currentTarget.dataset.id;
+  console.log(projectId);
+  wx.navigateTo({
+    url: '../station/index?id='+projectId,
+  })
+},
+//
+
+
+
+
 })
