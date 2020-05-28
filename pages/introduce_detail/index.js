@@ -1,23 +1,10 @@
-// pages/introduce/index.js
-Component({
-  /**
-   * 组件的属性列表
-   */
-  properties: {
-
-  },
-
-  /**
-   * 组件的初始数据
-   */
+Page({
   data: {
-
+    num: ''
   },
-  onLoad: function(options){ 
-    this.setData({  
-      str: options.str  
-    })  
-    console.log(str)
-   } 
+  onLoad: function(options) {
+    this.setData({
+      num: options.str
+    })
+  }
 })
-

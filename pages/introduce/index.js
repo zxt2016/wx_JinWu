@@ -17,12 +17,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    introduce_detail: function(e) {
-      var id = e.currentTarget.id;
-      wx.navigateTo({
-        url: '../introduce_detail/index?str='+id,
-      })
-    }
+    
   }
 })
 

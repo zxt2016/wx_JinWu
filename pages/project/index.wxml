@@ -1,49 +1,34 @@
 <view class='mineBg'>
     <image src="../image/partnership/top_img.png" mode="aspectFill"></image>
 <view class="title">
-        共<text>26</text>个项目
+        共<text>{{totalNum}}</text>个项目
  </view>
  <view class="line"></view>
- <view class="inviteList">请输入您想查找的项目</view>
+      <view class="inviteList">
+      <input class="weui-input" name="input" placeholder="请输入您想查找的项目" bindinput="searchBtn" focus='ture'/>
+      <image class="search" src="../image/sousuo.png" style="width:40rpx; height:40rpx"></image>
+      </view>    
  <view style="height:60rpx"></view>
  </view>
-<view class="content">
-    <view class="order_num" bindtap="station_detail">一号发电站<text style="margin-left:400rpx">详情</text></view>
+<view class="content" wx:for="{{projectList}}">
+<navigator url="../station/index?str={{item.id}}&name={{item.projectName}}">
+    <view class="order_num">{{item.projectName}}<text style="margin-left:400rpx">详情</text></view>
+</navigator>    
     <view>
     <view class="content_item float_lf">
-      <view class="shares item">地址：天津蓟县</view>
-      <view class="shares item">总装机容量：<text>329.34KW</text></view>
-      <view class="shares item">累计发电量：<text>886.34KW</text></view>
-      <view class="shares item">累计收益<text>3698.68万</text></view>
+      <view class="shares item">地址：{{item.projectAddress}}</view>
+      <view class="shares item">总装机容量：<text>{{item.capacity}}KW</text></view>
+      <view class="shares item">累计发电量：<text>{{item.totalPower}}KW</text></view>
+      <view class="shares item">累计收益：<text>{{item.totalEarn}}万</text></view>
     </view>
     <view class="content_item float_lf">
       <view class="shares item"></view>
-      <view class="shares item">认购份额：<text>68.5%</text></view>
-      <view class="shares item">单份认购份额：<text>38.8</text></view>
-      <view class="shares item">剩余认购份额：<text>31.5%</text></view>
+      <view class="shares item">认购份额：<text>{{item.subscriptionNum}}</text></view>
+      <view class="shares item">单份认购份额：<text>{{item.singleRatio}}</text></view>
+      <view class="shares item" hidden="{{show_btn}}">剩余认购份额：{{show_btn}}<text>31.5%</text></view>
     </view>
     </view>
-    <view class="handel_item float_rg">
-      <view class="pay_btn item">认购</view>
-    </view>  
-</view>
-<view class="content">
-    <view class="order_num" bindtap="station">一号发电站<text style="margin-left:400rpx">详情</text></view>
-    <view>
-    <view class="content_item float_lf">
-      <view class="shares item">地址：天津蓟县</view>
-      <view class="shares item">总装机容量：<text>329.34KW</text></view>
-      <view class="shares item">累计发电量：<text>886.34KW</text></view>
-      <view class="shares item">累计收益<text>3698.68万</text></view>
-    </view>
-    <view class="content_item float_lf">
-      <view class="shares item"></view>
-      <view class="shares item">认购份额：<text>68.5%</text></view>
-      <view class="shares item">单份认购份额：<text>38.8</text></view>
-      <view class="shares item">剩余认购份额：<text>31.5%</text></view>
-    </view>
-    </view>
-    <view class="handel_item float_rg">
+    <view class="handel_item float_rg" hidden="{{show_btn}}">
       <view class="pay_btn item">认购</view>
     </view>  
 </view>

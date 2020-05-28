@@ -6,15 +6,16 @@
       * 页面的初始数据
       */
       data: {
+      order_list: {},  
       currtab: 0,
-      swipertab: [{ name: '待支付', index: 0 }, { name: '支付中', index: 1 }, { name: '定金支付完成', index: 2 }, { name: '已完成', index: 3 }, { name: '取消', index: 4 }],
+      swipertab: [{ name: '待支付', index: 0 }, { name: '定金支付完成', index: 1 }, { name: '已完成', index: 2 }, { name: '取消', index: 3 }],
       },
        
       /**
       * 生命周期函数--监听页面加载
       */
       onLoad: function (options) {
-       
+           
       },
       /**
       * 生命周期函数--监听页面初次渲染完成
@@ -55,12 +56,100 @@
       this.setData({ currtab: e.detail.current })
       this.orderShow()
       },
-  //跳转详情页面
-  order_detail: function(e) {
-    wx.navigateTo({
-      url: '../order_detail/index',
-    })
-  },
+      
+    orderShow: function () {
+      var that = this
+      switch (this.data.currtab) {
+      case 0:
+      that.orderList(0)
+      break
+      case 1:
+      that.orderList(1)
+      break
+      case 2:
+      that.orderList(2)
+      break
+      case 3:
+      that.orderList(3)
+      break
+      }
+    },
+
+      orderList: function(num) { 
+        console.log(num)
+        var _this = this
+        wx.request({
+          url: 'http://192.168.1.4:8080/photovoltaic/wxOrder/getList',
+          method: 'GET', 
+          header: {
+            'content-type': 'application/json',
+            'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODcwMTY1MTA0MyIsImF1dGgiOiJST0xFX1VTRVIiLCJpZCI6MTI2NTgyNTA4NDkwMTQzMzM0NiwidGVsIjoiMTg3MDE2NTEwNDMiLCJleHAiOjE1OTA2MzUyMDB9.VI7OBu_YT7T33-psme_910x4XWErghnKyjkULCyK7lQC00-vTifq6jrdrP-BiMFjXVE6ooRCCVC0BlLMJ9panQ',
+            'openId': '1'
+          },
+          data: {
+            size: '10',
+            current: '1',
+            status: num,
+          },
+          success (res) {
+            console.log(res) 
+            _this.setData({
+              order_list: res.data.data.records
+            })
+          }
+        })
+      },
+
+      cancle_btn: function(e) {
+        var order_id = e.currentTarget.id
+        var that = this
+        wx.showModal({
+          title: '提示',
+          content: '是否取消该订单？取消后将不能恢复。',
+          success:function(res){
+                if(res.confirm){
+                  that.cancle_order(order_id);
+                  console.log('弹框后点确定')
+                }else{
+                    console.log('弹框后点取消')
+                }
+          }
+        })
+      },
+
+      cancle_order: function(order_id) {
+        var _this = this
+        wx.request({
+          url: 'http://192.168.1.4:8080/photovoltaic/wxOrder/cancelOrder',
+          method: 'GET', 
+          header: {
+            'content-type': 'application/json',
+            'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODcwMTY1MTA0MyIsImF1dGgiOiJST0xFX1VTRVIiLCJpZCI6MTI2NTgyNTA4NDkwMTQzMzM0NiwidGVsIjoiMTg3MDE2NTEwNDMiLCJleHAiOjE1OTA2MzUyMDB9.VI7OBu_YT7T33-psme_910x4XWErghnKyjkULCyK7lQC00-vTifq6jrdrP-BiMFjXVE6ooRCCVC0BlLMJ9panQ',
+            'openId': '1'
+          },
+          data: {
+            id: order_id
+          },
+          success (res) {
+            if( res.data.errcode == 1){
+              var that = this
+              wx.showToast({
+                title: res.data.errmsg,
+                icon:'loading',
+                duration:2000
+              })
+            }else{
+              var that = this
+              wx.showToast({
+                title: '取消成功',
+                icon:'success',
+                duration:2000
+              })
+            }
+          }
+        })
+      },
+
       /**
       * 生命周期函数--监听页面显示
       */
