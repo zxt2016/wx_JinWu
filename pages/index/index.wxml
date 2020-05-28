@@ -18,14 +18,14 @@
       <view class="tabItem {{stationType == 1?'active':''}}" data-num='1' bindtap="stationTab">
         <view class="item_view">
           <image class='left_icon ' src="{{imgUrl}}/index/index_icon1_{{stationType == 1?'blue':'grey'}}.png"></image>
-          <text>全部电站</text>
+          <text>全部招募单</text>
           <image class='right_icon' src="{{imgUrl}}/index/right_icon_{{stationType == 1?'blue':'grey'}}.png"></image>
         </view>
       </view>  
       <view class="tabItem {{stationType == 2?'active':''}}" data-num='2' bindtap="stationTab">
         <view class="item_view">
           <image class='left_icon' src="{{imgUrl}}/index/index_icon2_{{stationType == 2?'blue':'grey'}}.png"></image>
-          <text>我的电站</text>
+          <text>我的项目</text>
           <image class='right_icon' src="{{imgUrl}}/index/right_icon_{{stationType == 2?'blue':'grey'}}.png"></image>
         </view>
       </view>     
@@ -63,7 +63,7 @@
                       <view class="project_item">
                         <view class="item_name">
                           <text>{{item.projectName}}</text>
-                          <text class="look_details" data-id="{{item.projectId}}" bindtap="lookDetails">详情 ></text>
+                          <text class="look_details" data-id="{{item.id}}" data-name="{{item.projectName}}" bindtap="lookDetails">详情 ></text>
                         </view>
                         <view class="item_data">
                           <view class="item_list txt-num1">地区：{{item.projectAddress}}</view>
@@ -116,7 +116,7 @@
                       <view class="project_item">
                         <view class="item_name">
                           <text>{{item.projectName}}</text>
-                          <text class="look_details" data-id="{{item.projectId}}" bindtap="lookDetails">详情 ></text>
+                          <text class="look_details" data-id="{{item.id}}" data-name="{{item.projectName}}" bindtap="lookDetails">详情 ></text>
                         </view>
                         <view class="item_data">
                           <view class="item_list txt-num1">地区：{{item.projectAddress}}</view>

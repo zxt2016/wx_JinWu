@@ -70,4 +70,31 @@
   <view class="logo_img">
       <image src="{{imgUrl}}/guarantee/logo.png"></image>
     </view>
+
+
+
+<!-- 自定义弹框开始 -->
+    <view wx:if="{{showModel}}" class="model">
+      <view class="modelTitle">提示</view>
+      <view class="modelBody">金乌电联小程序申请获取微信授权（昵称、头像等)</view>
+      <view class="btns btnBox">
+        <button class='quxiao_btn' bindtap='quxiao'>拒绝</button>  
+        <button open-type="getUserInfo" class="agree" bindgetuserinfo="getUserInfo" bindtap='nones' lang="zh_CN">允许</button>
+      </view>
+    </view>
+    <view wx:if="{{showModel}}" class="mask"></view>
+    <!-- 自定义弹框结束 -->
+
+    <!-- 自定义拒绝授权弹框 -->
+    <view wx:if="{{setting}}" class="model">
+      <view class="modelTitle">警告通知</view>
+      <view class="modelBody">您点击了拒绝授权,将无法正常使用某些功能,点击确定重新获取授权。</view>
+      <view class="btns setting">
+        <button class='quxiao' bindtap='cancel'>取消</button>
+        <button class='sure_btn' open-type="openSetting" bindopensetting="callback">确定</button>
+      </view>
+    </view>
+    <view wx:if="{{setting}}" class="mask"></view>
+    <!-- 自定义拒绝授权弹框结束 -->
+
 </view>

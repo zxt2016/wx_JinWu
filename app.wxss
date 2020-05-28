@@ -28,3 +28,70 @@
   overflow: hidden;
   _zoom: 1;
   }
+
+  .mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(0,0, 0,0.7);
+  }
+  .model{
+    position: fixed;
+    top:30%;
+    left:0;
+    right:0;
+    z-index: 110;
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  .model .modelTitle{
+    color:#000;
+    font-weight: 700;
+    font-size: 30rpx;
+    padding: 20px 0;
+    /* border-bottom:1px solid #e5e5e5; */
+  }
+  .modelBody{
+    font-size: 14px;
+    padding: 0 30px 30px 30px;
+    color:#333;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .btnBox,.setting{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .btnBox button{
+    width: 50%;
+    color:#333;
+    border-radius: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+  }
+  .btnBox .quxiao{
+    background-color: #ccc;
+  }
+  .btnBox .agree{
+    color:#fff;
+    background-color: #2c7bfe;
+  }
+  .setting button{
+    width: 50%;
+    font-weight: normal
+  }
+  .quxiao{
+    color:#999 !important;
+  }
+  .sure_btn{
+    color:#fff !important;
+    background-color: #ff6400;
+  }

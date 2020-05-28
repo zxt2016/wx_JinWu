@@ -76,7 +76,7 @@ Page({
     projectData:[],
     projectData2:[],
     // 认购授权标识
-    power:1,
+    power:2,
 
 
   },
@@ -371,15 +371,28 @@ starRotate:function(){
 },
 //项目查看详情
 lookDetails:function(e){
-  var projectId = e.currentTarget.dataset.id;
-  console.log(projectId);
+  var id = e.currentTarget.dataset.id;
+  var name = e.currentTarget.dataset.name;
+  var proData = new Array();
+  // if(this.data.stationType == 1){
+  //   proData = this.data.projectData;
+  //   for(var i=0;i<proData.length;i++){
+  //     if(id == proData[i].id){
+  //       wx.setStorageSync('project_index',proData[i]);
+  //       break;
+  //     }
+  //   }
+  //   setTimeout(function(){
+  //     wx.navigateTo({
+  //       url: '../project_detail/index',
+  //     })
+  //   },300);
+  // }else{
+    
+  // }
   wx.navigateTo({
-    url: '../station/index?id='+projectId,
+    url: '../station/index?str='+id+'&name='+name,
   })
 },
-//
-
-
-
 
 })

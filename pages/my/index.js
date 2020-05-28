@@ -9,6 +9,9 @@ Page({
     dataInfo: '',
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     imgUrl:app.globalData.imgUrl,
+    //授权弹框
+    setting: false,
+    showModel: false,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -48,6 +51,40 @@ Page({
     }
     this.myData()
   },
+  onShow(){
+    var that = this;
+    //判断用户是否授权
+   wx.getSetting({
+    success: (res) => {
+      //没有授权需要弹框
+      if (!res.authSetting['scope.userInfo']) {
+        that.setData({
+          showModel: true,
+        })
+      } else {//判断用户已经授权。不需要弹框
+        that.setData({
+          showModel: false,
+        })
+        wx.getStorage({
+          key: 'userId',
+          success: function (ress) {
+            // that.setData({
+            //   userId: ress.data
+            // });
+           
+          },
+        })
+      }
+    }, fail: function () {
+      that.setData({
+        showModel: true,
+      })
+    }
+  })
+  },
+
+
+
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -55,6 +92,13 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+    setTimeout(function(){
+      wx.navigateTo({
+        url: '../login/login',
+      })
+    });
+
+
   },
 
   personal_data: function(e) {
@@ -107,7 +151,7 @@ Page({
       method: 'GET', 
       header: {
         'content-type': 'application/json',
-        'authorization': app.globalData.token,
+        'Authorization': app.globalData.token,
         'openId': '1'
       },
       success (res) {
@@ -116,6 +160,42 @@ Page({
           dataInfo: res.data.data
         })
       }
+    })
+  },
+  quxiao: function () {
+    var that = this;
+    that.setData({
+      showModel: false
+    })
+    wx.reLaunch({
+      url: '../index/index',
+    })
+  },
+  nones: function () {
+    var that = this;
+    that.setData({
+      showModel: false,
+      setting: false
+    })
+  },
+  //同意授权后
+  callback: function () {
+    var that = this;
+    that.setData({
+      showModel: true,
+      setting: false
+    })
+  },
+
+  //取消去设置页
+  cancel: function () {
+    var that = this;
+    that.setData({
+      showModel: false,
+      setting: false
+    })
+    wx.reLaunch({
+      url: '../index/index',
     })
   },
 })

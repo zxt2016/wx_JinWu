@@ -22,6 +22,7 @@
     "pages/partnership_detail/index",
     "pages/station_detail/index",
     "pages/project/index",
+    "pages/project_detail/index",
     "pages/order/index",
     "pages/station/index",
     "pages/order_detail/index"

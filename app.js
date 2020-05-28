@@ -1,32 +1,41 @@
 //app.js
 App({
   onLaunch: function () {
-    
+    var _this = this;
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     this.globalData.token = wx.getStorageSync('token');
-
-    // 登录
-    wx.login({
+    var openId = wx.getStorageSync('openId');
+    if(!openId){
+      // 登录
+      wx.login({
         success: res => {
-        // console.log(res);
+        console.log(res);
+        var code = res.code;
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        // wx.request({
-        //   url: this.globalData.baseUrl +'/wxUser/code2Session',
-        //   method:'POST',
-        //   data:{
-        //     code:res.code
-        //   },
-        //   success: rea => {
-        //     console.log(rea);
-        //   }
-        // })
+        wx.request({
+          url: _this.globalData.baseUrl +'/wxUser/code2Session?code='+code,
+          method:'POST',
+          header: {
+            'content-type': 'application/json',
+            'Authorization': _this.globalData.token,
+          },
+          success: rea => {
+            console.log(rea);
+            wx.setStorageSync('userId', rea.data.data.id);
+            wx.setStorageSync('openId', rea.data.data.openid);
+            wx.setStorageSync('phone', rea.data.data.phone);
+            wx.setStorageSync('userName', rea.data.data.username);
+          }
+        })
         
       }
     })
+    }
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -51,8 +60,8 @@ App({
   globalData: {
     token:'',
     userInfo: null,
-    //baseUrl:'http://192.168.1.5:8080/photovoltaic',
-      baseUrl: 'http://192.168.1.4:8080/photovoltaic',
+    baseUrl:'http://192.168.1.5:8080/photovoltaic',
+      // baseUrl: 'http://192.168.1.4:8080/photovoltaic',
     imgUrl:'https://www.jwpower.cn/image'
   }
 })
