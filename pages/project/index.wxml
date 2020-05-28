@@ -1,12 +1,12 @@
 <view class='mineBg'>
-    <image src="../image/partnership/top_img.png" mode="aspectFill"></image>
+    <image src="{{imgUrl}}/partnership/top_img.png" mode="aspectFill"></image>
 <view class="title">
         共<text>{{totalNum}}</text>个项目
  </view>
  <view class="line"></view>
       <view class="inviteList">
       <input class="weui-input" name="input" placeholder="请输入您想查找的项目" bindinput="searchBtn" focus='ture'/>
-      <image class="search" src="../image/sousuo.png" style="width:40rpx; height:40rpx"></image>
+      <image class="search" src="{{imgUrl}}/sousuo.png" style="width:40rpx; height:40rpx"></image>
       </view>    
  <view style="height:60rpx"></view>
  </view>

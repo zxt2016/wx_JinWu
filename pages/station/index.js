@@ -1,4 +1,5 @@
 // pages/station/index.js
+const app = getApp();
 Page({
 
   /**
@@ -7,7 +8,8 @@ Page({
   data: {
     stationList:{},
     recruitId:'' ,
-    projectName: ''
+    projectName: '',
+    imgUrl:app.globalData.imgUrl,
   },
 
   station_detail: function(e) {
@@ -18,11 +20,11 @@ Page({
   dataList: function(recruitId) { 
     var _this = this
     wx.request({
-      url: 'http://192.168.1.4:8080/photovoltaic/wxRecruitOrder/getStationList',
+      url: app.globalData.baseUrl+'/wxRecruitOrder/getStationList',
       method: 'GET', 
       header: {
         'content-type': 'application/json',
-        'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODcwMTY1MTA0MyIsImF1dGgiOiJST0xFX1VTRVIiLCJpZCI6MTI2NTgyNTA4NDkwMTQzMzM0NiwidGVsIjoiMTg3MDE2NTEwNDMiLCJleHAiOjE1OTA2NDY3NDZ9.MMx4cNKzZLtn14GYcZ-tTpkA2rmsGDu8zyESSJ0Rk4IzwkCF3K4R02Ev2wVeEHupBCuju8b76lKivuE8uMX_Fw',
+        'authorization': app.globalData.token,
         'openId': '1'
       },
       data: {
@@ -43,11 +45,11 @@ Page({
     var _this = this
     var name = e.detail.value
     wx.request({
-      url: 'http://192.168.1.4:8080/photovoltaic/wxRecruitOrder/getStationList',
+      url: app.globalData.baseUrl+'/wxRecruitOrder/getStationList',
       method: 'GET', 
       header: {
         'content-type': 'application/json',
-        'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODcwMTY1MTA0MyIsImF1dGgiOiJST0xFX1VTRVIiLCJpZCI6MTI2NTgyNTA4NDkwMTQzMzM0NiwidGVsIjoiMTg3MDE2NTEwNDMiLCJleHAiOjE1OTA2NDY3NDZ9.MMx4cNKzZLtn14GYcZ-tTpkA2rmsGDu8zyESSJ0Rk4IzwkCF3K4R02Ev2wVeEHupBCuju8b76lKivuE8uMX_Fw',
+        'authorization': app.globalData.token,
         'openId': '1'
       },
       data: {

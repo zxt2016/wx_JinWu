@@ -1,5 +1,5 @@
 <view class='mineBg'>
-    <image src="../image/partnership/top_img.png" mode="aspectFill"></image>
+    <image src="{{imgUrl}}/partnership/top_img.png" mode="aspectFill"></image>
 </view>
 <view class="title">
         <text>金乌科技</text>
@@ -12,5 +12,5 @@
 </text>
 </view>
 <view class="logo_img">
-      <image src="../image/guarantee/logo.png"></image>
+      <image src="{{imgUrl}}/guarantee/logo.png"></image>
     </view>

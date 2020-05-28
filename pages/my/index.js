@@ -8,6 +8,7 @@ Page({
     hasUserInfo: false,
     dataInfo: '',
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    imgUrl:app.globalData.imgUrl,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -83,6 +84,11 @@ Page({
       url: '../project/index?str=my',
     })
   },
+  myEnergy: function(e) {
+    wx.navigateTo({
+      url: '../myEnergy/index',
+    })
+  },
 
   order: function(e) {
     wx.navigateTo({
@@ -97,11 +103,11 @@ Page({
   myData: function(e) {
     var _this = this
     wx.request({
-      url: 'http://192.168.1.4:8080/photovoltaic/wxUser/userCompanyInfo',
+      url: app.globalData.baseUrl+'/wxUser/userCompanyInfo',
       method: 'GET', 
       header: {
         'content-type': 'application/json',
-        'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODcwMTY1MTA0MyIsImF1dGgiOiJST0xFX1VTRVIiLCJpZCI6MTI2NTgyNTA4NDkwMTQzMzM0NiwidGVsIjoiMTg3MDE2NTEwNDMiLCJleHAiOjE1OTA2NTk0MjR9.pyaiZmt9J1Lb_XROxAtj35REEM5FwrP_B1-9uH3tnFfzkHR_jtjx1BlObi-TdXpazPzZ-IdAiWmK-S8k-SDqLQ',
+        'authorization': app.globalData.token,
         'openId': '1'
       },
       success (res) {

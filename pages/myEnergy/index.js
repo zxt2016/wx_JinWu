@@ -16,6 +16,7 @@ Page({
     energy:[],
     //能量排行榜
     rankingList:[],
+    imgUrl:app.globalData.imgUrl,
   },
 
   /**

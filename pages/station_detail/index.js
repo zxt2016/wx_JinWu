@@ -1,11 +1,12 @@
 // pages/station_detail/index.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    imgUrl:app.globalData.imgUrl,
   },
 
   /**
@@ -18,11 +19,11 @@ Page({
       })
       var _this = this
     wx.request({
-      url: 'http://192.168.1.4:8080/photovoltaic/wxRecruitOrder/getStationDetail',
+      url: app.globalData.baseUrl+'/wxRecruitOrder/getStationDetail',
       method: 'GET', 
       header: {
         'content-type': 'application/json',
-        'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxODcwMTY1MTA0MyIsImF1dGgiOiJST0xFX1VTRVIiLCJpZCI6MTI2NTgyNTA4NDkwMTQzMzM0NiwidGVsIjoiMTg3MDE2NTEwNDMiLCJleHAiOjE1OTA2NDY3NDZ9.MMx4cNKzZLtn14GYcZ-tTpkA2rmsGDu8zyESSJ0Rk4IzwkCF3K4R02Ev2wVeEHupBCuju8b76lKivuE8uMX_Fw',
+        'authorization': app.globalData.token,
         'openId': '1'
       },
       data: {

@@ -1,3 +1,4 @@
+const app = getApp();
 // pages/about_us/index.js
 Page({
 
@@ -5,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    imgUrl:app.globalData.imgUrl,
   },
 
   /**

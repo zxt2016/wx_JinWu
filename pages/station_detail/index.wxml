@@ -1,5 +1,5 @@
 <view class="introduce">
-    <image src="../image/introduce/station.png"></image>
+    <image src="{{imgUrl}}/introduce/station.png"></image>
     <view bindtap='introduce_detail'>
       蓟县一号发电站
      </view> 
@@ -24,5 +24,5 @@
   </view>
 </view>
 <view class="logo_img">
-      <image src="../image/guarantee/logo.png"></image>
+      <image src="{{imgUrl}}/guarantee/logo.png"></image>
     </view>

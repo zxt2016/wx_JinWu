@@ -1,21 +1,21 @@
 <view class='mineBg'>
-    <image src="../image/partnership/top_img.png" mode="aspectFill"></image>
+    <image src="{{imgUrl}}/partnership/top_img.png" mode="aspectFill"></image>
 <view class="title">{{projectName}} </view>
  <view class="line"></view>
  <view class="inviteList">
       <input class="weui-input" name="input" placeholder="请输入您想查找的电站" bindinput="searchBtn" focus='ture'/>
-      <image class="search" src="../image/sousuo.png" style="width:40rpx; height:40rpx"></image>
+      <image class="search" src="{{imgUrl}}/sousuo.png" style="width:40rpx; height:40rpx"></image>
 </view> 
  <view style="height:60rpx"></view>
  </view>
  <view class="introduce" wx:for="{{stationList}}">
  <navigator url="../station_detail/index?str={{item.id}}">
-    <image wx:if="item.stationImg == ''" src="../image/introduce/station.png"></image>
+    <image wx:if="item.stationImg == ''" src="{{imgUrl}}/introduce/station.png"></image>
     <image wx:else src="{{item.stationImg}}"></image>
     <view bindtap='introduce_detail' bindtap="station_detail">
       <text>{{item.stationName}}</text>
       <view class="icon_img">
-        <image src="../image/introduce/icon.png"></image>
+        <image src="{{imgUrl}}/introduce/icon.png"></image>
       </view>
      </view> 
 </navigator>
