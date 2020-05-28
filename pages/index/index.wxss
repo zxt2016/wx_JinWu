@@ -357,13 +357,18 @@
   line-height: 70rpx;
   border-radius: 40rpx;
   font-size: 28rpx;
-  color:#fff;
+  color:#999;
   text-align: center;
-  background-color: #2c7bfe;
+  background-color: #e5e5e5;
+  /* background-color: #2c7bfe; */
   position: absolute;
   bottom:90rpx;
   right:80rpx;
   z-index: 100;
+}
+.blueBtn{
+  color:#fff;
+  background-color: #2c7bfe;
 }
 
 
