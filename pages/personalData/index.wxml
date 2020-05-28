@@ -5,37 +5,38 @@
     <view class="userinfo">
         <view class='itemList clearfix'>
           <text class='float_lf'>头像</text>
+          <image src="{{dataInfo.icon}}" style="width:50rpx; height:50rpx"></image>
           <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
         </view>
         <view class='itemList clearfix'>
           <text class='float_lf'>昵称</text>
-          <text class='float_rt'>Sherry</text>
+          <text class='float_rt'>{{dataInfo.nickName}}</text>
           <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
         </view>
         <view class='itemList clearfix'>
           <text class='float_lf'>姓名</text>
-          <text class='float_rt'>张瑞雪</text>
+          <text class='float_rt'>{{dataInfo.nickName}}</text>
           <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
         </view>
         <view class='itemList clearfix'>
           <text class='float_lf'>合伙公司</text>
-          <text class='float_rt'>测试数据</text>
+          <text class='float_rt'>{{dataInfo.count}}个</text>
           <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
         </view>
         <view class='itemList clearfix'>
           <text class='float_lf'>手机号码</text>
-          <text class='float_rt'>15214512451</text>
+          <text class='float_rt'>{{dataInfo.phone}}</text>
           <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
         </view>
         <view class='itemList clearfix'>
           <text class='float_lf'>地址</text>
-          <text class='float_rt'>石家庄裕华区万达写字楼B座</text>
+          <text class='float_rt'>{{dataInfo.address}}</text>
           <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
         </view>
     </view>
     <view style="height:430rpx"></view>
 </view>
-<view class="saveBtn">
+<view class="saveBtn" style="display:none">
     <text>保存</text>
 </view> 
 <view class="logo_img">
