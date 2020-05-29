@@ -11,6 +11,7 @@ Page({
     userCode:'',
     num:'',
     list:[],
+    imgUrl:app.globalData.imgUrl,
     userInfo:wx.getStorageSync('userInfo'),
   },
 
@@ -26,9 +27,9 @@ Page({
   onShareAppMessage: function () {
     var that = this;
     return {
-      title: that.data.userInfo.nickName+"邀请您加入光伏合伙人",
+      title: that.data.userInfo.nickName+"邀请您加入光伏合伙人，赶快注册吧！",
       path: "/pages/login/login?code=" + that.data.userCode,
-      imgUrl:'../image/invite/invite_img.png',
+      imgUrl:that.data.imgUrl+'/index/star0.png',
       success: function (res) {
         
       }
