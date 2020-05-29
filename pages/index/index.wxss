@@ -117,6 +117,23 @@
   perspective: 300px; 
   /* transform: perspective(300px) rotateX(0deg) rotateY(0deg); */
 }
+.nothing_station{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nowPower{
+  position: absolute;
+  top:0;
+  left: 50%;
+  z-index: 30;
+  width: 100%;
+  text-align: center;
+  padding: 30rpx 0;
+  font-size: 28rpx;
+  color:#fd9c31;
+  transform: translateX(-50%);
+}
 .star_animted .star{
   width: 160rpx;
   height:160rpx;

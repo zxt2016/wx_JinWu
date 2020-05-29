@@ -39,6 +39,8 @@
         </view>
         <image class='star_line' src="{{imgUrl}}/index/star_line.png"></image>
         <view class="star_animted">
+          <!-- 实时发电量 -->
+          <view class="nowPower">实时发电量：{{projectPower}}kw</view>
           <!-- 太阳 -->
           <image class="sun" src="{{imgUrl}}/index/sun.png"></image>
           <!-- 星球 -->
@@ -67,10 +69,10 @@
                         </view>
                         <view class="item_data">
                           <view class="item_list txt-num1">地区：{{item.projectAddress}}</view>
-                          <view class="item_list">总装机容量：{{item.capacity}}</view>
-                          <view class="item_list">剩余认购份数：{{item.remainingNum}}</view>
-                          <view class="item_list">总认购份数：{{item.subscriptionTotalNum}}</view>
-                          <view class="item_list">年化收益率%：<text style="color:red;">{{item.annualized}}</text></view>
+                          <view class="item_list">总装机容量：{{item.capacity}} kw</view>
+                          <view class="item_list">剩余认购份数：{{item.remainingNum}} 份</view>
+                          <view class="item_list">总认购份数：{{item.subscriptionTotalNum}} 份</view>
+                          <view class="item_list">年化收益率：<text style="color:red;">{{item.annualized}} %</text></view>
                         </view>
                         <view class="buyBtn {{power == 1 ? 'blueBtn' : ''}}" disabled="{{power == 1 ? false : true}}">认购</view>
                       </view>
@@ -92,6 +94,8 @@
         </view>
         <image class='star_line' src="{{imgUrl}}/index/star_line.png"></image>
         <view class="star_animted">
+        <!-- 实时发电量 -->
+          <view class="nowPower">实时发电量：{{myPower}}kw</view>
           <!-- 太阳 -->
           <image class="sun" src="{{imgUrl}}/index/sun.png"></image>
           <!-- 星球 -->
@@ -106,7 +110,7 @@
           <!-- 轮播 -->
           <view class="star_swiper">
             <view class="page-section page-section-spacing swiper">
-              <swiper indicator-dots="{{indicatorDots2}}"
+              <swiper wx:if="{{powerTip == 1}}" indicator-dots="{{indicatorDots2}}"
                 autoplay="{{autoplay2}}" interval="{{interval2}}" duration="{{duration2}}" circular="{{circular2}}">
                 <block wx:for="{{projectData2}}" wx:for-item="item" wx:key="*this">
                   <swiper-item class="swiper_img">
@@ -120,16 +124,29 @@
                         </view>
                         <view class="item_data">
                           <view class="item_list txt-num1">地区：{{item.projectAddress}}</view>
-                          <view class="item_list">总装机容量：{{item.capacity}}</view>
-                          <view class="item_list">剩余认购份数：{{item.remainingNum}}</view>
-                          <view class="item_list">总认购份数：{{item.subscriptionTotalNum}}</view>
-                          <view class="item_list">年化收益率%：<text style="color:red;">{{item.annualized}}</text></view>
+                          <view class="item_list">总装机容量：{{item.capacity}} kw</view>
+                          <view class="item_list">剩余认购份数：{{item.remainingNum}} 份</view>
+                          <view class="item_list">总认购份数：{{item.subscriptionTotalNum}} 份</view>
+                          <view class="item_list">年化收益率：<text style="color:red;">{{item.annualized}} %</text></view>
                         </view>
                         <!-- <view class="buyBtn">认购</view> -->
                       </view>
                     </view>
-
-
+                    <!-- <image src="{{item}}" style="width:100%"></image> -->
+                  </swiper-item>
+                </block>
+              </swiper>
+              <swiper wx:elif="{{powerTip == 2}}" indicator-dots="{{powerTip == 2 ? false : ''}}"
+                autoplay="{{autoplay2}}" interval="{{interval2}}" duration="{{duration2}}" circular="{{circular2}}">
+                <block>
+                  <swiper-item class="swiper_img">
+                    <image class="project_star_img" src="{{imgUrl}}/index/star0.png"></image>
+                    <view class="project_box">
+                      <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image>
+                      <view class="project_item nothing_station">
+                        <text>您还没有认购项目！</text>
+                      </view>
+                    </view>
                     <!-- <image src="{{item}}" style="width:100%"></image> -->
                   </swiper-item>
                 </block>
@@ -155,27 +172,27 @@
       </view>
     </view>
     <view class="counter_item">
-      <view class="item_text">总装机容量 <text>(KW))</text></view>
+      <view class="item_text">总装机容量 <text>(KW)</text></view>
       <view class="item_input">
-        <input type="number" disabled='true' value="399.68KW"></input>
+        <input type="number" disabled='true' value="399.68"></input>
       </view>
     </view>
     <view class="counter_item">
       <view class="item_text">帮助 <text>(户)</text></view>
       <view class="item_input">
-        <input type="number" disabled='true' value="8923户"></input>
+        <input type="number" disabled='true' value="8923"></input>
       </view>
     </view>
     <view class="counter_item">
       <view class="item_text">预计收益 <text>(万)</text></view>
       <view class="item_input">
-        <input type="number" disabled='true' value="2399.68万"></input>
+        <input type="number" disabled='true' value="2399.68"></input>
       </view>
     </view>
     <view class="counter_item">
       <view class="item_text">回报率 <text>(%)</text></view>
       <view class="item_input">
-        <input type="number" disabled='true' value="45.2%"></input>
+        <input type="number" disabled='true' style="color:red" value="45.2"></input>
       </view>
     </view>
   </view>
