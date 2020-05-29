@@ -22,12 +22,11 @@
   z-index: 10;
   margin: 20rpx;
   position: absolute;
-  margin-top: 15rpx;
+  margin-top: 45rpx;
 }
 .num_info{
   width: 49%;
   text-align: center;
-  margin-top: 30rpx;
 }
 .num{
   color: #ffffff;

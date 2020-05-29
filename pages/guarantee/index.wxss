@@ -8,6 +8,31 @@ page{
 .float-rg{
   float: right;
 }
+.line-left:first-child{
+  background-image: url('https://guangneng-img.oss-cn-beijing.aliyuncs.com/items/1590720707855.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-top: -19rpx;
+}
+.line-left{
+  background-image: url('https://guangneng-img.oss-cn-beijing.aliyuncs.com/items/1590723707616.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-top: -19rpx;
+}
+.line-right{
+  background-image: url('https://guangneng-img.oss-cn-beijing.aliyuncs.com/items/1590720828279.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-top: -20rpx;
+} 
+/* .line-right:last-child{
+  background-image: url('https://guangneng-img.oss-cn-beijing.aliyuncs.com/items/1590723846915.png');
+  background-size: 100% 80%;
+  background-repeat: no-repeat;
+  margin-top: -20rpx;
+  margin-left: 20%;
+}   */
 .backgroundimg{
     width: 100%;
     height: 100%;
@@ -51,8 +76,17 @@ page{
   font-size: 26rpx;
   line-height: 40rpx;
 }
-.content_child{
-  margin: 40rpx 0rpx;
+.content_child {
+  height: 680rpx;
+  width: 600rpx;
+}
+.title_lf{
+  margin-top: 40rpx;
+  margin-left: -30rpx;
+}
+.title_rg{
+  margin-top: 40rpx;
+  margin-right: -30rpx;
 }
 .num{
   background-image: url('https://guangneng-img.oss-cn-beijing.aliyuncs.com/items/1590478129555.png');
@@ -91,7 +125,7 @@ page{
   margin-top: 20rpx;
 }
 .content_info{
-  width: 80%;
+  width: 85%;
 }
 .content_image{
   width: 410rpx;

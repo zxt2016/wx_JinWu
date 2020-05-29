@@ -8,8 +8,8 @@
         <text>金乌创造合伙人全流程保障模式成立合伙企业：建立规范企业制度、实缴注资，《公司法》保护合伙人权益。</text>
         </view>
         <view class="guarantee_content">
-            <view class="content_child float-lf">
-                <view class="float-lf">
+            <view class="content_child float-lf line-left">
+                <view class="float-lf" style="margin:0rpx -30rpx">
                     <!-- <image class="num_img float-lf" src="../image/guarantee/01.png"></image> -->
                     <text class="num float-lf">01</text>
                     <text class="content_title_lf">合作形式正规</text>
@@ -20,8 +20,8 @@
                     <image class="content_image" src="{{imgUrl}}/guarantee/image11.png"></image>
                 </view>
             </view>
-            <view class="content_child float-rg">
-                <view class="float-rg">
+            <view class="content_child float-rg line-right">
+                <view class="float-rg title_rg">
                     <text class="num float-rg">02</text>
                     <text class="content_title_rg">国家政策规定</text>
                     <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
@@ -31,8 +31,8 @@
                     <image class="content_image" src="{{imgUrl}}/guarantee/image12.png"></image>
                 </view>
             </view>
-            <view class="content_child float-lf">
-                <view class="float-lf">
+            <view class="content_child float-lf line-left">
+                <view class="float-lf title_lf">
                     <text class="num float-lf">03</text>
                     <text class="content_title_lf">核心设备质量</text>
                     <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
@@ -42,8 +42,8 @@
                     <image class="content_image" src="{{imgUrl}}/guarantee/image1.png"></image>
                 </view>
             </view>
-            <view class="content_child float-rg">
-                <view class="float-rg">
+            <view class="content_child float-rg line-right">
+                <view class="float-rg title_rg">
                     <text class="num float-rg">04</text>
                     <text class="content_title_rg">农户屋顶筛选</text>
                     <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
@@ -53,8 +53,8 @@
                     <image class="content_image" src="{{imgUrl}}/guarantee/image2.png"></image>
                 </view>
             </view>
-            <view class="content_child float-lf">
-            <view class="float-lf">
+            <view class="content_child float-lf line-left">
+            <view class="float-lf title_lf">
                 <text class="num float-lf">05</text>
                 <text class="content_title_lf">专业施工安装</text>
                 <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
@@ -64,8 +64,8 @@
                     <image class="content_image" src="{{imgUrl}}/guarantee/image3.png"></image>
                 </view>
             </view>
-            <view class="content_child float-rg">
-            <view class="float-rg">
+            <view class="content_child float-rg line-right">
+            <view class="float-rg title_rg">
                 <text class="num float-rg">06</text>
                 <text class="content_title_rg">验收并网高标</text>
                 <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
@@ -75,8 +75,8 @@
                     <image class="content_image" src="{{imgUrl}}/guarantee/image4.png"></image>
                 </view>
             </view>
-            <view class="content_child float-lf">
-            <view class="float-lf">
+            <view class="content_child float-lf line-left">
+            <view class="float-lf title_lf">
                 <text class="num float-lf">07</text>
                 <text class="content_title_lf">大地商业保险</text>
                 <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
@@ -86,8 +86,8 @@
                     <image class="content_image" src="{{imgUrl}}/guarantee/image5.png"></image>
                 </view>
             </view>
-            <view class="content_child float-rg">
-            <view class="float-rg">
+            <view class="content_child float-rg line-right">
+            <view class="float-rg title_rg">
                 <text class="num float-rg">08</text>
                 <text class="content_title_rg">国网计算费用</text>
                 <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
@@ -97,8 +97,8 @@
                     <image class="content_image" src="{{imgUrl}}/guarantee/image6.png"></image>
                 </view>
             </view>
-            <view class="content_child float-lf">
-            <view class="float-lf">
+            <view class="content_child float-lf line-left">
+            <view class="float-lf title_lf">
                 <text class="num float-lf">09</text>
                 <text class="content_title_lf">银行监管账户</text>
                 <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
@@ -108,8 +108,8 @@
                     <image class="content_image" src="{{imgUrl}}/guarantee/image7.png"></image>
                 </view>
             </view>
-            <view class="content_child float-rg">
-                <view class="float-rg">
+            <view class="content_child float-rg line-right">
+                <view class="float-rg title_rg">
                 <text class="num float-rg">10</text>
                 <text class="content_title_rg">智能运维售后</text>
                 <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
@@ -119,8 +119,8 @@
                     <image class="content_image" src="{{imgUrl}}/guarantee/image8.png"></image>
                 </view>
             </view>
-            <view class="content_child float-lf">
-               <view class="float-lf">
+            <view class="content_child float-lf  line-left">
+               <view class="float-lf title_lf">
                 <text class="num float-lf">11</text>
                 <text class="content_title_lf">交易回购机制</text>
                 <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
@@ -130,8 +130,8 @@
                     <image class="content_image" src="{{imgUrl}}/guarantee/image9.png"></image>
                 </view>
             </view>
-            <view class="content_child float-rg">
-                <view class="float-rg">
+            <view class="content_child float-rg line-right">
+                <view class="float-rg title_rg">
                 <text class="num float-rg">12</text>
                 <text class="content_title_rg">智能数据平台</text>
                 <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
