@@ -7,17 +7,18 @@ Page({
    */
   data: {
     imgUrl:app.globalData.imgUrl,
+    stationList:{},
+    stationName:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      var id = ''
-      this.setData({
-        id: options.id
-      })
-      var _this = this
+    this.setData({
+      stationName: options.name
+    })
+    var _this = this
     wx.request({
       url: app.globalData.baseUrl+'/wxRecruitOrder/getStationDetail',
       method: 'GET', 
@@ -27,12 +28,12 @@ Page({
         'openId': '1'
       },
       data: {
-        stationId: id
+        stationId: options.str
       },
       success (res) {
         console.log(res) 
         _this.setData({
-          stationList: res.data.data.records,
+          stationList: res.data.data,
         })
       }
     })

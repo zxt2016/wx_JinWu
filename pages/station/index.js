@@ -81,7 +81,11 @@ Page({
   onReady: function () {
       
   },
-
+  station_btn: function(e) {
+    wx.navigateTo({
+      url: '../station_detail/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

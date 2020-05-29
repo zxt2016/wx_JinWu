@@ -1,17 +1,18 @@
 <view>
+  <form bindsubmit='userInfo'>
     <view class="itemTitle">
      <image src="{{imgUrl}}/personalData/my_bg.png"></image>
     </view>
     <view class="userinfo">
         <view class='itemList clearfix'>
           <text class='float_lf'>头像</text>
-          <image src="{{dataInfo.icon}}" style="width:50rpx; height:50rpx"></image>
-          <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+          <image src='{{dataInfo.icon}}' bindtap='changeAvatar'></image>
+          <input class="weui-input" name="icon_img" value="{{dataInfo.icon}}" style="display:none" />
         </view>
         <view class='itemList clearfix'>
           <text class='float_lf'>昵称</text>
-          <text class='float_rt'>{{dataInfo.nickName}}</text>
-          <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+          <input class="weui-input" name="nickName" value="{{dataInfo.nickName}}"/>
+          <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png' style="margin-top:-33rpx"></image>
         </view>
         <view class='itemList clearfix'>
           <text class='float_lf'>姓名</text>
@@ -25,19 +26,19 @@
         </view>
         <view class='itemList clearfix'>
           <text class='float_lf'>手机号码</text>
-          <text class='float_rt'>{{dataInfo.phone}}</text>
-          <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+          <input class="weui-input" name="phone" value="{{dataInfo.phone}}"/>
+          <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png' style="margin-top:-33rpx"></image>
         </view>
         <view class='itemList clearfix'>
           <text class='float_lf'>地址</text>
-          <text class='float_rt'>{{dataInfo.address}}</text>
-          <image class='float_rt jtRt' src='./image/jt_rt.png'></image>
+          <input class="weui-input" name="address" value="{{dataInfo.address}}"/>
+          <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png' style="margin-top:-33rpx"></image>
         </view>
     </view>
     <view style="height:430rpx"></view>
-</view>
-<view class="saveBtn" style="display:none">
-    <text>保存</text>
+    
+<button class="saveBtn" form-type='submit'>保存</button>
+</form>
 </view> 
 <view class="logo_img">
       <image src="{{imgUrl}}/guarantee/logo.png"></image>
