@@ -11,9 +11,9 @@
  <view style="height:60rpx"></view>
  </view>
 <view class="content" wx:for="{{projectList}}">
-<navigator url="../station/index?str={{item.id}}&name={{item.projectName}}">
-    <view class="order_num">{{item.projectName}}<text style="margin-left:400rpx">详情</text></view>
-</navigator>    
+  <navigator url="../station/index?str={{item.id}}&name={{item.projectName}}">
+      <view class="order_num">{{item.projectName}}<text style="margin-left:400rpx">详情</text></view>
+  </navigator>    
     <view>
     <view class="content_item float_lf">
       <view class="shares item">地址：{{item.projectAddress}}</view>
@@ -32,3 +32,4 @@
       <view class="pay_btn item">认购</view>
     </view>  
 </view>
+<view  wx:if="{{projectList == ''}}" style="margin:300rpx">暂无项目</view>

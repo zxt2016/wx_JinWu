@@ -32,6 +32,7 @@
     </view>  
     </view>
 </view>
+<view  wx:if="{{order_list == ''}}" style="margin:300rpx">暂无数据</view>
 </scroll-view>
 </swiper-item>
 <!-- 预付定金支付完成 -->
@@ -56,6 +57,7 @@
     </view>  
     </view>
 </view>
+<view  wx:if="{{order_list == ''}}" style="margin:300rpx">暂无数据</view>
 </scroll-view>
 </swiper-item>
 <!-- 已完成 -->
@@ -80,6 +82,7 @@
     </view>  
     </view>
 </view>
+<view  wx:if="{{order_list == ''}}" style="margin:300rpx">暂无数据</view>
 </scroll-view>
 </swiper-item>
 <!-- 取消 -->
@@ -104,6 +107,7 @@
     </view>  
     </view>
 </view>
+<view  wx:if="{{order_list == ''}}" style="margin:300rpx">暂无数据</view>
 </scroll-view>
 </swiper-item>
  
