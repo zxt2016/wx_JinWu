@@ -27,7 +27,7 @@
   box-sizing: border-box;
 }
 .section .userInfo{
-  width: 70%;
+  width: 80%;
 
 }
 .section .userInfo image{
@@ -45,13 +45,22 @@
   font-size: 24rpx;
   color:#ffffff;
   margin-bottom: 4rpx;
-  line-height: 60rpx;
+  line-height: 50rpx;
 }
 .section .userInfo .name_num text:first-child{
   font-size: 32rpx;
   color:#ffffff;
   font-family: PingFangSC-Medium, sans-serif;
   font-weight: 500;
+}
+.detail{
+  width: 130rpx;
+  height: 50rpx;
+  background-color: #ffffff;
+  margin-left: 240rpx;
+  color: #407ad9;
+  text-align: center;
+  border-radius: 30rpx;
 }
 .allnum{
   padding: 20rpx 0.5rpx;

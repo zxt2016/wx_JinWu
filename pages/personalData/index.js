@@ -31,7 +31,7 @@ Page({
              let icon = this.dataInfo.icon
              const data = res.data;
              _this.setData({
-              icon: data,
+              img_url: data,
             })
            }
          })   
@@ -74,6 +74,11 @@ Page({
       method:'POST',
       dataType:'json',
       contentType: 'application/json',
+      header: {
+        'content-type': 'application/json',
+        'authorization': app.globalData.token,
+        'openId': '1'
+      },
       data:JSON.stringify({
         icon: e.detail.value.icon_img,
         nickName: e.detail.value.nickName,
