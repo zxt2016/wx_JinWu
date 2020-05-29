@@ -1,6 +1,6 @@
 <view class="introduce">
-    <image src="{{imgUrl}}/introduce/introduce1.png"></image>
     <navigator url="../introduce_detail/index?str=1">
+    <image src="{{imgUrl}}/introduce/introduce1.png"></image>
       <text>关于光伏发电?</text>
       <view class="icon_img">
         <image src="{{imgUrl}}/introduce/icon.png"></image>
@@ -9,8 +9,8 @@
 </view>
 
 <view class="introduce">
-    <image src="{{imgUrl}}/introduce/introduce2.png"></image>
     <navigator url="../introduce_detail/index?str=2">
+    <image src="{{imgUrl}}/introduce/introduce2.png"></image>
       <text>关于国家对光伏产业的支持政策</text>
       <view class="icon_img">
         <image src="{{imgUrl}}/introduce/icon.png"></image>
@@ -19,8 +19,8 @@
 </view>
 
 <view class="introduce">
-    <image src="{{imgUrl}}/introduce/introduce7.png"></image>
     <navigator url="../introduce_detail/index?str=3">
+    <image src="{{imgUrl}}/introduce/introduce7.png"></image>
       <text>关于光伏行业</text>
       <view class="icon_img">
         <image src="{{imgUrl}}/introduce/icon.png"></image>
@@ -28,8 +28,8 @@
      </navigator>
 </view>
 <view class="introduce">
-    <image src="{{imgUrl}}/introduce/introduce4.png"></image>
     <navigator url="../introduce_detail/index?str=4">
+    <image src="{{imgUrl}}/introduce/introduce4.png"></image>
       <text>关于金乌光联---光伏合伙人模式</text>
       <view class="icon_img">
         <image src="{{imgUrl}}/introduce/icon.png"></image>
@@ -37,8 +37,8 @@
      </navigator>
 </view>
 <view class="introduce">
-    <image src="{{imgUrl}}/introduce/introduce5.png"></image>
     <navigator url="../introduce_detail/index?str=5">
+    <image src="{{imgUrl}}/introduce/introduce5.png"></image>
       <text>关于金乌光联光伏合伙人加入</text>
       <view class="icon_img">
         <image src="{{imgUrl}}/introduce/icon.png"></image>
@@ -46,8 +46,8 @@
      </navigator>
 </view>
 <view class="introduce">
-    <image src="{{imgUrl}}/introduce/introduce3.png"></image>
     <navigator url="../introduce_detail/index?str=6">
+    <image src="{{imgUrl}}/introduce/introduce3.png"></image>
       <text>关于金乌光联光伏合伙人收益率</text>
       <view class="icon_img">
         <image src="{{imgUrl}}/introduce/icon.png"></image>
