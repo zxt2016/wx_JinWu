@@ -69,7 +69,7 @@
     <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
   </view>
   </view>
-  <view class="tuichu">
+  <view class="tuichu" style="display:none">
     <text>退出登录</text>
   </view>
   <view class="logo_img">
