@@ -8,6 +8,7 @@ Page({
     system:'',
     animation: '',
     userId:'',
+    icon:'',
     //用户总能量
     totalEnergy:'',
     //用户可用能量
@@ -41,6 +42,7 @@ Page({
         console.log(res);
         if(res.statusCode == 200){
           _this.setData({
+            icon:res.data.icon,
             userId:res.data.userId,
             totalEnergy:res.data.totalEnergy,
             balanceEnergy:res.data.balanceEnergy
@@ -130,7 +132,7 @@ Page({
     for (let i = 0; i <bubble.length; i++) {
       var val = bubble[i].energy.toString();
       var obj = {
-        num: val.length >=4 ? (val/1000).toFixed(1) + 'kw' : val+'w',
+        num: val.length >=4 ? (val/1000).toFixed(1) + 'kwh' : val+'wh',
         title: bubble[i].type == 1 ? '邀请': bubble[i].type == 2 ? '分享' : bubble[i].type == 3 ? '发电' : '',
         anima: '',
         styleObject: '',

@@ -274,7 +274,7 @@ page {
 }
 .listMain{
   width: 100%;
-  height: 500rpx;
+  /* height: 500rpx; */
   padding: 10rpx 0;
   background-color: #fff;
 }

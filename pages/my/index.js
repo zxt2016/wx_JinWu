@@ -12,6 +12,7 @@ Page({
     //授权弹框
     setting: false,
     showModel: false,
+    token:wx.getStorageSync('token'),
   },
   //事件处理函数
   bindViewTap: function() {
@@ -141,7 +142,13 @@ Page({
       url: '../myEnergy/index',
     })
   },
-
+  gongYi:function(e){
+    wx.showToast({
+      title: '暂未开放，敬请期待',
+      icon:'none',
+      duration:3000
+    })
+  },
   order: function(e) {
     wx.navigateTo({
       url: '../order/index',
@@ -159,7 +166,7 @@ Page({
       method: 'GET', 
       header: {
         'content-type': 'application/json',
-        'Authorization': app.globalData.token,
+        'Authorization': _this.data.token,
         'openId': '1'
       },
       success (res) {

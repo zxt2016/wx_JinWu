@@ -131,7 +131,7 @@
   text-align: center;
   padding: 30rpx 0;
   font-size: 28rpx;
-  color:#fd9c31;
+  color:yellow;
   transform: translateX(-50%);
 }
 .star_animted .star{
@@ -144,8 +144,8 @@
   transform: translate(-50%,-50%);
 }
 .star_animted .sun{
-  width: 230rpx;
-  height:230rpx;
+  width: 260rpx;
+  height:260rpx;
   z-index: 40;
   position: absolute;
   top:50%;
@@ -297,7 +297,7 @@
   display: block;
 }
 .star_animted .star_swiper swiper{
-  height: 650rpx;
+  height: 685rpx;
 }
 .star_animted .star_swiper .swiper_img{
   padding-top: 150rpx;

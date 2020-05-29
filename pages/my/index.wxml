@@ -43,7 +43,7 @@
     <text class='float_lf'>我的能量</text>
     <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
   </view>
-  <view class='itemList clearfix' bindtap='mySheQun'>
+  <view class='itemList clearfix' bindtap='gongYi'>
     <image class='icon_img float_lf' style='width:40rpx;height:38rpx;' src='{{imgUrl}}/my/gongyi.png'></image>
     <text class='float_lf'>能量公益</text>
     <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
@@ -55,7 +55,7 @@
   </view>
   <view class='itemList clearfix' bindtap='share_btn'>
     <image class='icon_img float_lf' src='{{imgUrl}}/my/fenxiang.png'></image>
-    <text class='float_lf'>分享有赏</text>
+    <text class='float_lf'>分享有奖</text>
     <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
   </view>
   <view class='itemList clearfix' bindtap='personal_data'>

@@ -18,14 +18,14 @@
       <view class="tabItem {{stationType == 1?'active':''}}" data-num='1' bindtap="stationTab">
         <view class="item_view">
           <image class='left_icon ' src="{{imgUrl}}/index/index_icon1_{{stationType == 1?'blue':'grey'}}.png"></image>
-          <text>全部招募单</text>
+          <text>全部电站</text>
           <image class='right_icon' src="{{imgUrl}}/index/right_icon_{{stationType == 1?'blue':'grey'}}.png"></image>
         </view>
       </view>  
       <view class="tabItem {{stationType == 2?'active':''}}" data-num='2' bindtap="stationTab">
         <view class="item_view">
           <image class='left_icon' src="{{imgUrl}}/index/index_icon2_{{stationType == 2?'blue':'grey'}}.png"></image>
-          <text>我的项目</text>
+          <text>我的电站</text>
           <image class='right_icon' src="{{imgUrl}}/index/right_icon_{{stationType == 2?'blue':'grey'}}.png"></image>
         </view>
       </view>     
@@ -40,9 +40,10 @@
         <image class='star_line' src="{{imgUrl}}/index/star_line.png"></image>
         <view class="star_animted">
           <!-- 实时发电量 -->
-          <view class="nowPower">实时发电量：{{projectPower}}kw</view>
+          <view class="nowPower">当日累计发电量：{{projectPower/1000}}kwh</view>
           <!-- 太阳 -->
-          <image class="sun" src="{{imgUrl}}/index/sun.png"></image>
+          <!-- <image class="sun" src="{{imgUrl}}/index/sun.png"></image> -->
+          <image class="sun" src="../image/star/sun.png"></image>
           <!-- 星球 -->
           <view class="star_img">
             <image 
@@ -96,7 +97,7 @@
         <image class='star_line' src="{{imgUrl}}/index/star_line.png"></image>
         <view class="star_animted">
         <!-- 实时发电量 -->
-          <view class="nowPower">实时发电量：{{myPower}}kw</view>
+          <view class="nowPower">当日累计发电量：{{myPower/1000}}kwh</view>
           <!-- 太阳 -->
           <image class="sun" src="{{imgUrl}}/index/sun.png"></image>
           <!-- 星球 -->
