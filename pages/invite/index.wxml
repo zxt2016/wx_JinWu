@@ -4,11 +4,11 @@
 <view class="guize"><navigator url="../invite_rules/index">邀请规则 ></navigator></view>
 <view class="allnum clearfix">
     <view class="float_lf num_info">
-      <view class="num">625848</view>
+      <view class="num">{{userCode}}</view>
       <view class="num_text">邀请码</view>
     </view>
     <view class="float_lf num_info">
-      <view class="num">126</view>
+      <view class="num">{{num}}</view>
       <view class="num_text">邀请人数</view>
     </view>
   </view>

@@ -7,6 +7,10 @@ Page({
    */
   data: {
     imgUrl:app.globalData.imgUrl,
+    token:wx.getStorageSync('token'),
+    userCode:'',
+    num:'',
+    list:[],
   },
 
   //跳转邀请规则页面
@@ -31,7 +35,31 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  onLoad: function () {
+    wx.setNavigationBarTitle({
+      title: "邀请好友"
+    });
 
+    var _this = this;
+    wx.request({
+      url: app.globalData.baseUrl+'/wxUser/invited/List',
+      method:'GET',
+      header: {
+        'content-type': 'application/json',
+        'Authorization':_this.data.token
+      },
+      success(res){
+        console.log(res);
+        if(res.data.errcode == 0){
+          _this.setData({
+            userCode:res.data.data.code,
+            num:res.data.data.num,
+            list:res.data.data.list
+          });
+        }
+      },
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

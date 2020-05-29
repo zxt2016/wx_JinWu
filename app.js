@@ -8,7 +8,7 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     
-    // this.globalData.token = wx.getStorageSync('token');
+    this.globalData.token = wx.getStorageSync('token');
     var openId = wx.getStorageSync('openId');
     // 登录
     wx.login({

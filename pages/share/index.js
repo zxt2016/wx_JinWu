@@ -1,29 +1,14 @@
-// pages/share/index.js
-const app = getApp();
-Component({
-  /**
-   * 组件的属性列表
-   */
-  properties: {
-
-  },
-
-  /**
-   * 组件的初始数据
-   */
+//index.js
+//获取应用实例
+const app = getApp()
+Page({
   data: {
     imgUrl:app.globalData.imgUrl,
+    token:wx.getStorageSync('token'),
   },
-
-  share_rules: function(e) {
-    wx.navigateTo({
-      url: '../share_rules/index',
-    })
+  onLoad: function () {
+    
+    
   },
-  /**
-   * 组件的方法列表
-   */
-  methods: {
-
-  }
+ 
 })

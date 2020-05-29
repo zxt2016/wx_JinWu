@@ -1,11 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/invite/index",
-    
-    "pages/login/login",
+    "pages/index/index",
     "pages/myEnergy/index",
     "pages/myEnergy_record/index",
+    "pages/login/login",
     "pages/guarantee/index",
     "pages/introduce/index",
     "pages/introduce_detail/index",
