@@ -23,11 +23,26 @@ Page({
     wx.setNavigationBarTitle({
       title: "我的"
     });
+
+    var token = wx.getStorageSync('token');
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
+      if(!token){
+        wx.showToast({
+          title: '登录失效，请重新登录',
+          icon:'none',
+          duration:3000
+        })
+        setTimeout(function(){
+          wx.navigateTo({
+            url: '../login/login',
+          })
+        },2000);
+      }
+
     } else if (this.data.canIUse){
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
@@ -49,7 +64,14 @@ Page({
         }
       })
     }
-    this.myData()
+    this.myData();
+
+    // if(){}
+
+
+
+
+
   },
   onShow(){
     var that = this;
@@ -87,7 +109,7 @@ Page({
       wx.navigateTo({
         url: '../login/login',
       })
-    });
+    },300);
 
 
   },

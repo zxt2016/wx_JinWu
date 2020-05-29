@@ -48,7 +48,7 @@
             <image 
             wx:for="{{starData}}" 
             wx:for-item = 'item'
-            class="star star{{item.num+1}}" 
+            class="star star{{item.num}}" 
             src="{{imgUrl}}/index/star/star{{index}}.png"></image>
           </view>
 
@@ -59,12 +59,13 @@
                 autoplay="{{autoplay2}}" interval="{{interval2}}" duration="{{duration2}}" circular="{{circular2}}">
                 <block wx:for="{{projectData}}" wx:for-item="item" wx:key="*this">
                   <swiper-item class="swiper_img">
-                    <image class="project_star_img" src="{{item.trademark}}"></image>
+                    <!-- <image class="project_star_img" src="{{item.trademark}}"></image> -->
                     <view class="project_box">
                       <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image>
                       <view class="project_item">
                         <view class="item_name">
-                          <text>{{item.projectName}}</text>
+                          <image src="{{item.trademark}}" style="width:70rpx;height:70rpx;"></image>
+                          <text class="projectName txt-num1">{{item.projectName}}</text>
                           <text class="look_details" data-id="{{item.id}}" data-name="{{item.projectName}}" bindtap="lookDetails">详情 ></text>
                         </view>
                         <view class="item_data">
@@ -103,7 +104,7 @@
             <image 
             wx:for="{{starData}}" 
             wx:for-item = 'item'
-            class="star star{{item.num+1}}" 
+            class="star star{{item.num}}" 
             src="{{imgUrl}}/index/star/star{{index}}.png"></image>
           </view>
 
@@ -114,12 +115,13 @@
                 autoplay="{{autoplay2}}" interval="{{interval2}}" duration="{{duration2}}" circular="{{circular2}}">
                 <block wx:for="{{projectData2}}" wx:for-item="item" wx:key="*this">
                   <swiper-item class="swiper_img">
-                    <image class="project_star_img" src="{{item.trademark}}"></image>
+                    <!-- <image class="project_star_img" src="{{item.trademark}}"></image> -->
                     <view class="project_box">
                       <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image>
                       <view class="project_item">
                         <view class="item_name">
-                          <text>{{item.projectName}}</text>
+                          <image src="{{item.trademark}}" style="width:70rpx;height:70rpx;"></image>
+                          <text class="projectName txt-num1">{{item.projectName}}</text>
                           <text class="look_details" data-id="{{item.id}}" data-name="{{item.projectName}}" bindtap="lookDetails">详情 ></text>
                         </view>
                         <view class="item_data">
@@ -140,7 +142,7 @@
                 autoplay="{{autoplay2}}" interval="{{interval2}}" duration="{{duration2}}" circular="{{circular2}}">
                 <block>
                   <swiper-item class="swiper_img">
-                    <image class="project_star_img" src="{{imgUrl}}/index/star0.png"></image>
+                    <!-- <image class="project_star_img" src="{{imgUrl}}/index/star0.png"></image> -->
                     <view class="project_box">
                       <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image>
                       <view class="project_item nothing_station">

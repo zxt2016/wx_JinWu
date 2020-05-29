@@ -7,34 +7,18 @@ App({
     
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    this.globalData.token = wx.getStorageSync('token');
+    
+    // this.globalData.token = wx.getStorageSync('token');
     var openId = wx.getStorageSync('openId');
-    if(!openId){
-      // 登录
-      wx.login({
-        success: res => {
-        console.log(res);
-        var code = res.code;
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        wx.request({
-          url: _this.globalData.baseUrl +'/wxUser/code2Session?code='+code,
-          method:'POST',
-          header: {
-            'content-type': 'application/json',
-            'Authorization': _this.globalData.token,
-          },
-          success: rea => {
-            console.log(rea);
-            wx.setStorageSync('userId', rea.data.data.id);
-            wx.setStorageSync('openId', rea.data.data.openid);
-            wx.setStorageSync('phone', rea.data.data.phone);
-            wx.setStorageSync('userName', rea.data.data.username);
-          }
-        })
-        
+    // 登录
+    wx.login({
+      success: res => {
+      console.log(res);
+      var code = res.code;
+      // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      this.globalData.code = code;
       }
     })
-    }
     
     // 获取用户信息
     wx.getSetting({
@@ -56,12 +40,31 @@ App({
         }
       }
     })
+
+  
+    var openId = wx.getStorageSync('openId');
+    wx.request({
+      url: _this.globalData.baseUrl+'/refreshToken',
+      method: 'GET', 
+      header: {
+        'content-type': 'application/json',
+        'Authorization': wx.getStorageSync('token'),
+        'openId': openId
+      },
+      success (res) {
+        console.log(res) 
+        if(res.data.errcode == 0){
+          wx.setStorageSync('token',res.data.data);
+        }
+      }
+    })
   },
   globalData: {
     token:'',
+    code:'',
     userInfo: null,
-    baseUrl:'http://192.168.1.5:8080/photovoltaic',
-      // baseUrl: 'http://192.168.1.4:8080/photovoltaic',
+    // baseUrl:'http://192.168.1.5:8080/photovoltaic',
+      baseUrl: 'http://192.168.1.4:8080/photovoltaic',
     imgUrl:'https://www.jwpower.cn/image'
   }
 })

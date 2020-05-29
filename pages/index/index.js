@@ -17,13 +17,13 @@ Page({
     duration: 500,
     circular: true,
     //星系轮播
-    indicatorDots2: true,
+    indicatorDots2: false,
     vertical2: false,
-    autoplay2: true,
+    autoplay2: false,
     interval2: 5000,
     duration2: 800,
     circular2: true,
-
+    token:wx.getStorageSync('token'),
     //电站tab切换标识
     stationType:1,
     //星系旋转标识
@@ -58,13 +58,13 @@ Page({
         translateX:'',
         translateY:''
       },
-      // {
-      //   num:4,
-      //   width:'70',
-      //   height:'70',
-      //   translateX:'',
-      //   translateY:''
-      // },
+      {
+        num:4,
+        width:'70',
+        height:'70',
+        translateX:'',
+        translateY:''
+      },
     ],
     //平均角度
     deg:'',
@@ -153,7 +153,6 @@ Page({
             projectPower:res.data.data,
           });
         }
-        console.log(res);
       },
     })
     // 获取我的电站实时发电量
@@ -174,6 +173,7 @@ Page({
         console.log(res);
       },
     })
+
   },
   onShow(){
     var _this = this;
@@ -371,7 +371,7 @@ stationTab: function(e){
         url: app.globalData.baseUrl+'/wxOrder/getProjectList',
         method:'GET',
         header:{
-          'Authorization':app.globalData.token,
+          'Authorization':_this.data.token,
           'content-type': 'application/json'
         },
         data:{
@@ -379,6 +379,7 @@ stationTab: function(e){
           size:10
         },
         success(res){
+          console.log(res);
           if(res.statusCode == 200){
             if(res.data.data.records.length == 0){
               _this.setData({

@@ -74,16 +74,36 @@ Component({
             if (res.statusCode == 200){
               //存储token
               app.globalData.token = res.data.data.access_token;
-              wx.showToast({
-                title: '登录成功',
-                icon:'none',
-                duration:2000
+              wx.setStorageSync('token', res.data.data.access_token);
+              console.log(app.globalData.token);
+              wx.request({
+                url: app.globalData.baseUrl +'/wxUser/code2Session?code='+app.globalData.code,
+                method:'POST',
+                header: {
+                  'content-type': 'application/json',
+                  'Authorization': res.data.data.access_token,
+                },
+                success: rea => {
+                  console.log(rea);
+                  wx.setStorageSync('userId', rea.data.data.id);
+                  wx.setStorageSync('openId', rea.data.data.openid);
+                  wx.setStorageSync('phone', rea.data.data.phone);
+                  wx.setStorageSync('userName', rea.data.data.username);
+
+                  wx.showToast({
+                    title: '登录成功',
+                    icon:'none',
+                    duration:2000
+                  })
+                  setTimeout(function(){
+                    wx.switchTab({
+                      url: '../index/index',
+                    })
+                  },2000);
+                }
               })
-              setTimeout(function(){
-                wx.switchTab({
-                  url: '../index/index',
-                })
-              },2000);
+
+              
             }
           }
         })
