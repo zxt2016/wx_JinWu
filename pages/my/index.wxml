@@ -7,18 +7,23 @@
         <image class='float_lf' src='{{userInfo.avatarUrl}}'></image>
         <view class='name_num float_lf'>
           <text class='txt-num1'>{{userInfo.nickName}}</text>
-          <text class="float_lf" bindtap="partnership">所属合伙企业{{dataInfo.count}}个详情</text>
+          <view wx:if="{{dataInfo.count}}">
+          <text class="float_lf">所属合伙企业{{dataInfo.count}}个</text><text bindtap="partnership" class="detail" style="color:#407ad9">详情</text>
+          </view>
+          <text wx:else class="float_lf">所属合伙企业0个</text>
         </view>
       </view>
     </view>
   </view>
   <view class="allnum clearfix">
     <view class="float_lf num_info">
-      <view class="num">{{dataInfo.totalCost}}万元</view>
+      <view wx:if="{{dataInfo.totalCost}}" class="num">{{dataInfo.totalCost}}万元</view>
+      <view wx:else class="num">0万元</view>
       <view class="num_text">投资总额</view>
     </view>
     <view class="float_lf num_info">
-      <view class="num">{{dataInfo.totalIncome}}万元</view>
+      <view wx:if="{{dataInfo.totalIncome}}" class="num">{{dataInfo.totalIncome}}万元</view>
+      <view wx:else class="num">0万元</view>
       <view class="num_text">累计收益</view>
     </view>
   </view>

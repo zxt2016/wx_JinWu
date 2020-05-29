@@ -7,7 +7,7 @@
         <view class='itemList clearfix'>
           <text class='float_lf'>头像</text>
           <image src='{{dataInfo.icon}}' bindtap='changeAvatar'></image>
-          <input class="weui-input" name="icon_img" value="{{dataInfo.icon}}" style="display:none" />
+          <input class="weui-input" name="icon_img" value="{{img_url}}" style="display:none" />
         </view>
         <view class='itemList clearfix'>
           <text class='float_lf'>昵称</text>
