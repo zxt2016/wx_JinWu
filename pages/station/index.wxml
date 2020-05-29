@@ -9,10 +9,10 @@
  <view style="height:60rpx"></view>
  </view>
  <view class="introduce" wx:for="{{stationList}}">
- <navigator url="../station_detail/index?str={{item.id}}">
+ <navigator url="../station_detail/index?str={{item.id}}&name={{item.stationName}}">
     <image wx:if="item.stationImg == ''" src="{{imgUrl}}/introduce/station.png"></image>
     <image wx:else src="{{item.stationImg}}"></image>
-    <view bindtap='introduce_detail' bindtap="station_detail">
+    <view>
       <text>{{item.stationName}}</text>
       <view class="icon_img">
         <image src="{{imgUrl}}/introduce/icon.png"></image>

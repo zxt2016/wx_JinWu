@@ -7,9 +7,37 @@ Page({
    */
   data: {
     imgUrl:app.globalData.imgUrl,
-    dataInfo: {}
+    dataInfo: {},
+    img_url:''
   },
-
+  changeAvatar:function(){
+    const _this = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePath = res.tempFilePaths[0];
+        _this.setData({
+          personImage: tempFilePath
+        })
+        wx.uploadFile({
+           url: 'http://39.99.175.166:9000/admin/image/AliYunImgUpload', //图片上传至开发服务器接口
+           filePath: tempFilePath,
+           name: 'file',
+           formData: {},
+           success(res) {
+             let icon = this.dataInfo.icon
+             const data = res.data;
+             _this.setData({
+              icon: data,
+            })
+           }
+         })   
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -38,6 +66,31 @@ Page({
     })
   },  
 
+  userInfo: function(e) {
+    console.log(e)
+    var _this = this
+    wx.request({
+      url: app.globalData.baseUrl+'/wxUser/update/info',
+      method:'POST',
+      dataType:'json',
+      contentType: 'application/json',
+      data:JSON.stringify({
+        icon: e.detail.value.icon_img,
+        nickName: e.detail.value.nickName,
+        address: e.detail.value.address,
+      }),
+      success (res) {
+        console.log(res);
+            if (res.statusCode == 200){
+              wx.showToast({
+                title: '修改成功',
+                icon:'none',
+                duration:2000
+              })
+            }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
