@@ -16,6 +16,19 @@ Page({
     })
   },
   /**
+   * 用户邀请好友
+   */
+  onShareAppMessage: function () {
+    var that = this;
+    return {
+      title: "金乌光联，共享光伏电站，共享绿色财富。",
+      path: "/pages/share2/share2?id=" + that.data.userId + "&src=" + that.data.shareBg + "&tab2=" + that.data.tab2,
+      success: function (res) {
+        // console.log(res);
+      }
+    }
+  },
+  /**
    * 生命周期函数--监听页面加载
    */
 

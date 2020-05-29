@@ -77,11 +77,15 @@ Page({
     projectData2:[],
     // 认购授权标识
     power:2,
-
-
+    //招募单实时发电量
+    projectPower:'',
+    //我的项目实时发电量
+    myPower:'',
+    //我的项目为空的标识
+    powerTip:1,
   },
   //事件处理函数
-  bindViewTap: function() { 
+  bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
@@ -134,7 +138,42 @@ Page({
         console.log(res);
       },
     })
-
+    // 获取招募单实时发电量
+    wx.request({
+      url: app.globalData.baseUrl+'/power/company/power',
+      method: 'GET', 
+      header:{
+        'Authorization':app.globalData.token,
+        'content-type': 'application/json'
+      },
+      success(res){
+        console.log(res);
+        if(res.data.errcode == 0){
+          _this.setData({
+            projectPower:res.data.data,
+          });
+        }
+        console.log(res);
+      },
+    })
+    // 获取我的电站实时发电量
+    wx.request({
+      url: app.globalData.baseUrl+'/power/user/power',
+      method: 'GET', 
+      header:{
+        'Authorization':app.globalData.token,
+        'content-type': 'application/json'
+      },
+      success(res){
+        console.log(res);
+        if(res.data.errcode == 0){
+          _this.setData({
+            myPower:res.data.data,
+          });
+        }
+        console.log(res);
+      },
+    })
   },
   onShow(){
     var _this = this;
@@ -341,9 +380,17 @@ stationTab: function(e){
         },
         success(res){
           if(res.statusCode == 200){
-            _this.setData({
+            if(res.data.data.records.length == 0){
+              _this.setData({
+                powerTip:2,
                 projectData2:res.data.data.records,
-            });
+              });
+            }else{
+              _this.setData({
+                powerTip:1,
+                projectData2:res.data.data.records,
+              });
+            }
           }
           console.log(res);
         },

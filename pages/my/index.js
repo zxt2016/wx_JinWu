@@ -65,15 +65,6 @@ Page({
         that.setData({
           showModel: false,
         })
-        wx.getStorage({
-          key: 'userId',
-          success: function (ress) {
-            // that.setData({
-            //   userId: ress.data
-            // });
-           
-          },
-        })
       }
     }, fail: function () {
       that.setData({

@@ -1,16 +1,18 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/invite/index",
+    
+    "pages/login/login",
     "pages/myEnergy/index",
     "pages/myEnergy_record/index",
-    "pages/login/login",
     "pages/guarantee/index",
     "pages/introduce/index",
     "pages/introduce_detail/index",
     "pages/my/index",
     "pages/logs/logs",
     "pages/personalData/index",
-    "pages/invite/index",
+    
     "pages/invite_rules/index",
     "pages/share/index",
     "pages/share_rules/index",

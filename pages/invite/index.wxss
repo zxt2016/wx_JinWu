@@ -4,7 +4,7 @@
 }
 .mineBg image{
   width: 750rpx;
-  height: 390rpx;
+  height: 420rpx;
   z-index: -10;
 }
 .guize{
@@ -31,27 +31,33 @@
 .num{
   color: #ffffff;
   font-size: 48rpx;
-  height: 80rpx;
+  height: 70rpx;
 }
 .num_text{
   color: #ffffff;
 }
-.button{
-  width: 580rpx;
+.invitebtn{
   height: 80rpx;
   border-radius: 50rpx;
   background-color: #ffffff;
   margin-left: 86rpx;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 10;
-  margin-top: 200rpx;
+  color: #176eff;
+  font-size: 28rpx;
+  margin-top: 220rpx;
+  display: block;
+  line-height: 80rpx;
+  padding: 0 48rpx;
 }
-.button text{
+/* .button text{
   line-height: 80rpx;
   color: #176eff;
   font-size: 26rpx;
   margin-left: 260rpx;
-}
+} */
 .inviteList{
   position: absolute;
   z-index: 2;
@@ -60,7 +66,7 @@
   box-shadow: 5rpx 5rpx 5rpx #f3f3f3;
   border-radius: 20rpx;
   background-color: #ffffff;
-  margin: 300rpx 25rpx 40rpx 25rpx;
+  margin: 340rpx 25rpx 40rpx 25rpx;
   padding: 20rpx;
 }
 .itemList{

@@ -1,23 +1,24 @@
-<view class="container login_bg">
-  <image class="login_img"></image>
-  <view class='login_title'>登录</view>
-  <form class='login_form' bindsubmit="formSubmit">
-    <view class='form_item'>
-      <text>手机号：</text>
-      <input class='phone' name='phone' placeholder="请输入手机号" data-type="phone" value='' bindchange="changeVal"></input>
-    </view>
-    <view class='form_item'>
-      <text>验证码：</text>
-      <input class='code' name='code' value='' data-type="code" bindchange="changeVal"></input>
-      <button class='getCode' type="default" bindtap="sendMessage" wx:if="{{tip == true}}">获取验证码</button>
-      <button class='getCode' type="default" bindtap="sendMessage" wx:else disabled="true">{{curCount}}s</button>
-    </view>
-     <view class='form_item'>
-      <text>邀请码：</text>
-      <input class='phone invite' name='inviteCode' placeholder="请输入邀请码" value='' bindchange="changeVal"></input>
-    </view>
-    <view class='form_item'>
-      <button class='submit' type="primary" form-type="submit">登录</button>
-    </view>
-  </form>
+<view class="login_bg">
+  <image class="login_img" src="../image/login/logo_bg.png"></image>
+  <view class="loginMain">
+  
+    <form class='login_form' bindsubmit="formSubmit">
+      <view class='form_item'>
+        <image src="../image/login/shouji.png"></image>
+        <input class='phone' name='phone' placeholder="请输入手机号" placeholder-style="color:#ccc;" data-type="phone" value='' bindchange="changeVal"></input>
+      </view>
+      <view class='form_item'>
+        <input class='code' name='code' value='' data-type="code" placeholder="请输入短信验证码" placeholder-style="color:#ccc;" bindchange="changeVal"></input>
+        <button class='getCode' type="default" bindtap="sendMessage" wx:if="{{tip == true}}">获取验证码</button>
+        <button class='getCode' type="default" bindtap="sendMessage" wx:else disabled="true" style="border-color:#ccc;">{{curCount}}s</button>
+      </view>
+      <view class='form_item'>
+        <text>邀请码：</text>
+        <input class='phone invite' name='inviteCode' placeholder="请输入邀请码（非必填）" placeholder-style="color:#ccc;" value='' bindchange="changeVal"></input>
+      </view>
+      <view class='form_item' style="border:0;">
+        <button class='submit' type="primary" form-type="submit">登录</button>
+      </view>
+    </form>
+  </view>
 </view>

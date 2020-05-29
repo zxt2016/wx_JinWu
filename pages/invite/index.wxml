@@ -12,9 +12,11 @@
       <view class="num_text">邀请人数</view>
     </view>
   </view>
-  <view class="button">
+  <!-- open-type="share" -->
+  <button class="invitebtn" open-type="share" style="width:580rpx;">邀请</button>
+  <!-- <view class="button">
         <text>邀请</text>
- </view>
+ </view> -->
  <view class="inviteList">
         <view class='invite_title clearfix'>
           <text class='float_lf'>已邀请好友</text>
