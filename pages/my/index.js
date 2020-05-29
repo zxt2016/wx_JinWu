@@ -95,9 +95,6 @@ Page({
     }
   })
   },
-
-
-
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -110,8 +107,6 @@ Page({
         url: '../login/login',
       })
     },300);
-
-
   },
 
   personal_data: function(e) {

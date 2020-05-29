@@ -11,6 +11,7 @@ Page({
     userCode:'',
     num:'',
     list:[],
+    userInfo:wx.getStorageSync('userInfo'),
   },
 
   //跳转邀请规则页面
@@ -25,10 +26,11 @@ Page({
   onShareAppMessage: function () {
     var that = this;
     return {
-      title: "金乌光联，共享光伏电站，共享绿色财富。",
-      path: "/pages/share2/share2?id=" + that.data.userId + "&src=" + that.data.shareBg + "&tab2=" + that.data.tab2,
+      title: that.data.userInfo.nickName+"邀请您加入光伏合伙人",
+      path: "/pages/login/login?code=" + that.data.userCode,
+      imgUrl:'../image/invite/invite_img.png',
       success: function (res) {
-        // console.log(res);
+        
       }
     }
   },
@@ -36,10 +38,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
+    console.log(this.data.token);
     wx.setNavigationBarTitle({
       title: "邀请好友"
     });
-
     var _this = this;
     wx.request({
       url: app.globalData.baseUrl+'/wxUser/invited/List',
@@ -56,6 +58,17 @@ Page({
             num:res.data.data.num,
             list:res.data.data.list
           });
+        }else if(res.data.errcode == 41001){
+          wx.showToast({
+            title: '登录超时，请重新登录',
+            icon:'none',
+            duration:3000
+          })
+          setTimeout(function(){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          },2000);
         }
       },
     })
