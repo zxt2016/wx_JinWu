@@ -386,14 +386,13 @@ stationTab: function(e){
                 powerTip:2,
                 projectData2:res.data.data.records,
               });
-            }else{
+            }else{  
               _this.setData({
                 powerTip:1,
                 projectData2:res.data.data.records,
               });
             }
           }
-          console.log(res);
         },
       })
     }
@@ -442,5 +441,14 @@ lookDetails:function(e){
     url: '../station/index?str='+id+'&name='+name,
   })
 },
-
+renGou(){
+  var that = this;
+  if(that.data.power == 2){
+    wx.showToast({
+      title: '暂未开放，敬请期待',
+      icon:'none',
+      duration:3000
+    })
+  }
+},
 })

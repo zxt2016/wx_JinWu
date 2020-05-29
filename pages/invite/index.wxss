@@ -132,3 +132,12 @@
   width: 130rpx;
   height: 50rpx;
 }
+.invite_nothing{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.invite_nothing text{
+  font-size: 28rpx;
+}

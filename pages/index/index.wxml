@@ -75,7 +75,7 @@
                           <view class="item_list">总认购份数：{{item.subscriptionTotalNum}} 份</view>
                           <view class="item_list">年化收益率：<text style="color:red;">{{item.annualized}} %</text></view>
                         </view>
-                        <view class="buyBtn {{power == 1 ? 'blueBtn' : ''}}" disabled="{{power == 1 ? false : true}}">认购</view>
+                        <view class="buyBtn {{power == 1 ? 'blueBtn' : ''}}" bindtap="renGou">认购</view>
                       </view>
                     </view>
 

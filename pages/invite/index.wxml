@@ -21,34 +21,21 @@
         <view class='invite_title clearfix'>
           <text class='float_lf'>已邀请好友</text>
         </view>
-        <view class='itemList clearfix'>
+        <view class='itemList clearfix' wx:if="{{list.length != 0}}" wx:for="{{list}}" wx:for-item="item">
           <view class='user_num float_lf'>
-            <text class='float_lf'>1</text>
+            <text class='float_lf'>{{index+1}}</text>
           </view> 
-          <image class='user_img float_lf' src='{{imgUrl}}/invite/user.png'></image>
+          <image class='user_img float_lf' wx:if="{{item.icon != ''}}" src='{{item.icon}}'></image>
+          <image class='user_img float_lf' wx:elif="{{item.icon == ''}}" src='../invite/header_icon.png'></image>
           <view class='invite_detail float_lf'>
-                <view class="invite_name">金乌科技</view>
-                <view class="invite_time">邀请时间：2020-5-21</view>
+                <view class="invite_name">{{item.nickName}}</view>
+                <view class="invite_time">邀请时间：{{item.created}}</view>
           </view>
         </view>
-        <view class='itemList clearfix'>
-          <view class='user_num float_lf'>
-            <text class='float_lf'>2</text>
-          </view> 
-          <image class='user_img float_lf' src='{{imgUrl}}/invite/user.png'></image>
-          <view class='invite_detail float_lf'>
-                <view class="invite_name">金乌科技</view>
-                <view class="invite_time">邀请时间：2020-5-21</view>
-          </view>
-        </view>
-        <view class='itemList clearfix'>
-          <view class='user_num float_lf'>
-            <text class='float_lf'>3</text>
-          </view> 
-          <image class='user_img float_lf' src='{{imgUrl}}/invite/user.png'></image>
-          <view class='invite_detail float_lf'>
-                <view class="invite_name">金乌科技</view>
-                <view class="invite_time">邀请时间：2020-5-21</view>
+
+        <view class='itemList' wx:if="{{list.length == 0}}" >
+          <view class='invite_nothing'>
+            <text>您还没有邀请好友</text>
           </view>
         </view>
 </view>

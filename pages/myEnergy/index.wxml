@@ -3,12 +3,12 @@
 	<image class="three" src="{{imgUrl}}/myEnergy/myEnergy_bg.png"></image>
 	<!-- 可用能量、累计能量 -->
 	<view class="myEnergy">
-		<view class="balanceEnergy">可用能量：<text>{{balanceEnergy}}</text>	kw</view>
+		<view class="balanceEnergy">可用能量：<text>{{balanceEnergy}}</text>w</view>
 		<view class="totalEnergy">
 			<image class="header_top" src="{{imgUrl}}/myEnergy/header_img.png"></image>
 			<view>
 				<view>累计能量</view>
-				<view>{{totalEnergy}}kw</view>
+				<view>{{totalEnergy}}w</view>
 			</view>
 			<view class="record" bindtap="getRecord">记录</view>
 		</view>
@@ -51,7 +51,7 @@
 					<view class="name_val">
 						<text>金乌科技</text>
 						<!-- <text>{{item.nickName}}</text> -->
-						<text>{{item.totalEnergy}}kw</text>
+						<text>{{item.totalEnergy}}w</text>
 					</view>
 				</view>
 		</view>

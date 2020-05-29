@@ -10,8 +10,8 @@
     "pages/my/index",
     "pages/logs/logs",
     "pages/personalData/index",
-    
     "pages/invite/index",
+    
     "pages/invite_rules/index",
     "pages/share/index",
     "pages/share_rules/index",
