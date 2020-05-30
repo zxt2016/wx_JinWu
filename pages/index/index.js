@@ -150,7 +150,7 @@ Page({
         console.log(res);
         if(res.data.errcode == 0){
           _this.setData({
-            projectPower:res.data.data,
+            projectPower:(res.data.data/1000).toFixed(2),
           });
         }
       },

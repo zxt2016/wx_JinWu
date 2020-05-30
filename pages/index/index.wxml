@@ -40,7 +40,7 @@
         <image class='star_line' src="{{imgUrl}}/index/star_line.png"></image>
         <view class="star_animted">
           <!-- 实时发电量 -->
-          <view class="nowPower">当日累计发电量：{{projectPower/1000}}kwh</view>
+          <view class="nowPower">当日累计发电量：{{projectPower}}kwh</view>
           <!-- 太阳 -->
           <!-- <image class="sun" src="{{imgUrl}}/index/sun.png"></image> -->
           <image class="sun" src="../image/star/sun.png"></image>
@@ -99,7 +99,8 @@
         <!-- 实时发电量 -->
           <view class="nowPower">当日累计发电量：{{myPower/1000}}kwh</view>
           <!-- 太阳 -->
-          <image class="sun" src="{{imgUrl}}/index/sun.png"></image>
+          <!-- <image class="sun" src="{{imgUrl}}/index/sun.png"></image> -->
+          <image class="sun" src="../image/star/sun.png"></image>
           <!-- 星球 -->
           <view class="star_img">
             <image 
