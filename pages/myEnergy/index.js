@@ -9,6 +9,7 @@ Page({
     animation: '',
     userId:'',
     icon:'',
+    token:wx.getStorageSync('token'),
     //用户总能量
     totalEnergy:'',
     //用户可用能量
@@ -18,7 +19,13 @@ Page({
     //能量排行榜
     rankingList:[],
     imgUrl:app.globalData.imgUrl,
-  },
+    //上拉加载
+    limit: 5,//显示数据量
+    page: 1,//当前页
+    load: true,
+    loading: false,//加载动画的显示
+    total:0, //数据总数
+    },
 
   /**
    * 生命周期函数--监听页面加载
@@ -29,8 +36,6 @@ Page({
       system:wx.getSystemInfoSync(),
       token:wx.getStorageSync('token')
     })
-    console.log(wx.getStorageSync('token'));
-    app.globalData.token = wx.getStorageSync('token');
 
     //查询用户能量
     wx.request({
@@ -74,16 +79,17 @@ Page({
       header:{'Authorization':_this.data.token},
       contentType: 'application/json;charset=UTF-8 ',
       data:{
-        current:1,
-        size:10
+        current:_this.data.page,
+        size:_this.data.limit
       },
       success(res){
         console.log(res);
         if(res.statusCode == 200){
           _this.setData({
-            rankingList:res.data.data.records
+            rankingList:res.data.data.records,
+            total:res.data.data.total,
+            page:_this.data.page*1+1
           });
-
         }
       },
     })
@@ -268,12 +274,6 @@ Page({
         }
       },
     })
-
-
-
-
-
-    
   },
   getRecord(){
     var _this = this;
@@ -281,6 +281,58 @@ Page({
       url: '../myEnergy_record/index?total='+ _this.data.totalEnergy,
     });
   },
+  // 上拉加载
+onReachBottom: function () {
+    var that = this;
     
-
+    if (that.data.load) {//全局标志位，方式请求未响应是多次触发
+      if (that.data.rankingList.length >= that.data.total) {
+        wx.showToast({
+          title: '已经到底了！',
+          icon:"none",
+          duration:3000
+        })
+      }else{
+          that.setData({  
+            load: false,
+            loading: true,//加载动画的显示
+          })
+          wx.request({
+            url: app.globalData.baseUrl+'/wxEnergy/rank',
+            method:'GET',
+            header:{'Authorization':that.data.token},
+            contentType: 'application/json;charset=UTF-8 ',
+            data:{
+              current:that.data.page,
+              size:that.data.limit
+            },
+            success: function (res) {
+              console.log(res)
+              if(res.statusCode == 200){
+                var content = that.data.rankingList.concat(res.data.data.records);
+                that.setData({
+                  rankingList: content,
+                  page: that.data.page * 1 + 1,
+                  load: true,
+                  loading: false,
+                })
+              }
+              
+            },
+            fail: function (res) {
+                that.setData({
+                  loading: false,
+                  load: true,
+                })
+                wx.showToast({
+                  title: '数据异常',
+                  icon: 'none',
+                  duration: 2000,
+                }) 
+            },
+            complete: function (res) { },
+          })
+        }
+      }
+  }
 })

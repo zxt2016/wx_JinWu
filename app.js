@@ -45,7 +45,7 @@ App({
     wx.request({
       url: _this.globalData.baseUrl+'/refreshToken',
       method: 'GET', 
-      header: {
+      header: { 
         'content-type': 'application/json',
         'Authorization': wx.getStorageSync('token'),
         'openId': openId
@@ -63,7 +63,7 @@ App({
     code:'',
     userInfo: '',
     baseUrl:'http://192.168.1.5:8080/photovoltaic',
-     // baseUrl: 'http://8qqais.natappfree.cc/photovoltaic',
+    //  baseUrl: 'http://b2ikx7.natappfree.cc/photovoltaic',
     imgUrl:'https://www.jwpower.cn/image'
   }
 })

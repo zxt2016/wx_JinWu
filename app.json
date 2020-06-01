@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/my/index",
     "pages/index/index",
     "pages/myEnergy/index",
     "pages/myEnergy_record/index",
@@ -7,7 +8,7 @@
     "pages/guarantee/index",
     "pages/introduce/index",
     "pages/introduce_detail/index",
-    "pages/my/index",
+    
     "pages/logs/logs",
     "pages/personalData/index",
     "pages/invite/index",
