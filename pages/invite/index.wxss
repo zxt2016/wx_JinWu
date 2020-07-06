@@ -130,7 +130,7 @@
 
 .logo_img image{
   width: 130rpx;
-  height: 50rpx;
+  height: 130rpx;
 }
 .invite_nothing{
   height: 100%;

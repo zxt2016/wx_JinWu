@@ -146,7 +146,7 @@
 <!-- 自定义弹框开始 -->
     <view wx:if="{{showModel}}" class="model">
       <view class="modelTitle">提示</view>
-      <view class="modelBody">金乌电联小程序申请获取微信授权（昵称、头像等)</view>
+      <view class="modelBody">每刻蓝小程序申请获取微信授权（昵称、头像等)</view>
       <view class="btns btnBox">
         <button class='quxiao_btn' bindtap='quxiao'>拒绝</button>  
         <button open-type="getUserInfo" class="agree" bindgetuserinfo="getUserInfo" bindtap='nones' lang="zh_CN">允许</button>

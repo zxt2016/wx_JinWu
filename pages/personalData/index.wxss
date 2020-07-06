@@ -73,5 +73,5 @@ font-size: 26rpx;
 
 .logo_img image{
   width: 130rpx;
-  height: 50rpx;
+  height: 130rpx;
 }

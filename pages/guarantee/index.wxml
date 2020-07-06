@@ -142,7 +142,7 @@
                 <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
             </view>
             <view class="content_info float-lf">
-                <text class="text-rg">每一位合伙人均开通金乌光联平台账户，通过金乌光联平台可以查看所有电站全部实际情况，包括地址、现场视频照片、发电情况等等，同时还可以查看自己所持有电站的发电量，对发电收入有可控预期。</text>
+                <text class="text-rg">每一位合伙人均开通每刻蓝平台账户，通过每刻蓝平台可以查看所有电站全部实际情况，包括地址、现场视频照片、发电情况等等，同时还可以查看自己所持有电站的发电量，对发电收入有可控预期。</text>
                 <image class="content_image" src="{{imgUrl}}/guarantee/image10.png"></image>
             </view>
             </view>
