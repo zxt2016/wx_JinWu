@@ -182,10 +182,15 @@ Page({
     }
  },
  backHome(){
-   wx.switchTab({
-     url: '../index/index',
-   })
- },
+  wx.reLaunch({
+    url: '../index/index',
+    success: function (e) { 
+      var page = getCurrentPages().pop(); 
+      if (page == undefined || page == null) return; 
+      page.onLoad(); 
+    }
+  })
+},
 
  //认购
 renGou(){
