@@ -169,7 +169,7 @@ Page({
               power:data.status,
               profit:data.yieldList,
               allPower:power,
-              all_c:power/1000,
+              all_c:(power/1000).toFixed(2),
               all_mei:(power*0.4/1000).toFixed(2),
               all_tree:(power/5.023).toFixed(2),
               startTime:time1,
@@ -182,10 +182,15 @@ Page({
     }
  },
  backHome(){
-   wx.switchTab({
-     url: '../index/index',
-   })
- },
+  wx.reLaunch({
+    url: '../index/index',
+    success: function (e) { 
+      var page = getCurrentPages().pop(); 
+      if (page == undefined || page == null) return; 
+      page.onLoad(); 
+    }
+  })
+},
 
  //认购
 renGou(){

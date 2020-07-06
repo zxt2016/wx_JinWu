@@ -1,6 +1,6 @@
 <view class='mineBg'>
     <image src="{{imgUrl}}/partnership/top_img.png" mode="aspectFill"></image>
-<view class="title">{{projectName}} </view>
+<view class="title">{{projectName}}</view>
  <view class="line"></view>
  <view class="inviteList">
       <input class="weui-input" name="input" placeholder="请输入您想查找的电站" bindinput="searchBtn" focus='ture'/>

@@ -4,7 +4,7 @@
   </view>
   <form bindsubmit='realName' class="form_box">
     <view class="form_item">
-      <text>真是姓名：</text>
+      <text>真实姓名：</text>
       <input class="form_input realName" name="realName" placeholder="请输入您的真实姓名" placeholder-style="color:#999;font-size:24rpx;" bindinput="adInputChange"/>
     </view>
     <view class="form_item">
