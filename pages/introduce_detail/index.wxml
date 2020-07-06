@@ -52,14 +52,14 @@
 <view class="main" wx:if="{{num == 4}}">
     <image class="content_image" src="{{imgUrl}}/introduce/introduce4.png"></image>
     <view class="introduce_detail">
-      <text class="content_title">关于金乌光联---光伏合伙人模式</text>
+      <text class="content_title">关于每刻蓝---光伏合伙人模式</text>
       <view class="line"></view>
       <text class="content">痛点1 目前现金贬值率不断提升，银行机构理财年化收益普遍不足4%，而其他投资行业风险比较大，目前社会上缺乏投资收益高低风险的项目。
 
         痛点2 国家大力支持光伏新能源发展，国家电网对户用分布式光伏电站审批简易快捷，电费和补贴结算及时准确。光伏电站具备良好的投资属性，收益率高，收益稳定，收益期长达20年以上， 属于优质的长线投资产品，但一般投资人无法进行光伏电站市场开发、施工建设、电网并网和售后运维等专业操作。
 
         痛点3 大量农户屋顶闲置，但无力投资光伏电站。
-        简单来讲，金乌光联光伏合伙人模式就是光伏投资撮合交易平台，金乌解决光伏投资链条衔接和管理问题。
+        简单来讲，每刻蓝光伏合伙人模式就是光伏投资撮合交易平台，金乌解决光伏投资链条衔接和管理问题。
 
         金乌公司以自身多年光伏电站生产、施工、运维优势，首先自投资建设实体电站，打造优质光伏电站样本群，然后以出售企业股份的形式来交易光伏资产，回笼资金后再进一步开发市场，扩大规模，电站建成后再进行交易，如此循环往复。
         对于投资人来讲，投资的是实际存在资产，并且收益稳定、无风险，收益期长达20年；
@@ -80,9 +80,9 @@
 <view class="main" wx:if="{{num == 6}}">
     <image class="content_image" src="{{imgUrl}}/introduce/introduce3.png"></image>
     <view class="introduce_detail">
-      <text class="content_title">关于金乌光联光伏合伙人收益率</text>
+      <text class="content_title">关于每刻蓝光伏合伙人收益率</text>
       <view class="line"></view>
-      <text class="content">根据光伏电站大数据测算，金乌光联光伏合伙人模式20年投资回报率预计为，年化收益率预计为，并且相比定期存款，投资人是每月回收收益，按照复利计算，20年投资回报率为：，年化收益率为：</text> 
+      <text class="content">根据光伏电站大数据测算，每刻蓝光伏合伙人模式20年投资回报率预计为，年化收益率预计为，并且相比定期存款，投资人是每月回收收益，按照复利计算，20年投资回报率为：，年化收益率为：</text> 
     </view>
 </view>
 

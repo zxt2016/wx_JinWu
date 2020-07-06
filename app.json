@@ -36,7 +36,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#2c7bfe",
-    "navigationBarTitleText": "金乌电联",
+    "navigationBarTitleText": "每刻蓝",
     "navigationBarTextStyle":"white",
     "enablePullDownRefresh": true,
     "onReachBottomDistance":20

@@ -131,7 +131,7 @@ page{
   
   .logo_img image{
     width: 130rpx;
-    height: 50rpx;
+    height: 130rpx;
   }
   .warning{
     padding: 0 0 10rpx 40rpx;
