@@ -169,7 +169,7 @@ Page({
               power:data.status,
               profit:data.yieldList,
               allPower:power,
-              all_c:power/1000,
+              all_c:(power/1000).toFixed(2),
               all_mei:(power*0.4/1000).toFixed(2),
               all_tree:(power/5.023).toFixed(2),
               startTime:time1,
