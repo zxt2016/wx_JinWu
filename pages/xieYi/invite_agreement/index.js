@@ -1,4 +1,4 @@
-// pages/invite_rules/index.js
+// pages/xieYi/invite_agreement/index.js
 const app = getApp();
 Page({
 
@@ -6,7 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl:app.globalData.imgUrl,
     urls:'https://www.jwpower.cn/invite_agreement.html',
   },
 

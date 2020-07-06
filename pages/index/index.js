@@ -177,9 +177,9 @@ Page({
         console.log(res);
         if(res.data.errcode == 0){
           _this.setData({
-            projectPower:(res.data.data.nowElec/1000).toFixed(2),
-            proMonthPower:(res.data.data.monthElec/1000).toFixed(2),
-            proTotalPower:(res.data.data.yearElec/1000).toFixed(2)
+            projectPower:res.data.data.nowElec,
+            proMonthPower:res.data.data.monthElec,
+            proTotalPower:res.data.data.yearElec
           });
         }
       },

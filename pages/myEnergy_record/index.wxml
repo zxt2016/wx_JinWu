@@ -16,6 +16,12 @@
           <view wx:if="{{item.type == 3}}">
             <text>收取发电产生的能量{{item.energy}}g</text>
           </view>
+          <view wx:if="{{item.type == 4}}">
+            <text>收取首次购买产生的能量{{item.energy}}g</text>
+          </view>
+          <view wx:if="{{item.type == -1}}">
+            <text style="color:red;">自动消失的的能量{{item.energy}}g</text>
+          </view>
         </view>
       </view>
     </view>

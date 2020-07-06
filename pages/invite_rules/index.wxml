@@ -1,4 +1,4 @@
-<view class="content">
+<!-- <view class="content">
   <text class="title">参与方式：</text>
   <text class="item">1.打开小程序，点击【我的】-【邀请好友】，将页面链接分享给微信好友或朋友圈 </text>
   <text class="item">2.好友通过您的分享链接注册成功，您将获得能量奖励 </text>
@@ -6,4 +6,6 @@
 </view>
 <view class="logo_img">
       <image src="{{imgUrl}}/guarantee/logo.png"></image>
-    </view>
+    </view> -->
+<!-- 跳转外部链接 -->
+ <web-view src="{{urls}}"></web-view>

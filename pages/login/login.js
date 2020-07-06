@@ -20,6 +20,8 @@ Page({
     gzType:'',
     companyId:'',
     shopId:'',
+    // 是否同意注册协议
+    status:true,
   },
   onLoad: function (options) {
     console.log(options);
@@ -64,6 +66,12 @@ Page({
     }else if(!code){
       wx.showToast({
         title: '请输入验证码',
+        icon: 'none',
+        duration: 3000
+      })
+    }else if(_this.data.status == false){
+      wx.showToast({
+        title: '请勾选用户注册协议',
         icon: 'none',
         duration: 3000
       })
@@ -208,41 +216,64 @@ Page({
             })
 
             
+          }else{
+            wx.showToast({
+              title: res.data.errmsg,
+              icon:'none'
+            })
           }
         }
       })
     }
   },
+  // 手机号
+  phoneText(e){
+    // var txt = e.currentTarget.dataset.type;
+    var input_val = e.detail.value;
+    this.setData({
+      phone:input_val
+    });
+    console.log(input_val);
+  },
+  // 验证码
+  codeText(e){
+    var input_val = e.detail.value;
+    this.setData({
+      code:input_val
+    });
+    console.log(input_val);
+  },
   changeVal(e){
     var text = e.currentTarget.dataset.type;
     var input_val = e.detail.value;
-    if(text == 'phone'){
-      if(!input_val){
-        wx.showToast({
-          title: '请输入手机号',
-          icon:'none',
-          duration: 3000
-        })
-      } else if (/^(13[0-9]|14[5-9]|15[012356789]|16[0-9]|17[0-8]|18[0-9]|19[8-9])[0-9]{8}$/.test(input_val) != true){
-        wx.showToast({
-          title: '手机号格式不正确',
-          icon: 'none',
-          duration: 3000
-        })
-      }else{
-          this.setData({
-            phone:input_val
-          });
-      }
-    }else if(text == 'code'){
-      if(!input_val){
-        wx.showToast({
-          title: '请输入短信验证码',
-          icon:'none',
-          duration: 3000
-        })
-      }
-    }
+    // if(text == 'phone'){
+    //   if(!input_val){
+    //     wx.showToast({
+    //       title: '请输入手机号',
+    //       icon:'none',
+    //       duration: 3000
+    //     })
+    //   } else if (/^(13[0-9]|14[5-9]|15[012356789]|16[0-9]|17[0-8]|18[0-9]|19[8-9])[0-9]{8}$/.test(input_val) != true){
+    //     wx.showToast({
+    //       title: '手机号格式不正确',
+    //       icon: 'none',
+    //       duration: 3000
+    //     })
+    //   }else{
+    //       this.setData({
+    //         phone:input_val
+    //       });
+    //   }
+    // }
+    // if(text == 'code'){
+    //   if(!input_val){
+    //     wx.showToast({
+    //       title: '请输入短信验证码',
+    //       icon:'none',
+    //       duration: 3000
+    //     })
+    //   }
+    // }
     
   },
   //获取验证码-倒计时
@@ -323,5 +354,22 @@ Page({
     }
   },
   
-
+// 是否同意协议
+xieYiBtn(){
+  var stat = this.data.status;
+  if(stat == true){
+    this.setData({
+      status:false
+    });
+  }else{
+    this.setData({
+      status:true
+    });
+  }
+},
+agreement_btn(){
+  wx.navigateTo({
+    url: '../xieYi/user_agreement/index',
+  })
+},
 })

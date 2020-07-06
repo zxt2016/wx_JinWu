@@ -329,25 +329,29 @@
         console.log(num,_this.data.page)
         if(num == 0){
           _this.setData({
-            order_list: _this.data.data1,
+            order_list:_this.data.data1,
+            data1: _this.data.data1,
             total:_this.data.total1,
             page:_this.data.page*1+1
           })
         }else if(num == 1){
           _this.setData({
-            order_list: _this.data.data2,
+            order_list:_this.data.data2,
+            data2: _this.data.data2,
             total:_this.data.total2,
             page:_this.data.page*1+1
           })
         }else if(num == 2){
           _this.setData({
-            order_list: _this.data.data3,
+            order_list:_this.data.data3,
+            data3: _this.data.data3,
             total:_this.data.total3,
             page:_this.data.page*1+1
           })
         }else if(num == 3){
           _this.setData({
-            order_list: _this.data.data4,
+            order_list:_this.data.data4,
+            data4: _this.data.data4,
             total:_this.data.total4,
             page:_this.data.page*1+1
           })
@@ -399,7 +403,6 @@
           header: {
             'content-type': 'application/json',
             'authorization': app.globalData.token,
-            'openId': '1'
           },
           data: {
             id: order_id
@@ -417,6 +420,32 @@
                 icon:'success',
                 duration:2000
               })
+              wx.request({
+                url: app.globalData.baseUrl+'/wxOrder/getList',
+                method: 'GET', 
+                header: {
+                  'content-type': 'application/json',
+                  'Authorization': wx.getStorageSync('token'),
+                },
+                data: {
+                  current:_this.data.page,
+                  size:_this.data.limit,
+                  status:0,
+                },
+                success (res) {
+                  console.log(res);
+                  var data = res.data.data.records;
+                  for(var i=0;i<data.length;i++){
+                    data[i].capacity = (parseInt(data[i].capacity)/1000).toFixed(2);
+                    data[i].subscriptionAmont = (parseInt(data[i].subscriptionAmont)/1000).toFixed(2);
+                  }
+                  _this.setData({
+                    data1: data,
+                    total1:res.data.data.total,
+                  })
+                }
+              })
+
             }
           }
         })
@@ -428,7 +457,50 @@
   //   var height = wx.getSystemInfoSync().windowHeight;
   //   console.log(height,e.scrollTop);
   // },
-
+// 招募单支付
+proPayBtn(e){
+  var id = e.currentTarget.dataset.id;
+  wx.request({
+    url: app.globalData.baseUrl+'/wxRecruitOrder/getWeChatPayParams?id='+id,
+    method: 'GET', 
+    header: {
+      'content-type': 'application/json',
+      'Authorization': wx.getStorageSync('token'),
+    },
+    data: {
+      id:id
+    },
+    success (res) {
+      console.log(res);
+      if(res.data.errcode == 0){
+        wx.requestPayment(
+          {
+          timeStamp: res.data.data.orderString.timeStamp,
+          nonceStr: res.data.data.orderString.nonceStr,
+          package: res.data.data.orderString.package,
+          signType: res.data.data.orderString.signType,
+          paySign: res.data.data.orderString.sign,
+          success:function(res){
+              console.log(res);
+              if(res.errMsg == "requestPayment:ok"){
+                wx.navigateTo({
+                  url: '../pay_success/index',
+                })
+              }else{
+                wx.showToast({
+                  title: '支付失败！',
+                  icon:'none',
+                  duration:3000
+                })
+              }
+          },
+          fail:function(res){},
+            complete:function(res){}
+          })
+      }
+    }
+  })
+},
 
 
 

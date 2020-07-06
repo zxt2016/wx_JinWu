@@ -32,7 +32,7 @@ Component({
       {
         pagePath: "../shop/index",
         text: "低碳圈",
-        iconPath:"../../image/shopDetail/shop.png",
+        iconPath:"../../image/logo_nav.png",
         // iconPath:'https://www.jwpower.cn/image/shop_icon.png',
         // selectedIconPath:"../../image/shop_icon.png"
       },

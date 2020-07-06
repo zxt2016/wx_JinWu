@@ -9,6 +9,7 @@ page{
   background-color: #ffffff;
   margin-bottom: 20rpx;
   padding: 20rpx 32rpx;
+  box-sizing: border-box;
 }
 .introduce image{
   height: 285rpx;

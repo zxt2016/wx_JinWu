@@ -85,7 +85,7 @@
       </view>
 
       <view class="stationDataTotal">
-        <view class="project_box" style="height:{{projectData.length < 2 ? '205px': shTip1 == false ? '430px':projectData.length*200+35+'px'}}" wx:if="{{stationType == 1}}">
+        <view class="project_box" style="height:{{projectData.length < 2 ? '205px': shTip1 == false ? '450px':projectData.length*200+35+'px'}}" wx:if="{{stationType == 1}}">
             <!-- <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image> -->
             <view class="project_item" wx:for="{{projectData}}" wx:for-item="item" wx:key="*this">
               <view class="item_name">

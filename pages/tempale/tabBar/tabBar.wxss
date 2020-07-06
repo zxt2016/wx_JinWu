@@ -50,8 +50,8 @@
   transform: translate(-50%,-50%);
   z-index: 120;
   border-radius: 50%;
-  box-shadow: 0 0 3px 2px rgba(85, 175, 40,0.4);
-  background-color: rgb(85, 175, 40);
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0,0.2);
+  /* background-color: rgb(85, 175, 40); */
 }
 .tabBar .tabItem:first-child+.tabItem+.tabItem .tabBarIcon text{
   position: absolute;

@@ -27,7 +27,7 @@
 <view class="warning">注：预支付金额为认购份额总价值的1%。</view>
 <view class="agreement">
   <image class="icon" bindtap="xieYiBtn" src="../image/{{status == true ? 'sure_icon':'no_icon'}}.png"></image>
-  <text bindtap="xieYiBtn">我同意《发电站认购协议》</text>
+  <text bindtap="xieYiBtn">我同意《定金认购协议》</text>
   <text class="chakan" bindtap='agreement_btn'>查看协议</text>
 </view>
 <view class="saveBtn" bindtap="payMoney">
@@ -35,4 +35,17 @@
 </view>
 <view class="logo_img">
       <image src="{{imgUrl}}/guarantee/logo.png"></image>
+    </view>
+
+    <!-- 输入验证码 -->
+    <view class="mask" wx:if="{{codeShow}}" bindtap="cancel"></view>
+    <view class="yzCode" wx:if="{{codeShow}}">
+      <view class="codeTitle">邀请码</view>
+      <view class="codeInput">
+        <input name="code" value="{{yqCode}}" bindinput="codeVal" placeholder="请输入邀请码"></input>
+      </view>
+      <view class="codeBtn">
+        <view class="cancel" bindtap="cancel">取消</view>
+        <view class="sure" bindtap="sure">确定</view>
+      </view>
     </view>

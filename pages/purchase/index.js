@@ -17,6 +17,11 @@ Page({
     status:true,
     singleAmount:'',
     oldAmount:'',
+    // 用户当前状态
+    userType:0,
+    codeShow:false,
+    yqCode:'',
+    proId:'',
   },
   /**
    * 生命周期函数--监听页面加载
@@ -43,8 +48,14 @@ Page({
             _this.setData({
               proData:data,
               maxNum:data.remainingNum,
-              singleAmount:data.singleAmount,
-              oldAmount:data.singleAmount
+              singleAmount:data.singleAmount.toFixed(2),
+              oldAmount:data.singleAmount,
+              proId:options.proId
+            })
+          }else{
+            wx.showToast({
+              title: res.data.errmsg,
+              icon:'nnone'
             })
           }
         
@@ -60,7 +71,7 @@ Page({
       if (num>1) {
       num--;
       this.setData({
-        singleAmount:num*this.data.oldAmount,
+        singleAmount:(num*this.data.oldAmount).toFixed(2),
       });
       }
       var minusStatus = num>1 ? 'normal':'disable';
@@ -82,7 +93,7 @@ Page({
       }else{
         num++;
         this.setData({
-          singleAmount:num*this.data.oldAmount,
+          singleAmount:(num*this.data.oldAmount).toFixed(2),
         });
       }
       
@@ -107,20 +118,20 @@ Page({
 
     //跳转协议页面
     agreement_btn: function(e) {
-      wx.showModal({
-        title: '提示',
-        content: '该协议包含商业保密信息，若您想要了解详情，请联系客服：17631123590。',
-        success (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          } else if (res.cancel) {
-            console.log('用户点击取消')
-          }
-        }
-      })
-      // wx.navigateTo({
-      //   url: '../agreement/index',
+      // wx.showModal({
+      //   title: '提示',
+      //   content: '该协议包含商业保密信息，若您想要了解详情，请联系客服：17631123590。',
+      //   success (res) {
+      //     if (res.confirm) {
+      //       console.log('用户点击确定')
+      //     } else if (res.cancel) {
+      //       console.log('用户点击取消')
+      //     }
+      //   }
       // })
+      wx.navigateTo({
+        url: "../xieYi/subscriptionDeposit_agreement/index",
+      })
     },
     // 支付事件
     payMoney(){
@@ -136,7 +147,18 @@ Page({
           },
           success(res){
             console.log(res);
-            if(res.data.data.type == '2'){
+            if(res.data.data.type == '1'){
+              wx.showToast({
+                title: '请填写邀请码',
+                icon:'none',
+                duration:3000
+              })
+              _this.setData({
+                userType:res.data.data.type,
+                codeShow:true
+              });
+
+            }else if(res.data.data.type == '2'){
                 wx.showToast({
                   title: '请完成实名认证',
                   icon:'none',
@@ -144,7 +166,7 @@ Page({
                 })
                 setTimeout(function(){
                   wx.navigateTo({
-                    url: '../realName_renZheng/index?src=purchase',
+                    url: '../realName_renZheng/index?src=purchase&proId='+_this.data.proId,
                   })
                 },1000);
             }else{
@@ -158,7 +180,6 @@ Page({
                   },
                   success(res){
                     console.log(res);
-                    //返回订单号 1268457054223544321
                     if(res.data.errcode == 0){
                       var orderId = res.data.data;
                       //根据订单号获取微信支付参数
@@ -234,53 +255,50 @@ Page({
         });
       }
     },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+    codeVal(e){
+      console.log(e);
+      var val = e.detail.value;
+      this.setData({
+        yqCode:val
+      });
+    },
+    cancel(){
+      this.setData({
+        codeShow:false
+      });
+    },
+    sure(){
+      var _this = this;
+      var code = this.data.yqCode;
+      if(code == ''){
+        wx.showToast({
+          title: '请输入邀请码',
+          icon:'none'
+        })
+      }else{
+        wx.request({
+          url: app.globalData.baseUrl+'/wxUser/inputInvitedCode',
+          method:'POST',
+          header:{
+            'content-type': 'application/json',
+            'Authorization': wx.getStorageSync('token'),
+          },
+          data:JSON.stringify({
+            invitedCode:code
+          }),
+          success(res){
+            console.log(res);
+            if(res.data.errcode == 0){
+              _this.payMoney();
+            }else{
+              wx.showToast({
+                title: res.data.errmsg,
+                icon:'none'
+              })
+            }
+          },
+        })
+      }
+    },
+  
 })

@@ -100,3 +100,20 @@
   font-weight: normal;
   background-color: #176eff;
 }
+.agreement{
+  padding-left: 0;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  box-sizing: border-box;
+}
+.chakan{
+  color: #2663c8;
+  border-bottom: 1rpx solid #2663c8;
+}
+.icon{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 15rpx;
+}

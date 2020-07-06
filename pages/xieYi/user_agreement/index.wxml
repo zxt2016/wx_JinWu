@@ -1,0 +1,2 @@
+<!-- 跳转外部链接 -->
+ <web-view src="{{urls}}"></web-view>
