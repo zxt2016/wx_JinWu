@@ -133,7 +133,7 @@
         </block>
       </view>
       
-      <swiper id="swiperBox" current="{{currtab2}}" class="swiper-box" duration="300" style="height:{{order_list.length*215}}px;margin-top:90px;min-height:100vh;" bindchange="tabChange2">
+      <swiper id="swiperBox" current="{{currtab2}}" class="swiper-box" duration="300" style="height:{{co2Data.length*200}}px;margin-top:90px;min-height:70vh;" bindchange="tabChange2">
         <!-- 待支付 -->
         <swiper-item>
           <scroll-view class="hot-box" scroll-y="true">
@@ -156,7 +156,7 @@
                 <view class="payBtn" bindtap="payBtn" data-id="{{item.id}}">立即支付</view>
               </view>
             </view>
-            <view  wx:if="{{order_list == ''}}" style="margin:300rpx">暂无数据</view>
+            <view  wx:if="{{co2Data == ''}}" style="margin:300rpx">暂无数据</view>
           </scroll-view>
         </swiper-item>
         <!-- 已支付 -->
@@ -178,10 +178,10 @@
               <!-- 按钮 -->
               <view class="shopBtn">
                 <!-- <view class="cancel" bindtap="cancelBtn" data-id="{{item.id}}">取消订单</view> -->
-                <view class="payBtn" data-id="{{item.id}}">已支付</view>
+                <view class="payBtn" data-id="{{item.id}}" bindtap="payed">售后服务</view>
               </view>
             </view>
-            <view  wx:if="{{order_list == ''}}" style="margin:300rpx">暂无数据</view>
+            <view  wx:if="{{co2Data == ''}}" style="margin:300rpx">暂无数据</view>
           </scroll-view>
         </swiper-item>
         <!-- 已发货 -->
@@ -202,61 +202,59 @@
               </view>
               <!-- 按钮 -->
               <view class="shopBtn">
-                <!-- <view class="cancel" bindtap="cancelBtn" data-id="{{item.id}}">取消订单</view> -->
-                <view class="payBtn" data-id="{{item.id}}">已发货</view>
+                <view class="payBtn" data-id="{{item.id}}" bindtap="payed">售后服务</view>
               </view>
             </view>
-            <view  wx:if="{{order_list == ''}}" style="margin:300rpx">暂无数据</view>
+            <view  wx:if="{{co2Data == ''}}" style="margin:300rpx">暂无数据</view>
           </scroll-view>
         </swiper-item>
-        <!-- 已完成 -->
+        <!-- 退货 -->
         <swiper-item>
           <scroll-view class="hot-box" scroll-y="true">
-            <view class="content" wx:for="{{order_list}}">
-              <view class="order_num">订单号：{{item.id}}</view>
-              <view class="station">{{item.name}}</view>
-              <view class="clearfix">
-              <view class="content_item float_lf">
-                <view class="shares item">电站规模：<text>{{item.capacity}}kW</text></view>
-                <view class="shares item">所占股份：<text>{{item.subscriptionRatio}}%</text></view>
+            <view class="shopItems" wx:for="{{co2Data}}" wx:for-item="item" wx:key="index">
+              <view class="shopOrder">订单号：{{item.orderNo}}</view>
+              <view class="shopBox">
+                <view class="shopImg">
+                  <image src="{{item.commodityLogo}}"></image>
+                </view>
+                <view class="shopInfo">
+                  <view class="shopTitle txt-num2">{{item.describe}}</view>
+                  <view class="shopPrice">
+                    ¥<text>{{item.price}}</text>  + <text>{{item.energy}}</text>g
+                  </view>
+                </view>
               </view>
-              <view class="content_item float_lf">
-                <view class="shares item">认购金额：<text>{{item.subscriptionAmont}}万</text></view>
-                <view class="shares item">认购份额：<text>{{item.subscriptionNum}}份</text></view>
-              </view>
-              <view class="handel_item float_lf">
-                <view class="shares float_lf">预付金额：<text style="color:#ff0000; font-size: 36rpx;">{{item.depositAmont}}</text></view>
-                <view class="detail_btn"><navigator url="../order_detail/index?str={{item.recruitId}}">详情</navigator></view>
-                <view class="pay_btn">已完成</view>
-              </view>  
+              <!-- 按钮 -->
+              <view class="shopBtn">
+                <view class="payBtn" data-id="{{item.id}}" bindtap="payed">售后服务</view>
               </view>
             </view>
-            <view  wx:if="{{order_list == ''}}" style="margin:300rpx">暂无数据</view>
+            <view  wx:if="{{co2Data == ''}}" style="margin:300rpx">暂无数据</view>
           </scroll-view>
         </swiper-item>
         <!-- 取消 -->
         <swiper-item>
           <scroll-view class="hot-box" scroll-y="true">
-            <view class="content" wx:for="{{order_list}}">
-              <view class="order_num">订单号：{{item.id}}</view>
-              <view class="station">{{item.name}}</view>
-              <view class="clearfix">
-              <view class="content_item float_lf">
-                <view class="shares item">电站规模：<text>{{item.capacity}}kW</text></view>
-                <view class="shares item">所占股份：<text>{{item.subscriptionRatio}}%</text></view>
+            <view class="shopItems" wx:for="{{co2Data}}" wx:for-item="item" wx:key="index">
+              <view class="shopOrder">订单号：{{item.orderNo}}</view>
+              <view class="shopBox">
+                <view class="shopImg">
+                  <image src="{{item.commodityLogo}}"></image>
+                </view>
+                <view class="shopInfo">
+                  <view class="shopTitle txt-num2">{{item.describe}}</view>
+                  <view class="shopPrice">
+                    ¥<text>{{item.price}}</text>  + <text>{{item.energy}}</text>g
+                  </view>
+                </view>
               </view>
-              <view class="content_item float_lf">
-                <view class="shares item">认购金额：<text>{{item.subscriptionAmont}}万</text></view>
-                <view class="shares item">认购份额：<text>{{item.subscriptionNum}}份</text></view>
-              </view>
-              <view class="handel_item float_lf">
-                <view class="shares float_lf">预付金额：<text style="color:#ff0000; font-size: 36rpx;">{{item.depositAmont}}</text></view>
-                <view class="detail_btn"><navigator url="../order_detail/index?str={{item.recruitId}}">详情</navigator></view>
-                <view class="pay_btn">已取消</view>
-              </view>  
+              <!-- 按钮 -->
+              <view class="shopBtn">
+                <!-- <view class="cancel" bindtap="cancelBtn" data-id="{{item.id}}">取消订单</view> -->
+                <!-- <view class="payBtn" data-id="{{item.id}}" bindtap="payed">售后服务</view> -->
               </view>
             </view>
-            <view  wx:if="{{order_list == ''}}" style="margin:300rpx">暂无数据</view>
+            <view  wx:if="{{co2Data == ''}}" style="margin:300rpx">暂无数据</view>
           </scroll-view>
         </swiper-item>
       

@@ -2,117 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fce3cd3f-0f7d-46ee-bd8a-78a69652543e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/address_icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/del.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/del_icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/edit.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/getDown.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/line_icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/powerMonth.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/powerTotal.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/qiPao.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/sunIcon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/sunIcon1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/index/sunIcon2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/no_icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/project_detail/pro_icon1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/project_detail/pro_icon2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/project_detail/pro_icon3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/project_detail/pro_icon4.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/share/card_bg1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/share/card_bg2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/share/card_box.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/share/card_img1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/share/card_img11.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/share/card_img2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/share/card_logo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/share/card_ma.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/share/header_img.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/shopDetail/border.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/shopDetail/shop.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/shopDetail/shopDetail1.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/shopDetail/shopDetail2.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/shopDetail/shopDetail3.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/shopDetail/tip_icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/shopDetail/up.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/shop_icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/image/sure_icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/myAddress/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/myAddress/index.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/myAddress/index.wxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/myAddress/index.wxss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/myAddress_addEdit/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/myAddress_addEdit/index.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/myAddress_addEdit/index.wxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/myAddress_addEdit/index.wxss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/realName_renZheng/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/realName_renZheng/index.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/realName_renZheng/index.wxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/realName_renZheng/index.wxss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/share_card/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/share_card/index.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/share_card/index.wxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/share_card/index.wxss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/shop/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/shop/index.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/shop/index.wxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/shop/index.wxss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/shop_detail/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/shop_detail/index.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/shop_detail/index.wxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/shop_detail/index.wxss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/tempale/tabBar/tabBar.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/tempale/tabBar/tabBar.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/tempale/tabBar/tabBar.wxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pages/tempale/tabBar/tabBar.wxss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/utils/wxcharts.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
-      <change beforePath="$PROJECT_DIR$/app.wxss" afterPath="$PROJECT_DIR$/app.wxss" />
-      <change beforePath="$PROJECT_DIR$/pages/guarantee/index.json" afterPath="$PROJECT_DIR$/pages/guarantee/index.json" />
-      <change beforePath="$PROJECT_DIR$/pages/guarantee/index.wxml" afterPath="$PROJECT_DIR$/pages/guarantee/index.wxml" />
       <change beforePath="$PROJECT_DIR$/pages/index/index.js" afterPath="$PROJECT_DIR$/pages/index/index.js" />
-      <change beforePath="$PROJECT_DIR$/pages/index/index.json" afterPath="$PROJECT_DIR$/pages/index/index.json" />
-      <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" afterPath="$PROJECT_DIR$/pages/index/index.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/index/index.wxss" afterPath="$PROJECT_DIR$/pages/index/index.wxss" />
-      <change beforePath="$PROJECT_DIR$/pages/introduce/index.json" afterPath="$PROJECT_DIR$/pages/introduce/index.json" />
-      <change beforePath="$PROJECT_DIR$/pages/introduce/index.wxml" afterPath="$PROJECT_DIR$/pages/introduce/index.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/invite/index.js" afterPath="$PROJECT_DIR$/pages/invite/index.js" />
-      <change beforePath="$PROJECT_DIR$/pages/login/login.js" afterPath="$PROJECT_DIR$/pages/login/login.js" />
-      <change beforePath="$PROJECT_DIR$/pages/my/image/jt_rt.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/pages/my/index.js" afterPath="$PROJECT_DIR$/pages/my/index.js" />
-      <change beforePath="$PROJECT_DIR$/pages/my/index.json" afterPath="$PROJECT_DIR$/pages/my/index.json" />
-      <change beforePath="$PROJECT_DIR$/pages/my/index.wxml" afterPath="$PROJECT_DIR$/pages/my/index.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/my/index.wxss" afterPath="$PROJECT_DIR$/pages/my/index.wxss" />
       <change beforePath="$PROJECT_DIR$/pages/myEnergy/index.js" afterPath="$PROJECT_DIR$/pages/myEnergy/index.js" />
-      <change beforePath="$PROJECT_DIR$/pages/myEnergy/index.wxml" afterPath="$PROJECT_DIR$/pages/myEnergy/index.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/myEnergy_record/index.wxml" afterPath="$PROJECT_DIR$/pages/myEnergy_record/index.wxml" />
       <change beforePath="$PROJECT_DIR$/pages/order/index.js" afterPath="$PROJECT_DIR$/pages/order/index.js" />
       <change beforePath="$PROJECT_DIR$/pages/order/index.wxml" afterPath="$PROJECT_DIR$/pages/order/index.wxml" />
       <change beforePath="$PROJECT_DIR$/pages/order/index.wxss" afterPath="$PROJECT_DIR$/pages/order/index.wxss" />
-      <change beforePath="$PROJECT_DIR$/pages/partnership/index.wxml" afterPath="$PROJECT_DIR$/pages/partnership/index.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/pay_success/index.js" afterPath="$PROJECT_DIR$/pages/pay_success/index.js" />
-      <change beforePath="$PROJECT_DIR$/pages/pay_success/index.wxml" afterPath="$PROJECT_DIR$/pages/pay_success/index.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/project/index.js" afterPath="$PROJECT_DIR$/pages/project/index.js" />
-      <change beforePath="$PROJECT_DIR$/pages/project/index.wxml" afterPath="$PROJECT_DIR$/pages/project/index.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/project/index.wxss" afterPath="$PROJECT_DIR$/pages/project/index.wxss" />
-      <change beforePath="$PROJECT_DIR$/pages/project_detail/index.js" afterPath="$PROJECT_DIR$/pages/project_detail/index.js" />
-      <change beforePath="$PROJECT_DIR$/pages/project_detail/index.json" afterPath="$PROJECT_DIR$/pages/project_detail/index.json" />
-      <change beforePath="$PROJECT_DIR$/pages/project_detail/index.wxml" afterPath="$PROJECT_DIR$/pages/project_detail/index.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/project_detail/index.wxss" afterPath="$PROJECT_DIR$/pages/project_detail/index.wxss" />
-      <change beforePath="$PROJECT_DIR$/pages/purchase/index.js" afterPath="$PROJECT_DIR$/pages/purchase/index.js" />
-      <change beforePath="$PROJECT_DIR$/pages/purchase/index.wxml" afterPath="$PROJECT_DIR$/pages/purchase/index.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/purchase/index.wxss" afterPath="$PROJECT_DIR$/pages/purchase/index.wxss" />
-      <change beforePath="$PROJECT_DIR$/pages/share/index.js" afterPath="$PROJECT_DIR$/pages/share/index.js" />
-      <change beforePath="$PROJECT_DIR$/pages/share/index.wxml" afterPath="$PROJECT_DIR$/pages/share/index.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/share/index.wxss" afterPath="$PROJECT_DIR$/pages/share/index.wxss" />
-      <change beforePath="$PROJECT_DIR$/pages/station/index.js" afterPath="$PROJECT_DIR$/pages/station/index.js" />
-      <change beforePath="$PROJECT_DIR$/pages/station/index.wxss" afterPath="$PROJECT_DIR$/pages/station/index.wxss" />
       <change beforePath="$PROJECT_DIR$/pages/station_detail/index.js" afterPath="$PROJECT_DIR$/pages/station_detail/index.js" />
       <change beforePath="$PROJECT_DIR$/pages/station_detail/index.wxml" afterPath="$PROJECT_DIR$/pages/station_detail/index.wxml" />
-      <change beforePath="$PROJECT_DIR$/pages/station_detail/index.wxss" afterPath="$PROJECT_DIR$/pages/station_detail/index.wxss" />
-      <change beforePath="$PROJECT_DIR$/project.config.json" afterPath="$PROJECT_DIR$/project.config.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -146,8 +45,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            <state relative-caret-position="114">
+              <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -258,7 +157,7 @@
       <workItem from="1590809221381" duration="104000" />
       <workItem from="1590974413921" duration="2465000" />
       <workItem from="1591065744696" duration="457000" />
-      <workItem from="1594026025127" duration="26000" />
+      <workItem from="1594026025127" duration="836000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/zxt2016/wx_JinWu&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1589882241138</created>
@@ -442,11 +341,18 @@
       <option name="project" value="LOCAL" />
       <updated>1591006965120</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="111">
+      <created>1594026073517</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1594026073517</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22985000" />
+    <option name="totallyTimeSpent" value="23795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="56" y="23" width="1523" height="966" extended-state="0" />
@@ -825,8 +731,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        <state relative-caret-position="114">
+          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding />
         </state>
       </provider>

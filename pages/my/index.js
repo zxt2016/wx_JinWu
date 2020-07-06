@@ -111,10 +111,42 @@ Page({
       url: '../personalData/index',
     })
   },
-
+  // 邀请
   invite_btn: function(e) {
-    wx.navigateTo({
-      url: '../invite/index',
+    wx.request({
+      url: app.globalData.baseUrl+'/wxUser/invited/List',
+      method:'GET',
+      header: {
+        'content-type': 'application/json',
+        'Authorization':wx.getStorageSync('token')
+      },
+      success(res){
+        console.log(res);
+        if(res.data.errcode == 0){
+          if(res.data.data.code == ''){
+            wx.showToast({
+              title: '您没有邀请码，不能邀请好友',
+              icon:'none',
+              duration:3000
+            })
+          }else{
+            wx.navigateTo({
+              url: '../invite/index',
+            })
+          }
+        }else if(res.data.errcode == 41001){
+          wx.showToast({
+            title: '登录超时，请重新登录',
+            icon:'none',
+            duration:3000
+          })
+          setTimeout(function(){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          },2000);
+        }
+      },
     })
   },
 

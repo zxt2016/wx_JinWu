@@ -23,9 +23,9 @@
         currtab2: 0,
         shoptab: [
           { name: '待支付', index: 0 },
-          { name: '已支付', index: 1 },
+          { name: '待发货', index: 1 },
           { name: '已发货', index: 2 }, 
-          { name: '已完成', index: 3 }, 
+          { name: '退货', index: 3 }, 
           { name: '取消', index: 4 }
         ],
         deviceW:'',
@@ -290,6 +290,30 @@
         this.orderShow()
       },
       tabChange2: function (e) {
+        var _this = this;
+        wx.request({
+          url: app.globalData.baseUrl+'/wxCommodityOrder/getList',
+          method: 'GET', 
+          header: {
+            'content-type': 'application/json',
+            'Authorization': wx.getStorageSync('token'),
+          },
+          data: {
+            current:_this.data.page2,
+            size:_this.data.limit2,
+            status:e.detail.current,
+          },
+          success (res) {
+            console.log(res);
+            if(res.data.errcode == 0){
+              _this.setData({
+                co2Data: res.data.data.records,
+              })
+            }
+          }
+        })
+
+
         this.setData({ 
           page:1,
           currtab2: e.detail.current
@@ -448,6 +472,7 @@
   },
   // 取消订单
   cancelBtn(e){
+    var _this = this;
     var id = e.currentTarget.dataset.id;
     wx.request({
       url: app.globalData.baseUrl+'/wxCommodityOrder/cancel',
@@ -461,6 +486,45 @@
       },
       success (res) {
         console.log(res);
+        if(res.data.errcode == 0){
+          wx.showToast({
+            title: '订单取消成功',
+            icon:'none'
+          })
+          //再次获取待支付列表
+          wx.request({
+            url: app.globalData.baseUrl+'/wxOrder/getList',
+            method: 'GET', 
+            header: {
+              'content-type': 'application/json',
+              'Authorization': wx.getStorageSync('token'),
+            },
+            data: {
+              current:_this.data.page,
+              size:_this.data.limit,
+              status:0,
+            },
+            success (res) {
+              console.log(res);
+              var data = res.data.data.records;
+              for(var i=0;i<data.length;i++){
+                data[i].capacity = (parseInt(data[i].capacity)/1000).toFixed(2);
+                data[i].subscriptionAmont = (parseInt(data[i].subscriptionAmont)/1000).toFixed(2);
+              }
+              _this.setData({
+                data1: data,
+                total1:res.data.data.total,
+                currtab2:1,
+                activeTab:1,
+              })
+            }
+          })
+        }else{
+          wx.showToast({
+            title: res.data.errmsg,
+            icon:'none'
+          })
+        }
       }
     })
   },
@@ -507,13 +571,24 @@
         }
       }
     })
-  }
-  // onChange(e) {
-  //   const index = e.currentTarget.dataset.index;
-  //   console.log(index);
-  //   this.setData({ 
-  //     activeTab: index 
-  //   })
-  // },
-  })
+  },
+  //已支付--售后按钮
+  payed(){
+    wx.showModal({
+      title: '提示',
+      content: '查询发货及退换货服务请与客服联系：17631123590',
+      confirmText:'立即联系',
+      success (res) {
+        if (res.confirm) {
+          wx.makePhoneCall({
+            phoneNumber: '17631123590'
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+    
+  },  
+})
   

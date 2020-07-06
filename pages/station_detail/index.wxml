@@ -68,69 +68,17 @@
               <view class="{{currIndex == 2 ? 'active':''}}" data-index="2" bindtap="timeTab">年</view>
             </view>
             <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
-            <!-- <button type="primary" bindtap="updateData">更新数据</button> -->
           </view>
-          <!-- <view class="swiperTitle"><text>25年数据统计</text></view> -->
-          <!-- <view class="dataTotal">
-            <view class="dataItem">
-              <view class="dataItem_title">
-                <image src="../image/project_detail/pro_icon1.png"></image>
-                <text>总发电量</text>
-              </view>
-              <view>{{allPower}}kWh</view>
-            </view>
-            <view class="dataItem">
-              <view class="dataItem_title">
-                <image src="../image/project_detail/pro_icon2.png"></image>
-                <text>总碳减排</text>
-              </view>
-              <view>{{all_c}}t</view>
-            </view>
-            <view class="dataItem">
-              <view class="dataItem_title">
-                <image src="../image/project_detail/pro_icon3.png"></image>
-                <text>总节约煤</text>
-              </view>
-              <view>{{all_mei}}t</view>
-            </view>
-            <view class="dataItem">
-              <view class="dataItem_title">
-                <image src="../image/project_detail/pro_icon4.png"></image>
-                <text>等效植树</text>
-              </view>
-              <view>{{all_tree}}颗</view>
-            </view>
-          </view> -->
         </scroll-view>
       </swiper-item>
       <!-- 相关文件 -->
       <swiper-item>
         <scroll-view class="hot-box" scroll-y="true">
           <view class="infoMain">
-            <!-- <view class="info_item">
-              <text class="info_name">总认购份数</text>
-              <text class="info_value">{{stationList.subscriptionTotalNum}}份</text>
+            <view class="info_item" bindtap="lookPDF" data-src="{{stationList.recordsImg}}">
+              <text class="info_name" style="color:#5e9bfd;">国网备案合同.pdf</text>
+              <text class="info_value" style="color:#5e9bfd;">点击查看</text>
             </view>
-            <view class="info_item">
-              <text class="info_name">单份认购所占股份</text>
-              <text class="info_value">{{stationList.singleRatio}}%</text>
-            </view>
-            <view class="info_item">
-              <text class="info_name">剩余认购份数</text>
-              <text class="info_value">{{stationList.remainingNum}}份</text>
-            </view>
-            <view class="info_item">
-              <text class="info_name">单份认购金额</text>
-              <text class="info_value">{{stationList.singleInvestment}}万</text>
-            </view>
-            <view class="info_item">
-              <text class="info_name">单份预支付金额</text>
-              <text class="info_value">{{stationList.singleAmount}}元</text>
-            </view>
-            <view class="info_item">
-              <text class="info_name">认购周期</text>
-              <text class="info_value">从{{startTime}}至{{endTime}}</text>
-            </view>-->
           </view> 
         </scroll-view>
       </swiper-item>

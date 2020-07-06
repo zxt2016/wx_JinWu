@@ -145,7 +145,7 @@ Page({
       var val = bubble[i].energy.toString();
       var obj = {
         num: val.length >=4 ? (val/1000).toFixed(1) + 'kg' : val+'g',
-        title: bubble[i].type == 1 ? '邀请': bubble[i].type == 2 ? '分享' : bubble[i].type == 3 ? '发电' : '',
+        title: bubble[i].type == 1 ? '邀请': bubble[i].type == 2 ? '分享' : bubble[i].type == 3 ? '发电' : bubble[i].type == 4 ? '首买':'',
         anima: '',
         styleObject: '',
         isShow: true,

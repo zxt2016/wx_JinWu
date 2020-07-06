@@ -8,7 +8,7 @@ page{
   line-height: 80rpx;
   background: #fff;
   position: fixed;
-  top:49px;
+  top:47px;
   left:0;
   z-index: 2;
   display: flex;

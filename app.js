@@ -83,10 +83,9 @@ App({
     token:'',
     code:'',
     userInfo: '',
-    // baseUrl:'https://www.jwpower.cn/makeland',
-    // baseUrl:'http://192.168.1.5:8080/photovoltaic',
+    baseUrl:'https://www.jwpower.cn/makeland',
+    baseUrl:'http://192.168.1.5:8080/photovoltaic',
     baseUrl:'http://shvy76.natappfree.cc/makeland',
-    // baseUrl:'http://ay5kdp.natappfree.cc/photovoltaic',
     imgUrl:'https://www.jwpower.cn/image',
     
   }

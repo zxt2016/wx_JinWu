@@ -518,7 +518,7 @@ renGou(e){
   }else{
     wx.showModal({
       title: '提示',
-      content: '预定会支付1%的预定份额总值，预定成功后请与客服联系。',
+      content: '预定会支付1%的预定份额总值，预定成功后请与客服联系：17631123590。',
       cancelColor:'#666666',
       confirmColor:'#2c7bfe',
       success (res) {
