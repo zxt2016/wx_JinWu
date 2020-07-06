@@ -7,7 +7,6 @@ Page({
    */
   data: {
     imgUrl:app.globalData.imgUrl,
-    token:wx.getStorageSync('token'),
     userCode:'',
     num:'',
     list:[],
@@ -39,7 +38,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    console.log(this.data.token);
     wx.setNavigationBarTitle({
       title: "邀请好友"
     });
@@ -49,7 +47,7 @@ Page({
       method:'GET',
       header: {
         'content-type': 'application/json',
-        'Authorization':_this.data.token
+        'Authorization':wx.getStorageSync('token')
       },
       success(res){
         console.log(res);

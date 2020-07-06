@@ -1,6 +1,8 @@
 {
   "component": true,
-  "usingComponents": {},
+  "usingComponents": {
+    "tabBar": "../tempale/tabBar/tabBar"
+  },
   "backgroundTextStyle":"light",
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTitleText": "保障",

@@ -1,6 +1,8 @@
 //index.js
 //获取应用实例
 const app = getApp();
+
+
 Page({
   data: {
     motto: 'Hello World',
@@ -23,7 +25,6 @@ Page({
     interval2: 5000,
     duration2: 800,
     circular2: true,
-    token:wx.getStorageSync('token'),
     //电站tab切换标识
     stationType:1,
     //星系旋转标识
@@ -75,14 +76,47 @@ Page({
     // 招募单列表（项目）
     projectData:[],
     projectData2:[],
-    // 认购授权标识
-    power:2,
+
     //招募单实时发电量
     projectPower:'',
+    proMonthPower:'',
+    proTotalPower:'',
     //我的项目实时发电量
     myPower:'',
     //我的项目为空的标识
     powerTip:1,
+
+    //授权弹框
+    setting: false,
+    showModel: false,
+    token:'',
+    id:'',
+    refresh:false,
+
+    //判断点击的是认购还是tab切换
+    tabs:false,
+    //收益表显示标识
+    profit:true,
+    //列表展开收起标识
+    shTip1:false,
+    shTip2:false,
+    //投入金额
+    getMoney:100000,
+    //年份选择
+    years:[1,2,5,8,20],
+    //选择值
+    yearIndex:0,
+    //年化收益年份对应
+    profit:[6.5,7,7.5,8.5,9],
+    // 计算电站规模
+    capacitys:'',
+    //实际年化收益
+    myMoney:'',
+    todayPower:'',
+    animation:'',
+    animationEvent:'',
+    gzType:'',
+    companyId:'',
   },
   //事件处理函数
   bindViewTap: function() {
@@ -90,8 +124,19 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () { 
+  onLoad: function (options) { 
     var _this = this;
+    console.log(app.globalData.navData)
+    if(options.login == 'ok'){
+      this.setData({
+        refresh:true,
+      });
+    }else if(options.src == 'paySuccess'){
+      this.setData({
+        refresh:true,
+      });
+    }
+    
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -119,111 +164,39 @@ Page({
       })
     }
     this.getBannerList();
-
-    // 获取招募单列表
-    wx.request({
-      url: app.globalData.baseUrl+'/wxRecruitOrder/list',
-      method: 'GET', 
-      contentType: 'application/json;charset=UTF-8 ',
-      data:{
-        current:1,
-        size:10
-      },
-      success(res){
-        if(res.statusCode == 200){
-          _this.setData({
-              projectData:res.data.data.records,
-          });
-        }
-        console.log(res);
-      },
-    })
+    this.getProList();
     // 获取招募单实时发电量
     wx.request({
       url: app.globalData.baseUrl+'/power/company/power',
       method: 'GET', 
       header:{
-        'Authorization':app.globalData.token,
+        'Authorization':wx.getStorageSync('token'),
         'content-type': 'application/json'
       },
       success(res){
         console.log(res);
         if(res.data.errcode == 0){
           _this.setData({
-            projectPower:(res.data.data/1000).toFixed(2),
+            projectPower:(res.data.data.nowElec/1000).toFixed(2),
+            proMonthPower:(res.data.data.monthElec/1000).toFixed(2),
+            proTotalPower:(res.data.data.yearElec/1000).toFixed(2)
           });
         }
       },
     })
-    // 获取我的电站实时发电量
-    wx.request({
-      url: app.globalData.baseUrl+'/power/user/power',
-      method: 'GET', 
-      header:{
-        'Authorization':app.globalData.token,
-        'content-type': 'application/json'
-      },
-      success(res){
-        console.log(res);
-        if(res.data.errcode == 0){
-          _this.setData({
-            myPower:res.data.data,
-          });
-        }
-        console.log(res);
-      },
-    })
-
-  },
-  onShow(){
-    var _this = this;
-    //星球旋转特效
-    
-
-
-//     const query = wx.createSelectorQuery()
-//     var data = _this.data.starData;
-//     var deg = 360/data.length;
-//     for(var i=0;i<data.length;i++){
-//       query.select('.star'+i).boundingClientRect()
-//     }
-//       query.exec(function(res){
-//         console.log(res);
-//         for(var n=0;n<res.length;n++){
-// //           X坐标=a + Math.sin(角度 * (Math.PI / 180)) * r ；
-// // Y坐标=b + Math.cos(角度 * (Math.PI / 180)) * r ； 
-//           var x_position = -20 + Math.sin(deg*n* (Math.PI / 180))*130;
-//           var z_position = 0 + Math.cos(deg*n* (Math.PI / 180))*130;
-//           console.log(x_position,z_position)
-//           data[n].translateX = x_position;
-//           data[n].translateZ = z_position;
-          
-          
-//         }
-//         _this.setData({
-//             starData:data
-//         });
-//         var json ={
-//           r:140,
-//           x0:-10,
-//           y0:-40,
-
-//           width:res[0].width,
-//           height:res[0].height,
-//           a:360/_this.data.starData.length,
-//           num:0,
-//           max:10
-//       }
-//       // _this.threeCircleMove(json);
-//       })
-      //每个点角度为72 
-      // X坐标=a + Math.sin(角度 * (Math.PI / 180)) * r
-      // Y坐标=b + Math.cos(角度 * (Math.PI / 180)) * r
-      
-    
-
-  },
-  threeCircleMove(json){
+},
+onShow(){
+  if(this.data.refresh == true){
+    this.onLoad();
+  }
+  if(this.data.getMoney !=''){
+    this.setData({
+      capacitys:(this.data.getMoney/3.5/1000).toFixed(2)+'kW',
+    });
+    this.countMoney();
+  }
+},
+threeCircleMove(json){
     var _this = this;
     //要操作的元素
     var obj = {};
@@ -311,7 +284,6 @@ Page({
     
 },
 
-
 getUserInfo: function(e) {
   console.log(e)
   app.globalData.userInfo = e.detail.userInfo
@@ -333,7 +305,7 @@ getBannerList: function() {
       var img_list = []
       for (var i = 0; i < res.data.data.length; i++) {
         img_list.push(res.data.data[i].img,)
-      }  
+      } 
       _this.setData({
         banner_img: img_list
       })
@@ -344,111 +316,481 @@ getBannerList: function() {
 stationTab: function(e){
   var _this = this;
   var tab = e.currentTarget.dataset.num;
-  if(tab == 1){
-    if(this.data.projectData.length == 0){
-      wx.request({
-        url: app.globalData.baseUrl+'/wxRecruitOrder/list',
-        method: 'GET', 
-        header: {
-          'content-type': 'application/json'
-        },
-        data:{
-          current:1,
-          size:10
-        },
-        success(res){
-          if(res.statusCode == 200){
-            _this.setData({
-                projectData:res.data.data.records,
-            });
-          }
-        },
-      })
-    }
-  }else if(tab == 2){
-    if(this.data.projectData2.length == 0){
-      wx.request({
-        url: app.globalData.baseUrl+'/wxOrder/getProjectList',
-        method:'GET',
-        header:{
-          'Authorization':_this.data.token,
-          'content-type': 'application/json'
-        },
-        data:{
-          current:1,
-          size:10
-        },
-        success(res){
-          console.log(res);
-          if(res.statusCode == 200){
-            if(res.data.data.records.length == 0){
-              _this.setData({
-                powerTip:2,
-                projectData2:res.data.data.records,
-              });
-            }else{  
-              _this.setData({
-                powerTip:1,
-                projectData2:res.data.data.records,
-              });
-            }
-          }
-        },
-      })
-    }
-  }
   this.setData({
-    stationType:e.currentTarget.dataset.num
+    stationType:tab,
+    tabs:true
   });
-},
-//星系转动-->从右向左
-starRotate:function(){
-  var _this = this,
-  starData = _this.data.starData
-  //设定最大值为5，
-  for(var i=0;i<starData.length;i++){
-    if(starData[i].num == 0){
-      starData[i].num = starData.length-1;
-    }else{
-      var val = starData[i].num;
-      starData[i].num = val-1;
+  
+  if(tab == 1){
+    // 获取招募单实时发电量
+    wx.request({
+      url: app.globalData.baseUrl+'/power/company/power',
+      method: 'GET', 
+      header:{
+        'Authorization':wx.getStorageSync('token'),
+        'content-type': 'application/json'
+      },
+      success(res){
+        console.log(res);
+        if(res.data.errcode == 0){
+          _this.setData({
+            projectPower:(res.data.data.nowElec/1000).toFixed(2),
+            proMonthPower:(res.data.data.monthElec/1000).toFixed(2),
+            proTotalPower:(res.data.data.yearElec/1000).toFixed(2)
+          });
+        }
+      },
+    })
+
+    //获取招募单列表
+    this.getProList();
+
+  }else if(tab == 2){
+    //获取用户信息
+    wx.getSetting({
+      success: res => {
+        //没有授权需要弹框
+      if (!res.authSetting['scope.userInfo']) {
+        _this.setData({
+          showModel: true,
+        })
+      } else {//判断用户已经授权,判断是否登录
+        _this.setData({
+          showModel: false,
+        })
+        if(!wx.getStorageSync('token')){
+          wx.showToast({
+            title: '请先登录',
+            icon:'none',
+            duration:2000
+          })
+          setTimeout(function(){
+            wx.navigateTo({
+              url: '../login/login?str=index',
+            })
+          },500);
+        }else{
+          // 获取我的电站实时发电量
+          wx.request({
+            url: app.globalData.baseUrl+'/power/user/power',
+            method: 'GET', 
+            header:{
+              'Authorization':wx.getStorageSync('token'),
+              'content-type': 'application/json'
+            },
+            success(res){
+              console.log(res);
+              if(res.data.errcode == 0){
+                _this.setData({
+                  myPower:res.data.data,
+                  projectPower:(res.data.data.nowElec/1000).toFixed(2),
+                  proMonthPower:(res.data.data.monthElec/1000).toFixed(2),
+                  proTotalPower:(res.data.data.yearElec/1000).toFixed(2)
+                });
+              }
+            },
+          })
+          //获取我的电站列表
+          _this.getMinePro();
+        }
+      }
+    }, fail: function () {
+      _this.setData({
+        showModel: true,
+      })
     }
+    })
   }
-  _this.setData({starData});
 },
 //项目查看详情
 lookDetails:function(e){
   var id = e.currentTarget.dataset.id;
   var name = e.currentTarget.dataset.name;
-  var proData = new Array();
-  // if(this.data.stationType == 1){
-  //   proData = this.data.projectData;
-  //   for(var i=0;i<proData.length;i++){
-  //     if(id == proData[i].id){
-  //       wx.setStorageSync('project_index',proData[i]);
-  //       break;
-  //     }
-  //   }
-  //   setTimeout(function(){
-  //     wx.navigateTo({
-  //       url: '../project_detail/index',
-  //     })
-  //   },300);
-  // }else{
-    
-  // }
-  wx.navigateTo({
-    url: '../station/index?str='+id+'&name='+name,
+  //招募单点击详情跳转到项目详情页
+  if(this.data.stationType == 1){
+    setTimeout(function(){
+        wx.navigateTo({
+          url: '../project_detail/index?id='+id,
+        })
+    },500);
+    //我的电站跳转该项目下电站列表
+  }else{
+    wx.navigateTo({
+      url: '../station/index?str='+id+'&name='+name,
+    })
+  }
+  
+},
+//查看年份收益表
+lookProfit:function(){
+
+},
+//关注
+guanZhu(e){
+  var that = this;
+  var companyId = e.currentTarget.dataset.id;
+  var follow = e.currentTarget.dataset.follow;
+  this.setData({
+    companyId:companyId
+  });
+  if(follow == true){
+    this.setData({
+      gzType:2,
+    });
+  }else{
+    this.setData({
+      gzType:1,
+    });
+  }
+  /**
+   * 先验证是否授权、登录
+   * 验证招募单状态
+   * **/ 
+  //获取用户信息
+  wx.getSetting({
+    success: res => {
+      //没有授权需要弹框
+    if (!res.authSetting['scope.userInfo']) {
+      that.setData({
+        showModel: true,
+      })
+    } else {//判断用户已经授权,判断是否登录
+      that.setData({
+        showModel: false,
+      })
+      if(!wx.getStorageSync('token')){
+        wx.showToast({
+          title: '请先登录',
+          icon:'none',
+          duration:2000
+        })
+        setTimeout(function(){
+          wx.navigateTo({
+            url: '../login/login?gzType='+that.data.gzType+'&companyId='+that.data.companyId,
+          })
+        },500);
+      }else{
+        // 验证招募单状态
+        wx.request({
+          url: app.globalData.baseUrl+'/wxRecruitOrder/followCompany',
+          method:'GET',
+          header:{
+            'Authorization': wx.getStorageSync('token'),
+          },
+          data:{
+            companyId:companyId,
+            type:that.data.gzType
+          },
+          success(res){
+            console.log(res);
+            if(res.data.errcode == 0){
+              wx.showToast({
+                title: res.data.data,
+                icon:'none'
+              })
+              that.getProList();
+
+            }
+          },
+        })
+      }
+    }
+  }, fail: function () {
+    that.setData({
+      showModel: true,
+    })
+  }
   })
 },
-renGou(){
+//认购
+renGou(e){
   var that = this;
-  if(that.data.power == 2){
+  var power = e.currentTarget.dataset.power;
+  this.setData({
+    tabs:false
+  });
+  if(power != 1){
     wx.showToast({
       title: '暂未开放，敬请期待',
       icon:'none',
       duration:3000
     })
+  }else{
+    wx.showModal({
+      title: '提示',
+      content: '预定会支付1%的预定份额总值，预定成功后请与客服联系。',
+      cancelColor:'#666666',
+      confirmColor:'#2c7bfe',
+      success (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          var id = e.currentTarget.dataset.id;
+          that.setData({
+            id:id
+          });
+          /**
+           * 先验证是否授权、登录
+           * 验证招募单状态
+           * **/ 
+          //获取用户信息
+          wx.getSetting({
+            success: res => {
+              //没有授权需要弹框
+            if (!res.authSetting['scope.userInfo']) {
+              that.setData({
+                showModel: true,
+              })
+            } else {//判断用户已经授权,判断是否登录
+              that.setData({
+                showModel: false,
+              })
+              if(!wx.getStorageSync('token')){
+                wx.showToast({
+                  title: '请先登录',
+                  icon:'none',
+                  duration:2000
+                })
+                setTimeout(function(){
+                  wx.navigateTo({
+                    url: '../login/login?renGou=ok&proId='+id,
+                  })
+                },500);
+              }else{
+                // 验证招募单状态
+                wx.request({
+                  url: app.globalData.baseUrl+'/wxRecruitOrder/getRecruitOrderStatus',
+                  method:'GET',
+                  header:{
+                    'Authorization': wx.getStorageSync('token'),
+                  },
+                  data:{
+                    id:id
+                  },
+                  success(res){
+                    console.log(res);
+                    if(res.data.errcode == 0){
+                      setTimeout(function(){
+                        wx.navigateTo({
+                          url: '../purchase/index?tip=renGou&proId='+id,
+                        })
+                      },500);
+                    }
+                  },
+                })
+              }
+            }
+          }, fail: function () {
+            that.setData({
+              showModel: true,
+            })
+          }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+    
   }
 },
+//加载更多
+getMore(){
+  if(this.data.stationType == 1){
+    this.getProList();
+    if(this.data.shTip1 == false){
+      this.setData({
+        shTip1:true,
+      });
+    }else{
+      this.setData({
+        shTip1:false,
+      });
+    }
+  }else{
+    this.getMinePro();
+    if(this.data.shTip2 == false){
+      this.setData({
+        shTip2:true,
+      });
+    }else{
+      this.setData({
+        shTip2:false,
+      });
+    }
+  }
+  
+},
+getUserInfo: function(e) {
+  var _this = this;
+  app.globalData.userInfo = e.detail.userInfo
+  this.setData({
+    userInfo: e.detail.userInfo,
+    hasUserInfo: true
+  })
+  if(this.data.tabs == false){
+    if(this.data.gzType == 1){
+      setTimeout(function(){
+        wx.navigateTo({
+          url: '../login/login?gzType='+_this.data.gzType+'&companyId='+_this.data.companyId
+        })
+      },300);
+    }else{
+      setTimeout(function(){
+        wx.navigateTo({
+          url: '../login/login?renGou=ok&proId='+_this.data.id,
+        })
+      },300);
+    }
+  }else{
+    setTimeout(function(){
+      wx.navigateTo({
+        url: '../login/login?str=index',
+      })
+    },300);
+  }
+  
+},
+quxiao: function () {
+  var that = this;
+  that.setData({
+    showModel: false
+  })
+  wx.reLaunch({
+    url: '../index/index',
+  })
+},
+nones: function () {
+  var that = this;
+  that.setData({
+    showModel: false,
+    setting: false
+  })
+},
+//同意授权后
+callback: function () {
+  var that = this;
+  that.setData({
+    showModel: true,
+    setting: false
+  })
+},
+
+//取消去设置页
+cancel: function () {
+  var that = this;
+  that.setData({
+    showModel: false,
+    setting: false
+  })
+  wx.reLaunch({
+    url: '../index/index',
+  })
+},
+
+
+//获取招募单列表
+getProList(){
+  var _this = this;
+  wx.request({
+    url: app.globalData.baseUrl+'/wxRecruitOrder/list',
+    method: 'GET', 
+    contentType: 'application/json;charset=UTF-8 ',
+    data:{
+      current:1,
+      size:1000,
+      userId:wx.getStorageSync('userId')
+    },
+    success(res){
+      console.log(res);
+
+      if(res.data.errcode == 0){
+        var data = res.data.data.records;
+        for(var i=0;i<data.length;i++){
+          data[i].capacity = (data[i].capacity/1000).toFixed(2);
+          data[i].totalInvestment = (data[i].totalInvestment/10000).toFixed(2);
+          if(data[i].status == 1){
+            data[i].power = 1
+          }else{
+            data[i].power = 2
+          }
+        }
+        _this.setData({
+          projectData:data,
+        });
+      }
+    },
+  })
+},
+//获取我的电站列表
+getMinePro(){
+  var _this = this;
+  wx.request({
+    url: app.globalData.baseUrl+'/wxOrder/getProjectList',
+    method:'GET',
+    header:{
+      'Authorization':wx.getStorageSync('token'),
+      'content-type': 'application/json'
+    },
+    data:{
+      current:1,
+      size:1000
+    },
+    success(res){
+      console.log(res);
+      if(res.data.errcode == 0){
+        var data = res.data.data.records;
+        for(var i=0;i<data.length;i++){
+          data[i].capacity = (data[i].capacity/1000).toFixed(2);
+          data[i].totalInvestment = (data[i].totalInvestment/10000).toFixed(2);
+          if(data[i].status == 1){
+            data[i].power = 1
+          }else{
+            data[i].power = 2
+          }
+        }
+        _this.setData({
+          projectData2:data,
+        });
+      }
+    },
+  })
+},
+
+//预期收益计算器年份选择
+yearBtn(e){
+  var index = e.currentTarget.dataset.index;
+  console.log(index);
+  this.setData({
+    yearIndex:index,
+  });
+  if(this.data.getMoney != ''){
+    this.countMoney();
+  }
+  
+  
+},
+//投入金额
+getMoney(e){
+  console.log(e);
+  var num = (parseInt(e.detail.value)/3.5/1000).toFixed(2);
+  this.setData({
+    getMoney:e.detail.value,
+    capacitys:num+'kW',
+  });
+  if(this.data.yearIndex !=''){
+    this.countMoney();
+  }
+  
+},
+//计算实际年化收益
+countMoney(){ 
+  /**
+   * 实际年化收益 = 投入金额*预期年化
+   * **/
+  this.setData({
+    myMoney:(parseInt(this.data.getMoney)*this.data.profit[this.data.yearIndex]/100*this.data.years[this.data.yearIndex]).toFixed(2)
+  });
+},
+
+
 })

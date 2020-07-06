@@ -3,11 +3,12 @@ page{
 }
 .content{
   width: 710rpx;
-  height: 350rpx;
+  /* height: 350rpx; */
   margin: 20rpx;
   background-color: #ffffff;
   border-radius: 10rpx;
-  padding: 30rpx;
+  padding:30rpx;
+  box-sizing: border-box;
 }
 .order_num{
   font-size: 26rpx;
@@ -15,10 +16,10 @@ page{
   height: 85rpx;
   line-height: 85rpx;
   border-bottom: 1rpx solid #f3f3f3;
-  padding-left: 30rpx;
+  /* padding-left: 30rpx; */
 }
 .station{
-  padding-left: 30rpx;
+  /* padding-left: 30rpx; */
   font-size: 30rpx;
   font-weight: 700;
   height: 80rpx;
@@ -29,33 +30,40 @@ page{
   width: 150rpx;
   color: #737373;
   font-size: 26rpx;
-  padding-left: 30rpx;
+  /* padding-left: 30rpx; */
 }
 /*主容器*/
+
+.fenE{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
 .stepper {
-  width:80px;
+  width:120px;
   height:26px;
-  margin: 0 180rpx;
   border: 1px solid #ccc;
   border-radius: 3px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
   /*加号和减号*/
   .stepper text {
-  float: left;
-  width: 19px;
-  line-height: 26px;
-  text-align: center;
+    width: 30px;
+    line-height: 26px;
+    text-align: center;
   }
   /*数值*/
   .stepper input {
-  width: 40px;
-  height: 26px;
-  float: left;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 12px;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+    width: 60px;
+    height: 26px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
   }
   /*普通样式*/
   .stepper .normal {
@@ -65,29 +73,37 @@ page{
   .stepper .disable {
   color: #ccc;
   }
-
+.infoBox{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
   .content_item{
-    width: 25%;
+    width: 50%;
     color: #737373;
     font-size: 26rpx;
-    padding-left: 30rpx;
+    /* padding-left: 30rpx; */
     margin-top: 20rpx;
   }
   .content_item:first-child{
-    width: 65%;
+    width: 55%;
   }
   .item{
-    height: 45rpx;
-    line-height: 45rpx;
+    height: 60rpx;
+    line-height: 60rpx;
   }
   .icon{
-    width: 25rpx;
-    height: 25rpx;
+    width: 36rpx;
+    height: 36rpx;
     margin-right: 15rpx;
   }
   .agreement{
-    margin-left: 50rpx;
-    font-size: 22rpx;
+    padding-left: 40rpx;
+    font-size: 24rpx;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    box-sizing: border-box;
   }
   .chakan{
     color: #2663c8;
@@ -99,7 +115,7 @@ page{
     border-radius: 50rpx;
     background-color: #176eff;
     margin-left: 86rpx;
-    margin-top: 50rpx;
+    margin-top: 90rpx;
   }
   .saveBtn text{
     line-height: 80rpx;
@@ -116,4 +132,9 @@ page{
   .logo_img image{
     width: 130rpx;
     height: 50rpx;
+  }
+  .warning{
+    padding: 0 0 10rpx 40rpx;
+    font-size: 24rpx;
+    color:#176eff;
   }

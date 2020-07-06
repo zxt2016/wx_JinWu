@@ -18,14 +18,14 @@ Page({
       })
   },
   dataList: function(recruitId) { 
-    var _this = this
+    var _this = this;
+    console.log(recruitId);
     wx.request({
       url: app.globalData.baseUrl+'/wxRecruitOrder/getStationList',
       method: 'GET', 
       header: {
         'content-type': 'application/json',
-        'authorization': app.globalData.token,
-        'openId': '1'
+        'Authorization': wx.getStorageSync('token')
       },
       data: {
         size: '10',
@@ -49,8 +49,7 @@ Page({
       method: 'GET', 
       header: {
         'content-type': 'application/json',
-        'authorization': app.globalData.token,
-        'openId': '1'
+        'Authorization': wx.getStorageSync('token')
       },
       data: {
         size: '10',
@@ -72,7 +71,6 @@ Page({
       recruitId: options.str,
       projectName: options.name
     })
-    console.log(options.str)
     this.dataList(options.str);
   },
   /**

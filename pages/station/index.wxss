@@ -62,7 +62,6 @@ page{
   line-height: 60rpx;
   margin-right: 80rpx;
   float: right;
-
 }
 .icon_img image{
   width: 25rpx;
@@ -73,6 +72,7 @@ page{
   margin-top: 20rpx;
   width: 560rpx;
   float: left;
+  font-size: 28rpx;
 }
 .search{
   width: 40rpx;

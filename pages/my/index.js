@@ -21,11 +21,13 @@ Page({
     })
   },
   onLoad: function () {
+
     wx.setNavigationBarTitle({
       title: "我的"
     });
 
     var token = wx.getStorageSync('token');
+    console.log(app.globalData.userInfo)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -39,9 +41,9 @@ Page({
         })
         setTimeout(function(){
           wx.navigateTo({
-            url: '../login/login',
+            url: '../login/login?str=my',
           })
-        },2000);
+        },1000);
       }
 
     } else if (this.data.canIUse){
@@ -66,16 +68,10 @@ Page({
       })
     }
     this.myData();
-
-    // if(){}
-
-
-
-
-
   },
   onShow(){
     var that = this;
+    this.onLoad();
     //判断用户是否授权
    wx.getSetting({
     success: (res) => {
@@ -105,7 +101,7 @@ Page({
     })
     setTimeout(function(){
       wx.navigateTo({
-        url: '../login/login',
+        url: '../login/login?str=my',
       })
     },300);
   },
@@ -123,9 +119,14 @@ Page({
   },
 
   share_btn: function(e){
-    wx.navigateTo({
-      url: '../share/index',
+    wx.showToast({
+      title: '暂未开放，敬请期待',
+      icon:'none',
+      duration:3000
     })
+    // wx.navigateTo({
+    //   url: '../share/index',
+    // })
   },
   partnership: function(e) {
     wx.navigateTo({
@@ -159,6 +160,11 @@ Page({
       url: '../about_us/index',
     })
   },
+  address(e){
+    wx.navigateTo({
+      url: '../myAddress/index',
+    })
+  },
   myData: function(e) {
     var _this = this
     wx.request({
@@ -166,8 +172,7 @@ Page({
       method: 'GET', 
       header: {
         'content-type': 'application/json',
-        'Authorization': _this.data.token,
-        'openId': '1'
+        'Authorization': wx.getStorageSync('token'),
       },
       success (res) {
         console.log(res) 

@@ -1,68 +1,553 @@
-// pages/project_detail/index.js
+// pages/station_detail/index.js
+var wxCharts = require('../../utils/wxcharts.js');
+var lineChart = null;
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    projectData:{},
-  },
+    imgUrl:app.globalData.imgUrl,
+    infoList:{},
+    // 认购授权标识
+    power:0,
+    //授权弹框
+    setting: false,
+    showModel: false,
+    token:'',
+    id:'',
+    profit:[],
+    profitShow:false,
 
+    // tab切换
+    order_list: [],  
+    currtab: 0,
+    swipertab: [{ name: '基本信息', index: 0 }, { name: '发电情况', index: 1 }, { name: '预期年化', index: 2 }, { name: '认购情况', index: 3 }],
+    //发电总数据
+    powerTotal:[],
+    // 发电数据
+    time:[],
+    numVal:[],
+    currIndex:0,
+
+    // 25年数据
+    allPower:'',
+    all_c:'',
+    all_mei:'',
+    all_tree:'',
+    // 持有收益
+    annualized:[
+      {
+        year:'1年',
+        val:'6.5%'
+      },{
+        year:'2年',
+        val:'7%'
+      },
+      {
+        year:'3年',
+        val:'7.15%'
+      },
+      {
+        year:'4年',
+        val:'7.3%'
+      },
+      {
+        year:'5年',
+        val:'7.5%'
+      },
+      {
+        year:'6年',
+        val:'7.8%'
+      },
+      {
+        year:'7年',
+        val:'8%'
+      },
+      {
+        year:'8年',
+        val:'8.5%'
+      },
+      {
+        year:'9年',
+        val:'9%'
+      },
+      {
+        year:'10年',
+        val:'9%'
+      },
+      {
+        year:'11年',
+        val:'9%'
+      },
+      {
+        year:'12年',
+        val:'9%'
+      },
+      {
+        year:'13年',
+        val:'9%'
+      },
+      {
+        year:'14年',
+        val:'9%'
+      },
+      {
+        year:'15年',
+        val:'9%'
+      },
+      {
+        year:'16年',
+        val:'9%'
+      },
+      {
+        year:'17年',
+        val:'9%'
+      },
+      {
+        year:'18年',
+        val:'9%'
+      },
+      {
+        year:'19年',
+        val:'9%'
+      },
+      {
+        year:'20年',
+        val:'9%'
+      },
+    ],
+    height:300,
+    dicHeight:'',
+
+    //认购周期
+    startTime:'',
+    endTime:'',
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
+  onLoad: function (options) {
     var _this = this;
-    var data = wx.getStorageSync('project_index');
-    console.log(data);
-  },
+    wx.setNavigationBarTitle({
+      title: "合伙企业详情"
+    });
+    this.setData({
+      height: wx.getSystemInfoSync().windowHeight-340,  
+      dicHeight: wx.getSystemInfoSync().windowHeight,
+    })
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
-  },
+    //根据招募单ID获取详情
+    if(options.id){
+      this.setData({
+        id:options.id,
+      });
+      wx.request({
+        url: app.globalData.baseUrl+'/wxRecruitOrder/recruitOrderDetail',
+        method:'GET',
+        header:{
+          'Authorization': wx.getStorageSync('token'),
+        },
+        data:{
+          id:options.id
+        },
+        success(res){
+          console.log(res);
+          if(res.data.errcode == 0){
+            var data = res.data.data;
+            data.capacity = (data.capacity/1000).toFixed(2);
+            data.totalInvestment = (data.totalInvestment/1000).toFixed(2);
+            data.singleInvestment = (data.singleInvestment/10000).toFixed(2);
+            var power = (res.data.data.capacity*1.2*25/1000).toFixed(2);
+            var time1 = data.startTime.substring(0,4)+'年'+data.startTime.substring(5,7)+'月'+data.startTime.substring(8,10)+'日';
+            var time2 = data.endTime.substring(0,4)+'年'+data.endTime.substring(5,7)+'月'+data.endTime.substring(8,10)+'日';
+            console.log(time1);
+            _this.setData({
+              infoList:data,
+              power:data.status,
+              profit:data.yieldList,
+              allPower:power,
+              all_c:power/1000,
+              all_mei:(power*0.4/1000).toFixed(2),
+              all_tree:(power/5.023).toFixed(2),
+              startTime:time1,
+              endTime:time2,
+            })
+          }
+         
+        },
+      })
+    }
+ },
+ backHome(){
+   wx.switchTab({
+     url: '../index/index',
+   })
+ },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+ //认购
+renGou(){
+  var that = this;
+  if(that.data.power != 1){
+    wx.showToast({
+      title: '暂未开放，敬请期待',
+      icon:'none',
+      duration:3000
+    })
+  }else{
+    var id = this.data.infoList.id;
+    that.setData({
+      id:id
+    });
+    /**
+     * 先验证是否授权、登录
+     * 验证招募单状态
+     * **/ 
+    //获取用户信息
+    wx.getSetting({
+      success: res => {
+        //没有授权需要弹框
+      if (!res.authSetting['scope.userInfo']) {
+        that.setData({
+          showModel: true,
+        })
+      } else {//判断用户已经授权,判断是否登录
+        that.setData({
+          showModel: false,
+        })
+        if(!wx.getStorageSync('token')){
+          wx.showToast({
+            title: '请先登录',
+            icon:'none',
+            duration:2000
+          })
+          setTimeout(function(){
+            wx.navigateTo({
+              url: '../login/login?renGou=ok&proId='+id,
+            })
+          },500);
+        }else{
+          // 验证招募单状态
+          wx.request({
+            url: app.globalData.baseUrl+'/wxRecruitOrder/getRecruitOrderStatus',
+            method:'GET',
+            header:{
+              'Authorization': wx.getStorageSync('token'),
+            },
+            data:{
+              id:id
+            },
+            success(res){
+              console.log(res);
+              if(res.data.errcode == 0){
+                setTimeout(function(){
+                  wx.navigateTo({
+                    url: '../purchase/index?tip=renGou&proId='+id,
+                  })
+                },500);
+              }
+            },
+          })
+        }
+      }
+    }, fail: function () {
+      that.setData({
+        showModel: true,
+      })
+    }
+    })
   }
+},
+//tab切换
+tabSwitch: function (e) {
+  var that = this
+  if (this.data.currtab === e.target.dataset.current) {
+    return false
+  } else {
+    that.setData({
+      page:1,
+      currtab: e.target.dataset.current
+    })
+  }
+},
+tabChange(e){
+  var that = this;
+  console.log(e);
+  this.setData({
+    currtab:e.detail.current,
+  });
+  if(e.detail.current == 0){
+    this.setData({
+      height: wx.getSystemInfoSync().windowHeight-340,  
+    })
+  }else if(e.detail.current == 1){
+    this.setData({
+      height: wx.getSystemInfoSync().windowHeight-140,  
+    })
+    wx.request({
+      url: app.globalData.baseUrl+'/wxRecruitOrder/getProjectElecDetail',
+      method:'GET',
+      header:{
+        'Authorization': wx.getStorageSync('token'),
+      },
+      data:{
+        id:that.data.id
+      },
+      success(res){
+        console.log(res);
+        if(res.data.errcode == 0){
+          that.setData({
+            powerTotal:res.data.data,
+          })
+          
+          var time = new Array();
+          var numVal = new Array();
+          var data = that.data.powerTotal.day;
+          for(var i=0;i<data.length;i++){
+            time.push(data[i].time);
+            numVal.push((data[i].energy/1000).toFixed(2));
+          }
+          that.setData({
+            time:time,
+            numVal:numVal
+          })
+          // 图表数据
+          var windowWidth = 320;
+          try {
+              var res = wx.getSystemInfoSync();
+              windowWidth = res.windowWidth;
+          } catch (e) {
+              console.error('getSystemInfoSync failed!');
+          }
+          // var simulationData = that.createSimulationData();
+          lineChart = new wxCharts({
+              canvasId: 'lineCanvas',
+              type: 'line',
+              categories: time,
+              animation: true,
+              // background: '#f5f5f5',
+              series: [{
+                  name: '发电量',
+                  data: numVal,
+                  format: function (val, name) {
+                      return val + 'kWh';
+                  }
+              }],
+              xAxis: {
+                  disableGrid: true
+              },
+              yAxis: {
+                  title: '发电量（kWh）',
+                  format: function (val) {
+                      return val.toFixed(2);
+                  },
+                  min: 0
+              },
+              width: windowWidth,
+              height: 200,
+              dataLabel: false,
+              dataPointShape: true,
+              extra: {
+                  lineStyle: 'curve'
+              }
+          });
+        }
+       
+      },
+    })
+  }else if(e.detail.current == 2){
+    this.setData({
+      height: wx.getSystemInfoSync().windowHeight,  
+    })
+  }else if(e.detail.current == 3){
+    this.setData({
+      height: wx.getSystemInfoSync().windowHeight-300,  
+    })
+  }
+},
+
+// 跳转电站列表
+goToStation(e){
+  var id = e.currentTarget.dataset.id;
+  var name = e.currentTarget.dataset.name;
+  wx.navigateTo({
+    url: '../station/index?str='+id+'&name='+name,
+  })
+},
+
+// 图表事件
+touchHandler: function (e) {
+  // console.log(lineChart.getCurrentDataIndex(e));
+  lineChart.showToolTip(e, {
+      // background: '#7cb5ec',
+      format: function (item, category) {
+          return category + ' ' + item.name + ':' + item.data 
+      }
+  });
+},    
+createSimulationData: function () {
+  var categories = [];
+  var data = [];
+  for (var i = 0; i < 10; i++) {
+      categories.push('2016-' + (i + 1));
+      data.push(Math.random()*(20-10)+10);
+  }
+  // data[4] = null;
+  return {
+      categories: categories,
+      data: data
+  }
+},
+
+updateData: function () {
+  var that = this;
+  // var simulationData = this.createSimulationData();
+  var series = [{
+      name: '发电量',
+      data: that.data.numVal,
+      format: function (val, name) {
+          return val + '万';
+      }
+  }];
+  lineChart.updateData({
+      categories: that.data.time,
+      series: series
+  });
+},
+
+//图表事件切换
+timeTab(e){
+    var index = e.currentTarget.dataset.index;
+    this.setData({
+      currIndex:index
+    });
+    console.log(index);
+    var time = new Array();
+    var numVal = new Array();
+    if(index == 0){ //日
+      var data = this.data.powerTotal.day;
+      for(var i=0;i<data.length;i++){
+        time.push(data[i].time);
+        numVal.push((data[i].energy/1000).toFixed(2));
+      }
+    }else if(index == 1){ //月
+      var arr = new Array();
+      var data = this.data.powerTotal.month;
+      for(var i=0;i<data.length;i++){
+        time.push(data[i].month+'月');
+        numVal.push((data[i].monthEnergy/1000).toFixed(2));
+      }
+    }else if(index == 2){ //年
+      var arr = new Array();
+      var data = this.data.powerTotal.year;
+      for(var i=0;i<data.length;i++){
+        time.push(data[i].year);
+        numVal.push((data[i].yearEnergy/1000).toFixed(2));
+      }
+    }
+    this.setData({
+      time:time,
+      numVal:numVal
+    })
+    this.updateData();
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+getUserInfo: function(e) {
+  var _this = this;
+  app.globalData.userInfo = e.detail.userInfo
+  this.setData({
+    userInfo: e.detail.userInfo,
+    hasUserInfo: true
+  })
+  setTimeout(function(){
+    wx.navigateTo({
+      url: '../login/login?renGou=ok&proId='+_this.data.id,
+    })
+  },300);
+},
+quxiao: function () {
+  var that = this;
+  that.setData({
+    showModel: false
+  })
+  wx.reLaunch({
+    url: '../index/index',
+  })
+},
+nones: function () {
+  var that = this;
+  that.setData({
+    showModel: false,
+    setting: false
+  })
+},
+//同意授权后
+callback: function () {
+  var that = this;
+  that.setData({
+    showModel: true,
+    setting: false
+  })
+},
+//取消去设置页
+cancel: function () {
+  var that = this;
+  that.setData({
+    showModel: false,
+    setting: false
+  })
+  wx.reLaunch({
+    url: '../index/index',
+  })
+},
+//查看年份收益表
+lookBtn(){
+  this.setData({
+    profitShow:true
+  });
+},
+cancelLook(){
+  this.setData({
+    profitShow:false
+  });
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })

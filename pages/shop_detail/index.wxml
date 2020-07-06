@@ -1,0 +1,168 @@
+<!-- wx:if="{{up == false}}" -->
+<view class="pages" bindchange="onPageScroll">
+  <view class="shop_detail">
+    <!-- 商品图片轮播 -->
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+        <block wx:for="{{shopDetail.imgs}}" wx:key="*this" wx:for-index="index">
+          <swiper-item class="swiper_img">
+            <image src="{{item}}" bindload="imageLoad" data-type="banner" style="width:{{bannerImgWid}}px;"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 商品信息 -->
+    <view class="shopInfo">
+      <view class="shopTitle">{{shopDetail.commodityName}}</view>
+      <view class="jiFen"><text>{{shopDetail.energy}}能量以上</text></view>
+      <view class="price">
+        <view class="newPrice">{{shopDetail.payPrice}}<text style="font-size:24rpx;">元</text></view>
+        <view class="oldPrice"><text> {{shopDetail.price}}元</text></view>
+      </view>
+    </view>
+  </view>
+  <!-- 上滑加载 -->
+  <view class="sliderUp" wx:if="{{up == false}}">
+      <image src="../image/shopDetail/up.png"></image>
+      <text>上滑加载更多</text>
+  </view>
+</view>
+<view class="shopDetail projectInfo" wx:if="{{up == true}}">
+    <view class="swiper-tab tabMain">
+      <block class="tabItem" wx:for="{{swipertab}}" wx:key="sptab">
+        <view class="swiper-tab-list {{currtab == item.index ? 'active' : ''}}" data-current="{{item.index}}" bindtap="tabSwitch">{{item.name}}</view>
+      </block>
+    </view>
+    
+    <swiper id="swiperBox" current="{{currtab}}" class="swiper-box" duration="300" style="height:{{imgsHeight+42}}px;min-height:{{windowHeight-40}}px;" bindchange="tabChange">
+      <!-- 商品详情 -->
+      <swiper-item>
+        <scroll-view class="hot-box" style="height:100%">
+          <view class="infoMain" style="padding:0 0 40px 0;height:100%;">
+            <image src="{{shopDetail.commodityDetail}}" bindload="imageLoad" data-type="details" style="width:100%;height:{{imgsHeight}}px"></image>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 规格参数 -->
+      <swiper-item>
+        <scroll-view class="hot-box" scroll-y="true">
+          <!-- <view class="swiperTitle"><text>发电量统计</text></view> -->
+          <view class="infoMain" style="padding:0;">
+            <view class="specsItem">规格</view>
+            <view class="specsInfo">
+              <text>品名</text>
+              <text>{{shopDetail.name}}</text>
+            </view>
+            <view class="specsInfo">
+              <text>品牌</text>
+              <text>{{shopDetail.brand}}</text>
+            </view>
+            <view class="specsInfo">
+              <text>编号</text>
+              <text>{{shopDetail.commodityCode}}</text>
+            </view>
+            <view class="specsInfo">
+              <text>型号</text>
+              <text>{{shopDetail.number}}</text>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 配送售后 -->
+      <swiper-item>
+        <scroll-view class="hot-box" scroll-y="false" style="height:100%;">
+          <view class="infoMain" style="padding:0;">
+            <view class="specsItem">服务</view>
+            <view class="specsInfo">
+              <text style="width:40rpx;color:#333;">1、</text>
+              <text>订单支付限时30分钟，过期自动取消订单，请及时支付。</text>
+            </view>
+            <view class="specsInfo">
+              <text style="width:40rpx;color:#333;">2、</text>
+              <text>支付成功后修改地址不能改变寄送地址，请及时联系客服咨询。</text>
+            </view>
+            <view class="specsInfo">
+              <text style="width:40rpx;color:#333;">3、</text>
+              <text>发货方式为线下发货，若要查询请咨询客服人员。</text>
+            </view>
+            <view class="specsInfo">
+              <text style="width:40rpx;color:#333;">4、</text>
+              <text>若发生退换货问题，请联系客服处理。</text>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 运营资质 -->
+      <swiper-item>
+        <scroll-view class="hot-box" scroll-y="true">
+          <view class="infoMain">
+            <image src="{{shopDetail.operational}}" bindload="imageLoad" data-type="zizhi" style="width:100%;height:{{zizhiimg}}px;"></image>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    
+    </swiper>
+</view>
+
+<!-- 收货地址 -->
+<view class="address" wx:if="{{addressShow}}">
+  <!-- 按钮 -->
+  <view class="addressBtnBox">
+    <view class="canlce" bindtap="canlce">取消</view>
+    <view class="sure" bindtap="sure">确定</view>
+  </view>
+  <view class="addressList">
+    <radio-group bindchange="radioChange">
+      <view class="listItem" wx:for="{{address}}" wx:for-item="item" wx:key="index">
+        
+          <label class="weui-cell weui-check__label flex_center">
+            <view class="">
+              <view class="itemView">
+                <text>{{item.username}}</text>
+                <text>{{item.phone}}</text>
+              </view>
+              <view class="itemView">{{item.city}}{{item.address}}</view>
+            </view>
+            <view class="weui-cell__hd">
+              <radio value="{{item.id}}"/>
+            </view>
+            <!-- <view class="weui-cell__bd">{{item.name}}</view> -->
+          </label>
+      </view>
+    </radio-group>
+  </view>
+</view>
+
+  <!-- 立即购买 -->
+  <view class="buyBtn" bindtap="buyBtn" data-status="{{shopDetail.status}}" wx:if="{{shopDetail.status == 1}}">
+    <text>立即购买</text>
+  </view>
+  <view class="buyBtn" bindtap="buyBtn" data-status="{{shopDetail.status}}" wx:else style="background-color:#e5e5e5;color:#666;"> 
+    <text>即将上线...</text>
+  </view>
+
+
+<!-- 自定义弹框开始 -->
+    <view wx:if="{{showModel}}" class="model">
+      <view class="modelTitle">提示</view>
+      <view class="modelBody">金乌电联小程序申请获取微信授权（昵称、头像等)</view>
+      <view class="btns btnBox">
+        <button class='quxiao_btn' bindtap='quxiao'>拒绝</button>  
+        <button open-type="getUserInfo" class="agree" bindgetuserinfo="getUserInfo" bindtap='nones' lang="zh_CN">允许</button>
+      </view>
+    </view>
+    <view wx:if="{{showModel}}" class="mask"></view>
+    <!-- 自定义弹框结束 -->
+
+    <!-- 自定义拒绝授权弹框 -->
+    <view wx:if="{{setting}}" class="model">
+      <view class="modelTitle">警告通知</view>
+      <view class="modelBody">您点击了拒绝授权,将无法正常使用某些功能,点击确定重新获取授权。</view>
+      <view class="btns setting">
+        <button class='quxiao' bindtap='cancel'>取消</button>
+        <button class='sure_btn' open-type="openSetting" bindopensetting="callback">确定</button>
+      </view>
+    </view>
+    <view wx:if="{{setting}}" class="mask"></view>
+    <!-- 自定义拒绝授权弹框结束 -->

@@ -1,0 +1,105 @@
+page{
+  background-color: #f5f5f5;
+  margin-bottom: 110rpx;
+}
+.shopBox{
+  width: 100%;
+  padding:20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-wrap:row wrap; */
+  justify-content: space-between;
+}
+.shopBox .shopItem{
+  width: 49%;
+  padding:30rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.shopBox .shopItem .openingIcon{
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  bottom:20rpx;
+  right:20rpx;
+}
+.shopBox .shopItem .xian{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 100;
+}
+.shopBox .shopItem .xian .tipImg{
+  width: 20px;
+  height: 24px;
+  display: block;
+  
+}
+.shopBox .shopItem .xian text{
+  display: block;
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 110;
+  color:#fff;
+  font-size: 24rpx;
+  text-align: left;
+  padding-left: 4px;
+}
+.shopItem .shopImg{
+  width: 100%;
+  height: 200rpx;
+  margin-bottom: 10px;
+}
+.shopItem .shopImg{
+  overflow: hidden;
+}
+.shopItem .shopImg image{
+  width: auto;
+  height: 200rpx;
+  display: block;
+  margin:0 auto;
+}
+.shopItem .itemTitle{
+  font-size: 24rpx;
+  height: 70rpx;
+}
+.shopItem .jiFen{
+  font-size: 18rpx;
+  color:#fff;
+  padding:6rpx 0;
+  margin-top: 5px;
+}
+.shopItem .jiFen text{
+  display: inline-block;
+  /* border:1px solid #F56C6C; */
+  /* border-radius: 20px; */
+  padding: 1px 10px;
+  box-sizing: border-box;
+  background: url('https://www.jwpower.cn/image/border.png') center no-repeat;
+  background-size: 100% 100%;
+  /* opacity: 0.8; */
+}
+.shopItem .price {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+.shopItem .price .newPrice{
+  font-size: 38rpx;
+  color:rgb(253, 151, 151);
+}
+.shopItem .price .oldPrice{
+  color:#666;
+  font-size: 22rpx;
+  text-decoration:line-through
+}

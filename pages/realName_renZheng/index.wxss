@@ -1,0 +1,119 @@
+.form_box{
+  position: absolute;
+  top:30rpx;
+  left:30rpx;
+  z-index: 10;
+  display: block;
+  width: 690rpx;
+  height: 600rpx;
+  margin: 0 auto;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 3px 8px 2px rgba(0,0,0,0.1);
+}
+.form_box .form_item{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+}
+.form_box .form_item text{
+  display: inline-block;
+  font-size: 28rpx;
+  padding: 30rpx 0;
+  width: 160rpx;
+}
+.form_box .form_item input{
+  font-size: 28rpx;
+  width: 500rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0;
+}
+.saveBtn{
+  width: 400rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  background-color: #176eff;
+  margin:100rpx auto 0 auto;
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+
+
+
+
+.itemTitle{
+  position: relative;
+  z-index: 1;
+}
+.itemTitle image{
+  width: 100%;
+  height: 210rpx;
+}
+.userinfo{
+  position: absolute;
+  z-index: 2;
+  width: 660rpx;
+  height: 500rpx;
+  border: 1rpx solid #f3f3f3;
+  box-shadow: 5rpx 5rpx 5rpx #f3f3f3;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+  margin: -180rpx 25rpx 40rpx 25rpx;
+  padding: 20rpx;
+}
+.itemList{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  color: #3f3f3f;
+}
+
+.itemList:first-child{
+  height: 120rpx;
+  line-height: 120rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  color: #3f3f3f;
+}
+.itemList:first-child image{
+  width: 80rpx;
+  height: 80rpx;
+  float: right;
+}
+.itemList:last-child{
+  border-bottom: 0rpx;
+}
+.itemList text{
+  margin: 0rpx 15rpx;
+  font-size: 24rpx;
+}
+.itemList .jtRt{
+  width: 12rpx;
+  height: 22rpx;
+  margin-top: 10rpx;
+  line-height: 22rpx;
+}
+input{
+  text-align: right;
+margin-top: 20rpx;
+margin-right: 50rpx;
+font-size: 26rpx;
+
+}
+
+.logo_img{
+  bottom: 30rpx;
+  left: 315rpx;
+  position: absolute;
+}
+
+.logo_img image{
+  width: 130rpx;
+  height: 50rpx;
+}

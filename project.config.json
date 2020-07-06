@@ -5,13 +5,14 @@
 	},
 	"setting": {
 		"urlCheck": false,
-		"es6": true,
+		"es6": false,
 		"enhance": false,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": true,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
@@ -27,7 +28,7 @@
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.11.0",
+	"libVersion": "2.11.2",
 	"appid": "wx37e4252ff91ecc45",
 	"projectname": "JWDL",
 	"debugOptions": {
@@ -45,13 +46,43 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
-		"miniprogram": {
+		"gamePlugin": {
 			"current": -1,
 			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "项目详情页",
+					"pathName": "pages/project_detail/index",
+					"query": "id=1263296317893136386",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "电站详情页面",
+					"pathName": "pages/station_detail/index",
+					"query": "str=1242268142906736642&name=东望村王云波1（任县二期）",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "低碳圈详情",
+					"pathName": "pages/shop_detail/index",
+					"query": "id=1277899198340337667",
+					"scene": null
+				}
+			]
 		}
 	}
 }

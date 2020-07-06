@@ -1,35 +1,36 @@
 <view class='mineBg'>
     <image src="{{imgUrl}}/partnership/top_img.png" mode="aspectFill"></image>
 <view class="title">
-        共<text>{{totalNum}}</text>个项目
+        共<text>{{totalNum}}</text>个合伙企业
  </view>
  <view class="line"></view>
       <view class="inviteList">
-      <input class="weui-input" name="input" placeholder="请输入您想查找的项目" bindinput="searchBtn" focus='ture'/>
+      <input class="weui-input" name="input" placeholder="请输入您想查找的合伙企业" bindinput="searchBtn" focus='ture' style="font-size:24rpx;"/>
       <image class="search" src="{{imgUrl}}/sousuo.png" style="width:40rpx; height:40rpx"></image>
       </view>    
  <view style="height:60rpx"></view>
  </view>
 <view class="content" wx:for="{{projectList}}">
   <navigator url="../station/index?str={{item.id}}&name={{item.projectName}}">
-      <view class="order_num">{{item.projectName}}<text style="margin-left:400rpx">详情</text></view>
+      <view class="order_num">{{item.companyName}}<text style="margin-left:400rpx">详情</text></view>
   </navigator>    
-    <view>
+    <view class="clearfix">
     <view class="content_item float_lf">
-      <view class="shares item">地址：{{item.projectAddress}}</view>
-      <view class="shares item">总装机容量：<text>{{item.capacity}}KW</text></view>
-      <view class="shares item">累计发电量：<text>{{item.totalPower}}KW</text></view>
-      <view class="shares item">累计收益：<text>{{item.totalEarn}}万</text></view>
+      <view class="shares item txt-num1">所在地区：{{item.projectAddress}}</view>
+      <view class="shares item">电站规模：<text>{{item.capacity}}kW</text></view>
+      <view class="shares item">电站价值：<text>{{item.totalInvestment}}万</text></view>
+      <view class="shares item">预期年电费收益率：<text style="color:#eeaa3d;font-size:34rpx;">{{item.annualized}}</text><text style="color:#eeaa3d;font-size:24rpx;">%</text></view>
     </view>
-    <view class="content_item float_lf">
+    <view class="content_item float_rt" style="width:40%;">
       <view class="shares item"></view>
-      <view class="shares item">认购份额：<text>{{item.subscriptionNum}}</text></view>
-      <view class="shares item">单份认购份额：<text>{{item.singleRatio}}</text></view>
-      <view class="shares item" hidden="{{show_btn}}">剩余认购份额：{{show_btn}}<text>31.5%</text></view>
+      <view class="shares item">认购份额：<text>{{item.subscriptionNum}}份</text></view>
+      <view class="shares item">单份所占比例：<text>{{item.singleRatio}}%</text></view>
+      <!-- hidden="{{show_btn}}" -->
+      <!-- <view class="shares item">剩余认购份额：<text>31.5%</text></view> -->
     </view>
     </view>
-    <view class="handel_item float_rg" hidden="{{show_btn}}">
+    <!-- <view class="handel_item float_rg" hidden="{{show_btn}}">
       <view class="pay_btn item">认购</view>
-    </view>  
+    </view>   -->
 </view>
-<view  wx:if="{{projectList == ''}}" style="margin:300rpx">暂无项目</view>
+<view  wx:if="{{projectList == ''}}" style="margin:300rpx auto;text-align:center;">暂无数据</view>

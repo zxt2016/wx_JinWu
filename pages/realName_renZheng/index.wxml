@@ -1,0 +1,23 @@
+<view style="position:relative;">
+  <view class="itemTitle">
+    <image src="{{imgUrl}}/personalData/my_bg.png"></image>
+  </view>
+  <form bindsubmit='realName' class="form_box">
+    <view class="form_item">
+      <text>真是姓名：</text>
+      <input class="form_input realName" name="realName" placeholder="请输入您的真实姓名" placeholder-style="color:#999;font-size:24rpx;" bindinput="adInputChange"/>
+    </view>
+    <view class="form_item">
+      <text>身份证号：</text>
+      <input class="form_input idCard" name="idCard" placeholder="请输入您的身份证号" placeholder-style="color:#999;font-size:24rpx;" bindinput="adInputChange"/>
+    </view>
+    <view class="form_item">
+      <text>银行卡号：</text>
+      <input class="form_input bankCard" name="bankCard" placeholder="请输入您的银行卡号" placeholder-style="color:#999;font-size:24rpx;" bindinput="adInputChange"/>
+    </view>
+    <button class="saveBtn" form-type='submit'>保存</button>
+  </form>
+</view> 
+<view class="logo_img">
+      <image src="{{imgUrl}}/guarantee/logo.png"></image>
+    </view>

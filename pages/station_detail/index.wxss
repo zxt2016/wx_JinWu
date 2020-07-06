@@ -1,17 +1,32 @@
 page{
-  background-color: #f8f8f8;
+  background-color: #fff;
 }
 .introduce{
   height: 360rpx;
   background-color: #ffffff;
-  margin-bottom: 20rpx;
-  padding: 20rpx 32rpx;
+  /* margin-bottom: 20rpx; */
+  /* padding: 20rpx 32rpx; */
   text-align: center;
+  position: relative;
 }
 .introduce image{
-  height: 285rpx;
-  width: 690rpx;
-  margin-bottom: 20rpx;
+  height: 100%;
+  width: 100%;
+  /* margin-bottom: 20rpx; */
+}
+.introduce .stationName{
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
+  color:#fff;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .introduce_detail{
   float: left;
@@ -46,12 +61,140 @@ page{
   float: right;
 }
 .logo_img{
-  bottom: 30rpx;
+  /* bottom: 30rpx;
   left: 315rpx;
-  position: absolute;
+  position: absolute; */
 }
 
 .logo_img image{
   width: 130rpx;
   height: 50rpx;
+  display: block;
+  margin:0 auto;
+}
+
+
+
+
+
+.projectInfo{
+  width: 100%;
+  /* min-height: 600rpx; */
+  padding:0;
+  box-sizing: border-box;
+  margin-bottom:100rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.projectInfo .tabMain{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f5f5f5;
+}
+.projectInfo .tabMain .tabItem{
+  width: 25%;
+}
+.tabMain .swiper-tab-list{
+  text-align: center;
+  font-size: 28rpx;
+  padding:20rpx 0;
+}
+.tabMain .swiper-tab-list.active{
+  border-bottom: 2px solid #2c7bfe;
+}
+.projectInfo .swiperTitle{
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+.projectInfo .swiperTitle text{
+  display: block;
+  padding-left: 10rpx;
+  font-size: 28rpx;
+  line-height: 32rpx;
+  border-left: 2px solid #2c7bfe;
+}
+.projectInfo .infoMain{
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.projectInfo .infoMain .timeTab{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:0 0 40rpx 0;
+}
+.projectInfo .infoMain .timeTab view{
+  width: 100rpx;
+  padding: 10rpx 0;
+  font-size: 28rpx;
+  text-align: center;
+  border:1px solid #2c7bfe;
+}
+.projectInfo .infoMain .timeTab view:first-child{
+  border-radius: 40px 0 0 40px;
+}
+.projectInfo .infoMain .timeTab view:first-child+view{
+  border-left:0;
+  border-right: 0;
+}
+.projectInfo .infoMain .timeTab view:first-child+view+view{
+  border-radius: 0 40px 40px 0 ;
+}
+.projectInfo .infoMain .timeTab .active{
+  color:#fff;
+  background-color: #2c7bfe;
+}
+.projectInfo .infoMain .info_item{
+  display: flex;
+  font-size: 28rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+}
+/* .projectInfo .infoMain .info_item:first-child{
+  border-top: 0;
+} */
+.projectInfo .infoMain .info_item text{
+  padding:18rpx 0;
+}
+.projectInfo .infoMain .info_item .info_value{
+  color:#666;
+  font-size: 26rpx;
+}
+.canvas{
+  width: 100%;
+  height: 400rpx;
+}
+.dataTotal{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+.dataTotal .dataItem {
+  width: 25%;
+  text-align: center;
+}
+.dataTotal .dataItem .dataItem_title{
+  font-size: 28rpx;
+}
+.dataItem_title image{
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+  display: block;
+}
+.dataItem_title text{
+  display: block;
+  padding: 5px 0;
+  border-left: 1px solid #2c7bfe;
+}
+.dataTotal .dataItem:first-child .dataItem_title text{
+  border-left: 0;
+}
+.dataTotal .dataItem>view:first-child+view{
+  font-size: 24rpx;
 }

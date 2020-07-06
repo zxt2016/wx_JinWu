@@ -98,12 +98,12 @@
   background-color: #ffffff;
 }
 .itemList{
-  padding: 36rpx 0rpx;
+  padding: 28rpx 0rpx;
   margin: 0 40rpx;
   box-sizing: border-box;
   margin-bottom: 10rpx;
   background: #fff;
-  border-radius: 10rpx;
+  /* border-radius: 10rpx; */
   border-bottom: 1rpx solid #dddddd;
   display: flex;
   align-items: center;

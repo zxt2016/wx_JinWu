@@ -3,24 +3,37 @@ page{
   background-color: #f8f8f8;
 }
 .swiper-tab {
+  width: 100%;
   height: 80rpx;
   line-height: 80rpx;
-  background: #ffffff;
-  display: flex;
-  position: relative;
+  background: #fff;
+  position: fixed;
+  top:49px;
+  left:0;
   z-index: 2;
-  flex-direction: row;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  }
-   
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  /* box-shadow: 0 -4px 5px 3px rgba(0,0,0,0.05); */
+}
+
+/* .swiper-box swiper-item{ */
+  /* overflow-y: auto; */
+/* } */
   .swiper-tab-list {
-  margin: 20rpx 40rpx;
-  font-size: 30rpx;
+    margin: 20rpx 40rpx;
+    font-size: 30rpx;
   }
-   
+  .swiper-tab2 .swiper-tab-list {
+    width: 20%;
+    margin: 0;
+    font-size: 30rpx;
+    text-align: center;
+  }
   .on {
-  border-bottom:2px solid #176eff;
+    border-bottom:2px solid #176eff;
   }
    
   .navTopList {
@@ -55,38 +68,38 @@ page{
   }
   
   .content{
-    height: 380rpx;
+    /* height: 380rpx; */
     margin: 20rpx;
     background-color: #ffffff;
     border-radius: 10rpx;
-    padding: 30rpx;
+    padding:0 30rpx;
   }
   .order_num{
     font-size: 26rpx;
     font-weight: 500;
-    height: 85rpx;
-    line-height: 85rpx;
+    height: 100rpx;
+    line-height: 100rpx;
     border-bottom: 1rpx solid #f3f3f3;
-    padding-left: 30rpx;
+    padding-left: 20rpx;
   }
   .station{
-    padding-left: 30rpx;
+    padding-left: 20rpx;
     font-size: 30rpx;
     font-weight: 700;
-    height: 70rpx;
-    line-height: 70rpx;
+    height: 80rpx;
+    line-height: 80rpx;
   }
     .content_item{
       width: 45%;
       color: #737373;
       font-size: 26rpx;
-      padding-left: 30rpx;
+      padding-left: 20rpx;
       border-bottom: 1rpx solid #f3f3f3;
     }
     .item{
       height: 45rpx;
       line-height: 45rpx;
-      margin-bottom: 30rpx;
+      margin-bottom: 20rpx;
     }
     .icon{
       width: 25rpx;
@@ -96,8 +109,12 @@ page{
     .handel_item{
       color: #737373;
       font-size: 26rpx;
-      padding-left: 30rpx;
-      margin-top: 30rpx;
+      padding-left: 20rpx;
+      /* margin-top: 30rpx; */
+      height: 100rpx;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .detail_btn{
       border: 1rpx solid #999999;
@@ -122,4 +139,102 @@ page{
       display: inline-block;
     }
    
+
+  /* tab */
+  .tabMain{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-top: 1px solid #f5f5f5;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 100;
+  }
+  .tabMain .tabItem{
+    width: 50%;
+    padding: 20rpx 0;
+    text-align: center;
+    font-size: 28rpx;
+  }
+  .tabMain .tabItem text{
+    display: inline-block;
+    padding: 0 10rpx 10rpx 10rpx;
+  }
+  .tabMain .tabItem.activeTab{
+    color:#176eff;
+  }
+  .tabMain .tabItem.activeTab text{
+    border-bottom: 1px solid #176eff;
+  }
   
+
+  .shopItems{
+    width: 100%;
+    padding:30rpx;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+    background-color: #fff;
+  }
+  .shopItems .shopOrder{
+    padding:0 0 20rpx 0;
+    color:#333;
+    font-size: 24rpx;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .shopItems .shopBox{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 20rpx 0;
+  }
+  .shopItems .shopBox .shopImg{
+    width: 190rpx;
+    height: 138rpx;
+    overflow: hidden;
+    border-radius: 10rpx;
+  }
+  .shopItems .shopBox .shopImg image{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .shopItems .shopBox .shopInfo .shopTitle{
+    font-size: 28rpx;
+    width: 500rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+  }
+  .shopItems .shopBox .shopInfo .shopPrice{
+    text-align: left;
+    font-size: 24rpx;
+    color:#F56C6C;
+    padding: 10rpx 20rpx 0 20rpx;
+    box-sizing: border-box;
+  }
+  .shopItems .shopBox .shopInfo .shopPrice text{
+    font-size: 32rpx;
+  }
+  .shopItems .shopBtn{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20rpx 0 0 0;
+  }
+  .shopItems .shopBtn view{
+    padding: 10rpx 30rpx;
+    color:#666;
+    font-size: 24rpx;
+    background-color: #fff;
+    border:1px solid #e5e5e5;
+    border-radius: 30px;
+  }
+  .shopItems .shopBtn view.payBtn{
+    color:#fff;
+    background-color: #176eff;
+    border:1px solid #176eff;
+    margin-left: 20rpx;
+  }

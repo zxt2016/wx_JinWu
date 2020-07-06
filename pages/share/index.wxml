@@ -3,23 +3,23 @@
 </view>
 <view class="guize"><navigator url="../share_rules/index">分享规则 ></navigator></view>
 <view class="shareList">
-        <view class='share_title clearfix'>
-          <text class='float_lf'>分享给好友</text>
-        </view>
-        <view class='itemList clearfix' style="background-color: #e9f1ff; height: 100rpx;">
-          <text class='float_lf'>名称</text>
-          <text class='float_lf'>地址</text>
-          <text class='float_lf'>认购份额</text>
-          <text class='float_lf'>分享</text>
-        </view>
-        <view class='itemList clearfix' wx:for="{{dataInfo}}">
-          <text class='float_lf'>{{item.name}}</text>
-          <text class='float_lf'>{{item.address}}</text>
-          <text class='float_lf'>{{item.totalInvestment}}份</text>
-          <image class="icon float_lf" src="{{imgUrl}}/share/icon.png"></image>
-        </view>
-        <view  wx:if="{{dataInfo == ''}}" style="margin:240rpx">暂无数据</view>
-        
+    <view class='share_title clearfix'>
+      <text class='float_lf'>分享给好友</text>
+    </view>
+    <view class='itemList' style="background-color: #e9f1ff; height: 100rpx;">
+      <text>名称</text>
+      <text>地址</text>
+      <text>装机容量</text>
+      <text>分享</text>
+    </view>
+    <view class='itemList' wx:for="{{dataInfo}}" wx:for-item="item" data-id="{{item.id}}" bindtap="shareEvent">
+      <text class='txt-num1'>{{item.projectName}}</text>
+      <text class='txt-num1'>{{item.projectAddress}}</text>
+      <text class=''>{{item.capacity}}kw</text>
+      <image class="icon" src="{{imgUrl}}/share/icon.png"></image>
+    </view>
+    <view  wx:if="{{dataInfo.length == 0}}" style="margin:240rpx">暂无数据</view>
+    
 </view>   
 <view class="logo_img">
       <image src="{{imgUrl}}/guarantee/logo.png"></image>

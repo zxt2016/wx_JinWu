@@ -1,22 +1,28 @@
 {
   "pages": [
-    "pages/my/index",
     "pages/index/index",
+    "pages/shop/index",
+    "pages/order/index",
+    "pages/myAddress/index",
+    "pages/my/index",
+    "pages/shop_detail/index",
+    "pages/share/index",
+    "pages/share_card/index",
+    "pages/myAddress_addEdit/index",
+    "pages/project_detail/index",
+    "pages/purchase/index",
+    "pages/realName_renZheng/index",
     "pages/myEnergy/index",
     "pages/myEnergy_record/index",
     "pages/login/login",
     "pages/guarantee/index",
     "pages/introduce/index",
     "pages/introduce_detail/index",
-    
     "pages/logs/logs",
     "pages/personalData/index",
     "pages/invite/index",
-    
     "pages/invite_rules/index",
-    "pages/share/index",
     "pages/share_rules/index",
-    "pages/purchase/index",
     "pages/agreement/index",
     "pages/pay_success/index",
     "pages/about_us/index",
@@ -24,8 +30,6 @@
     "pages/partnership_detail/index",
     "pages/station_detail/index",
     "pages/project/index",
-    "pages/project_detail/index",
-    "pages/order/index",
     "pages/station/index",
     "pages/order_detail/index"
   ],
@@ -33,37 +37,9 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#2c7bfe",
     "navigationBarTitleText": "金乌电联",
-    "navigationBarTextStyle":"white"
-  },
-  "tabBar": {
-    "color":"#666",
-    "selectedColor":"#2c7bfe",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath":"pages/image/bar_icon1_grey.png",
-        "selectedIconPath":"pages/image/bar_icon1_blue.png"
-      },
-      {
-        "pagePath": "pages/guarantee/index",
-        "text": "保障",
-        "iconPath":"pages/image/bar_icon2_grey.png",
-        "selectedIconPath":"pages/image/bar_icon2_blue.png"
-      },
-      {
-        "pagePath": "pages/introduce/index",
-        "text": "须知",
-        "iconPath":"pages/image/bar_icon3_grey.png",
-        "selectedIconPath":"pages/image/bar_icon3_blue.png"
-      },
-      {
-        "pagePath": "pages/my/index",
-        "text": "我的",
-        "iconPath":"pages/image/bar_icon4_grey.png",
-        "selectedIconPath":"pages/image/bar_icon4_blue.png"
-      }
-    ]
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance":20
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

@@ -38,8 +38,11 @@ page{
   padding: 40rpx 0rpx;
   box-sizing: border-box;
   background: #fff;
-  border-radius: 10rpx;
+  /* border-radius: 10rpx; */
   border-bottom: 1rpx solid #dddddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .itemList:last-child{
@@ -47,7 +50,7 @@ page{
 }
 .itemList text{
   font-size: 24rpx;
-  width: 20%;
+  /* width: 20%; */
   text-align: center;
 }
 .itemList text:nth-child(2){
@@ -62,9 +65,12 @@ page{
   color: #3f3f3f;
 }
 .icon{
-  width: 40rpx;
-  height: 40rpx;
-  margin-left: 50rpx;
+  width: 80rpx;
+  height: 80rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: block;
+  /* margin-left: 50rpx; */
 }
 
 .logo_img{

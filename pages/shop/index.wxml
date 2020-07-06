@@ -1,0 +1,27 @@
+<!-- 底部导航 -->
+<view class="flex fix_nav_wp">
+  <tabBar id="tabBar" navActive='2'></tabBar>
+</view>
+<!-- 主体 商品列表-->
+<view class="shopBox">
+  <view class="shopItem" wx:for="{{shopData}}" wx:for-item="item" wx:key="index" wx:if="{{item.type == 1}}">
+    <view class="xian" bindtap="xianGou">
+      <image class="tipImg" src="../image/shopDetail/tip_icon.png"></image>
+      <text>限</text>
+    </view>
+    <view bindtap="shopDetail" data-id="{{item.id}}">
+      <view class="shopImg">
+      <!-- bindload="imageLoad" -->
+        <image src="{{item.logo}}"  data-index="{{index}}" style="width:{{item.width}}px"></image>
+      </view>
+      <view class="itemTitle txt-num2">{{item.commodityName}}</view>
+      <view class="jiFen"><text>{{item.energy}}能量以上</text></view>
+      <view class="price">
+        <view class="newPrice" wx:if="{{item.status != 0}}">{{item.payPrice}}<text style="font-size:24rpx;">元</text></view>
+        <view class="newPrice" style="height:52rpx;" wx:if="{{item.status == 0}}"></view>
+        <image class="openingIcon" src="{{imgUrl}}/opening.png" wx:if="{{item.status == 0}}"></image>
+        <view class="oldPrice" wx:if="{{item.status != 0}}"><text>原价{{item.price}}元</text></view>
+      </view>
+    </view>
+  </view>
+</view>

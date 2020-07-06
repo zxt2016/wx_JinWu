@@ -1,0 +1,25 @@
+<form class="address" catchsubmit="formSubmit">
+  <view class="addItem">
+    <text>收货人</text>
+    <input class="itemInput" name="name" placeholder="请输入收货人姓名" placeholder-style="color:#666;" value="{{addData.username}}"></input>
+  </view>
+  <view class="addItem">
+    <text>手机号码</text>
+    <input class="itemInput" name="phone" placeholder="请输入手机号码" placeholder-style="color:#666;" value="{{addData.phone}}"></input>
+  </view>
+  <view class="addItem">
+    <text>所在地区</text>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker" wx:if="{{region[0] == ''}}" style="color:#666;">请选择省市区</view>
+      <view class="picker" wx:else>{{region[0]}} {{region[1]}} {{region[2]}}</view>
+    </picker>
+    <!-- <input class="itemInput" name="address" placeholder="请选择所在地区" placeholder-style="color:#666;" value=""></input> -->
+  </view>
+  <view class="addItem">
+    <text>详细地址</text>
+    <input class="itemInput" name="addDetail" placeholder="请输入详细地址" placeholder-style="color:#666;" value="{{addData.address}}"></input>
+  </view>
+  <view class="addSave">
+    <button formType="submit">保存</button>
+  </view>
+</form>

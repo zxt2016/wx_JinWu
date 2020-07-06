@@ -11,9 +11,9 @@ Page({
     icon:'',
     token:wx.getStorageSync('token'),
     //用户总能量
-    totalEnergy:'',
+    totalEnergy:0,
     //用户可用能量
-    balanceEnergy:'',
+    balanceEnergy:0,
     //能量气泡数据
     energy:[],
     //能量排行榜
@@ -46,11 +46,12 @@ Page({
       success(res){
         console.log(res);
         if(res.statusCode == 200){
+          
           _this.setData({
             icon:res.data.icon,
             userId:res.data.userId,
-            totalEnergy:res.data.totalEnergy,
-            balanceEnergy:res.data.balanceEnergy
+            totalEnergy:(res.data.totalEnergy/1000).toFixed(2),
+            balanceEnergy:(res.data.balanceEnergy/1000).toFixed(2)
           });
         }
       },
@@ -85,8 +86,13 @@ Page({
       success(res){
         console.log(res);
         if(res.statusCode == 200){
+          var data = res.data.data.records;
+          for(var i=0;i<data.length;i++){
+            data[i].balanceEnergy = (data[i].balanceEnergy/1000).toFixed(2);
+            data[i].totalEnergy = (data[i].totalEnergy/1000).toFixed(2);
+          }
           _this.setData({
-            rankingList:res.data.data.records,
+            rankingList:data,
             total:res.data.data.total,
             page:_this.data.page*1+1
           });
@@ -138,7 +144,7 @@ Page({
     for (let i = 0; i <bubble.length; i++) {
       var val = bubble[i].energy.toString();
       var obj = {
-        num: val.length >=4 ? (val/1000).toFixed(1) + 'kwh' : val+'wh',
+        num: val.length >=4 ? (val/1000).toFixed(1) + 'kg' : val+'g',
         title: bubble[i].type == 1 ? '邀请': bubble[i].type == 2 ? '分享' : bubble[i].type == 3 ? '发电' : '',
         anima: '',
         styleObject: '',
@@ -228,12 +234,8 @@ Page({
       },
       success(res){
         console.log(res);
-        if(res.statusCode == 200){
-          that.setData({
-            totalEnergy:res.data.data.totalEnergy,
-            balanceEnergy:res.data.data.energy
-          });
-
+        if(res.data.errcode == 0){
+          
           // that.data.myList[e.currentTarget.id].styleObject.animation = ''; //将css动画置空
           console.log(that.data.myList[e.currentTarget.id].styleObject);
           let myItm = that.data.myList[e.currentTarget.id];
@@ -270,6 +272,38 @@ Page({
                 })
               }, 1100)
           }, 100)
+          var totalEnergy = res.data.data.totalEnergy;
+          var energy = res.data.data.energy;
+          setTimeout(function(){
+            //能量排行榜
+            wx.request({
+              url: app.globalData.baseUrl+'/wxEnergy/rank',
+              method:'GET',
+              header:{'Authorization':_this.data.token},
+              contentType: 'application/json;charset=UTF-8 ',
+              data:{
+                current:that.data.page,
+                size:that.data.limit
+              },
+              success(res){
+                console.log(res);
+                if(res.statusCode == 200){
+                  var data = res.data.data.records;
+                  for(var i=0;i<data.length;i++){
+                    data[i].balanceEnergy = (data[i].balanceEnergy/1000).toFixed(2);
+                    data[i].totalEnergy = (data[i].totalEnergy/1000).toFixed(2);
+                  }
+                  that.setData({
+                    rankingList:data,
+                    total:res.data.data.total,
+                    page:that.data.page*1+1,
+                    totalEnergy:parseFloat(totalEnergy/1000).toFixed(2),
+                    balanceEnergy:parseFloat(energy/1000).toFixed(2)
+                  });
+                }
+              },
+            })
+          },1000);
 
         }
       },
@@ -284,7 +318,6 @@ Page({
   // 上拉加载
 onReachBottom: function () {
     var that = this;
-    
     if (that.data.load) {//全局标志位，方式请求未响应是多次触发
       if (that.data.rankingList.length >= that.data.total) {
         wx.showToast({
@@ -308,7 +341,7 @@ onReachBottom: function () {
             },
             success: function (res) {
               console.log(res)
-              if(res.statusCode == 200){
+              if(res.data.errcode ==0){
                 var content = that.data.rankingList.concat(res.data.data.records);
                 that.setData({
                   rankingList: content,

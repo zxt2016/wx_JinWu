@@ -1,0 +1,18 @@
+<view class="addressList">
+  <view class="listItem" wx:for="{{address}}" wx:for-item="item" wx:key="index" wx:if="{{address.length>=1}}">
+    <view class="itemView">
+      <text>{{item.username}}</text>
+      <text>{{item.phone}}</text>
+    </view>
+    <view class="itemView">{{item.city}}{{item.address}}</view>
+    <!-- 编辑图标 -->
+    <image class="editImg" src="../image/edit.png" bindtap="editBtn" data-id="{{item.id}}" data-index="{{index}}"></image>
+    <!-- 删除图标 -->
+    <image class="delImg" src="../image/del_icon.png" bindtap="delBtn" data-id="{{item.id}}" data-index="{{index}}"></image>
+  </view>
+  <view class="nothingData" wx:if="{{address.length < 1}}">暂无数据</view>
+
+  <view class="addAddress" bindtap="add">
+    <text>添加地址</text>
+  </view>
+</view>

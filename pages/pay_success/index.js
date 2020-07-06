@@ -7,14 +7,50 @@ Page({
    */
   data: {
     imgUrl:app.globalData.imgUrl,
+    tip:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+     if(options.type == 'shop'){
+      this.setData({
+        tip:2
+      });
+     }
   },
+  //返回首页
+  backHome(){
+    wx.reLaunch({
+      url: '../index/index?src=paySuccess',
+      success: function (e) { 
+        var page = getCurrentPages().pop(); 
+        if (page == undefined || page == null) return; 
+        page.onLoad(); 
+      }
+    })
+  },
+  //查看订单
+  lookOrder(){
+    if(this.data.tip != 2){
+      wx.reLaunch({
+        url: '../order/index?tip=0', //招募单订单
+      })
+    }else{
+      wx.reLaunch({
+        url: '../order/index?tip=1', //低碳圈订单
+      })
+    }
+    
+  },
+
+
+
+
+
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

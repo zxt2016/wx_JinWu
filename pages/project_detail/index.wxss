@@ -1,1 +1,301 @@
-/* pages/project_detail/index.wxss */
+page{
+  position: relative;
+  border-bottom: 1px solid transparent;
+  background-color: #fff;
+}
+.introduce{
+  background-color: #ffffff;
+  position: relative;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+.introduce>image{
+  width: 750rpx;
+  height: 210rpx;
+  display: block;
+}
+.introduce_detail{
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  font-size: 36rpx;
+  color:#fff;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.projectInfo{
+  width: 100%;
+  /* min-height: 600rpx; */
+  padding:0;
+  box-sizing: border-box;
+  margin-bottom:250rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.projectInfo .tabMain{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f5f5f5;
+}
+.projectInfo .tabMain .tabItem{
+  width: 25%;
+}
+.tabMain .swiper-tab-list{
+  text-align: center;
+  font-size: 28rpx;
+  padding:20rpx 0;
+}
+.tabMain .swiper-tab-list.active{
+  border-bottom: 2px solid #2c7bfe;
+}
+.projectInfo .swiperTitle{
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+.projectInfo .swiperTitle text{
+  display: block;
+  padding-left: 10rpx;
+  font-size: 28rpx;
+  line-height: 32rpx;
+  border-left: 2px solid #2c7bfe;
+}
+.projectInfo .infoMain{
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.projectInfo .infoMain .timeTab{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:0 0 40rpx 0;
+}
+.projectInfo .infoMain .timeTab view{
+  width: 100rpx;
+  padding: 10rpx 0;
+  font-size: 28rpx;
+  text-align: center;
+  border:1px solid #2c7bfe;
+}
+.projectInfo .infoMain .timeTab view:first-child{
+  border-radius: 40px 0 0 40px;
+}
+.projectInfo .infoMain .timeTab view:first-child+view{
+  border-left:0;
+  border-right: 0;
+}
+.projectInfo .infoMain .timeTab view:first-child+view+view{
+  border-radius: 0 40px 40px 0 ;
+}
+.projectInfo .infoMain .timeTab .active{
+  color:#fff;
+  background-color: #2c7bfe;
+}
+.projectInfo .infoMain .info_item{
+  display: flex;
+  font-size: 28rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+}
+/* .projectInfo .infoMain .info_item:first-child{
+  border-top: 0;
+} */
+.projectInfo .infoMain .info_item text{
+  padding:18rpx 0;
+}
+.projectInfo .infoMain .info_item .info_value{
+  color:#666;
+  font-size: 26rpx;
+}
+.canvas{
+  width: 100%;
+  height: 400rpx;
+}
+
+.btnBar{
+  position: fixed;
+  bottom:0;
+  left:0;
+  z-index: 100;
+  width: 100%;
+  padding:20rpx 50rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.05);
+}
+.btnBar .btn_com{
+  width: 240rpx;
+  height: 60rpx;
+  color:#666;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  border-radius: 40rpx;
+  border:1px solid #e5e5e5;
+}
+.btnBar .renGou{
+  color:#fff;
+  border:1px solid #2c7bfe;
+  background-color: #2c7bfe;
+}
+.btnBar .renGou_no{
+  color:#666;
+  border:1px solid #ccc;
+  background-color: #ccc;
+}
+.logo_img{                                                                                                            
+  bottom: 140rpx;
+  left: 315rpx;
+  z-index: 60;
+  position: absolute;
+}
+.logo_img image{
+  width: 130rpx;
+  height: 50rpx;
+}
+.lookBtn{
+  display: block;
+  color:#2c7bfe !important;
+}
+.profitTable{
+  position: fixed;
+  top:50%;
+  left:50%;
+  z-index: 200;
+  width: 90%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding:10rpx 30rpx 30rpx 30rpx;
+  box-sizing: border-box;
+}
+.profitTable .tabTitle{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  border-bottom: 1px solid #f8f8f8;
+}
+.profitTable .tabTitle .del_icon{
+  padding:20rpx;
+}
+.profitTable .tabTitle .del_icon image{
+  width: 40rpx;
+  height:40rpx;
+}
+.profitTable .tableHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  border-bottom: 1px solid #f8f8f8;
+}
+.profitTable .tableHeader text{
+  display: inline-block;
+  width: 50%;
+  padding:20rpx 0;
+  text-align: center;
+}
+.profitTable .tableBox {
+  max-height: 400rpx;
+  overflow: auto;
+}
+.profitTable .tableBox .tableBox_item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f8f8f8;
+}
+.profitTable .tableBox .tableBox_item text{
+  width: 50%;
+  padding:10rpx 0;
+  text-align: center;
+  font-size: 24rpx;
+}
+.dataTotal{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+.dataTotal .dataItem {
+  width: 50%;
+  text-align: center;
+}
+.dataTotal .dataItem .dataItem_title{
+  font-size: 28rpx;
+}
+.dataItem_title image{
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+  display: block;
+}
+.dataItem_title text{
+  display: block;
+  padding: 5px 0;
+  border-left: 1px solid #2c7bfe;
+}
+.dataTotal .dataItem:first-child .dataItem_title text{
+  border-left: 0;
+}
+.dataTotal .dataItem>view:first-child+view{
+  font-size: 24rpx;
+}
+.annualizedTitle{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border:1px solid #e5e5e5;
+  margin-top:10px;
+  background-color: #f8f8f8;
+  
+}
+.annualizedTitle view{
+  width: 50%;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 28rpx;
+  border-left: 1px solid #e5e5e5;
+}
+.annualizedTitle view:first-child{
+  border-left: 0;
+}
+.annualized{
+  height: 100%;
+}
+.annualizedItem{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border:1px solid #e5e5e5;
+  border-top: 0;
+  box-sizing: border-box;
+}
+.annualizedItem view{
+  width: 50%;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 24rpx;
+  border-left: 1px solid #e5e5e5;
+}
+.annualizedItem view:first-child{
+  border-left:0;
+}
+.annualizedItem view:first-child+view{
+  color:#eeaa3d;
+}

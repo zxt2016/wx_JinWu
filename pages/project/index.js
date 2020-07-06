@@ -7,7 +7,7 @@ Page({
    */
   data: {
       projectList:{},
-      totalNum:'',
+      totalNum:0,
       show_btn: false,
       imgUrl:app.globalData.imgUrl,
       
@@ -39,9 +39,14 @@ Page({
         current: '1',
       },
       success (res) {
-        console.log(res) 
+        console.log(res)
+        var data = res.data.data.records;
+        for(var i=0;i<data.length;i++){
+          data[i].capacity = parseInt(data[i].capacity/1000).toFixed(2);
+          data[i].totalInvestment = parseInt(data[i].totalInvestment/1000).toFixed(2);
+        } 
         _this.setData({
-          projectList: res.data.data.records,
+          projectList: data,
           totalNum: res.data.data.total,
         })
       }

@@ -1,0 +1,32 @@
+.sharePage{
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+.sharePage .share_title{
+  font-size: 24rpx;
+  text-align: center;
+  padding: 30rpx 0;
+}
+.share_card{
+  width: 100%;
+  padding: 0 50rpx 30rpx 50rpx;
+  box-sizing: border-box;
+}
+.canvas_box{
+  display: block;
+  width: 640rpx; 
+  height: 1020rpx;
+}
+#shareCanvas{
+  position: fixed;
+  top:0;
+  left:-10000px;
+  z-index: -10;
+  width: 640rpx !important;
+  height: 1020rpx !important;
+}
+.cardImg{
+  width: 640rpx !important;
+  height: 1020rpx !important;
+}

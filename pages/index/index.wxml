@@ -1,5 +1,10 @@
-<!--index.wxml-->
-<view class='view_body'>
+
+<!-- 底部导航 -->
+<view class="flex fix_nav_wp">
+  <tabBar id="tabBar" navActive='0'></tabBar>
+</view>
+
+<view class='view_body' style="padding-bottom:100rpx;">
   <!-- 轮播 -->
   <view class="page-section page-section-spacing swiper">
     <swiper indicator-dots="{{indicatorDots}}"
@@ -32,173 +37,189 @@
     </view>
     <!-- 电站 -->
     <view class='stationMain'>
+      <!-- 球形发电特效 -->
+      <view class="ballBox">
+        <view class="outside">
+          <view class="chargeBox">
+            
+            <!-- 外圆弧 -->
+            <view class="ballCopy">
+              <image src="../image/index/line_icon.png"></image>
+              <!-- 圆周转动图 -->
+              <!-- <view class="xuanZhuan"></view> -->
+            </view>
+            
+            <!-- 球体 -->
+            <view class="battery"></view>
+            <!-- 旋转球体形成波浪 -->
+            <view class="battery-copy">
+                <!-- <view class="g-wave" animation="{{animation}}"></view>
+                <view class="g-wave" animation="{{animation}}"></view>
+                <view class="g-wave" animation="{{animation}}"></view> -->
+            </view>
+            <!-- 文字 -->
+            <view class="ballCenter">
+              <view>今日发电量</view>
+              <view class="projectPower">{{projectPower}}</view>
+              <view>kWh</view>
+            </view>
+            
+          </view>
+        </view>
+        <view class="addUpPower">
+          <view class="addUpItem month">
+            <image src="../image/index/powerMonth.png"></image>
+            <view class="itemText">
+              <view>月</view>
+              <view>{{proMonthPower}}kWh</view>
+            </view>
+          </view>
+          <view class="addUpItem total">
+            <image src="../image/index/powerTotal.png"></image>
+            <view class="itemText">
+              <view>累计发电量</view>
+              <view>{{proTotalPower}}kWh</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="stationDataTotal">
+        <view class="project_box" style="height:{{projectData.length < 2 ? '205px': shTip1 == false ? '430px':projectData.length*200+35+'px'}}" wx:if="{{stationType == 1}}">
+            <!-- <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image> -->
+            <view class="project_item" wx:for="{{projectData}}" wx:for-item="item" wx:key="*this">
+              <view class="item_name">
+                <!-- {{item.trademark}} -->
+                <image src="../image/index/sunIcon.png" style="width:46rpx;height:46rpx;"></image>
+                <text class="projectName txt-num1">{{item.companyName}} ({{item.projectAddress}})</text>
+                <text class="look_details" data-index="{{index}}" data-id="{{item.id}}" data-name="{{item.companyName}}" bindtap="lookDetails">详情 ></text>
+              </view>
+              <view class="item_data">
+                <view class="item_list">电站规模：{{item.capacity}} kW</view>
+                <view class="item_list">电站价值：{{item.totalInvestment}}万</view>
+                <view class="item_list">份额单价：{{item.singleInvestment}}元</view>
+                <view class="item_list">预期年电费收益率：<text style="color:#eeaa3d;font-size:54rpx;">{{item.annualized}}</text><text style="color:#eeaa3d;font-size:24rpx;">%</text></view>
+              </view>
+              <!-- 未关注 -->
+              <view class="followBtn" bindtap="guanZhu" data-follow="{{item.follow}}" data-id="{{item.companyId}}" wx:if="{{item.follow == false}}" style="background: url('https://www.jwpower.cn/image/heart.png') center no-repeat;background-size: auto 100%;"><text>{{item.followNum}}</text> <text class="gzText">关注</text></view>
+              <!-- 已关注 -->
+              <view class="followBtn" bindtap="guanZhu" data-follow="{{item.follow}}" data-id="{{item.companyId}}" wx:if="{{item.follow == true}}" style="background: url('https://www.jwpower.cn/image/heart_icon.png') center no-repeat;background-size: auto 100%;"><text>{{item.followNum}}</text><text class="gzText">关注</text></view>
+              <!-- 认购 -->
+              <view class="buyBtn {{item.power == 1 ? 'blueBtn' : ''}}" data-power="{{item.power}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="renGou">预定</view>
+            </view>
+            <view class="getDown" bindtap="getMore" wx:if="{{projectData.length > 2}}">
+              <image class="{{shTip1 == true ? 'active':''}}" src="../image/index/getDown.png"></image>
+            </view>
+        </view>
+
+        <view class="project_box" style="height:{{projectData2.length < 2 ? '205px': shTip2 == false ? '430px':projectData2.length*200+35+'px'}}"  wx:else>
+            <!-- <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image> -->
+            <view class="project_item" wx:for="{{projectData2}}" wx:for-item="item" wx:key="*this">
+              <view class="item_name">
+                <image src="../image/index/sunIcon.png" style="width:46rpx;height:46rpx;"></image>
+                <text class="projectName txt-num1">{{item.companyName}} ({{item.projectAddress}})</text>
+                <text class="look_details" data-index="{{index}}" data-id="{{item.id}}" data-name="{{item.companyName}}" bindtap="lookDetails">详情 ></text>
+              </view>
+              <view class="item_data">
+                <view class="item_list">电站规模：{{item.capacity}} kW</view>
+                <view class="item_list">电站价值：{{item.totalInvestment}}万</view>
+                <view class="item_list">认购份额：{{item.subscriptionNum}}份</view>
+                <view class="item_list">预期年电费收益率：<text style="color:#eeaa3d;font-size:54rpx;">{{item.annualized}}</text><text style="color:#eeaa3d;font-size:24rpx;">%</text></view>
+              </view>
+              <!-- <view class="followBtn {{item.power == 1 ? 'blueBtn' : ''}}" bindtap="guanZhu">关注 <text>(123人)</text></view> -->
+              <!-- <view class="buyBtn {{item.power == 1 ? 'blueBtn' : ''}}" data-power="{{item.power}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="renGou">认购</view> -->
+            </view>
+            <view class="getDown" bindtap="getMore" wx:if="{{projectData2.length > 2}}">
+              <image class="{{shTip2 == true ? 'active':''}}" src="../image/index/getDown.png"></image>
+            </view>
+        </view>
+    </view>
+
+
+
       <!-- 招募项目 星系特效-->
-      <view class="sMain_item {{stationType == 1 ? 'tabShow':''}}">
-        <view class="xk_box">
-          <image class='xingKong' src="{{imgUrl}}/index/star/star_bg.png"></image>
-        </view>
-        <image class='star_line' src="{{imgUrl}}/index/star_line.png"></image>
-        <view class="star_animted">
-          <!-- 实时发电量 -->
-          <view class="nowPower">当日累计发电量：{{projectPower}}kwh</view>
-          <!-- 太阳 -->
-          <!-- <image class="sun" src="{{imgUrl}}/index/sun.png"></image> -->
-          <image class="sun" src="../image/star/sun.png"></image>
-          <!-- 星球 -->
-          <view class="star_img">
-            <image 
-            wx:for="{{starData}}" 
-            wx:for-item = 'item'
-            class="star star{{item.num}}" 
-            src="{{imgUrl}}/index/star/star{{index}}.png"></image>
-          </view>
-
-          <!-- 轮播 -->
-          <view class="star_swiper">
-            <view class="page-section page-section-spacing swiper">
-              <swiper indicator-dots="{{indicatorDots2}}"
-                autoplay="{{autoplay2}}" interval="{{interval2}}" duration="{{duration2}}" circular="{{circular2}}">
-                <block wx:for="{{projectData}}" wx:for-item="item" wx:key="*this">
-                  <swiper-item class="swiper_img">
-                    <!-- <image class="project_star_img" src="{{item.trademark}}"></image> -->
-                    <view class="project_box">
-                      <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image>
-                      <view class="project_item">
-                        <view class="item_name">
-                          <image src="{{item.trademark}}" style="width:70rpx;height:70rpx;"></image>
-                          <text class="projectName txt-num1">{{item.projectName}}</text>
-                          <text class="look_details" data-id="{{item.id}}" data-name="{{item.projectName}}" bindtap="lookDetails">详情 ></text>
-                        </view>
-                        <view class="item_data">
-                          <view class="item_list txt-num1">地区：{{item.projectAddress}}</view>
-                          <view class="item_list">总装机容量：{{item.capacity}} kw</view>
-                          <view class="item_list">剩余认购份数：{{item.remainingNum}} 份</view>
-                          <view class="item_list">总认购份数：{{item.subscriptionTotalNum}} 份</view>
-                          <view class="item_list">年化收益率：<text style="color:red;">{{item.annualized}} %</text></view>
-                        </view>
-                        <view class="buyBtn {{power == 1 ? 'blueBtn' : ''}}" bindtap="renGou">认购</view>
-                      </view>
-                    </view>
-
-
-                    <!-- <image src="{{item}}" style="width:100%"></image> -->
-                  </swiper-item>
-                </block>
-              </swiper>
-            </view>
-          </view>
-        </view>
-      </view>
+      <!-- <view class="sMain_item {{stationType == 1 ? 'tabShow':''}}">
+        
+      </view> -->
       <!-- 我的电站 -->
-      <view class="sMain_item {{stationType == 2 ? 'tabShow':''}}">
-        <view class="xk_box">
-          <image class='xingKong' src="{{imgUrl}}/index/star/star_bg.png"></image>
-        </view>
-        <image class='star_line' src="{{imgUrl}}/index/star_line.png"></image>
-        <view class="star_animted">
-        <!-- 实时发电量 -->
-          <view class="nowPower">当日累计发电量：{{myPower/1000}}kwh</view>
-          <!-- 太阳 -->
-          <!-- <image class="sun" src="{{imgUrl}}/index/sun.png"></image> -->
-          <image class="sun" src="../image/star/sun.png"></image>
-          <!-- 星球 -->
-          <view class="star_img">
-            <image 
-            wx:for="{{starData}}" 
-            wx:for-item = 'item'
-            class="star star{{item.num}}" 
-            src="{{imgUrl}}/index/star/star{{index}}.png"></image>
-          </view>
-
-          <!-- 轮播 -->
-          <view class="star_swiper">
-            <view class="page-section page-section-spacing swiper">
-              <swiper wx:if="{{powerTip == 1}}" indicator-dots="{{indicatorDots2}}"
-                autoplay="{{autoplay2}}" interval="{{interval2}}" duration="{{duration2}}" circular="{{circular2}}">
-                <block wx:for="{{projectData2}}" wx:for-item="item" wx:key="*this">
-                  <swiper-item class="swiper_img">
-                    <!-- <image class="project_star_img" src="{{item.trademark}}"></image> -->
-                    <view class="project_box">
-                      <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image>
-                      <view class="project_item">
-                        <view class="item_name">
-                          <image src="{{item.trademark}}" style="width:70rpx;height:70rpx;"></image>
-                          <text class="projectName txt-num1">{{item.projectName}}</text>
-                          <text class="look_details" data-id="{{item.id}}" data-name="{{item.projectName}}" bindtap="lookDetails">详情 ></text>
-                        </view>
-                        <view class="item_data">
-                          <view class="item_list txt-num1">地区：{{item.projectAddress}}</view>
-                          <view class="item_list">总装机容量：{{item.capacity}} kw</view>
-                          <view class="item_list">剩余认购份数：{{item.remainingNum}} 份</view>
-                          <view class="item_list">总认购份数：{{item.subscriptionTotalNum}} 份</view>
-                          <view class="item_list">年化收益率：<text style="color:red;">{{item.annualized}} %</text></view>
-                        </view>
-                        <!-- <view class="buyBtn">认购</view> -->
-                      </view>
-                    </view>
-                    <!-- <image src="{{item}}" style="width:100%"></image> -->
-                  </swiper-item>
-                </block>
-              </swiper>
-              <swiper wx:elif="{{powerTip == 2}}" indicator-dots="{{powerTip == 2 ? false : ''}}"
-                autoplay="{{autoplay2}}" interval="{{interval2}}" duration="{{duration2}}" circular="{{circular2}}">
-                <block>
-                  <swiper-item class="swiper_img">
-                    <!-- <image class="project_star_img" src="{{imgUrl}}/index/star0.png"></image> -->
-                    <view class="project_box">
-                      <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image>
-                      <view class="project_item nothing_station">
-                        <text>您还没有认购项目！</text>
-                      </view>
-                    </view>
-                    <!-- <image src="{{item}}" style="width:100%"></image> -->
-                  </swiper-item>
-                </block>
-              </swiper>
-            </view>
-          </view>
-        </view>
-      </view>
+      <!-- <view class="sMain_item {{stationType == 2 ? 'tabShow':''}}">
+        
+      </view> -->
 
       <!-- 背景图标 -->
-      <view class="station_bg_icon">
+      <!-- <view class="station_bg_icon">
         <image src="{{imgUrl}}/index/station_bg.png"></image>
-      </view>
+      </view> -->
     </view>
   </view>
   <!-- 收益模拟计算器 -->
   <view class="incomeCounter">
-    <view class="counter_title">收益模拟计算器</view>
+    <view class="counter_title">预期收益计算器</view>
     <view class="counter_item getIn" style="border-bottom:1px solid #e5e5e5;">
       <view class="item_text">投入 <text>(万)</text></view>
       <view class="item_input">
-        <input type="number" name="money" placeholder="请输入您的投入金额" placeholder-style="color:#999;"></input>
+        <input type="number" name="money" bindinput="getMoney" value="{{getMoney}}" placeholder="请输入您的投入金额" placeholder-style="color:#999;"></input>
       </view>
     </view>
     <view class="counter_item">
-      <view class="item_text">总装机容量 <text>(KW)</text></view>
+      <view class="item_text">电站规模</view>
       <view class="item_input">
-        <input type="number" disabled='true' value="399.68"></input>
+        <input type="number" disabled='true' value="{{capacitys}}" placeholder="请输入您的投入金额" placeholder-style="color:#999;"></input>
       </view>
     </view>
     <view class="counter_item">
-      <view class="item_text">帮助 <text>(户)</text></view>
-      <view class="item_input">
-        <input type="number" disabled='true' value="8923"></input>
+      <view class="item_text">持有周期</view>
+      <view class="item_input btnList">
+        <view wx:for="{{years}}" wx:for-item = "item" wx:for-index="index" class="yearBtn {{index == yearIndex?'active':''}}" data-index="{{index}}" bindtap="yearBtn">{{item}}年</view>
+
+        <!-- <view wx:for="{{years}}" wx:for-item = "item" wx:for-index="index" class="yearBtn" wx:if="{{index != yearIndex }}" data-index="{{index}}" bindtap="yearBtn">{{item}}年</view> -->
+        <!-- <input type="number" disabled='true' value="8923"></input> -->
+        <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{years}}">
+          <view class="picker">
+          <text wx:if="{{yearIndex == ''}}" style="color:#999;">请选择持有年份</text>
+          <text wx:else style="color:#2c7bfe;">{{years[yearIndex]}}年</text>
+          </view>
+        </picker> -->
       </view>
     </view>
     <view class="counter_item">
-      <view class="item_text">预计收益 <text>(万)</text></view>
+      <view class="item_text">预期年电费收益率</view>
       <view class="item_input">
-        <input type="number" disabled='true' value="2399.68"></input>
+        <input type="number" disabled='true' style="color:#eeaa3d;font-size:36rpx;" value="{{profit[yearIndex]}}"></input>
+        <text style="color:#eeaa3d;font-size:24rpx;"> %</text>
       </view>
     </view>
     <view class="counter_item">
-      <view class="item_text">回报率 <text>(%)</text></view>
+      <view class="item_text">累计电费收益</view>
       <view class="item_input">
-        <input type="number" disabled='true' style="color:red" value="45.2"></input>
+        <input type="number" disabled='true' style="color:#eeaa3d;font-size:36rpx;" value="{{myMoney}}"></input>
+        <text style="color:#eeaa3d;font-size:24rpx;"> 元</text>
       </view>
     </view>
   </view>
+
+  <!-- 自定义弹框开始 -->
+    <view wx:if="{{showModel}}" class="model">
+      <view class="modelTitle">提示</view>
+      <view class="modelBody">金乌电联小程序申请获取微信授权（昵称、头像等)</view>
+      <view class="btns btnBox">
+        <button class='quxiao_btn' bindtap='quxiao'>拒绝</button>  
+        <button open-type="getUserInfo" class="agree" bindgetuserinfo="getUserInfo" bindtap='nones' lang="zh_CN">允许</button>
+      </view>
+    </view>
+    <view wx:if="{{showModel}}" class="mask"></view>
+    <!-- 自定义弹框结束 -->
+
+    <!-- 自定义拒绝授权弹框 -->
+    <view wx:if="{{setting}}" class="model">
+      <view class="modelTitle">警告通知</view>
+      <view class="modelBody">您点击了拒绝授权,将无法正常使用某些功能,点击确定重新获取授权。</view>
+      <view class="btns setting">
+        <button class='quxiao' bindtap='cancel'>取消</button>
+        <button class='sure_btn' open-type="openSetting" bindopensetting="callback">确定</button>
+      </view>
+    </view>
+    <view wx:if="{{setting}}" class="mask"></view>
+    <!-- 自定义拒绝授权弹框结束 -->
 </view>
 

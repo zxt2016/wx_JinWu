@@ -1,10 +1,10 @@
 <view class="content">
     <image src="{{imgUrl}}/success.png"></image>
     <view class="success_text">支付成功</view>
-    <view class="backBtn">
+    <view class="backBtn" bindtap="backHome">
         <text>返回首页</text>
     </view>
-    <view class="saveBtn">
+    <view class="saveBtn" bindtap="lookOrder">
         <text>查看订单</text>
     </view>
 </view>

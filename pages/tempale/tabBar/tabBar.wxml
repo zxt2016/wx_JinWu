@@ -1,0 +1,13 @@
+<view class="tabBar">
+  <view class="tabItem" wx:for="{{navData}}" wx:for-item="item" wx:key="index" data-src="{{item.pagePath}}" data-index="{{index}}" bindtap="tabBarEvent">
+    <view class="tabBarIcon" wx:if="{{index != 2}}">
+      <image wx:if="{{navActive == index}}" src="{{item.selectedIconPath}}"></image>
+      <image wx:else src="{{item.iconPath}}"></image>
+      <text class="{{navActive == index ? 'active' : ''}}">{{item.text}}</text>
+    </view>
+    <view class="tabBarIcon" wx:elif="{{index == 2}}">
+      <image src="{{item.iconPath}}"></image>
+      <text class="{{navActive == index ? 'active' : ''}}">{{item.text}}</text>
+    </view>
+  </view>
+</view>

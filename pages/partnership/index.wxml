@@ -15,7 +15,7 @@
           <view class='invite_detail float_lf'>
                 <view class="invite_name">{{item.name}}</view>
                 <view class="invite_time">地址：{{item.address}}</view>
-                <view class="invite_time">所占股份：{{item.shareRatio}}</view>
+                <view class="invite_time">所占股份：{{item.shareRatio}}%</view>
           </view>
         </view>
 </view>

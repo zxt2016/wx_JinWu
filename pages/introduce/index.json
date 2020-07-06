@@ -1,5 +1,7 @@
 {
   "component": true,
-  "usingComponents": {},
+  "usingComponents": {
+    "tabBar": "../tempale/tabBar/tabBar"
+  },
   "navigationBarTitleText": "须知"
 }

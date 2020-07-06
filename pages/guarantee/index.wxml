@@ -1,11 +1,16 @@
-<view>
+<!-- 底部导航 -->
+<view class="flex fix_nav_wp">
+  <tabBar id="tabBar" navActive="1"></tabBar>
+</view>
+<view style="padding-bottom: 110rpx;">
     <image class="backgroundimg" src="{{imgUrl}}/guarantee/backgroud.png" mode="aspectFill"></image>
     <view class="bannerimg">
         <image class="bannerimg_image" src="{{imgUrl}}/guarantee/banner.png"></image>
     </view>
     <view class="content">
         <view class="induction">
-        <text>金乌创造合伙人全流程保障模式成立合伙企业：建立规范企业制度、实缴注资，《公司法》保护合伙人权益。</text>
+            <text>您坐等电费收益的背后是金乌创造的586道工序，12重关键点全流程保障。</text>
+        <!-- <text>金乌创造合伙人全流程保障模式成立合伙企业：建立规范企业制度、实缴注资，《公司法》保护合伙人权益。</text> -->
         </view>
         <view class="guarantee_content">
             <view class="content_child float-lf line-left">
@@ -16,7 +21,7 @@
                     <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
                 </view>
                 <view class="content_info float-rg">
-                    <text>组织成立合伙企业，建立规范企业制度、实缴注资，用《公司法》保护合伙人权益。</text>
+                    <text>组织成立合伙企业，建立规范企业制度、实缴注资，用《合伙企业法》保护合伙人权益。</text>
                     <image class="content_image" src="{{imgUrl}}/guarantee/image11.png"></image>
                 </view>
             </view>
@@ -34,7 +39,7 @@
             <view class="content_child float-lf line-left">
                 <view class="float-lf title_lf">
                     <text class="num float-lf">03</text>
-                    <text class="content_title_lf">核心设备质量</text>
+                    <text class="content_title_lf">设备质量保证</text>
                     <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
                 </view>
                 <view class="content_info float-rg">
@@ -89,7 +94,7 @@
             <view class="content_child float-rg line-right">
             <view class="float-rg title_rg">
                 <text class="num float-rg">08</text>
-                <text class="content_title_rg">国网计算费用</text>
+                <text class="content_title_rg">国网结算电费</text>
                 <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
             </view>
                 <view class="content_info float-lf">
@@ -136,10 +141,10 @@
                 <text class="content_title_rg">智能数据平台</text>
                 <image class="title_icon" src="{{imgUrl}}/guarantee/icon.png"></image>
             </view>
-                <view class="content_info float-lf">
-                    <text class="text-rg">每一位合伙人均开通金乌光联平台账户，通过金乌光联平台可以查看所有电站全部实际情况，包括地址、现场视频照片、发电情况等等，同时还可以查看自己所持有电站的发电量，对发电收入有可控预期。</text>
-                    <image class="content_image" src="{{imgUrl}}/guarantee/image10.png"></image>
-                </view>
+            <view class="content_info float-lf">
+                <text class="text-rg">每一位合伙人均开通金乌光联平台账户，通过金乌光联平台可以查看所有电站全部实际情况，包括地址、现场视频照片、发电情况等等，同时还可以查看自己所持有电站的发电量，对发电收入有可控预期。</text>
+                <image class="content_image" src="{{imgUrl}}/guarantee/image10.png"></image>
+            </view>
             </view>
         </view>
     </view>

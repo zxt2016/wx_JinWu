@@ -1,28 +1,36 @@
 <view class="content">
-    <view class="order_num">订单号：20201568664792</view>
-    <view class="station">一号发电站</view>
+    <!-- <view class="order_num">订单号：20201568664792</view> -->
+    <view class="station">{{proData.companyName}}</view>
     
-    <text class="num">认购份额：</text>
-    <view class='stepper sum'>
-    <text class='{{minusStatus}}' type='number' bindtap='bindMinus'>-</text>
-    <input bindinput='bindManual' value='{{num}}'></input>
-    <text bindtap='bindPlus'>+</text>
+    <view class="fenE">
+      <text class="num">认购份额：</text>
+      <view class='stepper sum'>
+        <text class='{{minusStatus}}' type='number' bindtap='bindMinus'>-</text>
+        <input bindinput='bindManual' value='{{num}}'></input>
+        <text bindtap='bindPlus'>+</text>
+      </view>
     </view>
-    <view>
-    <view class="content_item float_lf">
-      <view class="shares item">所占股份：<text>85.6%</text></view>
-      <view class="shares item">总金额：<text>126.62万元</text></view>
-    </view>
-    <view class="content_item float_lf">
-      <view class="shares item">预支付金额：</view>
-      <view class="shares item"><text style="color:#ff0000; font-size: 36rpx;">18.58</text>万</view>
-    </view>
+    <view class="infoBox">
+      <view class="content_item">
+        <view class="shares item">所占股份：<text>{{proData.singleRatio*num}}%</text></view>
+        <view class="shares item">电站规模：<text>{{proData.capacity}}kW</text></view>
+        <view class="shares item">电站价值：<text>{{proData.totalInvestment}}万元</text></view>
+        
+      </view>
+      <view class="content_item">
+        <view class="shares item">剩余份数：<text>{{proData.remainingNum}}份</text></view>
+        <view class="shares item">总份数：<text>{{proData.subscriptionTotalNum}}份</text></view>
+        <view class="shares item">预支付金额：<text style="color:#ff0000; font-size: 36rpx;">{{singleAmount}}</text>元</view>
+      </view>
     </view>
 </view>
+<view class="warning">注：预支付金额为认购份额总价值的1%。</view>
 <view class="agreement">
-  <image class="icon" src="{{imgUrl}}/icon.png"></image>我同意《发电站认购协议》 <text class="chakan" bindtap='agreement_btn'>查看协议</text>
+  <image class="icon" bindtap="xieYiBtn" src="../image/{{status == true ? 'sure_icon':'no_icon'}}.png"></image>
+  <text bindtap="xieYiBtn">我同意《发电站认购协议》</text>
+  <text class="chakan" bindtap='agreement_btn'>查看协议</text>
 </view>
-<view class="saveBtn">
+<view class="saveBtn" bindtap="payMoney">
     <text>支付</text>
 </view>
 <view class="logo_img">

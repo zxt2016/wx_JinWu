@@ -1,2 +1,236 @@
-<!--pages/project_detail/index.wxml-->
-<text>pages/project_detail/index.wxml</text>
+<view class="introduce">
+    <image src="{{imgUrl}}/partnership/top_img.png" mode="aspectFill"></image>
+    <view class="introduce_detail">
+      <text>{{infoList.companyName}}</text>
+     </view> 
+</view>
+<view class="projectInfo">
+  <!-- tab切换 -->
+  <view style="padding-bottom:60rpx;">
+    <view class="swiper-tab tabMain">
+      <block class="tabItem" wx:for="{{swipertab}}" wx:key="sptab">
+        <view class="swiper-tab-list {{currtab == item.index ? 'active' : ''}}" data-current="{{item.index}}" bindtap="tabSwitch">{{item.name}}</view>
+      </block>
+    </view>
+    
+    <swiper id="swiperBox" current="{{currtab}}" class="swiper-box" duration="300" style="height:{{height}}px;" bindchange="tabChange">
+      <!-- 基本信息 -->
+      <swiper-item>
+        <scroll-view class="hot-box" scroll-y="true">
+          <view class="infoMain">
+            <view class="info_item">
+              <text class="info_name">合伙企业名称</text>
+              <text class="info_value">{{infoList.companyName}}</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">所在地区</text>
+              <text class="info_value">{{infoList.projectAddress}}</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">电站总规模</text>
+              <text class="info_value">{{infoList.capacity}}kW</text>
+            </view>
+            <view class="info_item" bindtap="goToStation" data-id="{{infoList.id}}" data-name="{{infoList.companyName}}">
+              <text class="info_name">包含电站</text>
+              <text class="info_value" style="color:#2c7bfe;">{{infoList.stationNum}}座 ></text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">电站总价值</text>
+              <text class="info_value">{{infoList.totalInvestment}}万</text>
+            </view>
+            <!-- <view class="info_item">
+              <text class="info_name">累计发电量</text>
+              <text class="info_value">{{infoList.totalPower}}kwh</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">年化收益率</text>
+              <text class="info_value" style="color:red;">{{infoList.annualized}}%</text>
+            </view>
+            <view class="info_item" bindtap="lookProfit">
+              <text class="info_name">年份收益表</text>
+              <text class="info_value lookBtn" bindtap="lookBtn">点击查看 ></text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">总认购份数</text>
+              <text class="info_value">{{infoList.subscriptionTotalNum}}份</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">剩余认购份数</text>
+              <text class="info_value">{{infoList.remainingNum}}份</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">单份预支付金额</text>
+              <text class="info_value">{{infoList.singleAmount}}元</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">单份认购金额</text>
+              <text class="info_value">{{infoList.singleInvestment}}万</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">单份认购所占股份</text>
+              <text class="info_value">{{infoList.singleRatio}}%</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">剩余待认购股份</text>
+              <text class="info_value">{{infoList.leftRatio}}%</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">发布时间</text>
+              <text class="info_value">{{infoList.releaseTime}}</text>
+            </view> -->
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 发电情况 -->
+      <swiper-item>
+        <scroll-view class="hot-box" scroll-y="true">
+          <view class="swiperTitle"><text>发电量统计</text></view>
+          <view class="infoMain" style="padding:0 30rpx;">
+            <view class="timeTab">
+              <view class="{{currIndex == 0 ? 'active':''}}" data-index="0" bindtap="timeTab">日</view>
+              <view class="{{currIndex == 1 ? 'active':''}}" data-index="1" bindtap="timeTab">月</view>
+              <view class="{{currIndex == 2 ? 'active':''}}" data-index="2" bindtap="timeTab">年</view>
+            </view>
+            <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+            <!-- <button type="primary" bindtap="updateData">更新数据</button> -->
+          </view>
+          <view class="swiperTitle"><text>25年数据统计</text></view>
+          <view class="dataTotal">
+            <view class="dataItem">
+              <view class="dataItem_title">
+                <image src="../image/project_detail/pro_icon1.png"></image>
+                <text>总发电量</text>
+              </view>
+              <view>{{allPower}}kWh</view>
+            </view>
+            <view class="dataItem">
+              <view class="dataItem_title">
+                <image src="../image/project_detail/pro_icon2.png"></image>
+                <text>总碳减排</text>
+              </view>
+              <view>{{all_c}}t</view>
+            </view>
+            <view class="dataItem">
+              <view class="dataItem_title">
+                <image src="../image/project_detail/pro_icon3.png"></image>
+                <text>总节约煤</text>
+              </view>
+              <view>{{all_mei}}t</view>
+            </view>
+            <view class="dataItem">
+              <view class="dataItem_title">
+                <image src="../image/project_detail/pro_icon4.png"></image>
+                <text>等效植树</text>
+              </view>
+              <view>{{all_tree}}颗</view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 预期年化 -->
+      <swiper-item>
+        <scroll-view class="hot-box" scroll-y="false" style="height:100%;margin-top:20px;">
+          <view class="infoMain" style="width:80%;height:100%;margin:0 auto 0 auto;padding:0;overflow:hidden;">
+            <view class="annualizedTitle">
+              <view>持有年份</view>
+              <view>预期收益率</view>
+            </view>
+            <view class="annualized">
+              <view class="annualizedItem" wx:for="{{annualized}}" wx:for-item="item">
+                <view>{{item.year}}</view>
+                <view>{{item.val}}</view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 认购情况 -->
+      <swiper-item>
+        <scroll-view class="hot-box" scroll-y="true">
+          <view class="infoMain">
+            <view class="info_item">
+              <text class="info_name">总认购份数</text>
+              <text class="info_value">{{infoList.subscriptionTotalNum}}份</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">单份认购所占股份</text>
+              <text class="info_value">{{infoList.singleRatio}}%</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">剩余认购份数</text>
+              <text class="info_value">{{infoList.remainingNum}}份</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">单份认购金额</text>
+              <text class="info_value">{{infoList.singleInvestment}}万</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">单份预支付金额</text>
+              <text class="info_value">{{infoList.singleAmount}}元</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">认购周期</text>
+              <text class="info_value">从{{startTime}}至{{endTime}}</text>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    
+    </swiper>
+</view>
+
+
+
+</view>
+<view class="btnBar">
+  <view class="btn_com backHome" bindtap="backHome">返回首页</view>
+  <view class="btn_com {{power == 1?'renGou':'renGou_no'}}" bindtap="renGou">立即认购</view>
+</view>
+<view class="logo_img">
+  <image src="{{imgUrl}}/guarantee/logo.png"></image>
+</view>
+
+<!-- 收益表 -->
+<!--   -->
+<view class="mask" wx:if="{{profitShow}}" bindtap="cancelLook"></view>
+<view class="profitTable" wx:if="{{profitShow}}">
+  <view class="tabTitle">
+    <text>年份收益表</text>
+    <view class="del_icon" bindtap="cancelLook"><image src="../image/del.png"></image></view>
+  </view>
+  <view class="tableHeader">
+    <text>年份</text>
+    <text>收益率</text>
+  </view>
+  <view class="tableBox">
+    <view class="tableBox_item" wx:for="{{profit}}" wx:for-item="item">
+      <text>{{item.year}}年</text>
+      <text style="color:red;">{{item.yield*100}}%</text>
+    </view>
+  </view>
+</view>
+
+
+<!-- 自定义弹框开始 -->
+    <view wx:if="{{showModel}}" class="model">
+      <view class="modelTitle">提示</view>
+      <view class="modelBody">金乌电联小程序申请获取微信授权（昵称、头像等)</view>
+      <view class="btns btnBox">
+        <button class='quxiao_btn' bindtap='quxiao'>拒绝</button>  
+        <button open-type="getUserInfo" class="agree" bindgetuserinfo="getUserInfo" bindtap='nones' lang="zh_CN">允许</button>
+      </view>
+    </view>
+    <view wx:if="{{showModel}}" class="mask"></view>
+    <!-- 自定义弹框结束 -->
+
+    <!-- 自定义拒绝授权弹框 -->
+    <view wx:if="{{setting}}" class="model">
+      <view class="modelTitle">警告通知</view>
+      <view class="modelBody">您点击了拒绝授权,将无法正常使用某些功能,点击确定重新获取授权。</view>
+      <view class="btns setting">
+        <button class='quxiao' bindtap='cancel'>取消</button>
+        <button class='sure_btn' open-type="openSetting" bindopensetting="callback">确定</button>
+      </view>
+    </view>
+    <view wx:if="{{setting}}" class="mask"></view>
+    <!-- 自定义拒绝授权弹框结束 -->

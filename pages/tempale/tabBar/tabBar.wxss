@@ -1,0 +1,69 @@
+.tabBar{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 4rpx;
+}
+.tabBar .tabItem{
+  position: relative;
+  width: 25%;
+  height: 45px;
+  text-align: center;
+  
+  box-sizing: border-box;
+}
+.tabBar .tabItem image{
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+  margin:0 auto;
+}
+.tabBar .tabItem text{
+  font-size: 24rpx;
+  color:#666;
+}
+.tabBar .tabItem .active{
+  color:#2c7bfe;
+}
+.tabBar .tabItem:first-child+.tabItem+.tabItem .tabBarIcon{
+  width: 110rpx;
+  height:110rpx;
+  border-radius: 50%;
+  border:1px solid #e5e5e5;
+  position: absolute;
+  top:-20px;
+  left:0;
+  right:0;
+  z-index: 10;
+  margin:0 auto;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.tabBar .tabItem:first-child+.tabItem+.tabItem .tabBarIcon image{
+  width: 78rpx;
+  height: 78rpx;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  z-index: 120;
+  border-radius: 50%;
+  box-shadow: 0 0 3px 2px rgba(85, 175, 40,0.4);
+  background-color: rgb(85, 175, 40);
+}
+.tabBar .tabItem:first-child+.tabItem+.tabItem .tabBarIcon text{
+  position: absolute;
+  top:19px;
+  left:50%;
+  z-index: 100;
+  width: 120%;
+  height: 88%;
+  margin:0 auto;
+  transform: translateX(-50%);
+  background-color: #fff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}

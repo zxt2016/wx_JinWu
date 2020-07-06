@@ -3,12 +3,12 @@
 	<image class="three" src="{{imgUrl}}/myEnergy/myEnergy_bg.png"></image>
 	<!-- 可用能量、累计能量 -->
 	<view class="myEnergy">
-		<view class="balanceEnergy">可用能量：<text>{{balanceEnergy}}</text>wh</view>
+		<view class="balanceEnergy">可用能量：<text>{{balanceEnergy}}</text>kg</view>
 		<view class="totalEnergy">
 			<image class="header_top" src="{{icon}}"></image>
 			<view>
 				<view>累计能量</view>
-				<view>{{totalEnergy}}wh</view>
+				<view>{{totalEnergy}}kg</view>
 			</view>
 			<view class="record" bindtap="getRecord">记录</view>
 		</view>
@@ -37,6 +37,12 @@
 	<view id="my_collect" class="view_collect"></view>
 	<!-- 能量排行 -->
 	<view class="rankingList">
+		<!-- 碳减排 -->
+		<view class="carbonBox">
+			<!-- <view>
+				<image src=""></image>
+			</view> -->
+		</view>	
 		<view class="list_title">能量排行</view>
 		<view class="listMain">
 				<view class="list_item" wx:for="{{rankingList}}" wx:for-item="item">
@@ -52,7 +58,7 @@
 						<!-- <text>金乌科技</text> -->
 						<text wx:if="{{item.nickName.length != 0}}">{{item.nickName}}</text>
 						<text wx:if="{{item.nickName.length == 0}}">游客</text>
-						<text>{{item.totalEnergy}}wh</text>
+						<text>{{item.totalEnergy}}kg</text>
 					</view>
 				</view>
 		</view>

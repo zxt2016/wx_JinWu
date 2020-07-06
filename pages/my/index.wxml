@@ -1,12 +1,16 @@
-<view class='page_box'>
+<!-- 底部导航 -->
+<view class="flex fix_nav_wp">
+  <tabBar id="tabBar" navActive="4"></tabBar>
+</view>
+<view class='page_box' style="padding-bottom:110rpx;">
   <!-- 用户信息 -->
   <view class='section clearfix' style='margin-top:20rpx;'>
   <image class='mineBg' src='{{imgUrl}}/my/my_bg.png'></image>
     <view class='userBox'>
       <view class='userInfo clearfix float_lf' hidden='{{logined}}'>
-        <image class='float_lf' src='{{dataInfo.icon}}'></image>
+        <image class='float_lf' src='{{userInfo.avatarUrl}}'></image>
         <view class='name_num float_lf'>
-          <text class='txt-num1'>{{dataInfo.nickName}}</text>
+          <text class='txt-num1'>{{userInfo.nickName}}</text>
           <view wx:if="{{dataInfo.count}}">
           <text class="float_lf">所属合伙企业{{dataInfo.count}}个</text><text bindtap="partnership" class="detail" style="color:#407ad9">详情</text>
           </view>
@@ -19,7 +23,7 @@
     <view class="float_lf num_info">
       <view wx:if="{{dataInfo.totalCost}}" class="num">{{dataInfo.totalCost}}万元</view>
       <view wx:else class="num">0万元</view>
-      <view class="num_text">投资总额</view>
+      <view class="num_text">初始投入</view>
     </view>
     <view class="float_lf num_info">
       <view wx:if="{{dataInfo.totalIncome}}" class="num">{{dataInfo.totalIncome}}万元</view>
@@ -43,21 +47,26 @@
     <text class='float_lf'>我的能量</text>
     <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
   </view>
-  <view class='itemList clearfix' bindtap='gongYi'>
+  <view class='itemList clearfix' bindtap='address'>
+    <image class='icon_img float_lf' style='width:40rpx;height:38rpx;' src='../image/address_icon.png'></image>
+    <text class='float_lf'>收货地址</text>
+    <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
+  </view>
+  <!-- <view class='itemList clearfix' bindtap='gongYi'>
     <image class='icon_img float_lf' style='width:40rpx;height:38rpx;' src='{{imgUrl}}/my/gongyi.png'></image>
     <text class='float_lf'>能量公益</text>
     <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
-  </view>
+  </view> -->
   <view class='itemList clearfix' bindtap='invite_btn'>
     <image class='icon_img float_lf' src='{{imgUrl}}/my/yaoqing.png'></image>
     <text class='float_lf'>邀请好友</text>
     <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
   </view>
-  <view class='itemList clearfix' bindtap='share_btn'>
+  <!-- <view class='itemList clearfix' bindtap='share_btn'>
     <image class='icon_img float_lf' src='{{imgUrl}}/my/fenxiang.png'></image>
     <text class='float_lf'>分享有奖</text>
     <image class='float_rt jtRt' src='{{imgUrl}}/jt_rt.png'></image>
-  </view>
+  </view> -->
   <view class='itemList clearfix' bindtap='personal_data'>
     <image class='icon_img float_lf' src='{{imgUrl}}/my/ziliao.png'></image>
     <text class='float_lf'>个人资料</text>

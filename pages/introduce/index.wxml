@@ -1,3 +1,7 @@
+<!-- 底部导航 -->
+<view class="flex fix_nav_wp">
+  <tabBar id="tabBar" navActive="3"></tabBar>
+</view>
 <view class="introduce">
     <navigator url="../introduce_detail/index?str=1">
     <image src="{{imgUrl}}/introduce/introduce1.png"></image>
@@ -55,6 +59,6 @@
      </navigator>
 </view>
 
-<view class="logo_img">
+<view class="logo_img" style="padding-bottom: 110rpx;">
   <image src="{{imgUrl}}/guarantee/logo.png"></image>
 </view>

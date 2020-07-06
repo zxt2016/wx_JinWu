@@ -1,0 +1,9 @@
+<view class="sharePage">
+  <view class="share_title">长按保存海报 分享给朋友</view>
+  <view class="share_card">
+    <view class="canvas_box">
+      <canvas id="shareCanvas" canvas-id="shareCanvas" style="width:640px;height:980px;"></canvas>
+      <image class="cardImg" src="{{cardImg}}"></image>
+    </view>
+  </view>
+</view>

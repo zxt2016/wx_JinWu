@@ -56,12 +56,17 @@
 }
 .stationMain{
   /* padding: 30rpx; */
-  height: 1100rpx;
+  /* height: 1100rpx; */
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
-  box-shadow: 0 -6px 6px -5px rgba(204, 204, 204, 0.3);
+  box-shadow: 0 -6px 6px -5px rgba(0, 0, 0, 0.1);
 }
+.stationMain .stationDataTotal{
+  /* padding: 30px; */
+  box-sizing: border-box;
+}
+
 .stationMain .sMain_item{
   width: 100%;
   height: 860rpx;
@@ -254,29 +259,40 @@
   align-items: center;
   justify-content: space-around;
   font-size: 28rpx;
-  margin-top: 30rpx;
 }
 .incomeCounter .counter_item .item_text{
   text-align: left;
-  width: 40%;
+  width: 230rpx;
 }
 .incomeCounter .counter_item .item_text text{
   color:#999;
   font-size: 24rpx;
 }
 .incomeCounter .counter_item .item_input{
-  width: 60%;
+  width: 420rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
 }
 .incomeCounter .counter_item .item_input input{
-  width: 100%;
+  width:90%;
   color:#2c7bfe;
   text-align: right;
-  /* padding: 20rpx 0; */
+  padding: 20rpx 0;
+}
+.incomeCounter .counter_item .item_input picker{
+  width: 100%;
+  padding: 20rpx 0;
+  text-align: right;
 }
 .incomeCounter .counter_item.getIn .item_input input{
   padding: 20rpx 0;
 }
-
+.incomeCounter .counter_item.getIn .item_input text{
+  text-align: right;
+  display: block;
+  width: 26rpx;
+}
 .star_animted .star_swiper{
   width: 100%;
   height: 660rpx;
@@ -285,12 +301,16 @@
   left:0;
   z-index: 100;
 }
-.star_animted .star_swiper .project_box{
+.project_box{
   position: relative;
   width: 100%;
   margin: 0 auto;
+  padding:0 20rpx 30rpx 20rpx;
+  /* padding:40rpx 30rpx; */
+  box-sizing: border-box;
+  transition: all 0.3s;
 }
-.star_animted .star_swiper .project_box>image{
+.project_box>image{
   width: 98% !important;
   height: 540rpx;
   margin: 0 auto;
@@ -329,36 +349,37 @@
   height: 100%;
 }
 .project_box .project_item{
-  position: absolute;
-  top:0;
-  left:0;
-  z-index: 20;
   width: 100%;
-  height: 100%;
   color:#333;
-  padding:60rpx;
+  position: relative;
+  margin-bottom: 40rpx;
+  padding:0 20rpx 20rpx 20rpx;
   box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
 }
 .project_item .item_name{
   padding:0;
-  
+  /* margin-bottom: 10rpx; */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* border-top:1px solid #e5e5e5; */
   border-bottom: 1px solid #e5e5e5;
-  font-size: 32rpx;
+  font-size: 28rpx;
 }
 .project_item .item_name .projectName{
   width: 380rpx;
   display: block;
-  padding-left: 20rpx;
   box-sizing: border-box;
+  padding-top: 6px;
 }
 .project_item .item_name .look_details{
   display: inline-block;
-  padding:26rpx;
+  padding:32rpx 26rpx 20rpx 26rpx;
   color:#2c7bfe;
   font-size: 28rpx;
+  
 }
 .project_box .project_item .item_data{
   position: relative;
@@ -375,8 +396,37 @@
     white-space:nowrap;
     -webkit-box-orient: vertical;
 }
+.followBtn{
+  width: 36px;
+  height: 26px;
+  line-height: 22px;
+  /* border-radius: 40rpx; */
+  font-size: 24rpx;
+  color:#fff;
+  text-align: center;
+  /* background-color: #2c7bfe; */
+  /* background-color: #55af28cc !important; */
+  position: absolute;
+  bottom:45rpx;
+  right:20rpx;
+  z-index: 100;
+  /* background: url('https://www.jwpower.cn/image/heart.png') center no-repeat; */
+  
+}
+.followBtn text{
+  font-size: 20rpx;
+}
+.followBtn .gzText{
+  position: absolute;
+  bottom:-19px;
+  z-index: 100;
+  color:#999;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
 .buyBtn{
-  width: 200rpx;
+  width: 190rpx;
   height: 70rpx;
   line-height: 70rpx;
   border-radius: 40rpx;
@@ -386,18 +436,252 @@
   background-color: #e5e5e5;
   /* background-color: #2c7bfe; */
   position: absolute;
-  bottom:90rpx;
-  right:80rpx;
+  bottom:30rpx;
+  right:110rpx;
   z-index: 100;
 }
 .blueBtn{
   color:#fff;
   background-color: #2c7bfe;
 }
+.getDown{
+  height: 40px;
+  /* padding: 20rpx 0; */
+  position: absolute;
+  bottom:0;
+  left:0;
+  z-index: 100;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.getDown image{
+  width: 30rpx;
+  height: 30rpx;
+  display: block;
+  margin:0 auto;
+  transition: all 0.3s;
+}
+.getDown image.active{
+  transform: rotate(180deg);
+}
 
 
+/* *******************球状波浪充电效果******************* */
 
 
+.stationMain .ballBox { 
+  width: 100%;
+  padding:0 50rpx;
+  position: relative;
+  box-sizing: border-box;
+  border:1px solid transparent;
+  margin-bottom: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: url('https://www.jwpower.cn/image/powerBg.jpg') center no-repeat;
+  background-size: 100% 100%;
+}
+.stationMain .ballBox .outside{
+  width: 130px;
+  height: 130px;  margin: 80rpx 0 60rpx 0;
+  border:2px solid rgba(234, 233, 238,0.6);
+  border-radius: 50%;
+  position: relative;
+}
+.stationMain .ballBox .chargeBox{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  /* position: relative; */
+  margin:5px 0 0 5px;
+  /* z-index: 900; */
+  overflow: hidden;
+  border:4px solid #cfdefd;
+  box-sizing: border-box;
+  /* background: #cfdefd; */
+  /* box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.1); */
+}
+.stationMain .ballBox .chargeBox .ballCopy{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  top:50%;
+  left:50%;
+  z-index: 1000;
+  border:0;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+  /* border:10px solid #2c7bfe; */
+  box-sizing: border-box;
+  /* background-color: #2c7bfe; */
+  animation:move2 8s linear infinite;
+}
+.stationMain .ballBox .chargeBox .ballCopy image{
+  width: 100%;
+  height: 100%;
+}
+.xuanZhuan{                     
+  width: 4px;
+  height: 26px;
+  position: absolute;
+  top:2px;
+  left:28px;
+  z-index: 1000;
+  background-color: #2c7bfe;
+  border-radius: 2px 2px 0 2px;
+  overflow: hidden;
+  transform:translate(0,0) rotate(60deg);
+  /* box-shadow: 3px -3px 3px 3px rgba(0, 0, 0, 0.1); */
+}
+.stationMain .ballBox .addUpPower .addUpItem{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.stationMain .ballBox .addUpPower .addUpItem:first-child{
+  margin-bottom: 100rpx;
+}
+.stationMain .ballBox .addUpPower .addUpItem image{
+  width: 36px;
+  height: 36px;
+  margin-right: 10rpx;
+}
+.stationMain .ballBox .addUpPower .addUpItem .itemText{
+  font-size: 28rpx;
+  line-height: 28rpx;
+  color:#666;
+}
+.stationMain .ballBox .addUpPower .addUpItem .itemText view:first-child{
+  /* font-size: 24rpx; */
+  margin-bottom: 10rpx;
+}
 
 
+.battery-copy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  /*border:2px solid #eee;*/
+  box-sizing: border-box;
+  /* box-shadow: 0 14px 28px rgba(33, 150, 243, 0), 0 10px 10px rgba(9, 188, 215, 0.08); */
+}
+
+.battery {
+  position: relative;
+  height: 120px;
+  border-radius: 50%;
+  /* box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.22); */
+  /* background: #fff; */
+  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+  /* border:4px solid #69a2ff; */
+}
+.battery::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(137, 166, 253, 0.05);
+  border-radius: 0;
+  /* box-shadow: 0 14px 28px rgba(33, 150, 243, 0), 0 10px 10px rgba(9, 188, 215, 0.08); */
+  /* filter: hue-rotate(0); */
+}
+
+.g-wave {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, .5);
+  border-radius: 45% 36% 43% 42%;
+  top: -180px;
+  left: 50%;
+  transform: translate(-50%, 0) rotate(720deg);
+  z-index: 1;
+  /* animation:top 2s linear ,move 10s linear infinite; */
+  animation-fill-mode: forwards
+}
+
+.g-wave:nth-child(2) {
+  border-radius: 38% 46% 43% 47%;
+  transform: translate(-50%, 0) rotate(-135deg);
+}
+
+.g-wave:nth-child(3) {
+  border-radius: 42% 46% 37% 40%;
+  transform: translate(-50%, 0) rotate(135deg);
+}
+
+@keyframes move {
+  100% {
+      transform:translate(-50%, 0) rotate(720deg);
+  }
+}
+@keyframes move2 {
+  100% {
+      transform:translate(-50%,-50%) rotate(720deg);
+  }
+}
+@keyframes top {
+  100% {
+      top:-240px;
+  }
+}
+
+.ballCenter{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-45%);
+  display: inline-block;
+  z-index: 100;
+}
+.ballCenter view{
+  display: block;
+  width: 100%;
+  font-size: 24rpx;
+  color:#2c7bfe;
+  text-align: center;
+  padding: 0;
+}
+.ballCenter .projectPower{
+  font-size: 44rpx;
+}
+
+.btnList{
+  display: flex;
+  align-items: center;
+  justify-content: space-around !important;
+  padding: 20rpx 0;
+}
+.btnList .yearBtn{
+  font-size: 24rpx;
+  width: 40px !important;
+  height: 26px;
+  padding: 0;
+  text-align: center;
+  line-height: 26px;
+  border-radius: 4px;
+  border:1px solid #2c7bfe;
+  color:#2c7bfe;
+  box-sizing: border-box;
+}
+.btnList .yearBtn.active{
+  color:#fff;
+  background-color: #2c7bfe;
+}
 

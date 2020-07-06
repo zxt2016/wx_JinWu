@@ -1,10 +1,151 @@
 <view class="introduce">
     <image src="{{stationList.stationImg}}"></image>
-    <view bindtap='introduce_detail'>
+    <view class="stationName">
       {{stationName}}
      </view> 
 </view>
-<view class="station_title">基本信息</view>
+<view class="projectInfo">
+  <!-- tab切换 -->
+  <view style="padding-bottom:60rpx;">
+    <view class="swiper-tab tabMain">
+      <block class="tabItem" wx:for="{{swipertab}}" wx:key="sptab">
+        <view class="swiper-tab-list {{currtab == item.index ? 'active' : ''}}" data-current="{{item.index}}" bindtap="tabSwitch">{{item.name}}</view>
+      </block>
+    </view>
+    
+    <swiper id="swiperBox" current="{{currtab}}" class="swiper-box" duration="300" style="height:{{height}}px;" bindchange="tabChange">
+      <!-- 基本信息 -->
+      <swiper-item>
+        <scroll-view class="hot-box" scroll-y="true">
+          <view class="infoMain">
+            <view class="info_item">
+              <text class="info_name">电站名称</text>
+              <text class="info_value">{{stationList.stationName}}</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">所在地区</text>
+              <text class="info_value">{{stationList.stationAddress}}</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">电站规模</text>
+              <text class="info_value">{{stationList.capacity}}kW</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">电站持有人</text>
+              <text class="info_value">{{stationList.owner}}</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">并网时间</text>
+              <text class="info_value">{{stationList.parallelTime}}</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">逆变器品牌</text>
+              <text class="info_value">{{stationList.deviceName}}</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">逆变器SN</text>
+              <text class="info_value">{{stationList.deviceSn}}</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">经度</text>
+              <text class="info_value">{{stationList.longitude}}</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">纬度</text>
+              <text class="info_value">{{stationList.latitude}}</text>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- 发电情况 -->
+      <swiper-item>
+        <scroll-view class="hot-box" scroll-y="true">
+          <view class="swiperTitle"><text>发电量统计</text></view>
+          <view class="infoMain" style="padding:0 30rpx;">
+            <view class="timeTab">
+              <view class="{{currIndex == 0 ? 'active':''}}" data-index="0" bindtap="timeTab">日</view>
+              <view class="{{currIndex == 1 ? 'active':''}}" data-index="1" bindtap="timeTab">月</view>
+              <view class="{{currIndex == 2 ? 'active':''}}" data-index="2" bindtap="timeTab">年</view>
+            </view>
+            <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+            <!-- <button type="primary" bindtap="updateData">更新数据</button> -->
+          </view>
+          <!-- <view class="swiperTitle"><text>25年数据统计</text></view> -->
+          <!-- <view class="dataTotal">
+            <view class="dataItem">
+              <view class="dataItem_title">
+                <image src="../image/project_detail/pro_icon1.png"></image>
+                <text>总发电量</text>
+              </view>
+              <view>{{allPower}}kWh</view>
+            </view>
+            <view class="dataItem">
+              <view class="dataItem_title">
+                <image src="../image/project_detail/pro_icon2.png"></image>
+                <text>总碳减排</text>
+              </view>
+              <view>{{all_c}}t</view>
+            </view>
+            <view class="dataItem">
+              <view class="dataItem_title">
+                <image src="../image/project_detail/pro_icon3.png"></image>
+                <text>总节约煤</text>
+              </view>
+              <view>{{all_mei}}t</view>
+            </view>
+            <view class="dataItem">
+              <view class="dataItem_title">
+                <image src="../image/project_detail/pro_icon4.png"></image>
+                <text>等效植树</text>
+              </view>
+              <view>{{all_tree}}颗</view>
+            </view>
+          </view> -->
+        </scroll-view>
+      </swiper-item>
+      <!-- 相关文件 -->
+      <swiper-item>
+        <scroll-view class="hot-box" scroll-y="true">
+          <view class="infoMain">
+            <!-- <view class="info_item">
+              <text class="info_name">总认购份数</text>
+              <text class="info_value">{{stationList.subscriptionTotalNum}}份</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">单份认购所占股份</text>
+              <text class="info_value">{{stationList.singleRatio}}%</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">剩余认购份数</text>
+              <text class="info_value">{{stationList.remainingNum}}份</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">单份认购金额</text>
+              <text class="info_value">{{stationList.singleInvestment}}万</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">单份预支付金额</text>
+              <text class="info_value">{{stationList.singleAmount}}元</text>
+            </view>
+            <view class="info_item">
+              <text class="info_name">认购周期</text>
+              <text class="info_value">从{{startTime}}至{{endTime}}</text>
+            </view>-->
+          </view> 
+        </scroll-view>
+      </swiper-item>
+    
+    </swiper>
+  </view>
+  <view class="logo_img">
+      <image src="{{imgUrl}}/guarantee/logo.png"></image>
+    </view>
+
+</view>
+
+
+
+<!-- <view class="station_title">基本信息</view>
 <view class="station_info">
   <view class='itemList clearfix' bindtap='myNeed'>
     <text class='float_lf'>电站地址：</text>
@@ -22,7 +163,4 @@
     <text class='float_lf'>并网时间：</text>
     <text class="float_rg">{{stationList.parallelTime}}</text>
   </view>
-</view>
-<view class="logo_img">
-      <image src="{{imgUrl}}/guarantee/logo.png"></image>
-    </view>
+</view> -->
