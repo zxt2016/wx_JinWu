@@ -5,7 +5,7 @@ page{
 }
 .introduce{
   width: 750rpx;
-  height: 360rpx;
+  height: 380rpx;
   background-color: #ffffff;
   margin-bottom: 20rpx;
   padding: 20rpx 32rpx;

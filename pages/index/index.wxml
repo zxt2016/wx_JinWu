@@ -101,7 +101,7 @@
                 <view class="item_list">预期年电费收益率：<text style="color:#eeaa3d;font-size:54rpx;">{{item.annualized}}</text><text style="color:#eeaa3d;font-size:24rpx;">%</text></view>
               </view>
               <!-- 未关注 -->
-              <view class="followBtn" bindtap="guanZhu" data-follow="{{item.follow}}" data-id="{{item.companyId}}" wx:if="{{item.follow == false}}" style="background: url('https://www.jwpower.cn/image/heart.png') center no-repeat;background-size: auto 100%;"><text>{{item.followNum}}</text> <text class="gzText">关注</text></view>
+              <view class="followBtn" bindtap="guanZhu" data-follow="{{item.follow}}" data-id="{{item.companyId}}" wx:if="{{item.follow == false}}" style="background: url('https://www.jwpower.cn/image/heart.png') center no-repeat;background-size: auto 100%; color:#999"><text>{{item.followNum}}</text> <text class="gzText">关注</text></view>
               <!-- 已关注 -->
               <view class="followBtn" bindtap="guanZhu" data-follow="{{item.follow}}" data-id="{{item.companyId}}" wx:if="{{item.follow == true}}" style="background: url('https://www.jwpower.cn/image/heart_icon.png') center no-repeat;background-size: auto 100%;"><text>{{item.followNum}}</text><text class="gzText">关注</text></view>
               <!-- 认购 -->
