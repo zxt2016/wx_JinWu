@@ -3,6 +3,7 @@ page{
 }
 .mineBg{
   width: 100%;
+  position: relative;
 }
 .mineBg image{
   width: 750rpx;
@@ -10,13 +11,16 @@ page{
   z-index: -10;
 }
 .title{
+  width: 100%;
   position: absolute;
+  top:30%;
+  left:50%;
   z-index: 10;
-  margin-top: -170rpx;
-  margin-left: 290rpx;
+  text-align: center;
   color: #ffffff;
   font-size: 36rpx;
   font-weight: 500;
+  transform: translate(-50%,-50%);
 }
 .line{
   border: 1rpx solid #ffffff;

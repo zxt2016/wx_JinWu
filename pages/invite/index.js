@@ -23,14 +23,17 @@ Page({
   /**
    * 用户邀请好友
    */
+
   onShareAppMessage: function () {
     var that = this;
+    console.log(wx.getStorageSync('userInfo').nickName);
+    console.log("pages/login/login?code=" + that.data.userCode);
     return {
-      title: that.data.userInfo.nickName+"邀请您加入光伏合伙人，赶快注册吧！",
-      path: "/pages/login/login?code=" + that.data.userCode,
-      imgUrl:that.data.imgUrl+'/index/star0.png',
+      title: wx.getStorageSync('userInfo').nickName+"邀请您加入光伏合伙人，赶快注册吧！",
+      path: "pages/login/login?code=" + that.data.userCode,
+      imageUrl:'https://guangneng-img.oss-cn-beijing.aliyuncs.com/items/1590666581688.png',
       success: function (res) {
-        
+        console.log(res);
       }
     }
   },
@@ -113,11 +116,4 @@ Page({
   onReachBottom: function () {
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

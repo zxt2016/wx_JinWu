@@ -43,6 +43,10 @@ Page({
       this.setData({
         shopId:options.shopId,
       });
+    }else if(options.code){
+      this.setData({
+        inviteCode:options.code
+      });
     }
   },
     //表单提交

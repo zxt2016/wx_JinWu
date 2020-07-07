@@ -58,8 +58,9 @@
         //tip:0,定金支付成功页跳转 1:低碳圈
         if(options.tip == 0){
           this.setData({
-            currtab:options.tip,
+            currtab:1,
             activeTab:options.tip,
+
           });
         }else if(options.tip == 1){
           this.setData({
@@ -460,15 +461,13 @@
 // 招募单支付
 proPayBtn(e){
   var id = e.currentTarget.dataset.id;
+  console.log(id);
   wx.request({
     url: app.globalData.baseUrl+'/wxRecruitOrder/getWeChatPayParams?id='+id,
     method: 'GET', 
     header: {
       'content-type': 'application/json',
       'Authorization': wx.getStorageSync('token'),
-    },
-    data: {
-      id:id
     },
     success (res) {
       console.log(res);

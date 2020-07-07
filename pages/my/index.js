@@ -71,7 +71,7 @@ Page({
   },
   onShow(){
     var that = this;
-    this.onLoad();
+    // this.onLoad();
     //判断用户是否授权
    wx.getSetting({
     success: (res) => {
