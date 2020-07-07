@@ -275,7 +275,7 @@
   align-items: baseline;
 }
 .incomeCounter .counter_item .item_input input{
-  width:90%;
+  width:80%;
   color:#2c7bfe;
   text-align: right;
   padding: 20rpx 0;

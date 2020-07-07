@@ -367,5 +367,11 @@ onReachBottom: function () {
           })
         }
       }
+  },
+  // 查看能量规则
+  lookRule(){
+    wx.navigateTo({
+      url: '../xieYi/energy/index',
+    })
   }
 })

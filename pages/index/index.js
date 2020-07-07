@@ -342,9 +342,6 @@ stationTab: function(e){
       },
     })
 
-    //获取招募单列表
-    this.getProList();
-
   }else if(tab == 2){
     //获取用户信息
     wx.getSetting({
@@ -370,6 +367,7 @@ stationTab: function(e){
             })
           },500);
         }else{
+          
           // 获取我的电站实时发电量
           wx.request({
             url: app.globalData.baseUrl+'/power/user/power',
@@ -383,15 +381,18 @@ stationTab: function(e){
               if(res.data.errcode == 0){
                 _this.setData({
                   myPower:res.data.data,
-                  projectPower:(res.data.data.nowElec/1000).toFixed(2),
-                  proMonthPower:(res.data.data.monthElec/1000).toFixed(2),
-                  proTotalPower:(res.data.data.yearElec/1000).toFixed(2)
+                  projectPower:parseInt(res.data.data.nowElec).toFixed(2),
+                  proMonthPower:parseInt(res.data.data.monthElec).toFixed(2),
+                  proTotalPower:parseInt(res.data.data.yearElec).toFixed(2)
                 });
               }
             },
           })
-          //获取我的电站列表
-          _this.getMinePro();
+
+          if(_this.data.projectData2.length == 0){
+            //获取我的电站列表
+            _this.getMinePro();
+          }
         }
       }
     }, fail: function () {
@@ -489,7 +490,6 @@ guanZhu(e){
                 icon:'none'
               })
               that.getProList();
-
             }
           },
         })
@@ -596,7 +596,6 @@ renGou(e){
 //加载更多
 getMore(){
   if(this.data.stationType == 1){
-    this.getProList();
     if(this.data.shTip1 == false){
       this.setData({
         shTip1:true,
@@ -607,7 +606,6 @@ getMore(){
       });
     }
   }else{
-    this.getMinePro();
     if(this.data.shTip2 == false){
       this.setData({
         shTip2:true,
@@ -698,7 +696,6 @@ getProList(){
     data:{
       current:1,
       size:1000,
-      userId:wx.getStorageSync('userId')
     },
     success(res){
       console.log(res);

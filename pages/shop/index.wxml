@@ -12,7 +12,7 @@
     <view bindtap="shopDetail" data-id="{{item.id}}">
       <view class="shopImg">
       <!-- bindload="imageLoad" -->
-        <image src="{{item.logo}}"  data-index="{{index}}" style="width:{{item.width}}px"></image>
+        <image src="{{item.logo}}" bindload="imageLoad"  data-index="{{index}}" style="height:{{item.height}}px !important"></image>
       </view>
       <view class="itemTitle txt-num2">{{item.commodityName}}</view>
       <view class="jiFen"><text>{{item.energy}}能量以上</text></view>

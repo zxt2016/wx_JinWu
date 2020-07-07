@@ -87,7 +87,7 @@
       <view class="stationDataTotal">
         <view class="project_box" style="height:{{projectData.length < 2 ? '205px': shTip1 == false ? '450px':projectData.length*200+35+'px'}}" wx:if="{{stationType == 1}}">
             <!-- <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image> -->
-            <view class="project_item" wx:for="{{projectData}}" wx:for-item="item" wx:key="*this">
+            <view class="project_item" wx:for="{{projectData}}" wx:for-item="item" wx:key="*this" wx:if="{{projectData.length > 0}}">
               <view class="item_name">
                 <!-- {{item.trademark}} -->
                 <image src="../image/index/sunIcon.png" style="width:46rpx;height:46rpx;"></image>
@@ -111,11 +111,14 @@
             <view class="getDown" bindtap="getMore" wx:if="{{projectData.length > 2}}">
               <image class="{{shTip1 == true ? 'active':''}}" src="../image/index/getDown.png"></image>
             </view>
+
+            <!-- 暂无数据 -->
+            <view class="nothing" wx:if="{{projectData.length == 0}}">暂无数据</view>
         </view>
 
         <view class="project_box" style="height:{{projectData2.length < 2 ? '205px': shTip2 == false ? '430px':projectData2.length*200+35+'px'}}"  wx:else>
             <!-- <image src="{{imgUrl}}/index/stationBox_bg.png" style="width:100%"></image> -->
-            <view class="project_item" wx:for="{{projectData2}}" wx:for-item="item" wx:key="*this">
+            <view class="project_item" wx:for="{{projectData2}}" wx:for-item="item" wx:key="*this" wx:if="{{projectData2.length > 0}}">
               <view class="item_name">
                 <image src="../image/index/sunIcon.png" style="width:46rpx;height:46rpx;"></image>
                 <text class="projectName txt-num1">{{item.companyName}} ({{item.projectAddress}})</text>
@@ -133,6 +136,9 @@
             <view class="getDown" bindtap="getMore" wx:if="{{projectData2.length > 2}}">
               <image class="{{shTip2 == true ? 'active':''}}" src="../image/index/getDown.png"></image>
             </view>
+
+            <!-- 暂无数据 -->
+            <view class="nothing" wx:if="{{projectData2.length == 0}}">暂无数据</view>
         </view>
     </view>
 

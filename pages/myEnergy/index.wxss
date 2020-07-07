@@ -271,6 +271,14 @@ page {
 .list_title{
   font-size: 32rpx;
   padding: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list_title text:first-child+text{
+  font-size: 24rpx;
+  color:#333; 
+  padding: 10rpx 0 10rpx 30rpx;
 }
 .listMain{
   width: 100%;

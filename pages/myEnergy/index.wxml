@@ -43,7 +43,10 @@
 				<image src=""></image>
 			</view> -->
 		</view>	
-		<view class="list_title">能量排行</view>
+		<view class="list_title">
+			<text>能量排行</text>
+			<text bindtap="lookRule">能量规则 ></text>
+		</view>
 		<view class="listMain">
 				<view class="list_item" wx:for="{{rankingList}}" wx:for-item="item">
 					<view class="num_header">

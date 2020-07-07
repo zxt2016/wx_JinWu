@@ -58,12 +58,13 @@ Page({
    * 商品列表logo图片加载完成后根据固定高度计算宽度
    * **/
   imageLoad: function(e) {
+    console.log(e);
     var index = e.currentTarget.dataset.index;
     // 获取图片宽高比
     const ratio = e.detail.width / e.detail.height
-    // 按照宽高比计算图片高度 100px 时的宽度
-    const imgWidth = 100 * ratio;
-    this.data.shopData[index].width = imgWidth;
+    // 按照宽高比计算图片宽度 100% 时的高度
+    const imgHeight = 144 / ratio;
+    this.data.shopData[index].height = imgHeight;
     this.setData({
       shopData:this.data.shopData
     });

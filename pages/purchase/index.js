@@ -106,14 +106,39 @@ Page({
     /*输入框事件*/
     bindManual: function(e) {
       var num = e.detail.value;
-      if(num >= this.data.maxNum){
-        num=this.data.maxNum;
-      }
       var minusStatus = num > 1 ? 'normal' : 'disable';
-      this.setData({
-        num:num,
-        minusStatus: minusStatus
-      })
+      if (!(/(^[1-9]\d*$)/.test(num))){
+        wx.showToast({
+          title: '请输入大于0的正整数',
+          icon:'none'
+        })
+        this.setData({
+          num:'',
+          minusStatus: minusStatus,
+          singleAmount:(1*this.data.oldAmount).toFixed(2),
+        })
+      }else{
+        if(num >= this.data.maxNum){
+          num=this.data.maxNum;
+        }
+        
+        this.setData({
+          num:num,
+          minusStatus: minusStatus,
+          singleAmount:(num*this.data.oldAmount).toFixed(2),
+        })
+      }
+      
+    },
+    bindBlurs(e){
+      var num = e.detail.value;
+      console.log(num)
+      if(num == "" || num == 0){
+        this.setData({
+          num:1,
+          singleAmount:(1*this.data.oldAmount).toFixed(2),
+        });
+      }
     },
 
     //跳转协议页面

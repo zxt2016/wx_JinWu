@@ -6,7 +6,7 @@
       <text class="num">认购份额：</text>
       <view class='stepper sum'>
         <text class='{{minusStatus}}' type='number' bindtap='bindMinus'>-</text>
-        <input bindinput='bindManual' value='{{num}}'></input>
+        <input bindinput='bindManual' bindblur="bindBlurs" value='{{num}}'></input>
         <text bindtap='bindPlus'>+</text>
       </view>
     </view>
@@ -20,7 +20,7 @@
       <view class="content_item">
         <view class="shares item">剩余份数：<text>{{proData.remainingNum}}份</text></view>
         <view class="shares item">总份数：<text>{{proData.subscriptionTotalNum}}份</text></view>
-        <view class="shares item">预支付金额：<text style="color:#ff0000; font-size: 36rpx;">{{singleAmount}}</text>元</view>
+        <view class="shares item">预支付金额：<text style="color:#ff0000; font-size: 32rpx;">{{singleAmount}}</text>元</view>
       </view>
     </view>
 </view>

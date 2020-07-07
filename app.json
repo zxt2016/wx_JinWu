@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/shop/index",
     "pages/index/index",
     "pages/login/login",
     "pages/xieYi/invite_agreement/index",
     "pages/xieYi/subscriptionDeposit_agreement/index",
     "pages/xieYi/user_agreement/index",
-    "pages/shop/index",
+    "pages/xieYi/energy/index",
     "pages/order/index",
     "pages/myAddress/index",
     "pages/my/index",

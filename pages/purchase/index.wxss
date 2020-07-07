@@ -79,14 +79,14 @@ page{
   justify-content: space-between;
 }
   .content_item{
-    width: 50%;
+    width: 55%;
     color: #737373;
     font-size: 26rpx;
     /* padding-left: 30rpx; */
     margin-top: 20rpx;
   }
   .content_item:first-child{
-    width: 55%;
+    width: 50%;
   }
   .item{
     height: 60rpx;
