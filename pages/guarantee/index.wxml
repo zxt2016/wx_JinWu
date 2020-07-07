@@ -148,9 +148,5 @@
             </view>
         </view>
     </view>
-    
-<view class="logo_img">
-      <image src="{{imgUrl}}/guarantee/logo.png"></image>
-    </view>
 </view>
 
