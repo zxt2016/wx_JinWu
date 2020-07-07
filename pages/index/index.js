@@ -14,7 +14,7 @@ Page({
     banner_img: [],
     indicatorDots: true,
     vertical: false,
-    autoplay: false,
+    autoplay: true,
     interval: 2000,
     duration: 500,
     circular: true,

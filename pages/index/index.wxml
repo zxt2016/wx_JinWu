@@ -107,6 +107,7 @@
               <!-- 认购 -->
               <view class="buyBtn {{item.power == 1 ? 'blueBtn' : ''}}" data-power="{{item.power}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="renGou">预定</view>
             </view>
+            <!-- 加载更多 -->
             <view class="getDown" bindtap="getMore" wx:if="{{projectData.length > 2}}">
               <image class="{{shTip1 == true ? 'active':''}}" src="../image/index/getDown.png"></image>
             </view>

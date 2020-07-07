@@ -27,6 +27,20 @@ Page({
     dicHeight:'',
     //pdf预览
     recordsImg:'',
+    windowWidth:320,
+    //折线图无数据
+    lineNo:true,
+    //电站逆变器SN
+    deviceSn:'',
+
+    //轮播图效果
+    banner_img: [],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 3000,
+    duration: 1000,
+    circular: true,
   },
 
   /**
@@ -38,9 +52,16 @@ Page({
     this.setData({
       stationName: options.name,
       stationId:options.str,
-      height: wx.getSystemInfoSync().windowHeight-180,  
+      height: wx.getSystemInfoSync().windowHeight-100,  
       dicHeight: wx.getSystemInfoSync().windowHeight,
     })
+
+    try {
+      var res = wx.getSystemInfoSync();
+      _this.data.windowWidth = res.windowWidth;
+    } catch (e) {
+        console.error('getSystemInfoSync failed!');
+    }
     
     // 获取基本信息
     wx.request({
@@ -56,42 +77,15 @@ Page({
         console.log(res) 
         var data = res.data.data;
         data.capacity = (data.capacity/1000).toFixed(2);
+        var bannerImg = data.stationImg.split(',');
         _this.setData({
           stationList: data,
-          recordsImg:data.recordsImg
+          recordsImg:data.recordsImg,
+          deviceSn:data.deviceSn,
+          banner_img:bannerImg
         })
       }
     })
-    // 获取发电信息
-    wx.request({
-      url: app.globalData.baseUrl+'/wxRecruitOrder/getStationElecDetail',
-      method:'GET',
-      data:{
-        stationId:_this.data.stationId
-      },
-      success(res){
-        console.log(res);
-        if(res.data.errcode == 0){
-          _this.setData({
-            powerTotal:res.data.data,
-          })
-          
-          var time = new Array();
-          var numVal = new Array();
-          var data = _this.data.powerTotal.day;
-          for(var i=0;i<data.length;i++){
-            time.push(data[i].time);
-            numVal.push((data[i].powerToday/1000).toFixed(2));
-          }
-          _this.setData({
-            time:time,
-            numVal:numVal
-          })
-        }
-       
-      },
-    })
-
  },
 //tab切换
 tabSwitch: function (e) {
@@ -116,70 +110,62 @@ tabChange(e){
   });
   if(e.detail.current == 0){
     this.setData({
-      height: wx.getSystemInfoSync().windowHeight-240,  
+      height: wx.getSystemInfoSync().windowHeight-100,  
     })
   }else if(e.detail.current == 1){
     this.setData({
-      height: wx.getSystemInfoSync().windowHeight-140,  
+      height: wx.getSystemInfoSync().windowHeight-240,  
     })
-    // 图表数据
-    var windowWidth = 320;
-    try {
-        var res = wx.getSystemInfoSync();
-        windowWidth = res.windowWidth;
-    } catch (e) {
-        console.error('getSystemInfoSync failed!');
-    }
-    // var simulationData = _this.createSimulationData();
-    if(_this.data.time.length <1){
-      wx.showToast({
-        title: '暂无数据',
-        icon:'none'
+    if(_this.data.powerTotal.length == 0){
+      // 获取发电信息
+      wx.request({
+        url: app.globalData.baseUrl+'/power/station',
+        method:'GET',
+        data:{
+          deviceSn:_this.data.deviceSn
+        },
+        success(res){
+          console.log(res);
+          if(res.data.errcode == 0){
+            if(res.data.data.length == 0){
+                _this.setData({
+                  lineNo:false
+                });
+            }else{
+              _this.setData({
+                powerTotal:res.data.data,
+                lineNo:true
+              })
+              
+              var time = new Array();
+              var numVal = new Array();
+              var data = res.data.data;
+              for(var i=0;i<data.length;i++){
+                var date = data[i].time.replace(/-/g,'.');
+                time.push(date.substring(5,date.length));
+                numVal.push((data[i].powerToday).toFixed(2));
+              }
+              _this.setData({
+                time:time,
+                numVal:numVal
+              })
+              console.log(time,numVal);
+              _this.drawLine(time,numVal);
+            }
+
+            
+          }
+        
+        },
       })
     }else{
-      lineChart = new wxCharts({
-        canvasId: 'lineCanvas',
-        type: 'line',
-        categories: _this.data.time,
-        animation: true,
-        // background: '#f5f5f5',
-        series: [{
-            name: '发电量',
-            data: _this.data.numVal,
-            format: function (val, name) {
-                return val + 'kWh';
-            }
-        }],
-        xAxis: {
-            disableGrid: true
-        },
-        yAxis: {
-            title: '发电量（kWh）',
-            format: function (val) {
-                return val.toFixed(2);
-            },
-            min: 0
-        },
-        width: windowWidth,
-        height: 200,
-        dataLabel: false,
-        dataPointShape: true,
-        extra: {
-            lineStyle: 'curve'
-        }
-    });
+      _this.drawLine(_this.data.time,_this.data.numVal);
     }
     
 
-
-
   }else if(e.detail.current == 2){
     this.setData({
-      height: wx.getSystemInfoSync().windowHeight,  
-    })
-  }else if(e.detail.current == 3){
-    this.setData({
-      height: wx.getSystemInfoSync().windowHeight-300,  
+      height: wx.getSystemInfoSync().windowHeight/1.8,  
     })
   }
 },
@@ -209,7 +195,6 @@ createSimulationData: function () {
 
 updateData: function () {
   var that = this;
-  // var simulationData = this.createSimulationData();
   var series = [{
       name: '发电量',
       data: _this.data.numVal,
@@ -262,6 +247,9 @@ timeTab(e){
 // pdf预览事件
 lookPDF(e){
   var src = e.currentTarget.dataset.src;
+  wx.showLoading({
+    title:'加载中...'
+  });
   wx.downloadFile({
     url: src,
     success: function (res) {
@@ -271,9 +259,46 @@ lookPDF(e){
         filePath: filePath,
         success: function (res) {
           console.log('打开文档成功')
+          wx.hideLoading();
         }
       })
     }
   })
 },
+
+//绘制折线图
+  drawLine(time,numVal){
+    var _this = this;
+    lineChart = new wxCharts({
+      canvasId: 'lineCanvas',
+      type: 'line',
+      categories: time,
+      animation: true,
+      // background: '#f5f5f5',
+      series: [{
+          name: '七日发电量',
+          data: numVal,
+          format: function (val, name) {
+              return val + 'kWh';
+          }
+      }],
+      xAxis: {
+          disableGrid: true
+      },
+      yAxis: {
+          title: '发电量（kWh）',
+          format: function (val) {
+              return val.toFixed(2);
+          },
+          min: 0
+      },
+      width: _this.data.windowWidth,
+      height: 200,
+      dataLabel: false,
+      dataPointShape: true,
+      extra: {
+          lineStyle: 'curve'
+      }
+    });
+  },
 })

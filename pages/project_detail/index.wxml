@@ -13,7 +13,7 @@
       </block>
     </view>
     
-    <swiper id="swiperBox" current="{{currtab}}" class="swiper-box" duration="300" style="height:{{height}}px;" bindchange="tabChange">
+    <swiper id="swiperBox" current="{{currtab}}" class="swiper-box" duration="300" style="height:{{height}}px;margin-bottom:60rpx;" bindchange="tabChange">
       <!-- 基本信息 -->
       <swiper-item>
         <scroll-view class="hot-box" scroll-y="true">
@@ -38,46 +38,6 @@
               <text class="info_name">电站总价值</text>
               <text class="info_value">{{infoList.totalInvestment}}万</text>
             </view>
-            <!-- <view class="info_item">
-              <text class="info_name">累计发电量</text>
-              <text class="info_value">{{infoList.totalPower}}kwh</text>
-            </view>
-            <view class="info_item">
-              <text class="info_name">年化收益率</text>
-              <text class="info_value" style="color:red;">{{infoList.annualized}}%</text>
-            </view>
-            <view class="info_item" bindtap="lookProfit">
-              <text class="info_name">年份收益表</text>
-              <text class="info_value lookBtn" bindtap="lookBtn">点击查看 ></text>
-            </view>
-            <view class="info_item">
-              <text class="info_name">总认购份数</text>
-              <text class="info_value">{{infoList.subscriptionTotalNum}}份</text>
-            </view>
-            <view class="info_item">
-              <text class="info_name">剩余认购份数</text>
-              <text class="info_value">{{infoList.remainingNum}}份</text>
-            </view>
-            <view class="info_item">
-              <text class="info_name">单份预支付金额</text>
-              <text class="info_value">{{infoList.singleAmount}}元</text>
-            </view>
-            <view class="info_item">
-              <text class="info_name">单份认购金额</text>
-              <text class="info_value">{{infoList.singleInvestment}}万</text>
-            </view>
-            <view class="info_item">
-              <text class="info_name">单份认购所占股份</text>
-              <text class="info_value">{{infoList.singleRatio}}%</text>
-            </view>
-            <view class="info_item">
-              <text class="info_name">剩余待认购股份</text>
-              <text class="info_value">{{infoList.leftRatio}}%</text>
-            </view>
-            <view class="info_item">
-              <text class="info_name">发布时间</text>
-              <text class="info_value">{{infoList.releaseTime}}</text>
-            </view> -->
           </view>
         </scroll-view>
       </swiper-item>
@@ -85,52 +45,55 @@
       <swiper-item>
         <scroll-view class="hot-box" scroll-y="true">
           <view class="swiperTitle"><text>发电量统计</text></view>
-          <view class="infoMain" style="padding:0 30rpx;">
-            <view class="timeTab">
+          <view wx:if="{{lineNo == true}}">
+            <view class="infoMain" style="padding:0 30rpx;">
+            <!-- <view class="timeTab">
               <view class="{{currIndex == 0 ? 'active':''}}" data-index="0" bindtap="timeTab">日</view>
               <view class="{{currIndex == 1 ? 'active':''}}" data-index="1" bindtap="timeTab">月</view>
               <view class="{{currIndex == 2 ? 'active':''}}" data-index="2" bindtap="timeTab">年</view>
+            </view> -->
+              <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+              <!-- <button type="primary" bindtap="updateData">更新数据</button> -->
             </view>
-            <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
-            <!-- <button type="primary" bindtap="updateData">更新数据</button> -->
+            <view class="swiperTitle"><text>25年数据统计</text></view>
+            <view class="dataTotal">
+              <view class="dataItem">
+                <view class="dataItem_title">
+                  <image src="../image/project_detail/pro_icon1.png"></image>
+                  <text>总发电量</text>
+                </view>
+                <view>{{allPower}}kWh</view>
+              </view>
+              <view class="dataItem">
+                <view class="dataItem_title">
+                  <image src="../image/project_detail/pro_icon2.png"></image>
+                  <text>总碳减排</text>
+                </view>
+                <view>{{all_c}}t</view>
+              </view>
+              <view class="dataItem">
+                <view class="dataItem_title">
+                  <image src="../image/project_detail/pro_icon3.png"></image>
+                  <text>总节约煤</text>
+                </view>
+                <view>{{all_mei}}t</view>
+              </view>
+              <view class="dataItem">
+                <view class="dataItem_title">
+                  <image src="../image/project_detail/pro_icon4.png"></image>
+                  <text>等效植树</text>
+                </view>
+                <view>{{all_tree}}颗</view>
+              </view>
+            </view>
           </view>
-          <view class="swiperTitle"><text>25年数据统计</text></view>
-          <view class="dataTotal">
-            <view class="dataItem">
-              <view class="dataItem_title">
-                <image src="../image/project_detail/pro_icon1.png"></image>
-                <text>总发电量</text>
-              </view>
-              <view>{{allPower}}kWh</view>
-            </view>
-            <view class="dataItem">
-              <view class="dataItem_title">
-                <image src="../image/project_detail/pro_icon2.png"></image>
-                <text>总碳减排</text>
-              </view>
-              <view>{{all_c}}t</view>
-            </view>
-            <view class="dataItem">
-              <view class="dataItem_title">
-                <image src="../image/project_detail/pro_icon3.png"></image>
-                <text>总节约煤</text>
-              </view>
-              <view>{{all_mei}}t</view>
-            </view>
-            <view class="dataItem">
-              <view class="dataItem_title">
-                <image src="../image/project_detail/pro_icon4.png"></image>
-                <text>等效植树</text>
-              </view>
-              <view>{{all_tree}}颗</view>
-            </view>
-          </view>
+          <view class="nothing" wx:else>暂无数据</view>
         </scroll-view>
       </swiper-item>
       <!-- 预期年化 -->
       <swiper-item>
         <scroll-view class="hot-box" scroll-y="false" style="height:100%;margin-top:20px;">
-          <view class="infoMain" style="width:80%;height:100%;margin:0 auto 0 auto;padding:0;overflow:hidden;">
+          <view class="infoMain" style="width:80%;height:100%;margin:0 auto;padding:0;overflow:hidden;">
             <view class="annualizedTitle">
               <view>持有年份</view>
               <view>预期收益率</view>

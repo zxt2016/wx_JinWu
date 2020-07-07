@@ -29,9 +29,9 @@ Page({
     console.log(wx.getStorageSync('userInfo').nickName);
     console.log("pages/login/login?code=" + that.data.userCode);
     return {
-      title: wx.getStorageSync('userInfo').nickName+"邀请您加入光伏合伙人，赶快注册吧！",
+      title: wx.getStorageSync('userInfo').nickName+"邀请您加入低碳光伏合伙人-共建低碳，共享收益。",
       path: "pages/login/login?code=" + that.data.userCode,
-      imageUrl:'https://guangneng-img.oss-cn-beijing.aliyuncs.com/items/1590666581688.png',
+      imageUrl:'https://www.jwpower.cn/image/invite_logo.png',
       success: function (res) {
         console.log(res);
       }

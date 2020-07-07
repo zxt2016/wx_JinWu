@@ -9,7 +9,7 @@ page{
   text-align: center;
   position: relative;
 }
-.introduce image{
+.introduce swiper{
   height: 100%;
   width: 100%;
   /* margin-bottom: 20rpx; */
@@ -82,9 +82,11 @@ page{
   /* min-height: 600rpx; */
   padding:0;
   box-sizing: border-box;
-  margin-bottom:100rpx;
+  padding-bottom:150rpx;
   background-color: #fff;
   border-radius: 10rpx;
+  position: relative;
+
 }
 .projectInfo .tabMain{
   display: flex;
@@ -197,4 +199,10 @@ page{
 }
 .dataTotal .dataItem>view:first-child+view{
   font-size: 24rpx;
+}
+.nothing{
+  width: 100%;
+  padding: 100px 0;
+  text-align: center;
+  color:#666;
 }

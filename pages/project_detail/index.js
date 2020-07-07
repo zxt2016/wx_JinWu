@@ -124,6 +124,7 @@ Page({
     //认购周期
     startTime:'',
     endTime:'',
+    windowWidth:320,
   },
   /**
    * 生命周期函数--监听页面加载
@@ -138,6 +139,14 @@ Page({
       dicHeight: wx.getSystemInfoSync().windowHeight,
     })
 
+    try {
+        var res = wx.getSystemInfoSync();
+        _this.setData({
+          windowWidth:res.windowWidth
+        })
+    } catch (e) {
+        console.error('getSystemInfoSync failed!');
+    }
 
     //根据招募单ID获取详情
     if(options.id){
@@ -158,9 +167,9 @@ Page({
           if(res.data.errcode == 0){
             var data = res.data.data;
             data.capacity = (data.capacity/1000).toFixed(2);
-            data.totalInvestment = (data.totalInvestment/1000).toFixed(2);
+            data.totalInvestment = (data.totalInvestment/10000).toFixed(2);
             data.singleInvestment = (data.singleInvestment/10000).toFixed(2);
-            var power = (res.data.data.capacity*1.2*25/1000).toFixed(2);
+            var power = (res.data.data.capacity*1.2*25).toFixed(2);
             var time1 = data.startTime.substring(0,4)+'年'+data.startTime.substring(5,7)+'月'+data.startTime.substring(8,10)+'日';
             var time2 = data.endTime.substring(0,4)+'年'+data.endTime.substring(5,7)+'月'+data.endTime.substring(8,10)+'日';
             console.log(time1);
@@ -170,8 +179,8 @@ Page({
               profit:data.yieldList,
               allPower:power,
               all_c:(power/1000).toFixed(2),
-              all_mei:(power*0.4/1000).toFixed(2),
-              all_tree:(power/5.023).toFixed(2),
+              all_mei:(power*0.4).toFixed(2),
+              all_tree:(power/5.02).toFixed(2),
               startTime:time1,
               endTime:time2,
             })
@@ -292,7 +301,7 @@ tabChange(e){
       height: wx.getSystemInfoSync().windowHeight-140,  
     })
     wx.request({
-      url: app.globalData.baseUrl+'/wxRecruitOrder/getProjectElecDetail',
+      url: app.globalData.baseUrl+'/power/project',
       method:'GET',
       header:{
         'Authorization': wx.getStorageSync('token'),
@@ -303,61 +312,33 @@ tabChange(e){
       success(res){
         console.log(res);
         if(res.data.errcode == 0){
-          that.setData({
-            powerTotal:res.data.data,
-          })
+
+          if(res.data.data.length == 0){
+            _this.setData({
+              lineNo:false
+            });
+          }else{
+            that.setData({
+              powerTotal:res.data.data,
+              lineNo:true
+            })
+            
+            var time = new Array();
+            var numVal = new Array();
+            var data = res.data.data;
+            for(var i=0;i<data.length;i++){
+              var date = data[i].time.replace(/-/g,'.');
+              time.push(date.substring(5,date.length));
+              numVal.push((data[i].energy).toFixed(2));
+            }
+            that.setData({
+              time:time,
+              numVal:numVal
+            })
+            console.log(time,numVal);
+            that.drawLine(time,numVal);
+          }
           
-          var time = new Array();
-          var numVal = new Array();
-          var data = that.data.powerTotal.day;
-          for(var i=0;i<data.length;i++){
-            time.push(data[i].time);
-            numVal.push((data[i].energy/1000).toFixed(2));
-          }
-          that.setData({
-            time:time,
-            numVal:numVal
-          })
-          // 图表数据
-          var windowWidth = 320;
-          try {
-              var res = wx.getSystemInfoSync();
-              windowWidth = res.windowWidth;
-          } catch (e) {
-              console.error('getSystemInfoSync failed!');
-          }
-          // var simulationData = that.createSimulationData();
-          lineChart = new wxCharts({
-              canvasId: 'lineCanvas',
-              type: 'line',
-              categories: time,
-              animation: true,
-              // background: '#f5f5f5',
-              series: [{
-                  name: '发电量',
-                  data: numVal,
-                  format: function (val, name) {
-                      return val + 'kWh';
-                  }
-              }],
-              xAxis: {
-                  disableGrid: true
-              },
-              yAxis: {
-                  title: '发电量（kWh）',
-                  format: function (val) {
-                      return val.toFixed(2);
-                  },
-                  min: 0
-              },
-              width: windowWidth,
-              height: 200,
-              dataLabel: false,
-              dataPointShape: true,
-              extra: {
-                  lineStyle: 'curve'
-              }
-          });
         }
        
       },
@@ -384,7 +365,6 @@ goToStation(e){
 
 // 图表事件
 touchHandler: function (e) {
-  // console.log(lineChart.getCurrentDataIndex(e));
   lineChart.showToolTip(e, {
       // background: '#7cb5ec',
       format: function (item, category) {
@@ -408,7 +388,6 @@ createSimulationData: function () {
 
 updateData: function () {
   var that = this;
-  // var simulationData = this.createSimulationData();
   var series = [{
       name: '发电量',
       data: that.data.numVal,
@@ -459,8 +438,41 @@ timeTab(e){
     this.updateData();
 },
 
-
-
+// 绘制折线图
+drawLine(time,numVal){
+  var _this = this;
+  lineChart = new wxCharts({
+    canvasId: 'lineCanvas',
+    type: 'line',
+    categories: time,
+    animation: true,
+    // background: '#f5f5f5',
+    series: [{
+        name: '七日发电量',
+        data: numVal,
+        format: function (val, name) {
+            return val + 'kWh';
+        }
+    }],
+    xAxis: {
+        disableGrid: true
+    },
+    yAxis: {
+        title: '发电量（kWh）',
+        format: function (val) {
+            return val.toFixed(2);
+        },
+        min: 0
+    },
+    width: _this.data.windowWidth,
+    height: 200,
+    dataLabel: false,
+    dataPointShape: true,
+    extra: {
+        lineStyle: 'curve'
+    }
+});
+},
 
 
 

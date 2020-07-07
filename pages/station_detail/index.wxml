@@ -1,8 +1,19 @@
 <view class="introduce">
-    <image src="{{stationList.stationImg}}"></image>
+    <!-- <image src="{{stationList.stationImg}}"></image> -->
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+      <block wx:for="{{banner_img}}" wx:key="*this">
+        <swiper-item class="swiper_img">
+          <image src="{{item}}" style="width:100%;height:100%;"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+
+
     <view class="stationName">
       {{stationName}}
-     </view> 
+    </view> 
 </view>
 <view class="projectInfo">
   <!-- tab切换 -->
@@ -61,14 +72,15 @@
       <swiper-item>
         <scroll-view class="hot-box" scroll-y="true">
           <view class="swiperTitle"><text>发电量统计</text></view>
-          <view class="infoMain" style="padding:0 30rpx;">
-            <view class="timeTab">
+          <view class="infoMain" style="padding:0 30rpx;" wx:if="{{lineNo == true}}">
+            <!-- <view class="timeTab">
               <view class="{{currIndex == 0 ? 'active':''}}" data-index="0" bindtap="timeTab">日</view>
               <view class="{{currIndex == 1 ? 'active':''}}" data-index="1" bindtap="timeTab">月</view>
               <view class="{{currIndex == 2 ? 'active':''}}" data-index="2" bindtap="timeTab">年</view>
-            </view>
+            </view> -->
             <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
           </view>
+          <view class="nothing" wx:else>暂无数据</view>
         </scroll-view>
       </swiper-item>
       <!-- 相关文件 -->

@@ -65,14 +65,14 @@
 					"id": 0,
 					"name": "项目详情页",
 					"pathName": "pages/project_detail/index",
-					"query": "id=1263296317893136386",
+					"query": "id=1279027955268681730",
 					"scene": null
 				},
 				{
 					"id": 1,
 					"name": "电站详情页面",
 					"pathName": "pages/station_detail/index",
-					"query": "str=1242268142906736642&name=东望村王云波1（任县二期）",
+					"query": "str=1277882797055627265&name=保定清苑李新库",
 					"scene": null
 				},
 				{

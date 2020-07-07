@@ -121,3 +121,14 @@
     border-top:1px solid #e5e5e5;
     box-sizing: border-box;
   }
+  .logo_img{
+    position: absolute;
+    left:50% !important;
+    bottom: 140rpx;
+    z-index: 60;
+    transform: translateX(-50%);
+  }
+  .logo_img image{
+    width: 200rpx !important;
+    height: 200rpx !important; 
+  }
